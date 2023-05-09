@@ -1,0 +1,24 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main", "develop", "feature/*" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+    name: "Build & Test in Docker"
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: make compose/rebuild
+    - name: Run test in Docker image
+      run: make compose/run
+    - name: Tag Docker image
+      run: docker tag projecteuler-java:latest projecteuler-java:${{ github.sha }}
+
