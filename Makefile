@@ -20,7 +20,8 @@ BRUTEFORCE ?= false
 BRUTEFORCE :=$(shell echo '${BRUTEFORCE}'| tr '[:lower:]' '[:upper:]'| tr -d '[:blank:]')
 
 # Package Manager
-GRADLE=./gradlew
+# GRADLE=./gradlew
+GRADLE=gradle
 
 # DOCKER
 BUILDKIT_PROGRESS=plain
@@ -51,8 +52,8 @@ dependencies:
 	$(GRADLE) dependencies
 	@echo "################################################################################"
 
-test: env dependencies
-	$(GRADLE) test
+test: env
+	$(GRADLE) --console=verbose clean test
 
 compose/build: env
 	docker-compose --profile testing build
