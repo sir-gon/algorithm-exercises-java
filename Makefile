@@ -52,6 +52,9 @@ dependencies:
 	$(GRADLE) dependencies
 	@echo "################################################################################"
 
+lint:
+	$(GRADLE) --console=verbose clean checkstyleMain checkstyleTest
+
 test: env
 	$(GRADLE) --console=verbose clean test
 
@@ -64,4 +67,4 @@ compose/rebuild: env
 compose/run: compose/build
 	docker-compose --profile testing run --rm projecteuler-java make test
 
-all: env dependencies test
+all: env dependencies lint test
