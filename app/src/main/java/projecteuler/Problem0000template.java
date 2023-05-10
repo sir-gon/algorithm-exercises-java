@@ -1,13 +1,29 @@
+// CHECKSTYLE.OFF: JavadocParagraph
+
 package projecteuler;
 
+/**
+ *
+ * {TITLE}
+ *
+ * https://projecteuler.net/problem=XX
+ *
+ * {DESCRIPTION}
+ *
+ * ////////////////////////////////////////////////////////////////////////////
+ * Result found:
+ * ////////////////////////////////////////////////////////////////////////////
+ */
 public class Problem0000template {
-    public String getGreeting() {
-        return "Hello World!";
-    }
 
-    public Class<Integer> problem0000template() {
-        Class<Integer> result = null;
-      
-        return result;
-    }
+  /**
+   * Problem template method.
+   */
+  public Integer problem0000template() {
+    Integer result = null;
+
+    return result;
+  }
 }
+
+//CHECKSTYLE.ON: JavadocParagraph
