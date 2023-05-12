@@ -53,6 +53,9 @@ checkstyle {
 
 test {
     finalizedBy jacocoTestReport // report is always generated after tests run
+
+    // Reference: https://discuss.gradle.org/t/unable-to-configure-java-util-logging-with-gradle-test-task/2034
+    systemProperty 'java.util.logging.config.file', 'build/resources/test/logging.properties'
 }
 
 jacoco {
