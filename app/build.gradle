@@ -56,6 +56,11 @@ test {
 
     // Reference: https://discuss.gradle.org/t/unable-to-configure-java-util-logging-with-gradle-test-task/2034
     systemProperty 'java.util.logging.config.file', 'build/resources/test/logging.properties'
+
+    // Reference: https://stackoverflow.com/a/43289870/6366150
+    testLogging {
+        showStandardStreams = true
+    }
 }
 
 jacoco {
