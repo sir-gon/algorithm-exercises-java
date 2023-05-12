@@ -51,6 +51,11 @@ checkstyle {
     showViolations = true
 }
 
+def jacocoExclusions = [
+        '**/*App.class',
+        '**/CustomLogger.class'
+];
+
 test {
     finalizedBy jacocoTestReport // report is always generated after tests run
 
@@ -78,4 +83,30 @@ jacocoTestReport {
             outputLocation = file("$buildDir/jacoco.xml")
         }
     }
+
+    afterEvaluate {
+    classDirectories.setFrom(files(classDirectories.files.collect {
+      fileTree(dir: it,
+              exclude: jacocoExclusions
+      )
+    }))
+  }
+}
+
+jacocoTestCoverageVerification {
+  afterEvaluate {
+    classDirectories.setFrom(files(classDirectories.files.collect {
+      fileTree(dir: it,
+              exclude: jacocoExclusions
+      )
+    }))
+  }
+  violationRules {
+    rule {
+      excludes = jacocoExclusions
+      limit {
+        minimum = 0.90
+      }
+    }
+  }
 }
