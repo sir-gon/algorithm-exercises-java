@@ -2,6 +2,8 @@
 
 package projecteuler;
 
+import java.util.logging.Logger;
+
 /**
  * Multiples of 3 and 5
  *
@@ -14,6 +16,8 @@ package projecteuler;
  */
 public class Problem0001 {
 
+  static Logger logger = projecteuler.util.CustomLogger.getLogger();
+
   /**
    * Problem template method.
    */
@@ -23,10 +27,12 @@ public class Problem0001 {
 
     for (i = 0; i < top; i++) {
       if (i % 3 == 0 || i % 5 == 0) {
+        logger.fine(String.format("Line result: %d", i));
 
         result += i;
       }
     }
+    logger.info(String.format("Problem 00001 solved: %d", result));
 
     return result;
   }
