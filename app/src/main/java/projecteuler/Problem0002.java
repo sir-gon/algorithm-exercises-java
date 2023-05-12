@@ -2,6 +2,8 @@
 
 package projecteuler;
 
+import java.util.logging.Logger;
+
 /**
  * Even Fibonacci numbers
  *
@@ -17,12 +19,14 @@ package projecteuler;
  */
 public class Problem0002 {
 
+  static Logger logger = projecteuler.util.CustomLogger.getLogger();
+
   /**
    * Problem template method.
    */
   public Integer problem0002(int top) {
 
-    // int i = 0;
+    int i = 0;
     int last1 = 1;
     int last2 = 0;
     int evenSum = 0;
@@ -31,7 +35,7 @@ public class Problem0002 {
     do {
       fibo = last2 + last1;
 
-      // logger.debug(`Fibonacci (${i}) = ${fibo}`);
+      logger.fine(String.format("Fibonacci(%d) = %d", i, fibo));
 
       if (fibo % 2 == 0) {
         evenSum += fibo;
@@ -40,10 +44,11 @@ public class Problem0002 {
       // next keys:
       last2 = last1;
       last1 = fibo;
-      //i += 1;
+      i += 1;
     } while (fibo < top);
 
-    // logger.info(`RESULT = ${evenSum}`);
+    logger.info(String.format("Problem 0002 result: %d", evenSum));
+
     return evenSum;
   }
 
