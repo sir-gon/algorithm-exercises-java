@@ -1,4 +1,5 @@
-[![Java CI with Gradle](https://github.com/sir-gon/projecteuler-java/actions/workflows/gradle.yml/badge.svg?branch=main)](https://github.com/sir-gon/projecteuler-java/actions/workflows/gradle.yml) [![codecov](https://codecov.io/gh/sir-gon/projecteuler-java/branch/main/graph/badge.svg?token=7QAS85D3HB)](https://codecov.io/gh/sir-gon/projecteuler-java)
+[![Java CI with Gradle](https://github.com/sir-gon/projecteuler-java/actions/workflows/gradle.yml/badge.svg?branch=main)](https://github.com/sir-gon/projecteuler-java/actions/workflows/gradle.yml) [![codecov](https://codecov.io/gh/sir-gon/projecteuler-java/branch/main/graph/badge.svg?token=7QAS85D3HB)](https://codecov.io/gh/sir-gon/projecteuler-java) [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fsir-gon%2Fprojecteuler-java.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fsir-gon%2Fprojecteuler-java?ref=badge_shield)
+
 
 ![GitHub](https://img.shields.io/github/license/sir-gon/projecteuler-java) ![GitHub language count](https://img.shields.io/github/languages/count/sir-gon/projecteuler-java) ![GitHub top language](https://img.shields.io/github/languages/top/sir-gon/projecteuler-java)
 
@@ -129,8 +130,6 @@ OpenJDK 64-Bit Server VM Temurin-19.0.2+7 (build 19.0.2+7, mixed mode, sharing)
 
 ## Coverage
 [![Coverage](https://codecov.io/gh/sir-gon/projecteuler-java/branch/main/graphs/tree.svg?token=7QAS85D3HB)](https://codecov.io/gh/sir-gon/projecteuler-java)
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fsir-gon%2Fprojecteuler-java.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fsir-gon%2Fprojecteuler-java?ref=badge_shield)
-
 
 ## License
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fsir-gon%2Fprojecteuler-java.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fsir-gon%2Fprojecteuler-java?ref=badge_large)
