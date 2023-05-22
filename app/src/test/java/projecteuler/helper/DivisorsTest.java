@@ -10,10 +10,10 @@ import org.junit.jupiter.api.Test;
 class DivisorsTest {
 
   private class DivisorsOfNumberTestCase {
-    Integer input;
-    Integer[] answer;
+    Long input;
+    Long[] answer;
 
-    DivisorsOfNumberTestCase(Integer input, Integer[] answer) {
+    DivisorsOfNumberTestCase(Long input, Long[] answer) {
       this.input = input;
       this.answer = answer;
     }
@@ -32,7 +32,7 @@ class DivisorsTest {
   @Test void listOfDivisorsOfNumberBorderCaseTest() {
 
     DivisorsOfNumberTestCase[] testCases = {
-      new DivisorsOfNumberTestCase(1, new Integer[] { 1 })
+      new DivisorsOfNumberTestCase(1L, new Long[] { 1L })
     };
 
     for (DivisorsOfNumberTestCase testCase : testCases) {
@@ -43,10 +43,10 @@ class DivisorsTest {
   @Test void listOfDivisorsOfNumberTest() {
 
     DivisorsOfNumberTestCase[] testCases = {
-      new DivisorsOfNumberTestCase(2, new Integer[] { 1, 2 }),
-      new DivisorsOfNumberTestCase(8, new Integer[] { 1, 2, 4, 8 }),
-      new DivisorsOfNumberTestCase(9, new Integer[] { 1, 3, 9 }),
-      new DivisorsOfNumberTestCase(16, new Integer[] { 1, 2, 4, 8, 16 })
+      new DivisorsOfNumberTestCase(2L, new Long[] { 1L, 2L }),
+      new DivisorsOfNumberTestCase(8L, new Long[] { 1L, 2L, 4L, 8L }),
+      new DivisorsOfNumberTestCase(9L, new Long[] { 1L, 3L, 9L }),
+      new DivisorsOfNumberTestCase(16L, new Long[] { 1L, 2L, 4L, 8L, 16L })
     };
 
     for (DivisorsOfNumberTestCase testCase : testCases) {

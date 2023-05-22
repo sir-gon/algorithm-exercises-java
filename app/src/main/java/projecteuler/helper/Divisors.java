@@ -11,19 +11,19 @@ public class Divisors {
   /**
    * Calculate divisors of a number.
    */
-  public static Integer[] divisors(int _top) {
-    Integer top = Math.abs(_top);
-    Integer target = Math.abs(_top);
+  public static Long[] divisors(Long _top) {
+    Long top = Math.abs(_top);
+    Long target = Math.abs(_top);
 
-    ArrayList<Integer> divs = new ArrayList<Integer>();
+    ArrayList<Long> divs = new ArrayList<Long>();
 
-    divs.add(1);
+    divs.add(1L);
 
     if (top == 1) {
-      return divs.toArray(Integer[]::new);
+      return divs.toArray(Long[]::new);
     }
 
-    int i = 2;
+    Long i = 2L;
     while (i <= top) {
 
       top = target / i;
@@ -41,7 +41,7 @@ public class Divisors {
     divs.add(target);
 
     // sort divisors
-    Integer[] answer = divs.toArray(Integer[]::new);
+    Long[] answer = divs.toArray(Long[]::new);
     Arrays.sort(answer);
 
     return answer;

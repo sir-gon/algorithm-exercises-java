@@ -9,10 +9,10 @@ import org.junit.jupiter.api.Test;
 
 class PrimeTest {
   class IsPrimeTestCase {
-    Integer input;
+    Long input;
     Boolean answer;
 
-    IsPrimeTestCase(Integer input, Boolean answer) {
+    IsPrimeTestCase(Long input, Boolean answer) {
       this.input = input;
       this.answer = answer;
     }
@@ -31,8 +31,8 @@ class PrimeTest {
   @Test void notPrimeBorderCasesCaseTest() {
 
     IsPrimeTestCase[] testCases = {
-      new IsPrimeTestCase(0, false),
-      new IsPrimeTestCase(1, false)
+      new IsPrimeTestCase(0L, false),
+      new IsPrimeTestCase(1L, false)
     };
 
     for (IsPrimeTestCase testCase : testCases) {
@@ -44,9 +44,9 @@ class PrimeTest {
   @Test void somePrimeNumbersCaseTest() {
 
     IsPrimeTestCase[] testCases = {
-      new IsPrimeTestCase(2, true),
-      new IsPrimeTestCase(7, true),
-      new IsPrimeTestCase(13, true),
+      new IsPrimeTestCase(2L, true),
+      new IsPrimeTestCase(7L, true),
+      new IsPrimeTestCase(13L, true),
     };
 
     for (IsPrimeTestCase testCase : testCases) {
@@ -58,10 +58,10 @@ class PrimeTest {
   @Test void someNotPrimeNumbersCaseTest() {
 
     IsPrimeTestCase[] testCases = {
-      new IsPrimeTestCase(4, false),
-      new IsPrimeTestCase(10, false),
-      new IsPrimeTestCase(100, false),
-      new IsPrimeTestCase(300, false),
+      new IsPrimeTestCase(4L, false),
+      new IsPrimeTestCase(10L, false),
+      new IsPrimeTestCase(100L, false),
+      new IsPrimeTestCase(300L, false),
     };
 
     for (IsPrimeTestCase testCase : testCases) {

@@ -8,7 +8,7 @@ public class Prime {
   /**
    * Checks if number is prime.
    */
-  public static Boolean isPrime(int _number) {
+  public static Boolean isPrime(Long _number) {
 
     if (_number == 0 || _number == 1) {
       return false;
