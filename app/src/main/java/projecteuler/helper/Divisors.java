@@ -1,6 +1,7 @@
 package projecteuler.helper;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Divisors helper.
@@ -39,7 +40,10 @@ public class Divisors {
 
     divs.add(target);
 
-    return divs.toArray(Integer[]::new);
+    // sort divisors
+    Integer[] answer = divs.toArray(Integer[]::new);
+    Arrays.sort(answer);
 
+    return answer;
   }
 }
