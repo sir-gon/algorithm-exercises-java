@@ -8,11 +8,12 @@ import org.junit.jupiter.api.Test;
 class DivisorsTest {
   @Test void listOfDivisorsOfNumberTest() {
 
-    Integer[] answer = { 1, 2, 3, 4 };
+
+    Integer[] answer = { 1, 2, 4, 8 };
 
     Divisors classUnderTest = new Divisors();
 
-    assertArrayEquals(answer, classUnderTest.divisors(0));
+    assertArrayEquals(answer, classUnderTest.divisors(8));
 
   }
 }

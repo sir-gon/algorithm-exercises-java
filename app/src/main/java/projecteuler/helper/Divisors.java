@@ -11,15 +11,35 @@ public class Divisors {
    * Calculate divisors of a number.
    */
   public Integer[] divisors(int _top) {
+    Integer top = Math.abs(_top);
+    Integer target = Math.abs(_top);
 
-    ArrayList<Integer> result = new ArrayList<Integer>();
+    ArrayList<Integer> divs = new ArrayList<Integer>();
 
-    result.add(1);
-    result.add(2);
-    result.add(3);
-    result.add(4);
+    divs.add(1);
 
-    return result.toArray(Integer[]::new);
+    if (top == 1) {
+      return divs.toArray(Integer[]::new);
+    }
+
+    int i = 2;
+    while (i <= top) {
+
+      top = target / i;
+
+      if (top > 2 && target % i == 0) {
+        divs.add(i);
+
+        if (i < top) {
+          divs.add(target / i);
+        }
+      }
+      i += 1;
+    }
+
+    divs.add(target);
+
+    return divs.toArray(Integer[]::new);
 
   }
 }
