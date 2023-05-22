@@ -24,8 +24,7 @@ class DivisorsTest {
 
 
     for (DivisorsOfNumberTestCase testCase : testCases) {
-      Divisors classUnderTest = new Divisors();
-      assertArrayEquals(testCase.answer, classUnderTest.divisors(testCase.input));
+      assertArrayEquals(testCase.answer, Divisors.divisors(testCase.input));
     }
 
   }
@@ -41,8 +40,7 @@ class DivisorsTest {
 
 
     for (DivisorsOfNumberTestCase testCase : testCases) {
-      Divisors classUnderTest = new Divisors();
-      assertArrayEquals(testCase.answer, classUnderTest.divisors(testCase.input));
+      assertArrayEquals(testCase.answer, Divisors.divisors(testCase.input));
     }
 
   }

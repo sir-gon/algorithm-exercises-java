@@ -11,7 +11,7 @@ public class Divisors {
   /**
    * Calculate divisors of a number.
    */
-  public Integer[] divisors(int _top) {
+  public static Integer[] divisors(int _top) {
     Integer top = Math.abs(_top);
     Integer target = Math.abs(_top);
 
