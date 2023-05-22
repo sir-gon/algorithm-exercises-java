@@ -66,6 +66,11 @@ test {
     // Reference: https://stackoverflow.com/a/43289870/6366150
     testLogging {
         showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+
+    beforeTest { descriptor ->
+      logger.lifecycle("Running test: ${descriptor}")
     }
 }
 
