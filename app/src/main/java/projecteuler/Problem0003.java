@@ -25,9 +25,9 @@ public class Problem0003 {
   /**
    * Problem template method.
    */
-  public static Integer problem0003(Integer _top) {
+  public static Long problem0003(Long _top) {
 
-    Integer[] divs = Divisors.divisors(_top);
+    Long[] divs = Divisors.divisors(_top);
 
     // middle position for odd and even cases
     Integer middle = (int) Math.ceil(divs.length / 2) - 1;
@@ -35,25 +35,28 @@ public class Problem0003 {
 
     logger.info(String.format("Divisors of %d: %s", _top, divs.toString()));
 
-    Integer maxPrimeFactor = null;
+    Long maxPrimeFactor = null;
     Integer i = middle;
     // check half divisors, each is Prime? wich is largest?
-    do {
+
+    while (i >= 0) {
       Boolean prime = Prime.isPrime(divs[i]);
 
       logger.fine(String.format("%d is Prime?: %b", i, prime));
 
       if (prime) {
         maxPrimeFactor = divs[i];
+        logger.info(String.format("Problem 00003 solved: %d", maxPrimeFactor));
+
+        return maxPrimeFactor;
       }
 
       i -= 1;
-    } while (i >= 0 && maxPrimeFactor == null);
+    }
 
-    logger.info(String.format("Problem 00003 solved: %d", maxPrimeFactor));
-
-    return maxPrimeFactor;
+    return null;
   }
+
 }
 
 //CHECKSTYLE.ON: JavadocParagraph
