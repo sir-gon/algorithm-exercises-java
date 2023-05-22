@@ -1,6 +1,7 @@
 package projecteuler.helper;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.jupiter.api.Test;
@@ -21,6 +22,10 @@ class PrimeTest {
     Prime classUnderTest = new Prime();
 
     assertNotNull(classUnderTest);
+    assertInstanceOf(
+        Prime.class,
+        classUnderTest,
+        String.format("Must be an instance of %s", Prime.class));
   }
 
   @Test void notPrimeBorderCasesCaseTest() {

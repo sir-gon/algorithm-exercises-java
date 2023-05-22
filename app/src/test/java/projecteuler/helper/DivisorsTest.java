@@ -1,6 +1,7 @@
 package projecteuler.helper;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.jupiter.api.Test;
@@ -22,6 +23,10 @@ class DivisorsTest {
     Divisors classUnderTest = new Divisors();
 
     assertNotNull(classUnderTest);
+    assertInstanceOf(
+        Divisors.class,
+        classUnderTest,
+        String.format("Must be an instance of %s", Divisors.class));
   }
 
   @Test void listOfDivisorsOfNumberBorderCaseTest() {
