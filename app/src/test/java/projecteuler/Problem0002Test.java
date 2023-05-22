@@ -12,6 +12,8 @@ class Problem0002Test {
     int top = 4000000;
     int solutionFound = classUnderTest.problem0002(top);
 
-    assertEquals(answer, solutionFound, "PROBLEM 0001 solution found: ${}");
+    assertEquals(answer, solutionFound,
+        String.format("Problem 00002 answer must be: %d", answer)
+    );
   }
 }
