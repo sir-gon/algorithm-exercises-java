@@ -1,12 +1,14 @@
 package projecteuler.helper;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.jupiter.api.Test;
 
 
 class DivisorsTest {
-  class DivisorsOfNumberTestCase {
+
+  private class DivisorsOfNumberTestCase {
     Integer input;
     Integer[] answer;
 
@@ -16,17 +18,21 @@ class DivisorsTest {
     }
   }
 
+  @Test void instanceCaseTest() {
+    Divisors classUnderTest = new Divisors();
+
+    assertNotNull(classUnderTest);
+  }
+
   @Test void listOfDivisorsOfNumberBorderCaseTest() {
 
     DivisorsOfNumberTestCase[] testCases = {
       new DivisorsOfNumberTestCase(1, new Integer[] { 1 })
     };
 
-
     for (DivisorsOfNumberTestCase testCase : testCases) {
       assertArrayEquals(testCase.answer, Divisors.divisors(testCase.input));
     }
-
   }
 
   @Test void listOfDivisorsOfNumberTest() {
@@ -37,7 +43,6 @@ class DivisorsTest {
       new DivisorsOfNumberTestCase(9, new Integer[] { 1, 3, 9 }),
       new DivisorsOfNumberTestCase(16, new Integer[] { 1, 2, 4, 8, 16 })
     };
-
 
     for (DivisorsOfNumberTestCase testCase : testCases) {
       assertArrayEquals(testCase.answer, Divisors.divisors(testCase.input));
