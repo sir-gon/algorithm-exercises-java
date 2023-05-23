@@ -1,9 +1,4 @@
 // CHECKSTYLE.OFF: JavadocParagraph
-
-package projecteuler;
-
-import java.util.logging.Logger;
-
 /**
  * Multiples of 3 and 5
  *
@@ -13,6 +8,14 @@ import java.util.logging.Logger;
  * of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
  *
  * Find the sum of all the multiples of 3 or 5 below 1000.
+ */
+
+package projecteuler;
+
+import java.util.logging.Logger;
+
+/**
+ * Multiples of 3 and 5.
  */
 public class Problem0001 {
 

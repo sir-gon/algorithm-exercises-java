@@ -1,9 +1,4 @@
 // CHECKSTYLE.OFF: JavadocParagraph
-
-package projecteuler;
-
-import java.util.logging.Logger;
-
 /**
  * Even Fibonacci numbers
  *
@@ -16,6 +11,14 @@ import java.util.logging.Logger;
  *
  * By considering the terms in the Fibonacci sequence whose values do not exceed four million,
  * find the sum of the even-valued terms.
+ */
+
+package projecteuler;
+
+import java.util.logging.Logger;
+
+/**
+ * Even Fibonacci numbers.
  */
 public class Problem0002 {
 

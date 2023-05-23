@@ -1,7 +1,4 @@
 // CHECKSTYLE.OFF: JavadocParagraph
-
-package projecteuler;
-
 /**
  *
  * {TITLE}
@@ -15,6 +12,11 @@ package projecteuler;
  * ////////////////////////////////////////////////////////////////////////////
  */
 
+package projecteuler;
+
+/**
+ * {TITLE}.
+ */
 public class Problem0000template {
 
   static java.util.logging.Logger logger = projecteuler.util.CustomLogger.getLogger();
