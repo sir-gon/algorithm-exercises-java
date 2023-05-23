@@ -38,6 +38,15 @@ class PrimeTest {
     };
 
     for (IsPrimeTestCase testCase : testCases) {
+      // Test the instance way
+      Prime classUnderTest = new Prime();
+      Boolean answer = classUnderTest.calculateIsPrime(testCase.input);
+      Integer cycles = classUnderTest.getCycles();
+
+      assertEquals(testCase.answer, answer);
+      assertEquals(testCase.cycles, cycles);
+
+      // Test static way
       assertEquals(testCase.answer, Prime.isPrime(testCase.input));
     }
 
@@ -46,12 +55,21 @@ class PrimeTest {
   @Test void somePrimeNumbersCaseTest() {
 
     IsPrimeTestCase[] testCases = {
-      new IsPrimeTestCase(2L, true, 1),
-      new IsPrimeTestCase(7L, true, 7),
-      new IsPrimeTestCase(13L, true, 13),
+      new IsPrimeTestCase(2L, true, 0),
+      new IsPrimeTestCase(7L, true, 5),
+      new IsPrimeTestCase(13L, true, 11),
     };
 
     for (IsPrimeTestCase testCase : testCases) {
+      // Test the instance way
+      Prime classUnderTest = new Prime();
+      Boolean answer = classUnderTest.calculateIsPrime(testCase.input);
+      Integer cycles = classUnderTest.getCycles();
+
+      assertEquals(testCase.answer, answer);
+      assertEquals(testCase.cycles, cycles);
+
+      // Test static way
       assertEquals(testCase.answer, Prime.isPrime(testCase.input));
     }
 
@@ -67,6 +85,15 @@ class PrimeTest {
     };
 
     for (IsPrimeTestCase testCase : testCases) {
+      // Test the instance way
+      Prime classUnderTest = new Prime();
+      Boolean answer = classUnderTest.calculateIsPrime(testCase.input);
+      Integer cycles = classUnderTest.getCycles();
+
+      assertEquals(testCase.answer, answer);
+      assertEquals(testCase.cycles, cycles);
+
+      // Test static way
       assertEquals(testCase.answer, Prime.isPrime(testCase.input));
     }
 

@@ -21,9 +21,10 @@ public class Prime {
     }
 
     int init = 2;
+    int startCountFrom = 1;
 
     for (int i = init; i < _number; i++) {
-      this.cycles = i - init;
+      this.cycles = startCountFrom + i - init;
 
       if (_number % i == 0) {
         return false;
