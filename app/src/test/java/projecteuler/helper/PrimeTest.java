@@ -11,10 +11,12 @@ class PrimeTest {
   class IsPrimeTestCase {
     Long input;
     Boolean answer;
+    Integer cycles;
 
-    IsPrimeTestCase(Long input, Boolean answer) {
+    IsPrimeTestCase(Long input, Boolean answer, Integer cycles) {
       this.input = input;
       this.answer = answer;
+      this.cycles = cycles;
     }
   }
 
@@ -31,11 +33,20 @@ class PrimeTest {
   @Test void notPrimeBorderCasesCaseTest() {
 
     IsPrimeTestCase[] testCases = {
-      new IsPrimeTestCase(0L, false),
-      new IsPrimeTestCase(1L, false)
+      new IsPrimeTestCase(0L, false, 0),
+      new IsPrimeTestCase(1L, false, 0)
     };
 
     for (IsPrimeTestCase testCase : testCases) {
+      // Test the instance way
+      Prime classUnderTest = new Prime();
+      Boolean answer = classUnderTest.calculateIsPrime(testCase.input);
+      Integer cycles = classUnderTest.getCycles();
+
+      assertEquals(testCase.answer, answer);
+      assertEquals(testCase.cycles, cycles);
+
+      // Test static way
       assertEquals(testCase.answer, Prime.isPrime(testCase.input));
     }
 
@@ -44,12 +55,21 @@ class PrimeTest {
   @Test void somePrimeNumbersCaseTest() {
 
     IsPrimeTestCase[] testCases = {
-      new IsPrimeTestCase(2L, true),
-      new IsPrimeTestCase(7L, true),
-      new IsPrimeTestCase(13L, true),
+      new IsPrimeTestCase(2L, true, 0),
+      new IsPrimeTestCase(7L, true, 5),
+      new IsPrimeTestCase(13L, true, 11),
     };
 
     for (IsPrimeTestCase testCase : testCases) {
+      // Test the instance way
+      Prime classUnderTest = new Prime();
+      Boolean answer = classUnderTest.calculateIsPrime(testCase.input);
+      Integer cycles = classUnderTest.getCycles();
+
+      assertEquals(testCase.answer, answer);
+      assertEquals(testCase.cycles, cycles);
+
+      // Test static way
       assertEquals(testCase.answer, Prime.isPrime(testCase.input));
     }
 
@@ -58,13 +78,22 @@ class PrimeTest {
   @Test void someNotPrimeNumbersCaseTest() {
 
     IsPrimeTestCase[] testCases = {
-      new IsPrimeTestCase(4L, false),
-      new IsPrimeTestCase(10L, false),
-      new IsPrimeTestCase(100L, false),
-      new IsPrimeTestCase(300L, false),
+      new IsPrimeTestCase(4L, false, 1),
+      new IsPrimeTestCase(10L, false, 1),
+      new IsPrimeTestCase(100L, false, 1),
+      new IsPrimeTestCase(300L, false, 1),
     };
 
     for (IsPrimeTestCase testCase : testCases) {
+      // Test the instance way
+      Prime classUnderTest = new Prime();
+      Boolean answer = classUnderTest.calculateIsPrime(testCase.input);
+      Integer cycles = classUnderTest.getCycles();
+
+      assertEquals(testCase.answer, answer);
+      assertEquals(testCase.cycles, cycles);
+
+      // Test static way
       assertEquals(testCase.answer, Prime.isPrime(testCase.input));
     }
 

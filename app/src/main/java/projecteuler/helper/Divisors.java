@@ -8,12 +8,21 @@ import java.util.Arrays;
  */
 public class Divisors {
 
+  int cycles = 0;
+
   /**
-   * Calculate divisors of a number.
+   * Calculate divisors of a natural number.
+   *
+   * @param _number number to calculate their divisors
+   * @return Long
    */
-  public static Long[] divisors(Long _top) {
-    Long top = Math.abs(_top);
-    Long target = Math.abs(_top);
+  public Long[] calculateDivisors(Long _number) {
+
+    // Reset cycles counter
+    this.cycles = 0;
+
+    Long top = Math.abs(_number);
+    Long target = Math.abs(_number);
 
     ArrayList<Long> divs = new ArrayList<Long>();
 
@@ -23,13 +32,14 @@ public class Divisors {
       return divs.toArray(Long[]::new);
     }
 
-    Long i = 2L;
+    int init = 2;
+    int i = init;
     while (i <= top) {
 
       top = target / i;
 
       if (top > 2 && target % i == 0) {
-        divs.add(i);
+        divs.add(Long.valueOf(i));
 
         if (i < top) {
           divs.add(target / i);
@@ -38,6 +48,8 @@ public class Divisors {
       i += 1;
     }
 
+    cycles = i - init;
+
     divs.add(target);
 
     // sort divisors
@@ -45,5 +57,21 @@ public class Divisors {
     Arrays.sort(answer);
 
     return answer;
+
+  }
+
+  public Integer getCycles() {
+    return this.cycles;
+  }
+
+  /**
+   * Calculate divisors of a number.
+   */
+  public static Long[] divisors(Long _number) {
+
+    Divisors self = new Divisors();
+    Long[] result = self.calculateDivisors(_number);
+
+    return result;
   }
 }
