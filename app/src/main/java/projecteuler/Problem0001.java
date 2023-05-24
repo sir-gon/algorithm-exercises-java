@@ -1,9 +1,4 @@
 // CHECKSTYLE.OFF: JavadocParagraph
-
-package projecteuler;
-
-import java.util.logging.Logger;
-
 /**
  * Multiples of 3 and 5
  *
@@ -14,6 +9,14 @@ import java.util.logging.Logger;
  *
  * Find the sum of all the multiples of 3 or 5 below 1000.
  */
+
+package projecteuler;
+
+import java.util.logging.Logger;
+
+/**
+ * Multiples of 3 and 5.
+ */
 public class Problem0001 {
 
   static Logger logger = projecteuler.util.CustomLogger.getLogger();
@@ -21,7 +24,7 @@ public class Problem0001 {
   /**
    * Problem template method.
    */
-  public Integer problem0001(Integer top) {
+  public static Integer problem0001(Integer top) {
     Integer result = 0;
     Integer i;
 
