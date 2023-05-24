@@ -27,7 +27,7 @@ public class Problem0002 {
   /**
    * Problem template method.
    */
-  public Integer problem0002(int top) {
+  public static Integer problem0002(int top) {
 
     int i = 0;
     int last1 = 1;

@@ -17,14 +17,14 @@ package projecteuler;
 /**
  * {TITLE}.
  */
-public class Problem0000template {
+public class Problem0000 {
 
   static java.util.logging.Logger logger = projecteuler.util.CustomLogger.getLogger();
 
   /**
    * Problem template method.
    */
-  public Integer problem0000template() {
+  public static Integer problem0000() {
     Integer result = null;
 
     logger.info(String.format("Problem 000XX solved: %d", result));

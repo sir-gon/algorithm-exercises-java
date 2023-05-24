@@ -24,7 +24,7 @@ public class Problem0001 {
   /**
    * Problem template method.
    */
-  public Integer problem0001(Integer top) {
+  public static Integer problem0001(Integer top) {
     Integer result = 0;
     Integer i;
 
