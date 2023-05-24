@@ -74,4 +74,58 @@ public class Divisors {
 
     return result;
   }
+
+  static class PrimeFactor {
+    Integer factor;
+    Integer carry;
+    Integer cycles;
+
+    PrimeFactor(Integer factor, Integer carry, Integer cycles) {
+      this.factor = factor;
+      this.carry = carry;
+      this.cycles = cycles;
+    }
+  }
+
+  /**
+   * Prime factor Factory.
+   *
+   * @param factor prime factor
+   * @param carry divisor
+   * @param cycles number of cycles in which it was calculated
+   * @return PrimeFactor
+   */
+  public static PrimeFactor primeFactor(Integer factor, Integer carry, Integer cycles) {
+    Divisors.PrimeFactor result = new PrimeFactor(factor, carry, cycles);
+
+    return result;
+  }
+
+  /**
+   * Calculate the next minimal prime factor of a number.
+   *
+   * @param _target number to get the first next prime factor
+   * @return PrimeFactor
+   */
+  public static PrimeFactor nextPrimeFactor(Integer _target) {
+    Integer top = Math.abs(_target);
+
+    // default
+    Integer factor = top;
+    Integer carry = 1;
+
+    final Integer init = 1;
+    Integer i = init;
+
+    if (top != 1) {
+      do {
+        i += 1;
+        factor = i;
+        carry = top / i;
+      } while (i <= top && top % i != 0);
+    }
+
+    return new PrimeFactor(factor, carry, i - init);
+  }
+
 }
