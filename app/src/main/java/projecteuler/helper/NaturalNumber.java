@@ -2,6 +2,7 @@ package projecteuler.helper;
 
 import java.util.ArrayList;
 
+// CHECKSTYLE.OFF: JavadocParagraph
 /**
  * NaturalNumber.
  */
@@ -24,7 +25,10 @@ public class NaturalNumber {
   }
 
   /**
-   * getNextPrimeFactor.
+   * Get cycles the next minimal prime factor.
+   *
+   * If the prime factor has not yet been computed, then it is computed first.
+   * That is, this function saves the result in an internal cache.
    */
   public Integer getNextPrimeFactor() {
 
@@ -36,7 +40,12 @@ public class NaturalNumber {
   }
 
   /**
-   * getNextDivisor.
+   * Get cycles to compute the next divisor.
+   * The divisor is the inverse number of the prime factor,
+   * by which the target number is divided to obtain the prime factor.
+   *
+   * If the prime factor has not yet been computed, then it is computed first.
+   * That is, this function saves the result in an internal cache.
    */
   public Integer getNextDivisor() {
     if (this.__nextDivisor == null) {
@@ -47,7 +56,10 @@ public class NaturalNumber {
   }
 
   /**
-   * getNextPrimeFactorCycles.
+   * Get cycles to compute the next minimal Prime Factor of a number.
+   *
+   * If the prime factor has not yet been computed, then it is computed first.
+   * That is, this function saves the result in an internal cache.
    */
   public Integer getNextPrimeFactorCycles() {
 
@@ -59,7 +71,7 @@ public class NaturalNumber {
   }
 
   /**
-   * computeNextPrimefactor.
+   * Compute the next minimal Prime Factor of a number.
    */
   public Integer computeNextPrimefactor() {
     Integer top = Math.abs(this.getValue());
@@ -87,7 +99,7 @@ public class NaturalNumber {
   }
 
   /**
-   * primeFactors.
+   * Compute a list of prime factors of a number.
    */
   public Integer[] primeFactors() {
     ArrayList<Integer> factors = new ArrayList<Integer>();
@@ -118,6 +130,9 @@ public class NaturalNumber {
     return this.__primeFactors;
   }
 
+  /**
+   * Get cycles to compute a list of prime factors of a number.
+   */
   public Integer getPrimeFactorCycles() {
     if (this.__primeFactorsCycles == null) {
       this.primeFactors();
@@ -126,3 +141,5 @@ public class NaturalNumber {
     return __primeFactorsCycles;
   }
 }
+
+//CHECKSTYLE.ON: JavadocParagraph
