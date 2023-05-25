@@ -1,5 +1,7 @@
 package projecteuler.helper;
 
+import java.util.ArrayList;
+
 /**
  * NaturalNumber.
  */
@@ -10,7 +12,10 @@ public class NaturalNumber {
   private Integer __nextDivisor = null;
   private Integer __nextPrimeFactorCycles = null;
 
-  NaturalNumber(Integer value) {
+  private Integer[] __primeFactors = null;
+  private Integer __primeFactorsCycles = null;
+
+  public NaturalNumber(Integer value) {
     this.__value = value;
   }
 
@@ -81,4 +86,36 @@ public class NaturalNumber {
     return __nextPrimeFactor;
   }
 
+  /**
+   * primeFactors.
+   */
+  public Integer[] primeFactors() {
+    ArrayList<Integer> factors = new ArrayList<Integer>();
+    Integer target = Math.abs(this.getValue());
+    Integer cycles = 0;
+
+    if (target == 1) {
+      factors.add(1);
+      this.__primeFactors = factors.toArray(Integer[]::new);
+
+      return this.__primeFactors;
+    }
+
+    Integer partial = target;
+    while (partial != 1) {
+      NaturalNumber partialNumber = new NaturalNumber(partial);
+      Integer primeFactor = partialNumber.getNextPrimeFactor();
+      Integer divisor = partialNumber.getNextDivisor();
+      cycles += partialNumber.getNextPrimeFactorCycles();
+
+      factors.add(primeFactor);
+      partial = divisor;
+    }
+
+    this.__primeFactors = factors.toArray(Integer[]::new);
+
+
+    return this.__primeFactors;
+
+  }
 }
