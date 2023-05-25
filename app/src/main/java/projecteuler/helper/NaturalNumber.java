@@ -97,7 +97,7 @@ public class NaturalNumber {
     if (target == 1) {
       factors.add(1);
       this.__primeFactors = factors.toArray(Integer[]::new);
-
+      this.__primeFactorsCycles = cycles;
       return this.__primeFactors;
     }
 
@@ -113,9 +113,16 @@ public class NaturalNumber {
     }
 
     this.__primeFactors = factors.toArray(Integer[]::new);
-
+    this.__primeFactorsCycles = cycles;
 
     return this.__primeFactors;
+  }
 
+  public Integer getPrimeFactorCycles() {
+    if (this.__primeFactorsCycles == null) {
+      this.primeFactors();
+    }
+
+    return __primeFactorsCycles;
   }
 }

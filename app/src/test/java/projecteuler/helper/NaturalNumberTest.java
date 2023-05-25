@@ -158,7 +158,29 @@ class NaturalNumberTest {
       );
 
       final Integer[] answer_prime_factors = answer.primeFactors();
+      final Integer answer_prime_factors_cycles = answer.getPrimeFactorCycles();
+
       assertArrayEquals(expected.factors, answer_prime_factors);
+      assertEquals(expected.cycles, answer_prime_factors_cycles);
+    }
+  }
+
+  @Test void primeFactorsCyclesWithoutCacheTest() {
+
+    for (PrimeFactorsOfNumberTestCase expected : this.primeFactorsTestCases) {
+
+      NaturalNumber answer = new NaturalNumber(Integer.valueOf(expected.input));
+
+      assertNotNull(answer);
+      assertInstanceOf(
+          NaturalNumber.class,
+          answer,
+          String.format("Must be an instance of %s", NaturalNumber.class)
+      );
+
+      final Integer answer_prime_factors_cycles = answer.getPrimeFactorCycles();
+
+      assertEquals(expected.cycles, answer_prime_factors_cycles);
     }
   }
 }
