@@ -71,7 +71,7 @@ public class NaturalNumber {
         i += 1;
         factor = i;
         carry = top / i;
-      } while (i <= top && top % i != 0);
+      } while (top % i != 0);
     }
 
     this.__nextPrimeFactor = factor;
