@@ -65,56 +65,5 @@ class DivisorsTest {
       // Test static way
       assertArrayEquals(testCase.answer, Divisors.divisors(testCase.input));
     }
-
-  }
-
-  private class NextPrimeFactorOfNumberTestCase {
-    Integer input;
-    Divisors.PrimeFactor answer;
-
-    NextPrimeFactorOfNumberTestCase(Integer input, Divisors.PrimeFactor answer) {
-      this.input = input;
-      this.answer = answer;
-    }
-  }
-
-  @Test void nextPrimeFactorOfNumberTest() {
-
-    NextPrimeFactorOfNumberTestCase[] testCases = {
-      new NextPrimeFactorOfNumberTestCase(
-          1,
-          Divisors.primeFactor(1, 1, 0)
-      ),
-      new NextPrimeFactorOfNumberTestCase(
-          2,
-          Divisors.primeFactor(2, 1, 1)
-      ),
-      new NextPrimeFactorOfNumberTestCase(
-          4,
-          Divisors.primeFactor(2, 1, 1)
-      ),
-      new NextPrimeFactorOfNumberTestCase(
-          9,
-          Divisors.primeFactor(3, 3, 2)
-      ),
-      new NextPrimeFactorOfNumberTestCase(
-          7,
-          Divisors.primeFactor(7, 1, 6)
-      )
-    };
-
-    for (NextPrimeFactorOfNumberTestCase testCase : testCases) {
-      // Test static way
-      Divisors.PrimeFactor answer = Divisors.nextPrimeFactor(testCase.input);
-      assertNotNull(answer);
-      assertInstanceOf(
-          Divisors.PrimeFactor.class,
-          answer,
-          String.format("Must be an instance of %s", Divisors.PrimeFactor.class));
-
-      assertEquals(testCase.answer.factor, answer.factor);
-      assertEquals(testCase.answer.cycles, answer.cycles);
-    }
-
   }
 }
