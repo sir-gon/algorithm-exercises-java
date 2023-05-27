@@ -39,9 +39,6 @@ public class Problem0005 {
       occurrences.put(number, occurrences.getOrDefault(number, 0) + 1);
     }
 
-    // Convertir el mapa en una lista de pares (número, cantidad)
-    // List<Map.Entry<Integer, Integer>> result = new ArrayList<>(occurrences.entrySet());
-
     return occurrences;
   }
 
@@ -69,7 +66,7 @@ public class Problem0005 {
 
 
   /**
-   * Problem 0005 (brute force way).
+   * Problem 0005.
    */
   public static Integer problem0005(Integer _bottom, Integer _top) {
     Integer result = null;
@@ -94,9 +91,6 @@ public class Problem0005 {
     }
 
     result = 1;
-    minimumPrimeFactorsCollector.forEach((factor, quantity) -> {
-    });
-    //way 2 (java 7 Method)
     for (Map.Entry<Integer, Integer> me : minimumPrimeFactorsCollector.entrySet()) {
       Integer factor = me.getKey();
       Integer quantity = me.getValue();
