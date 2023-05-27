@@ -65,6 +65,5 @@ class DivisorsTest {
       // Test static way
       assertArrayEquals(testCase.answer, Divisors.divisors(testCase.input));
     }
-
   }
 }
