@@ -140,6 +140,18 @@ public class NaturalNumber {
 
     return __primeFactorsCycles;
   }
+
+  /**
+   * Checks if number is prime.
+   */
+  public Boolean isPrime() {
+    Integer primeFactor = this.getNextPrimeFactor();
+    if (primeFactor != 1 && primeFactor == this.getValue()) {
+      return true;
+    }
+
+    return false;
+  }
 }
 
 //CHECKSTYLE.ON: JavadocParagraph

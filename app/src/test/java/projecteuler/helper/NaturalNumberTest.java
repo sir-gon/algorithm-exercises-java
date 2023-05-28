@@ -21,13 +21,15 @@ class NaturalNumberTest {
     Integer input;
     Integer factor;
     Integer divisor;
+    Boolean isPrime;
     Integer cycles;
 
     NextPrimeFactorOfNumberTestCase(
-        Integer input, Integer factor, Integer divisor, Integer cycles) {
+        Integer input, Integer factor, Integer divisor, Boolean isPrime, Integer cycles) {
       this.input = input;
       this.factor = factor;
       this.divisor = divisor;
+      this.isPrime = isPrime;
       this.cycles = cycles;
     }
   }
@@ -51,11 +53,11 @@ class NaturalNumberTest {
   @BeforeAll
   void initNextPrimeFactorOfNumberTestCases() {
     nextPrimeFactorTestCases = new ArrayList<NextPrimeFactorOfNumberTestCase>(Arrays.asList(
-      new NextPrimeFactorOfNumberTestCase(1, 1, 1, 0),
-      new NextPrimeFactorOfNumberTestCase(2, 2, 1, 1),
-      new NextPrimeFactorOfNumberTestCase(4, 2, 2, 1),
-      new NextPrimeFactorOfNumberTestCase(9, 3, 3, 2),
-      new NextPrimeFactorOfNumberTestCase(7, 7, 1, 6)
+      new NextPrimeFactorOfNumberTestCase(1, 1, 1, false, 0),
+      new NextPrimeFactorOfNumberTestCase(2, 2, 1, true, 1),
+      new NextPrimeFactorOfNumberTestCase(4, 2, 2, false, 1),
+      new NextPrimeFactorOfNumberTestCase(9, 3, 3, false, 2),
+      new NextPrimeFactorOfNumberTestCase(7, 7, 1, true, 6)
       ));
   }
 
@@ -182,5 +184,20 @@ class NaturalNumberTest {
 
       assertEquals(expected.cycles, answer_prime_factors_cycles);
     }
+  }
+
+  @Test void someNotPrimeNumbersCaseTest() {
+
+    for (NextPrimeFactorOfNumberTestCase expected : this.nextPrimeFactorTestCases) {
+
+      // Test the instance way
+      NaturalNumber answer = new NaturalNumber(Integer.valueOf(expected.input));
+      Boolean answerIsPrime = answer.isPrime();
+      Integer answerCycles = answer.getNextPrimeFactorCycles();
+
+      assertEquals(expected.isPrime, answerIsPrime);
+      assertEquals(expected.cycles, answerCycles);
+    }
+
   }
 }
