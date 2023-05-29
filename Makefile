@@ -58,6 +58,9 @@ lint:
 test: env
 	$(GRADLE) --console=verbose clean test
 
+build: env lint test
+	$(GRADLE) --console=verbose clean build
+
 compose/build: env
 	docker-compose --profile testing build
 
