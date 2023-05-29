@@ -8,19 +8,19 @@ import java.util.ArrayList;
  */
 public class NaturalNumber {
 
-  private Integer __value = null;
-  private Integer __nextPrimeFactor = null;
-  private Integer __nextDivisor = null;
+  private Long __value = null;
+  private Long __nextPrimeFactor = null;
+  private Long __nextDivisor = null;
   private Integer __nextPrimeFactorCycles = null;
 
-  private Integer[] __primeFactors = null;
+  private Long[] __primeFactors = null;
   private Integer __primeFactorsCycles = null;
 
-  public NaturalNumber(Integer value) {
+  public NaturalNumber(Long value) {
     this.__value = value;
   }
 
-  public Integer getValue() {
+  public Long getValue() {
     return this.__value;
   }
 
@@ -30,7 +30,7 @@ public class NaturalNumber {
    * If the prime factor has not yet been computed, then it is computed first.
    * That is, this function saves the result in an internal cache.
    */
-  public Integer getNextPrimeFactor() {
+  public Long getNextPrimeFactor() {
 
     if (this.__nextPrimeFactor == null) {
       this.computeNextPrimefactor();
@@ -47,7 +47,7 @@ public class NaturalNumber {
    * If the prime factor has not yet been computed, then it is computed first.
    * That is, this function saves the result in an internal cache.
    */
-  public Integer getNextDivisor() {
+  public Long getNextDivisor() {
     if (this.__nextDivisor == null) {
       this.computeNextPrimefactor();
     }
@@ -73,12 +73,12 @@ public class NaturalNumber {
   /**
    * Compute the next minimal Prime Factor of a number.
    */
-  public Integer computeNextPrimefactor() {
-    Integer top = Math.abs(this.getValue());
+  public Long computeNextPrimefactor() {
+    Long top = Math.abs(this.getValue());
 
     // default
-    Integer factor = top;
-    Integer carry = 1;
+    Long factor = top;
+    Long divisor = 1L;
 
     final Integer init = 1;
     Integer i = init;
@@ -86,13 +86,13 @@ public class NaturalNumber {
     if (top != 1) {
       do {
         i += 1;
-        factor = i;
-        carry = top / i;
+        factor = Long.valueOf(i);
+        divisor = top / i;
       } while (top % i != 0);
     }
 
     this.__nextPrimeFactor = factor;
-    this.__nextDivisor = carry;
+    this.__nextDivisor = divisor;
     this.__nextPrimeFactorCycles = i - init;
 
     return __nextPrimeFactor;
@@ -101,30 +101,30 @@ public class NaturalNumber {
   /**
    * Compute a list of prime factors of a number.
    */
-  public Integer[] primeFactors() {
-    ArrayList<Integer> factors = new ArrayList<Integer>();
-    Integer target = Math.abs(this.getValue());
+  public Long[] primeFactors() {
+    ArrayList<Long> factors = new ArrayList<Long>();
+    Long target = Math.abs(this.getValue());
     Integer cycles = 0;
 
-    if (target == 1) {
-      factors.add(1);
-      this.__primeFactors = factors.toArray(Integer[]::new);
+    if (target == 1L) {
+      factors.add(1L);
+      this.__primeFactors = factors.toArray(Long[]::new);
       this.__primeFactorsCycles = cycles;
       return this.__primeFactors;
     }
 
-    Integer partial = target;
+    Long partial = target;
     while (partial != 1) {
       NaturalNumber partialNumber = new NaturalNumber(partial);
-      Integer primeFactor = partialNumber.getNextPrimeFactor();
-      Integer divisor = partialNumber.getNextDivisor();
+      Long primeFactor = partialNumber.getNextPrimeFactor();
+      Long divisor = partialNumber.getNextDivisor();
       cycles += partialNumber.getNextPrimeFactorCycles();
 
       factors.add(primeFactor);
       partial = divisor;
     }
 
-    this.__primeFactors = factors.toArray(Integer[]::new);
+    this.__primeFactors = factors.toArray(Long[]::new);
     this.__primeFactorsCycles = cycles;
 
     return this.__primeFactors;
@@ -145,7 +145,7 @@ public class NaturalNumber {
    * Checks if number is prime.
    */
   public Boolean isPrime() {
-    Integer primeFactor = this.getNextPrimeFactor();
+    Long primeFactor = this.getNextPrimeFactor();
     if (primeFactor != 1 && primeFactor == this.getValue()) {
       return true;
     }

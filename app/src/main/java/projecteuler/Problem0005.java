@@ -30,12 +30,12 @@ public class Problem0005 {
   /**
    * countOccurrences.
    */
-  public static Map<Integer, Integer> countOccurrences(List<Integer> numbers) {
+  public static Map<Long, Integer> countOccurrences(List<Long> numbers) {
     // Crear un mapa para realizar el recuento de ocurrencias
-    Map<Integer, Integer> occurrences = new HashMap<>();
+    Map<Long, Integer> occurrences = new HashMap<>();
 
     // Contar las ocurrencias de cada número en la lista
-    for (int number : numbers) {
+    for (Long number : numbers) {
       occurrences.put(number, occurrences.getOrDefault(number, 0) + 1);
     }
 
@@ -45,10 +45,10 @@ public class Problem0005 {
   /***
    * mixOccurrences.
    */
-  public static Map<Integer, Integer> mixOccurrences(
-      Map<Integer, Integer> listA,
-      Map<Integer, Integer> listB) {
-    Map<Integer, Integer> occurrences = new HashMap<>();
+  public static Map<Long, Integer> mixOccurrences(
+      Map<Long, Integer> listA,
+      Map<Long, Integer> listB) {
+    Map<Long, Integer> occurrences = new HashMap<>();
 
     listA.forEach((key, value) -> {
       occurrences.put(key, value);
@@ -72,15 +72,15 @@ public class Problem0005 {
     Integer result = null;
     Integer cycles = 0;
 
-    Map<Integer, Integer> minimumPrimeFactorsCollector = new HashMap<>();
+    Map<Long, Integer> minimumPrimeFactorsCollector = new HashMap<>();
 
     for (int i = _bottom; i <= _top; i++) {
-      NaturalNumber number = new NaturalNumber(i);
+      NaturalNumber number = new NaturalNumber(Long.valueOf(i));
 
-      Integer[] primeFactors = number.primeFactors();
+      Long[] primeFactors = number.primeFactors();
       cycles += number.getNextPrimeFactorCycles();
 
-      Map<Integer, Integer> primeFactorsCount = countOccurrences(Arrays.asList(primeFactors));
+      Map<Long, Integer> primeFactorsCount = countOccurrences(Arrays.asList(primeFactors));
 
       minimumPrimeFactorsCollector = mixOccurrences(
           minimumPrimeFactorsCollector,
@@ -91,8 +91,8 @@ public class Problem0005 {
     }
 
     result = 1;
-    for (Map.Entry<Integer, Integer> me : minimumPrimeFactorsCollector.entrySet()) {
-      Integer factor = me.getKey();
+    for (Map.Entry<Long, Integer> me : minimumPrimeFactorsCollector.entrySet()) {
+      Long factor = me.getKey();
       Integer quantity = me.getValue();
 
       result *= (int) Math.pow((double) factor, (double) quantity);

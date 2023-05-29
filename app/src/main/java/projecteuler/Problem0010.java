@@ -25,16 +25,16 @@ public class Problem0010 {
   /**
    * Problem 0010.
    */
-  public static Long problem0010(Integer bottom, Integer top) {
+  public static Long problem0010(Long bottom, Long top) {
     ArrayList<Long> primes = new ArrayList<Long>();
 
-    Integer i = bottom;
+    Long i = bottom;
 
     do {
       i += 1;
 
       if (new NaturalNumber(i).isPrime()) {
-        primes.add(Long.valueOf(i));
+        primes.add(i);
         logger.fine(String.format("Prime found %d put in position: $d", i, primes.size()));
       }
     } while (i < top);

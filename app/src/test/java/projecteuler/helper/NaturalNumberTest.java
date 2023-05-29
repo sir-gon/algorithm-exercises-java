@@ -38,11 +38,11 @@ class NaturalNumberTest {
 
   public class PrimeFactorsOfNumberTestCase {
     Integer input;
-    Integer[] factors;
+    Long[] factors;
     Integer cycles;
 
     PrimeFactorsOfNumberTestCase(
-        Integer input, Integer[] factors, Integer cycles) {
+        Integer input, Long[] factors, Integer cycles) {
       this.input = input;
       this.factors = factors;
       this.cycles = cycles;
@@ -66,16 +66,16 @@ class NaturalNumberTest {
   @BeforeAll
   void initPrimeFactorsOfNumberTestCases() {
     primeFactorsTestCases = new ArrayList<PrimeFactorsOfNumberTestCase>(Arrays.asList(
-      new PrimeFactorsOfNumberTestCase(1, new Integer[]{ 1 }, 0),
-      new PrimeFactorsOfNumberTestCase(2, new Integer[]{ 2 }, 1),
-      new PrimeFactorsOfNumberTestCase(6, new Integer[]{ 2, 3 }, 3),
-      new PrimeFactorsOfNumberTestCase(12, new Integer[]{ 2, 2, 3 }, 4),
-      new PrimeFactorsOfNumberTestCase(120, new Integer[]{ 2, 2, 2, 3, 5 }, 9)
+      new PrimeFactorsOfNumberTestCase(1, new Long[]{ 1L }, 0),
+      new PrimeFactorsOfNumberTestCase(2, new Long[]{ 2L }, 1),
+      new PrimeFactorsOfNumberTestCase(6, new Long[]{ 2L, 3L }, 3),
+      new PrimeFactorsOfNumberTestCase(12, new Long[]{ 2L, 2L, 3L }, 4),
+      new PrimeFactorsOfNumberTestCase(120, new Long[]{ 2L, 2L, 2L, 3L, 5L }, 9)
     ));
   }
 
   @Test void instanceCaseTest() {
-    NaturalNumber classUnderTest = new NaturalNumber(0);
+    NaturalNumber classUnderTest = new NaturalNumber(0L);
 
     assertNotNull(classUnderTest);
     assertInstanceOf(
@@ -88,7 +88,7 @@ class NaturalNumberTest {
 
     for (NextPrimeFactorOfNumberTestCase expected : this.nextPrimeFactorTestCases) {
 
-      NaturalNumber answer = new NaturalNumber(Integer.valueOf(expected.input));
+      NaturalNumber answer = new NaturalNumber(Long.valueOf(expected.input));
 
       assertNotNull(answer);
       assertInstanceOf(
@@ -96,11 +96,23 @@ class NaturalNumberTest {
           answer,
           String.format("Must be an instance of %s", NaturalNumber.class));
 
-      final Integer answer_factor = answer.getNextPrimeFactor();
-      final Integer answer_cached_factor = answer.getNextPrimeFactor();
+      final Long answer_factor = answer.getNextPrimeFactor();
+      final Long answer_cached_factor = answer.getNextPrimeFactor();
 
-      assertEquals(expected.factor, answer_factor);
-      assertEquals(expected.factor, answer_cached_factor);
+      assertEquals(Long.valueOf(expected.factor), answer_factor,
+          String.format(
+            "NaturalNumber'%d'.getNextPrimeFactor() => %d",
+            expected.input,
+            expected.factor
+          )
+      );
+      assertEquals(Long.valueOf(expected.factor), answer_cached_factor,
+          String.format(
+            "NaturalNumber'%d'.getNextPrimeFactor() => %d",
+            expected.input,
+            expected.factor
+          )
+      );
     }
   }
 
@@ -108,7 +120,7 @@ class NaturalNumberTest {
 
     for (NextPrimeFactorOfNumberTestCase expected : this.nextPrimeFactorTestCases) {
 
-      NaturalNumber answer = new NaturalNumber(Integer.valueOf(expected.input));
+      NaturalNumber answer = new NaturalNumber(Long.valueOf(expected.input));
 
       assertNotNull(answer);
       assertInstanceOf(
@@ -117,11 +129,11 @@ class NaturalNumberTest {
           String.format("Must be an instance of %s", NaturalNumber.class)
       );
 
-      final Integer answer_divisor = answer.getNextDivisor();
-      final Integer answer_cached_divisor = answer.getNextDivisor();
+      final Long answer_divisor = answer.getNextDivisor();
+      final Long answer_cached_divisor = answer.getNextDivisor();
 
-      assertEquals(expected.divisor, answer_divisor);
-      assertEquals(expected.divisor, answer_cached_divisor);
+      assertEquals(Long.valueOf(expected.divisor), answer_divisor);
+      assertEquals(Long.valueOf(expected.divisor), answer_cached_divisor);
     }
   }
 
@@ -129,7 +141,7 @@ class NaturalNumberTest {
 
     for (NextPrimeFactorOfNumberTestCase expected : this.nextPrimeFactorTestCases) {
 
-      NaturalNumber answer = new NaturalNumber(Integer.valueOf(expected.input));
+      NaturalNumber answer = new NaturalNumber(Long.valueOf(expected.input));
 
       assertNotNull(answer);
       assertInstanceOf(
@@ -150,7 +162,7 @@ class NaturalNumberTest {
 
     for (PrimeFactorsOfNumberTestCase expected : this.primeFactorsTestCases) {
 
-      NaturalNumber answer = new NaturalNumber(Integer.valueOf(expected.input));
+      NaturalNumber answer = new NaturalNumber(Long.valueOf(expected.input));
 
       assertNotNull(answer);
       assertInstanceOf(
@@ -159,7 +171,7 @@ class NaturalNumberTest {
           String.format("Must be an instance of %s", NaturalNumber.class)
       );
 
-      final Integer[] answer_prime_factors = answer.primeFactors();
+      final Long[] answer_prime_factors = answer.primeFactors();
       final Integer answer_prime_factors_cycles = answer.getPrimeFactorCycles();
 
       assertArrayEquals(expected.factors, answer_prime_factors);
@@ -171,7 +183,7 @@ class NaturalNumberTest {
 
     for (PrimeFactorsOfNumberTestCase expected : this.primeFactorsTestCases) {
 
-      NaturalNumber answer = new NaturalNumber(Integer.valueOf(expected.input));
+      NaturalNumber answer = new NaturalNumber(Long.valueOf(expected.input));
 
       assertNotNull(answer);
       assertInstanceOf(
@@ -191,7 +203,7 @@ class NaturalNumberTest {
     for (NextPrimeFactorOfNumberTestCase expected : this.nextPrimeFactorTestCases) {
 
       // Test the instance way
-      NaturalNumber answer = new NaturalNumber(Integer.valueOf(expected.input));
+      NaturalNumber answer = new NaturalNumber(Long.valueOf(expected.input));
       Boolean answerIsPrime = answer.isPrime();
       Integer answerCycles = answer.getNextPrimeFactorCycles();
 
