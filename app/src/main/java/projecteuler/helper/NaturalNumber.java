@@ -146,11 +146,18 @@ public class NaturalNumber {
    */
   public Boolean isPrime() {
     Long primeFactor = this.getNextPrimeFactor();
-    if (primeFactor != 1 && primeFactor == this.getValue()) {
+    if (primeFactor != 1 && primeFactor.equals(this.getValue())) {
       return true;
     }
 
     return false;
+  }
+
+  /**
+   * Checks if number is prime. Static way.
+   */
+  public static Boolean isPrime(Long _number) {
+    return new NaturalNumber(_number).isPrime();
   }
 }
 

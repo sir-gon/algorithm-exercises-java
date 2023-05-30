@@ -209,6 +209,10 @@ class NaturalNumberTest {
 
       assertEquals(expected.isPrime, answerIsPrime);
       assertEquals(expected.cycles, answerCycles);
+
+      // Test Static way
+      assertEquals(expected.isPrime, NaturalNumber.isPrime(Long.valueOf(expected.input)));
+      assertEquals(expected.cycles, answerCycles);
     }
 
   }
