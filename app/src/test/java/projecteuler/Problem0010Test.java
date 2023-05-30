@@ -22,8 +22,8 @@ class Problem0010Test {
   @Test void problem0010SmallTest() {
 
     Long expectedSolution = 17L;
-    Integer bottom = 1;
-    Integer top = 10;
+    Long bottom = 1L;
+    Long top = 10L;
     Long solutionFound = Problem0010.problem0010(bottom, top);
 
     assertEquals(expectedSolution, solutionFound,

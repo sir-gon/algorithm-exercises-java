@@ -3,7 +3,7 @@
 package projecteuler;
 
 import projecteuler.helper.Divisors;
-import projecteuler.helper.Prime;
+import projecteuler.helper.NaturalNumber;
 
 /**
  * Largest prime factor
@@ -20,7 +20,7 @@ public class Problem0003 {
   static java.util.logging.Logger logger = projecteuler.util.CustomLogger.getLogger();
 
   /**
-   * Problem template method.
+   * Problem 0003.
    */
   public static Long problem0003(Long _top) {
 
@@ -37,7 +37,7 @@ public class Problem0003 {
     // check half divisors, each is Prime? wich is largest?
 
     while (i >= 0) {
-      Boolean prime = Prime.isPrime(divs[i]);
+      Boolean prime = NaturalNumber.isPrime(Long.valueOf(divs[i]));
 
       logger.fine(String.format("%d is Prime?: %b", i, prime));
 

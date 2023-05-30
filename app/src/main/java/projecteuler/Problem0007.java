@@ -32,7 +32,7 @@ public class Problem0007 {
 
     while (primes.size() < _top) {
       i += 1;
-      NaturalNumber number = new NaturalNumber(j);
+      NaturalNumber number = new NaturalNumber(Long.valueOf(j));
       if (number.isPrime()) {
         primes.add(j);
 
