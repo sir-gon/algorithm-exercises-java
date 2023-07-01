@@ -130,4 +130,38 @@ public class BigNum {
     return result;
   }
 
+  /**
+   * bigMultiplyRowToBigNum.
+   */
+  public static BigNum bigMultiplyRowToBigNum(String strNumber, int multiplierDigit) {
+    ArrayList<Integer> number = new BigNum(strNumber).getInternalValue();
+    Collections.reverse(number);
+
+    ArrayList<Integer> result = new ArrayList<Integer>();
+
+    int mul = 0;
+    int carry = 0;
+    int digit = 0;
+
+    for (int i = 0; i < number.size(); i++) {
+      mul = number.get(i) * multiplierDigit + carry;
+      if (mul < 10) {
+        digit = mul;
+        carry = 0;
+      } else {
+        digit = (int) Math.floor(mul % 10);
+        carry = (int) Math.floor(mul / 10);
+      }
+
+      result.add(digit);
+    }
+
+    if (carry > 0) {
+      result.add(carry);
+    }
+    Collections.reverse(result);
+
+    return new BigNum(result);
+  }
+
 }

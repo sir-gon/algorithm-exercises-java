@@ -73,4 +73,35 @@ class BigNumTest {
     solutionFound = solutionFound.bigSum(new BigNum(6));
 
   }
+
+  @Test void bigMultiplyRowToBigNumTest() {
+    BigNum solutionFound;
+
+    // Test sum operation
+    Integer input = 0;
+    solutionFound = new BigNum(input);
+    solutionFound.bigSum(6);
+
+    assertArrayEquals(
+        new Integer[]{ 4 },
+        BigNum.bigMultiplyRowToBigNum("2", 2).toArray()
+    );
+
+    assertArrayEquals(
+        new Integer[]{ 2, 4 },
+        BigNum.bigMultiplyRowToBigNum("12", 2).toArray()
+    );
+
+    assertArrayEquals(
+        new Integer[]{ 4, 8 },
+        BigNum.bigMultiplyRowToBigNum("12", 4).toArray()
+    );
+
+    assertArrayEquals(
+        new Integer[]{ 8, 9, 9, 1 },
+        BigNum.bigMultiplyRowToBigNum("999", 9).toArray()
+    );
+    solutionFound = solutionFound.bigSum(new BigNum(6));
+
+  }
 }
