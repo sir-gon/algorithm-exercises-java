@@ -1,12 +1,12 @@
 package projecteuler.helper;
 
 /**
- * Product helper.
+ * Sum helper.
  */
 public class Sum {
 
   /**
-   * Producto of array of numbers.
+   * Sum of array of numbers.
    */
   public static Long sum(Long[] _numList) {
 
