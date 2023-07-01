@@ -6,7 +6,7 @@ package projecteuler.helper;
 public class Product {
 
   /**
-   * Producto of array of numbers.
+   * Product of array of numbers.
    */
   public static Long product(Long[] _numList) {
 
