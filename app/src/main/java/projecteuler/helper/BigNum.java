@@ -205,4 +205,17 @@ public class BigNum {
     return this.bigSumMany(collector.toArray(new String[collector.size()]));
   }
 
+  /**
+   * .
+   */
+  public BigNum bigPower(int exponent) {
+    BigNum result = new BigNum(1);
+    String base = this.toString();
+
+    for (int i = 1; i < exponent; i++) {
+      result = this.bigMultiply(base);
+    }
+
+    return result;
+  }
 }

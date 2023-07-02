@@ -105,15 +105,52 @@ class BigNumTest {
 
   }
 
-
   @Test void bigMultiplyTest() {
-
-    BigNum expectedAnswer = new BigNum("998001");
-    BigNum solutionFound = new BigNum("999").bigMultiply("999");
+    assertArrayEquals(
+      new BigNum("4").toArray(),
+      new BigNum("2").bigMultiply("2").toArray()
+    );
 
     assertArrayEquals(
-        expectedAnswer.toArray(),
-        solutionFound.toArray()
+      new BigNum("44").toArray(),
+      new BigNum("2").bigMultiply("22").toArray()
     );
+
+    assertArrayEquals(
+      new BigNum("998001").toArray(),
+      new BigNum("999").bigMultiply("999").toArray()
+    );
+
+    assertArrayEquals(
+      new BigNum("152415787532388367501905199875019052100").toArray(),
+      new BigNum("12345678901234567890").bigMultiply("12345678901234567890").toArray()
+    );
+  }
+
+  @Test void bigPowerTest() {
+
+    assertArrayEquals(
+      new BigNum("4").toArray(),
+      new BigNum("2").bigPower(2).toArray()
+    );
+    assertArrayEquals(
+      new BigNum("16").toArray(),
+      new BigNum("2").bigPower(4).toArray()
+    );
+    assertArrayEquals(
+      new BigNum("32").toArray(),
+      new BigNum("2").bigPower(5).toArray()
+    );
+    assertArrayEquals(
+      new BigNum(
+          "10715086071862673209484250490600018105614048117055"
+        + "33607443750388370351051124936122493198378815695858"
+        + "12759467291755314682518714528569231404359845775746"
+        + "98574803934567774824230985421074605062371141877954"
+        + "18215304647498358194126739876755916554394607706291"
+        + "4571196477686542167660429831652624386837205668069376").toArray(),
+      new BigNum("2").bigPower(1000).toArray()
+    );
+
   }
 }
