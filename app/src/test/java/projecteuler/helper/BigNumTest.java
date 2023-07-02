@@ -104,4 +104,16 @@ class BigNumTest {
     solutionFound = solutionFound.bigSum(new BigNum(6));
 
   }
+
+
+  @Test void bigMultiplyTest() {
+
+    BigNum expectedAnswer = new BigNum("998001");
+    BigNum solutionFound = new BigNum("999").bigMultiply("999");
+
+    assertArrayEquals(
+        expectedAnswer.toArray(),
+        solutionFound.toArray()
+    );
+  }
 }

@@ -2,11 +2,14 @@ package projecteuler.helper;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.stream.Collectors;
 
 /**
  * BigNums helper.
  */
 public class BigNum {
+
+  static java.util.logging.Logger logger = projecteuler.util.CustomLogger.getLogger();
 
   int cycles = 0;
   ArrayList<Integer> value = new ArrayList<Integer>();
@@ -45,6 +48,16 @@ public class BigNum {
     ArrayList<Integer> valueFound = this.getInternalValue();
 
     return valueFound.toArray(new Integer[valueFound.size()]);
+  }
+
+  /**
+   *  Get value as String.
+   */
+  public String toString() {
+    String listString = this.value.stream().map(Object::toString)
+                    .collect(Collectors.joining(""));
+
+    return listString;
   }
 
   /**
@@ -121,13 +134,11 @@ public class BigNum {
    * Calculate the sum of many BigNum as a list of strings.
    */
   public BigNum bigSumMany(String[] strNumberArr) {
-    BigNum result = new BigNum("0");
-
     for (int i = 0; i < strNumberArr.length; i++) {
-      result = this.bigSum(strNumberArr[i]);
+      this.bigSum(strNumberArr[i]);
     }
 
-    return result;
+    return this;
   }
 
   /**
@@ -162,6 +173,36 @@ public class BigNum {
     Collections.reverse(result);
 
     return new BigNum(result);
+  }
+
+  /**
+   * Calculate the sum of many BigNum as a list of strings.
+   */
+  public BigNum bigMultiply(String strNumMultiplier) {
+    String strMultiply = this.toString();
+
+    ArrayList<String> collector = new ArrayList<String>();
+
+    ArrayList<Integer> bigNumMultiplier = new BigNum(strNumMultiplier).getInternalValue();
+    Collections.reverse(bigNumMultiplier);
+
+    for (int i = 0; i < bigNumMultiplier.size(); i++) {
+      // Product of multiply digits as rows by every multiplier digit
+      StringBuilder row = new StringBuilder();
+      String rowProduct = bigMultiplyRowToBigNum(strMultiply, bigNumMultiplier.get(i)).toString();
+
+      row.append(rowProduct);
+
+      // padding position by row
+      for (int j = 0; j < i; j++) {
+        row.append("0");
+      }
+
+      collector.add(row.toString());
+    }
+
+    this.value = new ArrayList<Integer>();
+    return this.bigSumMany(collector.toArray(new String[collector.size()]));
   }
 
 }
