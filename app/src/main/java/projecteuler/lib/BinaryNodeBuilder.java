@@ -18,7 +18,7 @@ public class BinaryNodeBuilder<T> {
       return null;
     }
 
-    if (i < dataTree.length && j < dataTree[i].length) {
+    if (i < dataTree.length /* && j < dataTree[i].length */) {
       T currentValue = dataTree[i][j];
       BinaryNode<T> resultNode = new BinaryNode<T>(dataTree[i][j]);
 
@@ -37,7 +37,6 @@ public class BinaryNodeBuilder<T> {
       }
 
       return resultNode;
-
     }
 
     return null;

@@ -14,7 +14,7 @@ import org.junit.jupiter.api.TestInstance.Lifecycle;
 class BinaryNodeBuilderTest {
 
   private Integer[][] smallCaseData = {
-    {75, 0},
+    {75},
     {95, 64}
   };
 
@@ -44,5 +44,42 @@ class BinaryNodeBuilderTest {
     BinaryNode<Integer> testTree = builder.build_binary_node_tree(null);
 
     assertNull(testTree);
+  }
+
+  @Test void buildEmptyTreeTest() {
+    Integer[][] emptyMatrix = {};
+
+    BinaryNodeBuilder<Integer> builder = new BinaryNodeBuilder<Integer>();
+    BinaryNode<Integer> testTree = builder.build_binary_node_tree(emptyMatrix);
+
+    assertNull(testTree);
+  }
+
+  @Test void buildMalformedMatrix1TreeTest() {
+    Integer[][] emptyMatrix = {
+      {1},
+      {2},
+      {3}
+    };
+
+    BinaryNodeBuilder<Integer> builder = new BinaryNodeBuilder<Integer>();
+    BinaryNode<Integer> testTree = builder.build_binary_node_tree(emptyMatrix);
+
+
+    assertEquals(new BinaryNode<Integer>(1), testTree);
+  }
+
+  @Test void buildMalformedMatrix2TreeTest() {
+    Integer[][] emptyMatrix = {
+      {1},
+      {},
+      {3}
+    };
+
+    BinaryNodeBuilder<Integer> builder = new BinaryNodeBuilder<Integer>();
+    BinaryNode<Integer> testTree = builder.build_binary_node_tree(emptyMatrix);
+
+
+    assertEquals(new BinaryNode<Integer>(1), testTree);
   }
 }

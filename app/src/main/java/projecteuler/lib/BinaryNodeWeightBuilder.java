@@ -20,7 +20,7 @@ public class BinaryNodeWeightBuilder<T>
       return null;
     }
 
-    if (i < dataTree.length && j < dataTree[i].length) {
+    if (i < dataTree.length /* && j < dataTree[i].length */) {
       int currentValue = dataTree[i][j] + rootValue;
       BinaryNode<Integer> resultNode = new BinaryNode<Integer>(Integer.valueOf(currentValue));
 

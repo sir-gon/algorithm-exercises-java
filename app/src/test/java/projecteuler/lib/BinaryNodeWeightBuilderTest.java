@@ -49,4 +49,39 @@ class BinaryNodeWeightBuilderTest {
 
     assertNull(testTree);
   }
+
+  @Test void buildEmptyTreeTest() {
+    Integer[][] emptyMatrix = {};
+
+    BinaryNodeWeightBuilder<Integer> builder = new BinaryNodeWeightBuilder<Integer>();
+    BinaryNode<Integer> testTree = builder.build_binary_node_tree_with_weight(emptyMatrix);
+
+    assertNull(testTree);
+  }
+
+  @Test void buildMalformedMatrix1TreeTest() {
+    Integer[][] emptyMatrix = {
+      {1},
+      {2},
+      {3}
+    };
+
+    BinaryNodeWeightBuilder<Integer> builder = new BinaryNodeWeightBuilder<Integer>();
+    BinaryNode<Integer> testTree = builder.build_binary_node_tree_with_weight(emptyMatrix);
+
+    assertEquals(new BinaryNode<Integer>(1), testTree);
+  }
+
+  @Test void buildMalformedMatrix2TreeTest() {
+    Integer[][] emptyMatrix = {
+      {1},
+      {},
+      {3}
+    };
+
+    BinaryNodeWeightBuilder<Integer> builder = new BinaryNodeWeightBuilder<Integer>();
+    BinaryNode<Integer> testTree = builder.build_binary_node_tree_with_weight(emptyMatrix);
+
+    assertEquals(new BinaryNode<Integer>(1), testTree);
+  }
 }
