@@ -153,4 +153,23 @@ class BigNumTest {
     );
 
   }
+
+  @Test void bigFactorialTest() {
+    assertArrayEquals(
+        new BigNum("2").toArray(),
+        BigNum.bigFactorial(2).toArray()
+    );
+    assertArrayEquals(
+        new BigNum("6").toArray(),
+        BigNum.bigFactorial(3).toArray()
+    );
+    assertArrayEquals(
+        new BigNum("120").toArray(),
+        BigNum.bigFactorial(5).toArray()
+    );
+    assertArrayEquals(
+        new BigNum("3628800").toArray(),
+        BigNum.bigFactorial(10).toArray()
+    );
+  }
 }
