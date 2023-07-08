@@ -15,8 +15,6 @@ public class NumberToWord {
   public static final String _MILLS_ = "thousand";
 
   static {
-    dictionary.put("1", "value1");
-    dictionary.put("2", "value2");
     dictionary.put("1", "one");
     dictionary.put("2", "two");
     dictionary.put("3", "three");
