@@ -142,6 +142,17 @@ public class BigNum {
   }
 
   /**
+   * Calculate the sum of many BigNum as a list of integers.
+   */
+  public BigNum bigSumMany(Integer[] numberArr) {
+    for (int i = 0; i < numberArr.length; i++) {
+      this.bigSum(numberArr[i]);
+    }
+
+    return this;
+  }
+
+  /**
    * bigMultiplyRowToBigNum.
    */
   public static BigNum bigMultiplyRowToBigNum(String strNumber, int multiplierDigit) {
@@ -217,5 +228,18 @@ public class BigNum {
     }
 
     return result;
+  }
+
+  /**
+   * .
+   */
+  public static BigNum bigFactorial(int number) {
+    BigNum acum = new BigNum(1);
+
+    for (int multiplier = 1; multiplier <= number; multiplier++) {
+      acum = acum.bigMultiply(String.valueOf(multiplier));
+    }
+
+    return acum;
   }
 }
