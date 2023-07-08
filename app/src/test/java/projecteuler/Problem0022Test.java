@@ -18,6 +18,15 @@ class Problem0022Test {
         classUnderTest,
         String.format("Must be an instance of %s", Problem0022.class)
     );
+
+    Problem0022Data dataClassUnderTest = new Problem0022Data();
+
+    assertNotNull(dataClassUnderTest);
+    assertInstanceOf(
+        Problem0022Data.class,
+        dataClassUnderTest,
+        String.format("Must be an instance of %s", Problem0022Data.class)
+    );
   }
 
   @Test void problem0022full() {
