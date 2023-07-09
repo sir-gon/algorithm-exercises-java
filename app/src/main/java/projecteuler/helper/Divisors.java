@@ -8,7 +8,7 @@ import java.util.Arrays;
  */
 public class Divisors {
 
-  int cycles = 0;
+  long cycles = 0;
 
   /**
    * Calculate divisors of a natural number.
@@ -21,8 +21,8 @@ public class Divisors {
     // Reset cycles counter
     this.cycles = 0;
 
-    Long top = Math.abs(_number);
     Long target = Math.abs(_number);
+    Long top = Math.abs(_number);
 
     ArrayList<Long> divs = new ArrayList<Long>();
 
@@ -32,25 +32,30 @@ public class Divisors {
       return divs.toArray(Long[]::new);
     }
 
-    int init = 2;
-    int i = init;
+    long init = 2;
+    long i = init;
+    long remainder;
     while (i <= top) {
 
       top = target / i;
+      remainder = target % i;
 
-      if (top > 2 && target % i == 0) {
-        divs.add(Long.valueOf(i));
+      if (top > 2 && remainder == 0) {
 
+        if (i <= top) {
+          divs.add(i);
+        }
         if (i < top) {
-          divs.add(target / i);
+          divs.add(top);
         }
       }
       i += 1;
     }
 
+    divs.add(target);
+
     cycles = i - init;
 
-    divs.add(target);
 
     // sort divisors
     Long[] answer = divs.toArray(Long[]::new);
@@ -60,7 +65,7 @@ public class Divisors {
 
   }
 
-  public Integer getCycles() {
+  public Long getCycles() {
     return this.cycles;
   }
 
@@ -73,5 +78,32 @@ public class Divisors {
     Long[] result = self.calculateDivisors(_number);
 
     return result;
+  }
+
+  /**
+   * DivisorsAbundance.
+   */
+  public enum DivisorsAbundance {
+    DIVISORS_ABUNDANT,
+    DIVISORS_DEFICIENT,
+    DIVISORS_PERFECT;
+  }
+
+  /**
+   * Calculate abundance of a number.
+   */
+  public static DivisorsAbundance abundance(Long _number) {
+    Long[] divisors = Divisors.divisors(_number);
+    Long divSum = Sum.sum(divisors) - _number;
+
+    if (divSum > _number) {
+      return DivisorsAbundance.DIVISORS_ABUNDANT;
+    }
+
+    if (divSum < _number) {
+      return DivisorsAbundance.DIVISORS_DEFICIENT;
+    }
+
+    return DivisorsAbundance.DIVISORS_PERFECT;
   }
 }

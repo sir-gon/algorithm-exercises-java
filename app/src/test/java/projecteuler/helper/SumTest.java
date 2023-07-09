@@ -21,12 +21,14 @@ class SumTest {
 
   @Test void productOfEmptyListTest() {
 
-    Long[] input = new Long[]{};
     Long expectedAnswer = 0L;
 
     // Test static way
-    assertEquals(expectedAnswer, Sum.sum(null));
-    assertEquals(expectedAnswer, Sum.sum(input));
+    Long[] inputNull = null;
+    assertEquals(expectedAnswer, Sum.sum(inputNull));
+
+    Long[] inputEmpty = new Long[]{};
+    assertEquals(expectedAnswer, Sum.sum(inputEmpty));
   }
 
   @Test void sumOfSomeConsecutiveNumbersTest() {
@@ -49,11 +51,21 @@ class SumTest {
 
   @Test void sumOfEmptyListTest() {
 
-    Long[] input = new Long[]{};
     Long expectedAnswer = 0L;
 
     // Test static way
-    assertEquals(expectedAnswer, Sum.sum(null));
-    assertEquals(expectedAnswer, Sum.sum(input));
+    Long[] inputNull = null;
+    assertEquals(expectedAnswer, Sum.sum(inputNull));
+
+    Long[] inputEmpty = new Long[]{};
+    assertEquals(expectedAnswer, Sum.sum(inputEmpty));
+
+    Integer expectediAnswer = 0;
+
+    Integer[] inputiNull = null;
+    assertEquals(expectediAnswer, Sum.sum(inputiNull));
+
+    Integer[] inputiEmpty = new Integer[]{};
+    assertEquals(expectediAnswer, Sum.sum(inputiEmpty));
   }
 }

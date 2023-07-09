@@ -59,6 +59,8 @@ def jacocoExclusions = [
 ];
 
 test {
+    maxHeapSize = "1024m"
+
     finalizedBy jacocoTestReport // report is always generated after tests run
 
     // Reference: https://discuss.gradle.org/t/unable-to-configure-java-util-logging-with-gradle-test-task/2034

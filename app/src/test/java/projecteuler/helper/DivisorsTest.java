@@ -3,6 +3,7 @@ package projecteuler.helper;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertInstanceOf;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.jupiter.api.Test;
@@ -13,9 +14,9 @@ class DivisorsTest {
   private class DivisorsOfNumberTestCase {
     Long input;
     Long[] answer;
-    Integer cycles;
+    Long cycles;
 
-    DivisorsOfNumberTestCase(Long input, Long[] answer, Integer cycles) {
+    DivisorsOfNumberTestCase(Long input, Long[] answer, Long cycles) {
       this.input = input;
       this.answer = answer;
       this.cycles = cycles;
@@ -35,7 +36,7 @@ class DivisorsTest {
   @Test void listOfDivisorsOfNumberBorderCaseTest() {
 
     DivisorsOfNumberTestCase[] testCases = {
-      new DivisorsOfNumberTestCase(1L, new Long[] { 1L }, 0)
+      new DivisorsOfNumberTestCase(1L, new Long[] { 1L }, 0L)
     };
 
     for (DivisorsOfNumberTestCase testCase : testCases) {
@@ -46,10 +47,10 @@ class DivisorsTest {
   @Test void listOfDivisorsOfNumberTest() {
 
     DivisorsOfNumberTestCase[] testCases = {
-      new DivisorsOfNumberTestCase(2L, new Long[] { 1L, 2L }, 1),
-      new DivisorsOfNumberTestCase(8L, new Long[] { 1L, 2L, 4L, 8L}, 2),
-      new DivisorsOfNumberTestCase(9L, new Long[] { 1L, 3L, 9L }, 2),
-      new DivisorsOfNumberTestCase(16L, new Long[] { 1L, 2L, 4L, 8L, 16L}, 3)
+      new DivisorsOfNumberTestCase(2L, new Long[] { 1L, 2L }, 1L),
+      new DivisorsOfNumberTestCase(8L, new Long[] { 1L, 2L, 4L, 8L}, 2L),
+      new DivisorsOfNumberTestCase(9L, new Long[] { 1L, 3L, 9L }, 2L),
+      new DivisorsOfNumberTestCase(16L, new Long[] { 1L, 2L, 4L, 8L, 16L}, 3L)
     };
 
     for (DivisorsOfNumberTestCase testCase : testCases) {
@@ -57,7 +58,7 @@ class DivisorsTest {
       // Test the instance way
       Divisors classUnderTest = new Divisors();
       Long[] answer = classUnderTest.calculateDivisors(testCase.input);
-      Integer cycles = classUnderTest.getCycles();
+      Long cycles = classUnderTest.getCycles();
 
       assertArrayEquals(testCase.answer, answer);
       assertEquals(testCase.cycles, cycles);
@@ -65,5 +66,16 @@ class DivisorsTest {
       // Test static way
       assertArrayEquals(testCase.answer, Divisors.divisors(testCase.input));
     }
+  }
+
+  @Test void abundanceTest() {
+    assertEquals(Divisors.DivisorsAbundance.DIVISORS_DEFICIENT, Divisors.abundance(10L));
+    assertEquals(Divisors.DivisorsAbundance.DIVISORS_ABUNDANT, Divisors.abundance(12L));
+    assertEquals(Divisors.DivisorsAbundance.DIVISORS_PERFECT, Divisors.abundance(28L));
+  }
+
+  @Test void abundanceBorderCasesTest() {
+    assertNotEquals(Divisors.DivisorsAbundance.DIVISORS_ABUNDANT, Divisors.abundance(110L));
+    assertNotEquals(Divisors.DivisorsAbundance.DIVISORS_ABUNDANT, Divisors.abundance(18632L));
   }
 }
