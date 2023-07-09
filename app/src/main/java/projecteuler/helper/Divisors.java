@@ -74,4 +74,31 @@ public class Divisors {
 
     return result;
   }
+
+  /**
+   * DivisorsAbundance.
+   */
+  public enum DivisorsAbundance {
+    DIVISORS_ABUNDANT,
+    DIVISORS_DEFICIENT,
+    DIVISORS_PERFECT;
+  }
+
+  /**
+   * Calculate abundance of a number.
+   */
+  public static DivisorsAbundance abundance(Long _number) {
+    Long[] divisors = Divisors.divisors(_number);
+    Long divSum = Sum.sum(divisors) - _number;
+
+    if (divSum > _number) {
+      return DivisorsAbundance.DIVISORS_ABUNDANT;
+    }
+
+    if (divSum < _number) {
+      return DivisorsAbundance.DIVISORS_DEFICIENT;
+    }
+
+    return DivisorsAbundance.DIVISORS_PERFECT;
+  }
 }

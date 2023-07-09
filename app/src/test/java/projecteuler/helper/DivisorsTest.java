@@ -66,4 +66,15 @@ class DivisorsTest {
       assertArrayEquals(testCase.answer, Divisors.divisors(testCase.input));
     }
   }
+
+  @Test void abundanceTest() {
+    assertEquals(Divisors.DivisorsAbundance.DIVISORS_DEFICIENT, Divisors.abundance(10L));
+    assertEquals(Divisors.DivisorsAbundance.DIVISORS_ABUNDANT, Divisors.abundance(12L));
+    assertEquals(Divisors.DivisorsAbundance.DIVISORS_PERFECT, Divisors.abundance(28L));
+  }
+
+  @Test void abundanceBorderCasesTest() {
+    assertEquals(Divisors.DivisorsAbundance.DIVISORS_ABUNDANT, Divisors.abundance(110L));
+    assertEquals(Divisors.DivisorsAbundance.DIVISORS_ABUNDANT, Divisors.abundance(18632L));
+  }
 }
