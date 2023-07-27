@@ -128,8 +128,8 @@ OpenJDK Runtime Environment Temurin-19.0.2+7 (build 19.0.2+7)
 OpenJDK 64-Bit Server VM Temurin-19.0.2+7 (build 19.0.2+7, mixed mode, sharing)
 ```
 
-## Coverage
-[![Coverage](https://codecov.io/gh/sir-gon/projecteuler-java/branch/main/graphs/tree.svg?token=7QAS85D3HB)](https://codecov.io/gh/sir-gon/projecteuler-java)
-
 ## License
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fsir-gon%2Fprojecteuler-java.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fsir-gon%2Fprojecteuler-java?ref=badge_large)
+
+## Coverage
+[![Coverage](https://codecov.io/gh/sir-gon/algorithm-exercises-java/branch/main/graphs/tree.svg?token=7QAS85D3HB)](https://codecov.io/gh/sir-gon/projecteuler-java)
