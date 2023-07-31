@@ -13,6 +13,7 @@ plugins {
     id 'jacoco'
     id 'org.barfuin.gradle.jacocolog' version '3.1.0'
     id 'com.adarshr.test-logger' version '3.2.0'
+    id "org.sonarqube" version "4.2.1.3168"
 }
 
 java {
@@ -117,5 +118,13 @@ jacocoTestCoverageVerification {
         minimum = 0.90
       }
     }
+  }
+}
+
+sonar {
+  properties {
+    property "sonar.projectKey", "sir-gon_algorithm-exercises-java"
+    property "sonar.organization", "sir-gon"
+    property "sonar.host.url", "https://sonarcloud.io"
   }
 }
