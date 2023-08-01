@@ -32,18 +32,19 @@ import java.util.ArrayList;
  * Problem 0013.
  */
 public class Problem0014 {
+  private Problem0014() {}
 
   static java.util.logging.Logger logger = ae.projecteuler.util.CustomLogger.getLogger();
 
   /**
    * Problem 0013.
    */
-  public static Long problem0014(Integer bottom, Integer top) throws Exception {
+  public static Long problem0014(Integer bottom, Integer top) throws IllegalArgumentException {
     if (bottom < 1) {
-      throw new Exception("bottom must be a positive integer");
+      throw new IllegalArgumentException("bottom must be a positive integer");
     }
     if (bottom >= top) {
-      throw new Exception("top must be and integer, higher than bottom");
+      throw new IllegalArgumentException("top must be and integer, higher than bottom");
     }
     ArrayList<Long> maxSequence = new ArrayList<Long>();
 
@@ -52,9 +53,8 @@ public class Problem0014 {
       ArrayList<Long> sequence =  new ArrayList<Long>();
       sequence.add(c);
       do {
-        c = Collatz.collatz((long) c);
+        c = Collatz.collatz(c);
         sequence.add(c);
-        // console.log(`sequence of ${i}: ${c}`);
       } while (c != 1);
 
       logger.fine(String.format("sequence of %d: %s", i, sequence));
@@ -73,7 +73,7 @@ public class Problem0014 {
     // return firt element
     long result = maxSequence.get(0);
 
-    logger.info(String.format("Problem 00014 solved: %d", result));
+    logger.info(() -> String.format("Problem 00014 solved: %d", result));
     return result;
   }
 }
