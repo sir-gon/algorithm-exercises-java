@@ -19,6 +19,8 @@ package ae.projecteuler;
  */
 public class Problem0000 {
 
+  private Problem0000() {}
+
   static java.util.logging.Logger logger = ae.projecteuler.util.CustomLogger.getLogger();
 
   /**
@@ -27,7 +29,7 @@ public class Problem0000 {
   public static Integer problem0000() {
     Integer result = null;
 
-    logger.info(String.format("Problem 000XX solved: %d", result));
+    logger.info(() -> String.format("Problem 000XX solved: %d", result));
 
     return result;
   }
