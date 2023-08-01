@@ -21,8 +21,8 @@ class Problem0007Test {
   @EnabledIfEnvironmentVariable(named = "BRUTEFORCE", matches = "TRUE")
   @Test void problem0007FullTest() {
 
-    Integer expectedSolution = 13;
-    Integer top = 6;
+    Integer expectedSolution = 104743;
+    Integer top = 10001;
     Integer solutionFound = Problem0007.problem0007(top);
 
     assertEquals(expectedSolution, solutionFound,
