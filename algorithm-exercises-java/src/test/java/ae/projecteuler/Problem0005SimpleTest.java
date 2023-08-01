@@ -1,8 +1,6 @@
 package ae.projecteuler;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertInstanceOf;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
@@ -11,17 +9,6 @@ import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
 class Problem0005SimpleTest {
 
   static java.util.logging.Logger logger = ae.projecteuler.util.CustomLogger.getLogger();
-
-  @Test void problem0005InstanceTest() {
-    Problem0005Simple classUnderTest = new Problem0005Simple();
-
-    assertNotNull(classUnderTest);
-    assertInstanceOf(
-        Problem0005Simple.class,
-        classUnderTest,
-        String.format("Must be an instance of %s", Problem0005Simple.class)
-    );
-  }
 
   @Test void problem0005SmallTest() {
 

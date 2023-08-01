@@ -33,6 +33,8 @@ import java.util.Set;
  */
 public class Problem0019 {
 
+  private Problem0019() {}
+
   static java.util.logging.Logger logger = ae.projecteuler.util.CustomLogger.getLogger();
   private static final String __FEBRUARY__KEY__ = "FEBRUARY";
 

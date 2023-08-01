@@ -8,18 +8,6 @@ import org.junit.jupiter.api.Test;
 
 
 class Problem0016Test {
-
-  @Test void problem0016Instance() {
-    Problem0016 classUnderTest = new Problem0016();
-
-    assertNotNull(classUnderTest);
-    assertInstanceOf(
-        Problem0016.class,
-        classUnderTest,
-        String.format("Must be an instance of %s", Problem0016.class)
-    );
-  }
-
   @Test void problem0016() {
 
     Integer base = 2;

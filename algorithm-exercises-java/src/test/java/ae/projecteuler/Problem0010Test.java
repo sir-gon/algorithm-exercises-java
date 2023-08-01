@@ -1,25 +1,11 @@
 package ae.projecteuler;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertInstanceOf;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.jupiter.api.Test;
 
 
 class Problem0010Test {
-
-  @Test void problem0010Instance() {
-    Problem0010 classUnderTest = new Problem0010();
-
-    assertNotNull(classUnderTest);
-    assertInstanceOf(
-        Problem0010.class,
-        classUnderTest,
-        String.format("Must be an instance of %s", Problem0010.class)
-    );
-  }
-
   @Test void problem0010SmallTest() {
 
     Long expectedSolution = 17L;

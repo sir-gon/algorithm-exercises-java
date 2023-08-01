@@ -6,7 +6,10 @@ package ae.projecteuler.data;
  * Problem0018Data.
  */
 public class Problem0018Data {
-  public static Integer[][] problem0018Data = {
+
+  private Problem0018Data() {}
+
+  public static final Integer[][] problem0018Data = {
     {75},
     {95, 64},
     {17, 47, 82},

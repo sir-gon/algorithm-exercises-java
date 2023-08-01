@@ -27,6 +27,8 @@ import ae.projecteuler.helper.NumberToWord;
  */
 public class Problem0017 {
 
+  private Problem0017() {}
+
   static java.util.logging.Logger logger = ae.projecteuler.util.CustomLogger.getLogger();
 
   /**

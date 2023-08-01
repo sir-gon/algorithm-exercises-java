@@ -1,8 +1,6 @@
 package ae.projecteuler;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertInstanceOf;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -38,17 +36,6 @@ class Problem0008Test {
         + "84580156166097919133875499200524063689912560717606"
         + "05886116467109405077541002256983155200055935729725"
         + "71636269561882670428252483600823257530420752963450";
-  }
-
-  @Test void problem0008Instance() {
-    Problem0008 classUnderTest = new Problem0008();
-
-    assertNotNull(classUnderTest);
-    assertInstanceOf(
-        Problem0008.class,
-        classUnderTest,
-        String.format("Must be an instance of %s", Problem0008.class)
-    );
   }
 
   @Test void problem0008SmallTest() {

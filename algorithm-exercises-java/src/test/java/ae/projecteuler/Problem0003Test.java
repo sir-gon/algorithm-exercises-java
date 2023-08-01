@@ -9,16 +9,7 @@ import org.junit.jupiter.api.Test;
 
 class Problem0003Test {
 
-  @Test void problem0003InstanceTest() {
-
-    Problem0003 classUnderTest = new Problem0003();
-
-    assertNotNull(classUnderTest);
-    assertInstanceOf(
-        Problem0003.class,
-        classUnderTest,
-        String.format("Must be an instance of %s", Problem0003.class));
-  }
+  private static final String OUTPUT_MESSAGE = "Problem 0003 answer must be: %d";
 
   @Test void problem0003BorderCaseTest() {
 
@@ -27,7 +18,7 @@ class Problem0003Test {
     Long solutionFound = Problem0003.problem0003(top);
 
     assertEquals(answer, solutionFound,
-        String.format("Problem 00003 answer must be: %d", answer)
+        String.format(OUTPUT_MESSAGE, answer)
     );
   }
 
@@ -38,7 +29,7 @@ class Problem0003Test {
     Long solutionFound = Problem0003.problem0003(top);
 
     assertEquals(answer, solutionFound,
-        String.format("Problem 00003 answer must be: %d", answer)
+        String.format(OUTPUT_MESSAGE, answer)
     );
   }
 
@@ -49,7 +40,7 @@ class Problem0003Test {
     Long solutionFound = Problem0003.problem0003(top);
 
     assertEquals(answer, solutionFound,
-        String.format("Problem 00003 answer must be: %d", answer)
+        String.format(OUTPUT_MESSAGE, answer)
     );
   }
 }

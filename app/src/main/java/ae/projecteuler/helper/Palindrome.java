@@ -5,16 +5,18 @@ package ae.projecteuler.helper;
  */
 public class Palindrome {
 
+  private Palindrome() {}
+
   /**
    * Checks that a number is a palindrome
    * (reads the same in both directions: left-to-right / right-to-left).
    *
-   * @param _number Number to test if it is a palindrome
+   * @param number Number to test if it is a palindrome
    * @return Boolean
    */
-  public static Boolean isPalindrome(Long _number) {
-    String original = _number.toString();
-    String reversed = new StringBuffer(original).reverse().toString();
+  public static Boolean isPalindrome(Long number) {
+    String original = number.toString();
+    String reversed = new StringBuilder(original).reverse().toString();
 
     return original.equals(reversed);
   }

@@ -31,6 +31,8 @@ import ae.projecteuler.helper.Palindrome;
  */
 public class Problem0004 {
 
+  private Problem0004() {}
+
   static java.util.logging.Logger logger = ae.projecteuler.util.CustomLogger.getLogger();
 
   /**

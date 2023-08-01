@@ -1,25 +1,11 @@
 package ae.projecteuler;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertInstanceOf;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import ae.projecteuler.helper.BigNum;
 import org.junit.jupiter.api.Test;
 
 class Problem0020Test {
-
-  @Test void problem0020Instance() {
-    Problem0020 classUnderTest = new Problem0020();
-
-    assertNotNull(classUnderTest);
-    assertInstanceOf(
-        Problem0020.class,
-        classUnderTest,
-        String.format("Must be an instance of %s", Problem0020.class)
-    );
-  }
-
   @Test void problem0020() {
 
     Integer inputLimit = 100;

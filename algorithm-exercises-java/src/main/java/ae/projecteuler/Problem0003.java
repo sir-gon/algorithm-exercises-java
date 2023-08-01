@@ -17,6 +17,8 @@ import ae.projecteuler.helper.NaturalNumber;
 
 public class Problem0003 {
 
+  private Problem0003() {}
+
   static java.util.logging.Logger logger = ae.projecteuler.util.CustomLogger.getLogger();
 
   /**

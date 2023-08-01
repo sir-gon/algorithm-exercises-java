@@ -51,6 +51,8 @@ import java.util.Arrays;
  */
 public class Problem0018 {
 
+  private Problem0018() {}
+
   static java.util.logging.Logger logger = ae.projecteuler.util.CustomLogger.getLogger();
 
   /**

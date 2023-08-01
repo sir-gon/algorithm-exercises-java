@@ -19,6 +19,8 @@ import ae.projecteuler.helper.BigNum;
  */
 public class Problem0016 {
 
+  private Problem0016() {}
+
   static java.util.logging.Logger logger = ae.projecteuler.util.CustomLogger.getLogger();
 
   /**

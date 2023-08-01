@@ -9,18 +9,6 @@ import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
 
 
 class Problem0023Test {
-
-  @Test void problem0023Instance() {
-    Problem0023 classUnderTest = new Problem0023();
-
-    assertNotNull(classUnderTest);
-    assertInstanceOf(
-        Problem0023.class,
-        classUnderTest,
-        String.format("Must be an instance of %s", Problem0023.class)
-    );
-  }
-
   @Test void problem0023smallCase1() {
 
     Integer answer = 276;

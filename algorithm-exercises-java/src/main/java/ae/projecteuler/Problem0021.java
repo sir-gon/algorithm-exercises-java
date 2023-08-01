@@ -37,6 +37,8 @@ import java.util.Set;
  */
 public class Problem0021 {
 
+  private Problem0021() {}
+
   static java.util.logging.Logger logger = ae.projecteuler.util.CustomLogger.getLogger();
 
   /**

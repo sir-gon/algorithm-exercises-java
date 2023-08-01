@@ -34,6 +34,8 @@ import ae.projecteuler.helper.Divisors;
  */
 public class Problem0012 {
 
+  private Problem0012() {}
+
   static java.util.logging.Logger logger = ae.projecteuler.util.CustomLogger.getLogger();
 
   /**

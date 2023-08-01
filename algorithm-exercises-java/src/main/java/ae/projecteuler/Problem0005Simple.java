@@ -19,6 +19,8 @@ package ae.projecteuler;
  */
 public class Problem0005Simple {
 
+  private Problem0005Simple() {}
+
   static java.util.logging.Logger logger = ae.projecteuler.util.CustomLogger.getLogger();
 
   /**

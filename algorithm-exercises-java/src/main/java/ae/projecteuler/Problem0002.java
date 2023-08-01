@@ -15,12 +15,15 @@
 
 package ae.projecteuler;
 
+import java.text.MessageFormat;
 import java.util.logging.Logger;
 
 /**
  * Even Fibonacci numbers.
  */
 public class Problem0002 {
+
+  private Problem0002() {}
 
   static Logger logger = ae.projecteuler.util.CustomLogger.getLogger();
 
@@ -38,7 +41,8 @@ public class Problem0002 {
     do {
       fibo = last2 + last1;
 
-      logger.fine(String.format("Fibonacci(%d) = %d", i, fibo));
+      String log = MessageFormat.format("Fibonacci({0}) = {1}", i, fibo);
+      logger.fine(log);
 
       if (fibo % 2 == 0) {
         evenSum += fibo;
@@ -50,7 +54,8 @@ public class Problem0002 {
       i += 1;
     } while (fibo < top);
 
-    logger.info(String.format("Problem 0002 result: %d", evenSum));
+    String log = MessageFormat.format("Problem 0002 result: {0}", evenSum);
+    logger.info(log);
 
     return evenSum;
   }

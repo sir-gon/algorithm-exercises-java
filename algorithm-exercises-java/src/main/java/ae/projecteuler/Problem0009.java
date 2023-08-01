@@ -20,6 +20,8 @@ package ae.projecteuler;
  */
 public class Problem0009 {
 
+  private Problem0009() {}
+
   static java.util.logging.Logger logger = ae.projecteuler.util.CustomLogger.getLogger();
 
   private class Triplet {

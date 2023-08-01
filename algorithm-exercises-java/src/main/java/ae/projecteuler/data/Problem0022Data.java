@@ -6,7 +6,10 @@ package ae.projecteuler.data;
  * Problem0022Data.
  */
 public class Problem0022Data {
-  public static String[] problem0022Data = {
+
+  private Problem0022Data() {}
+
+  public static final String[] problem0022Data = {
     "MARY",
     "PATRICIA",
     "LINDA",

@@ -24,6 +24,8 @@ import java.util.Arrays;
  */
 public class Problem0024 {
 
+  private Problem0024() {}
+
   static java.util.logging.Logger logger = ae.projecteuler.util.CustomLogger.getLogger();
 
   static Long factorial(long n) {
