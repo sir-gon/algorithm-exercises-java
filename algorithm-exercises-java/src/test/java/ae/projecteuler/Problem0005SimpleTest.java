@@ -27,38 +27,42 @@ class Problem0005SimpleTest {
 
   @Test void problem0005BruteForceCuttedTest() {
 
+    String log;
+    log = "Problem 00005 BRUTE FORCE stars...";
+    logger.info(log);
+
     Integer answer = 232792560;
     Integer bottom = 1;
     Integer top = 20;
     Integer startFrom = answer - 1000;
-
     Integer solutionFound = Problem0005Simple.problem0005(bottom, top, startFrom);
-
-    logger.info(String.format("Problem 00005 BRUTE FORCE stars..."));
 
     assertEquals(answer, solutionFound,
         String.format("Problem 0005 BRUTE-FORCE answer must be: %d", answer)
     );
 
-    logger.info(String.format("Problem 00005 BRUTE FORCE ends."));
+    log = "Problem 00005 BRUTE FORCE ends.";
+    logger.info(log);
   }
 
   @EnabledIfEnvironmentVariable(named = "BRUTEFORCE", matches = "TRUE")
   @Test void problem0005BruteForceFull() {
 
+    String log;
+    log = "Problem 00005 BRUTE FORCE stars...";
+    logger.info(log);
+
     Integer answer = 232792560;
     Integer bottom = 1;
     Integer top = 20;
     Integer startFrom = 1;
-
     Integer solutionFound = Problem0005Simple.problem0005(bottom, top, startFrom);
-
-    logger.info(String.format("Problem 00005 BRUTE FORCE stars..."));
 
     assertEquals(answer, solutionFound,
         String.format("Problem 0005 BRUTE-FORCE answer must be: %d", answer)
     );
 
-    logger.info(String.format("Problem 00005 BRUTE FORCE ends."));
+    log = "Problem 00005 BRUTE FORCE ends.";
+    logger.info(log);
   }
 }
