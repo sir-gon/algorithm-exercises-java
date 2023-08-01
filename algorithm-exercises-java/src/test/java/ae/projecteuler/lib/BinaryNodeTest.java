@@ -121,7 +121,7 @@ class BinaryNodeTest {
     assertEquals(testNodeA, testNodeA);
 
     // Comparing to incompatible object
-    assertNotEquals("A", new BinaryNode<String>("A"));
+    assertNotEquals(new BinaryNode<String>("A"), new StringBuilder('A').toString());
 
     // Same type, both with null type
     assertEquals(new BinaryNode<String>(),  new BinaryNode<String>());
