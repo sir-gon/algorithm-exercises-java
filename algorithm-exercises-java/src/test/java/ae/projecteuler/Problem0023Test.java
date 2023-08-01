@@ -4,33 +4,27 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 
 class Problem0023Test {
-  @Test void problem0023smallCase1() {
+  @ParameterizedTest
+  @CsvSource({
+      "12, 24, 276, Test Case 1",
+      "12, 25, 301, Test Case 2",
+  })
+  void problem0023smallCase1(
+      int inputUnderLimit,
+      int inputSuperLimit,
+      int answer,
+      String testCase) {
 
-    Integer answer = 276;
-    Integer inputUnderLimit = 12;
-    Integer inputSuperLimit = 24;
     Integer solutionFound = Problem0023.problem0023(inputUnderLimit, inputSuperLimit);
 
-    assertEquals(answer, solutionFound,
-        String.format("Problem 0023 answer must be: %d", answer)
-    );
+    String log = String.format("Problem 0023 {0} answer must be: {1}", testCase, answer);
+    assertEquals(answer, solutionFound, log);
   }
-
-  @Test void problem0023smallCase2() {
-
-    Integer answer = 301;
-    Integer inputUnderLimit = 12;
-    Integer inputSuperLimit = 25;
-    Integer solutionFound = Problem0023.problem0023(inputUnderLimit, inputSuperLimit);
-
-    assertEquals(answer, solutionFound,
-        String.format("Problem 0023 answer must be: %d", answer)
-    );
-  }
-
 
   @EnabledIfEnvironmentVariable(named = "BRUTEFORCE", matches = "TRUE")
   @Test void problem0023fullCase() {
