@@ -60,20 +60,22 @@ public class Problem0018 {
    */
   public static Integer problem0018(Integer[][] triangle) {
 
-
+    String log;
     BinaryNodeWeightBuilder<Integer> builder = new BinaryNodeWeightBuilder<Integer>();
     BinaryNode<Integer> tree = builder.build_binary_node_tree_with_weight(triangle);
     Integer[] leaves = builder.getLeaves();
 
-
-    logger.fine(String.format("Triangle: %s", tree));
-    logger.fine(String.format("Leaves count: %d, %s", leaves.length, leaves));
+    log = String.format("Triangle: %s", tree);
+    logger.fine(log);
+    log = String.format("Leaves count: %d, %s", leaves.length, leaves);
+    logger.fine(log);
 
     Arrays.sort(leaves);
 
     Integer result = leaves[leaves.length - 1]; // maximum is last element
 
-    logger.fine(String.format("Problem 00018 solved: %d", result));
+    log = String.format("Problem 00018 solved: %d", result);
+    logger.fine(log);
 
     return result;
   }

@@ -29,13 +29,16 @@ public class Problem0020 {
    * Problem 0020.
    */
   public static BigNum problem0020(int limit) {
+    String log;
     BigNum factorial = BigNum.bigFactorial(limit);
 
-    logger.info(String.format("Factorial of %d!: %s", limit, factorial.toString()));
+    log = String.format("Factorial of %d!: %s", limit, factorial.toString());
+    logger.info(log);
 
     BigNum result = new BigNum(0).bigSumMany(factorial.toArray());
 
-    logger.info(String.format("Problem 00020 solved: %s", result.toString()));
+    log = String.format("Problem 00020 solved: %s", result.toString());
+    logger.info(log);
 
     return result;
   }

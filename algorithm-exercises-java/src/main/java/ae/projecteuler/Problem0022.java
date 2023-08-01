@@ -56,7 +56,10 @@ public class Problem0022 {
       result += (i + 1) * WordScore.wordScore(names.get(i));
     }
 
-    logger.info(String.format("Problem 00022 solved: %d", result));
+    String log;
+
+    log = String.format("Problem 00022 solved: %d", result);
+    logger.info(log);
 
     return result;
   }
