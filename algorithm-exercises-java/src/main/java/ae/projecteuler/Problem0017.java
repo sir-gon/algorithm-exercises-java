@@ -34,21 +34,24 @@ public class Problem0017 {
   /**
    * Problem 0017.
    */
-  public static Integer problem0017(int _init, int _last) throws Exception {
+  public static Integer problem0017(int init, int last) throws Exception {
 
     int acum = 0;
+    String log;
 
-    for (int i = _init; i <= _last; i++) {
+    for (int i = init; i <= last; i++) {
       String word = NumberToWord.number_to_word(i);
 
       String replaced = word.replaceAll("[^A-Za-z0-9]", "");
 
       acum += replaced.length();
 
-      logger.fine(String.format("acum: %d => word: %s", acum, word));
+      log = String.format("acum: %d => word: %s", acum, word);
+      logger.fine(log);
     }
 
-    logger.info(String.format("Problem 00017 solved: %d", acum));
+    log = String.format("Problem 00017 solved: %d", acum);
+    logger.info(log);
 
     return acum;
   }
