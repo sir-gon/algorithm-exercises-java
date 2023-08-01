@@ -12,6 +12,7 @@
 
 package ae.projecteuler;
 
+import java.text.MessageFormat;
 import java.util.logging.Logger;
 
 /**
@@ -19,10 +20,13 @@ import java.util.logging.Logger;
  */
 public class Problem0001 {
 
+  private Problem0001() {}
+
   static Logger logger = ae.projecteuler.util.CustomLogger.getLogger();
 
   /**
-   * Problem template method.
+   *
+   * Problem0001.
    */
   public static Integer problem0001(Integer top) {
     Integer result = 0;
@@ -30,12 +34,15 @@ public class Problem0001 {
 
     for (i = 0; i < top; i++) {
       if (i % 3 == 0 || i % 5 == 0) {
-        logger.fine(String.format("Line result: %d", i));
+        String text = MessageFormat.format("Line result: {0}", i);
+        logger.fine(text);
 
         result += i;
       }
     }
-    logger.info(String.format("Problem 00001 solved: %d", result));
+
+    String text = MessageFormat.format("Problem 00001 solved: {0}", result);
+    logger.info(text);
 
     return result;
   }
