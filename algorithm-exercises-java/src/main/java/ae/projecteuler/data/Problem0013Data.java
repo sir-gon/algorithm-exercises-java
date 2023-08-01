@@ -9,7 +9,7 @@ public class Problem0013Data {
 
   private Problem0013Data() {}
 
-  public static final String[] problem0013Data = {
+  protected static final String[] data = {
     "37107287533902102798797998220837590246510135740250",
     "46376937677490009712648124896970078050417018260538",
     "74324986199524741059474233309513058123726617309629",
@@ -111,5 +111,9 @@ public class Problem0013Data {
     "20849603980134001723930671666823555245252804609722",
     "53503534226472524250874054075591789781264330331690"
   };
+
+  public static String[] getProblem13Data() {
+    return Problem0013Data.data;
+  }
 }
 //CHECKSTYLE.ON: JavadocParagraph

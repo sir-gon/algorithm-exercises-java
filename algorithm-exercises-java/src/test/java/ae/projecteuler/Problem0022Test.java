@@ -11,7 +11,7 @@ class Problem0022Test {
 
     Integer answer = 871198282;
 
-    Integer solutionFound = Problem0022.problem0022(Problem0022Data.problem0022Data);
+    Integer solutionFound = Problem0022.problem0022(Problem0022Data.getProblem22Data());
 
     assertEquals(answer, solutionFound,
         String.format("Problem 0022 answer must be: %d", answer)

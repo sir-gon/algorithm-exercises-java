@@ -9,7 +9,7 @@ public class Problem0022Data {
 
   private Problem0022Data() {}
 
-  public static final String[] problem0022Data = {
+  protected static final String[] data = {
     "MARY",
     "PATRICIA",
     "LINDA",
@@ -5174,5 +5174,9 @@ public class Problem0022Data {
     "BRODERICK",
     "ALONSO"
   };
+
+  public static String[] getProblem22Data() {
+    return Problem0022Data.data;
+  }
 }
 //CHECKSTYLE.ON: JavadocParagraph

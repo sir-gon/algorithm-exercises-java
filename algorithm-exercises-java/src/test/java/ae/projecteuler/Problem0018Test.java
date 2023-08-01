@@ -1,8 +1,6 @@
 package ae.projecteuler;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertInstanceOf;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import ae.projecteuler.data.Problem0018Data;
 import org.junit.jupiter.api.Test;
@@ -29,7 +27,7 @@ class Problem0018Test {
   @Test void problem0018full() {
 
     Integer answer = 1074;
-    Integer[][] triangle = Problem0018Data.problem0018Data;
+    Integer[][] triangle = Problem0018Data.getProblem18Data();
 
     assertEquals(answer, Problem0018.problem0018(triangle),
         String.format("Problem 0018 answer must be: %d", answer)

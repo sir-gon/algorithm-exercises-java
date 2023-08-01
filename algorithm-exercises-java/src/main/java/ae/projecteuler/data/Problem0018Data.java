@@ -9,7 +9,7 @@ public class Problem0018Data {
 
   private Problem0018Data() {}
 
-  public static final Integer[][] problem0018Data = {
+  protected static final Integer[][] data = {
     {75},
     {95, 64},
     {17, 47, 82},
@@ -26,5 +26,9 @@ public class Problem0018Data {
     {63, 66, 4, 68, 89, 53, 67, 30, 73, 16, 69, 87, 40, 31},
     {4, 62, 98, 27, 23, 9, 70, 98, 73, 93, 38, 53, 60, 4, 23},
   };
+
+  public static Integer[][] getProblem18Data() {
+    return Problem0018Data.data;
+  }
 }
 //CHECKSTYLE.ON: JavadocParagraph

@@ -11,7 +11,7 @@ class Problem0013Test {
 
     String expectedSolution = "5537376230";
     Integer firtsDigits = 10;
-    String[] arrayOfNumbers = Problem0013Data.problem0013Data;
+    String[] arrayOfNumbers = Problem0013Data.getProblem13Data();
 
     String solutionFound = Problem0013.problem0013(arrayOfNumbers, firtsDigits);
 
