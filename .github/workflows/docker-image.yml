@@ -20,5 +20,5 @@ jobs:
     - name: Run test in Docker image
       run: make compose/run
     - name: Tag Docker image
-      run: docker tag projecteuler-java:latest projecteuler-java:${{ github.sha }}
+      run: docker tag algorithm-exercises-java:latest algorithm-exercises-java:${{ github.sha }}
 
