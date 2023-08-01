@@ -61,7 +61,7 @@ public class Problem0018 {
   public static Integer problem0018(Integer[][] triangle) {
 
     String log;
-    BinaryNodeWeightBuilder<Integer> builder = new BinaryNodeWeightBuilder<Integer>();
+    BinaryNodeWeightBuilder<Integer> builder = new BinaryNodeWeightBuilder<>();
     BinaryNode<Integer> tree = builder.build_binary_node_tree_with_weight(triangle);
     Integer[] leaves = builder.getLeaves();
 

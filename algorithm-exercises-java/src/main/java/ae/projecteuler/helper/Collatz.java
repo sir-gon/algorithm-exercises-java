@@ -5,6 +5,8 @@ package ae.projecteuler.helper;
  */
 public class Collatz {
 
+  private Collatz() {}
+
   /**
    * Collatz of array of numbers.
    */

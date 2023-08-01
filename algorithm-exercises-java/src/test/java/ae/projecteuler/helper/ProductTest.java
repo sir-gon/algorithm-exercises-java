@@ -1,23 +1,11 @@
 package ae.projecteuler.helper;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertInstanceOf;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.jupiter.api.Test;
 
 
 class ProductTest {
-
-  @Test void instanceCaseTest() {
-    Product classUnderTest = new Product();
-
-    assertNotNull(classUnderTest);
-    assertInstanceOf(
-        Product.class,
-        classUnderTest,
-        String.format("Must be an instance of %s", Product.class));
-  }
 
   @Test void productOfEmptyListTest() {
 

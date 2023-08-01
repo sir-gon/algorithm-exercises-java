@@ -1,24 +1,11 @@
 package ae.projecteuler.helper;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertInstanceOf;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.jupiter.api.Test;
 
 
 class CollatzTest {
-
-  @Test void instanceCaseTest() {
-    Collatz classUnderTest = new Collatz();
-
-    assertNotNull(classUnderTest);
-    assertInstanceOf(
-        Collatz.class,
-        classUnderTest,
-        String.format("Must be an instance of %s", Collatz.class));
-  }
-
 
   @Test void collatzSequenceFirstTest() {
 

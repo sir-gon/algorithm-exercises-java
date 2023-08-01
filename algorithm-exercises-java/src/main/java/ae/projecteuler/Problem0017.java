@@ -40,7 +40,7 @@ public class Problem0017 {
     String log;
 
     for (int i = init; i <= last; i++) {
-      String word = NumberToWord.number_to_word(i);
+      String word = NumberToWord.numberToWord(i);
 
       String replaced = word.replaceAll("[^A-Za-z0-9]", "");
 

@@ -2,5 +2,9 @@
     "java.configuration.updateBuildConfiguration": "automatic",
     "java.compile.nullAnalysis.mode": "automatic",
     "java.checkstyle.configuration": "${workspaceFolder}/config/checkstyle/checkstyle.xml",
-    "java.checkstyle.version": "10.10.0"
+    "java.checkstyle.version": "10.10.0",
+    "sonarlint.connectedMode.project": {
+        "connectionId": "sir-gon",
+        "projectKey": "sir-gon_algorithm-exercises-java"
+    }
 }

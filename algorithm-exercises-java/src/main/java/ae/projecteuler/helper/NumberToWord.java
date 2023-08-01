@@ -8,11 +8,12 @@ import java.util.Map;
  * NumberToWord.
  */
 public class NumberToWord {
+  private NumberToWord() {}
 
-  public static final Map<String, String> dictionary = new HashMap<>();
+  protected static final Map<String, String> dictionary = new HashMap<>();
 
-  public static final String _CENTS_ = "hundred";
-  public static final String _MILLS_ = "thousand";
+  public static final String CENTS = "hundred";
+  public static final String MILLS = "thousand";
 
   static {
     dictionary.put("1", "one");
@@ -42,16 +43,16 @@ public class NumberToWord {
     dictionary.put("70", "seventy");
     dictionary.put("80", "eighty");
     dictionary.put("90", "ninety");
-    dictionary.put("100", "hundred");
-    dictionary.put("1000", "thousand");
+    dictionary.put("100", CENTS);
+    dictionary.put("1000", MILLS);
   }
 
   /***
-   * number_to_word.
+   * numberToWord.
    */
-  public static String number_to_word(int value) throws Exception {
+  public static String numberToWord(int value) throws Exception {
     if (value < 0) {
-      throw new Exception("Invalid value");
+      throw new IllegalArgumentException("Invalid value");
     }
 
     String strValue = new BigNum(value).toString();
@@ -61,8 +62,8 @@ public class NumberToWord {
       return dictionary.get(strValue);
     } else if (value <= 99) {
       // 20 to 99
-      int dec = (int) Math.floor(value / 10) * 10;
-      int unit = (int) Math.floor(value % 10);
+      int dec = (int) Math.floor((double) value / 10) * 10;
+      int unit = (int) Math.floor((double) value % 10);
 
       if (unit == 0) {
         return dictionary.get(Integer.toString(dec));
@@ -75,33 +76,33 @@ public class NumberToWord {
 
     } else if (value <= 999) {
       // 100 to 999
-      int rest = (int) Math.floor(value % 100);
-      int cent = (int) Math.floor(value / 100);
+      int rest = (int) Math.floor((double) value % 100);
+      int cent = (int) Math.floor((double) value / 100);
 
       if (rest == 0) {
         return String.format(
           "%s %s",
           dictionary.get(Integer.toString(cent)),
-          NumberToWord._CENTS_);
+          NumberToWord.CENTS);
       }
 
       return String.format(
           "%s %s and %s",
           dictionary.get(Integer.toString(cent)),
-          NumberToWord._CENTS_,
-          number_to_word(rest)
+          NumberToWord.CENTS,
+          numberToWord(rest)
       );
     } else if (value == 1000) {
       // up to 1000
-      int mills = (int) Math.floor(value / 1000);
+      int mills = (int) Math.floor((double) value / 1000);
 
       return String.format(
           "%s %s",
           dictionary.get(Integer.toString(mills)),
-          NumberToWord._MILLS_);
+          NumberToWord.MILLS);
     }
 
-    throw new Exception("Invalid value");
+    throw new IllegalArgumentException("Invalid value");
   }
 }
 //CHECKSTYLE.ON: JavadocParagraph

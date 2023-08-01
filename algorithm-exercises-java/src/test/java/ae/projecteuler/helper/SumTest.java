@@ -1,23 +1,11 @@
 package ae.projecteuler.helper;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertInstanceOf;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.jupiter.api.Test;
 
 
 class SumTest {
-
-  @Test void instanceCaseTest() {
-    Sum classUnderTest = new Sum();
-
-    assertNotNull(classUnderTest);
-    assertInstanceOf(
-        Sum.class,
-        classUnderTest,
-        String.format("Must be an instance of %s", Sum.class));
-  }
 
   @Test void productOfEmptyListTest() {
 
