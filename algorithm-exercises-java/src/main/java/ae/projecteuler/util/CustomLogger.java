@@ -13,7 +13,7 @@ public class CustomLogger {
   /**
    * Common logger singleton.
    */
-  @SuppressWarnings({"java:S106"})
+  @SuppressWarnings({"java:S106", "java:S4792"})
   public static java.util.logging.Logger getLogger() {
 
     // default log level
