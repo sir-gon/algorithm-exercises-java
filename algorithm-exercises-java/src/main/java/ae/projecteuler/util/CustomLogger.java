@@ -5,12 +5,15 @@ package ae.projecteuler.util;
  */
 public class CustomLogger {
 
+  private CustomLogger() {}
+
   public static final String LOGGER_NAME = "projecteuler";
   private static java.util.logging.Logger log;
 
   /**
    * Common logger singleton.
    */
+  @SuppressWarnings({"java:S106"})
   public static java.util.logging.Logger getLogger() {
 
     // default log level
@@ -20,7 +23,7 @@ public class CustomLogger {
       logLevel = "INFO";
     }
 
-    logLevel.toUpperCase();
+    logLevel = logLevel.toUpperCase();
 
     // Singleton initalization
     if (log == null) {

@@ -1,47 +1,54 @@
 package ae.projecteuler.constants;
 
 import java.util.LinkedHashMap;
+import java.util.Map;
 
 /**
  * Dates.
  */
 public class Date {
-  public static final int __SUNDAY__ = 0;
-  public static final int __MONDAY__ = 1;
-  public static final int __TUESDAY__ = 2;
-  public static final int __WEDNESDAY__ = 3;
-  public static final int __THURSDAY__ = 4;
-  public static final int __FRIDAY__ = 5;
-  public static final int __SATURDAY__ = 6;
+  private Date() {}
 
-  public static final int __JANUARY__ = 0;
-  public static final int __FEBRUARY__ = 1;
-  public static final int __MARCH__ = 2;
-  public static final int __APRIL__ = 3;
-  public static final int __MAY__ = 4;
-  public static final int __JUNE__ = 5;
-  public static final int __JULY__ = 6;
-  public static final int __AUGUST__ = 7;
-  public static final int __SEPTEMBER__ = 8;
-  public static final int __OCTOBER__ = 9;
-  public static final int __NOVEMBER__ = 10;
-  public static final int __DECEMBER__ = 11;
+  public static final int SUNDAY = 0;
+  public static final int MONDAY = 1;
+  public static final int TUESDAY = 2;
+  public static final int WEDNESDAY = 3;
+  public static final int THURSDAY = 4;
+  public static final int FRIDAY = 5;
+  public static final int SATURDAY = 6;
 
-  public static final LinkedHashMap<String, Integer>
-      __DAYS_IN_MONTH__ = new LinkedHashMap<String, Integer>();
+  public static final int JANUARY = 0;
+  public static final int FEBRUARY = 1;
+  public static final int MARCH = 2;
+  public static final int APRIL = 3;
+  public static final int MAY = 4;
+  public static final int JUNE = 5;
+  public static final int JULY = 6;
+  public static final int AUGUST = 7;
+  public static final int SEPTEMBER = 8;
+  public static final int OCTOBER = 9;
+  public static final int NOVEMBER = 10;
+  public static final int DECEMBER = 11;
+
+  protected static final Map<String, Integer>
+      DAYS_IN_MONTH = new LinkedHashMap<>();
 
   static {
-    __DAYS_IN_MONTH__.put("JANUARY", 31);
-    __DAYS_IN_MONTH__.put("FEBRUARY", 28);
-    __DAYS_IN_MONTH__.put("MARCH", 31);
-    __DAYS_IN_MONTH__.put("APRIL", 30);
-    __DAYS_IN_MONTH__.put("MAY", 31);
-    __DAYS_IN_MONTH__.put("JUNE", 30);
-    __DAYS_IN_MONTH__.put("JULY", 31);
-    __DAYS_IN_MONTH__.put("AUGUST", 31);
-    __DAYS_IN_MONTH__.put("SEPTEMBER", 30);
-    __DAYS_IN_MONTH__.put("OCTOBER", 31);
-    __DAYS_IN_MONTH__.put("NOVEMBER", 30);
-    __DAYS_IN_MONTH__.put("DECEMBER", 31);
+    DAYS_IN_MONTH.put("JANUARY", 31);
+    DAYS_IN_MONTH.put("FEBRUARY", 28);
+    DAYS_IN_MONTH.put("MARCH", 31);
+    DAYS_IN_MONTH.put("APRIL", 30);
+    DAYS_IN_MONTH.put("MAY", 31);
+    DAYS_IN_MONTH.put("JUNE", 30);
+    DAYS_IN_MONTH.put("JULY", 31);
+    DAYS_IN_MONTH.put("AUGUST", 31);
+    DAYS_IN_MONTH.put("SEPTEMBER", 30);
+    DAYS_IN_MONTH.put("OCTOBER", 31);
+    DAYS_IN_MONTH.put("NOVEMBER", 30);
+    DAYS_IN_MONTH.put("DECEMBER", 31);
+  }
+
+  public static Map<String, Integer> daysInMonth() {
+    return Date.DAYS_IN_MONTH;
   }
 }

@@ -54,7 +54,7 @@ public class Problem0019 {
     // copy days in months
     Map<String, Integer> daysInMonth = new LinkedHashMap<>();
     Set<Entry<String, Integer>>
-        entries = ae.projecteuler.constants.Date.__DAYS_IN_MONTH__.entrySet();
+        entries = ae.projecteuler.constants.Date.daysInMonth().entrySet();
     for (Map.Entry<String, Integer> mapEntry : entries) {
       daysInMonth.put(mapEntry.getKey(), mapEntry.getValue());
     }
