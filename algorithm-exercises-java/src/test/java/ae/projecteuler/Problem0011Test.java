@@ -13,7 +13,7 @@ class Problem0011Test {
   @Test void problem0011() throws Exception {
 
     Integer answer = 70600674;
-    Integer[][] inputMatrix = Problem0011Data.problem0011Data;
+    Integer[][] inputMatrix = Problem0011Data.getProblem11Data();
     Integer inputInterval = 4;
 
     Integer solutionFound = Problem0011.problem0011(inputMatrix, inputInterval);
@@ -25,7 +25,7 @@ class Problem0011Test {
 
   @Test void problem0011WrongData() {
 
-    Integer[][] inputMatrix = Problem0011Data.problem0011WrongData;
+    Integer[][] inputMatrix = Problem0011Data.getProblem11WrongData();
     Integer inputInterval = 0;
 
     Exception exception = assertThrows(Exception.class, () -> {
