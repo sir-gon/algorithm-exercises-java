@@ -101,7 +101,7 @@ public class Problem0005 {
       result *= (int) Math.pow(factor, quantity);
     }
 
-    log = String.format("Problem 00005 solved: %d", result);
+    log = String.format("Problem 0005 solved: %d", result);
     logger.info(log);
 
     return result;

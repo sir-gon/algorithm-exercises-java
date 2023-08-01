@@ -28,9 +28,9 @@ class Problem0011Test {
     Integer[][] inputMatrix = Problem0011Data.getProblem11WrongData();
     Integer inputInterval = 0;
 
-    Exception exception = assertThrows(Exception.class, () -> {
-      Problem0011.problem0011(inputMatrix, inputInterval);
-    });
+    Exception exception = assertThrows(Exception.class, () ->
+        Problem0011.problem0011(inputMatrix, inputInterval)
+    );
 
     String expectedMessage = "Not a square matrix";
     String actualMessage = exception.getMessage();
