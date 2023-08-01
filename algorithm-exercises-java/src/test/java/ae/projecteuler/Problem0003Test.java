@@ -11,7 +11,7 @@ class Problem0003Test {
 
   @Test void problem0003BorderCaseTest() {
 
-    Integer answer = null;
+    Long answer = null;
     Long top = 1L;
     Long solutionFound = Problem0003.problem0003(top);
 
