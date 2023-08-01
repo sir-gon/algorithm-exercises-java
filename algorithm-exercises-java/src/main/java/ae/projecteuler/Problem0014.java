@@ -25,6 +25,7 @@
 package ae.projecteuler;
 
 import ae.projecteuler.helper.Collatz;
+import java.text.MessageFormat;
 import java.util.ArrayList;
 
 
@@ -40,35 +41,38 @@ public class Problem0014 {
    * Problem 0013.
    */
   public static Long problem0014(Integer bottom, Integer top) throws IllegalArgumentException {
+    String log;
+
     if (bottom < 1) {
       throw new IllegalArgumentException("bottom must be a positive integer");
     }
     if (bottom >= top) {
       throw new IllegalArgumentException("top must be and integer, higher than bottom");
     }
-    ArrayList<Long> maxSequence = new ArrayList<Long>();
+    ArrayList<Long> maxSequence = new ArrayList<>();
 
     for (int i = bottom; i < top; i++) {
       long c = i;
-      ArrayList<Long> sequence =  new ArrayList<Long>();
+      ArrayList<Long> sequence =  new ArrayList<>();
       sequence.add(c);
       do {
         c = Collatz.collatz(c);
         sequence.add(c);
       } while (c != 1);
 
-      logger.fine(String.format("sequence of %d: %s", i, sequence));
+      log = MessageFormat.format("sequence of {0}: {1}", i, sequence);
+      logger.fine(log);
 
       if (sequence.size() > maxSequence.size()) {
         maxSequence = sequence;
       }
     }
 
-    logger.fine(String.format(
-        "Large sequence found: %s has %d elements",
+    log = MessageFormat.format(
+        "Large sequence found: {0} has {1} elements",
         maxSequence,
-        maxSequence.size())
-    );
+        maxSequence.size());
+    logger.fine(log);
 
     // return firt element
     long result = maxSequence.get(0);

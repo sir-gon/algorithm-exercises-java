@@ -7,7 +7,7 @@ import java.util.ArrayList;
  */
 public class BinaryNodeBuilder<T> {
 
-  ArrayList<T> leafCollector = new ArrayList<T>();
+  private ArrayList<T> leafCollector = new ArrayList<T>();
 
   private BinaryNode<T> build_binary_node_tree_internal(
       T[][] dataTree,

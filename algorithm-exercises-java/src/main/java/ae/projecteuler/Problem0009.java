@@ -15,10 +15,14 @@
 
 package ae.projecteuler;
 
+import java.text.MessageFormat;
+
 /**
  * Special Pythagorean triplet.
  */
 public class Problem0009 {
+
+  private Problem0009() {}
 
   static java.util.logging.Logger logger = ae.projecteuler.util.CustomLogger.getLogger();
 
@@ -34,7 +38,7 @@ public class Problem0009 {
       this.tc = c;
     }
 
-    public Boolean isPythagoreanTriplet() {
+    public boolean isPythagoreanTriplet() {
       return Math.pow(this.ta, 2) + Math.pow(this.tb, 2) == Math.pow(this.tc, 2);
     }
   }
@@ -42,10 +46,11 @@ public class Problem0009 {
   /**
    * Problem 0009.
    */
-  public static Integer problem0009(Integer _limit) {
+  public static Integer problem0009(Integer limit) {
+    String log;
     Integer a = 1;
     Integer b = 2;
-    Integer c = _limit - b - a;
+    Integer c = limit - b - a;
 
     Triplet found = null;
 
@@ -54,17 +59,19 @@ public class Problem0009 {
 
       while (b < c && found == null) {
         // TESTING
-        logger.fine(String.format("TESTING: a = ${a} b = ${b} c = ${c}", a, b, c));
+        log = MessageFormat.format("TESTING: a = {0} b = {1} c = {2}", a, b, c);
+        logger.fine(log);
         Triplet test = new Problem0009().new Triplet(a, b, c);
 
         if (test.isPythagoreanTriplet()) {
           found = test;
-          logger.fine(String.format("FOUND: a = ${a} b = ${b} c = ${c}", a, b, c));
+          log = MessageFormat.format("FOUND: a = {0} b = {1} c = {2}", a, b, c);
+          logger.fine(log);
         }
 
         // INCREASE
         b += 1;
-        c = _limit - b - a;
+        c = limit - b - a;
       }
 
       a += 1;
@@ -74,8 +81,10 @@ public class Problem0009 {
       return null;
     }
 
-    logger.info(String.format("FOUND: a = %d, b = %d, c = %d", found.ta, found.tb, found.tc));
-    logger.info(String.format("PRODUCT: a * b * c = %d", found.ta * found.tb * found.tc));
+    log = MessageFormat.format("FOUND: a = {0}, b = {1}, c = {2}", found.ta, found.tb, found.tc);
+    logger.info(log);
+    log = MessageFormat.format("PRODUCT: a * b * c = {0}", found.ta * found.tb * found.tc);
+    logger.info(log);
 
     return found.ta * found.tb * found.tc;
   }

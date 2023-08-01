@@ -35,31 +35,40 @@
 
 package ae.projecteuler;
 
+import java.text.MessageFormat;
+
 /**
  * Problem 0011.
  */
 public class Problem0011 {
 
+  private Problem0011() {}
+
   static java.util.logging.Logger logger = ae.projecteuler.util.CustomLogger.getLogger();
+  private static final String ROW_MESSAGE = "row: i {0}, column: {1}, step {2} => {3}";
 
   /**
-  * Problem 0011.
+   * Problem 0011.
    *
    * @throws Exception invalid input (matrix or interval lentht)
    */
-  public static Integer problem0011(Integer[][] squareMatrix, Integer interval) throws Exception {
+  public static Integer problem0011(Integer[][] squareMatrix, Integer interval)
+      throws IllegalArgumentException {
     Integer top = squareMatrix.length;
     Integer result = 0;
     Integer acum = 0;
 
+    String log;
+
     for (Integer i = 0; i < top; i++) {
 
       if (top != squareMatrix[i].length) {
-        throw new Exception("Not a square matrix");
+        throw new IllegalArgumentException("Not a square matrix");
       }
 
       for (Integer j = 0; j < top; j++) {
-        logger.fine(String.format("i: $d, j: $d", i, j));
+        log = MessageFormat.format("i: {0}, j: {1}", i, j);
+        logger.fine(log);
 
         acum = 1;
 
@@ -68,10 +77,10 @@ public class Problem0011 {
           // vertical
 
           for (Integer k = 0; k < interval; k++) {
-            logger.fine(String.format(
-                "row: i $d, column: $d, step $d => $d",
-                i + k, j, k, squareMatrix[i + k][j]
-            ));
+            log = MessageFormat.format(
+                Problem0011.ROW_MESSAGE,
+                i + k, j, k, squareMatrix[i + k][j]);
+            logger.fine(log);
             acum *= squareMatrix[i + k][j];
           }
         }
@@ -84,10 +93,11 @@ public class Problem0011 {
           // horizontal
 
           for (Integer k = 0; k < interval; k++) {
-            logger.fine(String.format(
-                "row: i $d, column: $d, step $d => $d",
-                i, j + k, k, squareMatrix[i][j + k]
-            ));
+            log = MessageFormat.format(
+                  Problem0011.ROW_MESSAGE,
+                  i, j + k, k, squareMatrix[i][j + k]
+            );
+            logger.fine(log);
             acum *= squareMatrix[i][j + k];
           }
         }
@@ -100,10 +110,11 @@ public class Problem0011 {
           logger.fine("---- DIAG \\ ---------------------------------------------");
 
           for (Integer k = 0; k < interval; k++) {
-            logger.fine(String.format(
-                "row: i $d, column: $d, step $d => $d",
+            log = MessageFormat.format(
+              Problem0011.ROW_MESSAGE,
                 i, j + k, k, squareMatrix[i + k][j + k]
-            ));
+            );
+            logger.fine(log);
             acum *= squareMatrix[i + k][j + k];
           }
         }
@@ -116,10 +127,11 @@ public class Problem0011 {
           logger.fine("---- DIAG / ---------------------------------------------");
 
           for (Integer k = 0; k < interval; k++) {
-            logger.fine(String.format(
-                "row: i $d, column: $d, step $d => $d",
+            log = MessageFormat.format(
+                Problem0011.ROW_MESSAGE,
                 i, j + k, k, squareMatrix[i + k][j + (interval - 1) - k]
-            ));
+            );
+            logger.fine(log);
             acum *= squareMatrix[i + k][j + (interval - 1) - k];
           }
         }
@@ -128,7 +140,8 @@ public class Problem0011 {
       }
     }
 
-    logger.info(String.format("Problem 00011 solved: %d", result));
+    log = MessageFormat.format("Problem 00011 solved: %{0}", result);
+    logger.info(log);
 
     return result;
   }

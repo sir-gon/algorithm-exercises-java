@@ -1,24 +1,13 @@
 package ae.projecteuler;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertInstanceOf;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.jupiter.api.Test;
 
 
 class Problem0009Test {
 
-  @Test void problem0009Instance() {
-    Problem0009 classUnderTest = new Problem0009();
-
-    assertNotNull(classUnderTest);
-    assertInstanceOf(
-        Problem0009.class,
-        classUnderTest,
-        String.format("Must be an instance of %s", Problem0009.class)
-    );
-  }
+  private static final String OUTPUT_MESSAGE = "Problem 0009 answer must be: %d";
 
   @Test void problem0009EmptyTest() {
 
@@ -27,7 +16,7 @@ class Problem0009Test {
     Integer solutionFound = Problem0009.problem0009(inputLimit);
 
     assertEquals(expectedSolution, solutionFound,
-        String.format("Problem 0000 answer must be: %d", expectedSolution)
+        String.format(OUTPUT_MESSAGE, expectedSolution)
     );
   }
 
@@ -38,7 +27,7 @@ class Problem0009Test {
     Integer solutionFound = Problem0009.problem0009(inputLimit);
 
     assertEquals(expectedSolution, solutionFound,
-        String.format("Problem 0000 answer must be: %d", expectedSolution)
+        String.format(OUTPUT_MESSAGE, expectedSolution)
     );
   }
 
@@ -49,7 +38,7 @@ class Problem0009Test {
     Integer solutionFound = Problem0009.problem0009(inputLimit);
 
     assertEquals(expectedSolution, solutionFound,
-        String.format("Problem 0000 answer must be: %d", expectedSolution)
+        String.format(OUTPUT_MESSAGE, expectedSolution)
     );
   }
 
@@ -60,7 +49,7 @@ class Problem0009Test {
     Integer solutionFound = Problem0009.problem0009(inputLimit);
 
     assertEquals(expectedSolution, solutionFound,
-        String.format("Problem 0000 answer must be: %d", expectedSolution)
+        String.format(OUTPUT_MESSAGE, expectedSolution)
     );
   }
 }

@@ -34,15 +34,15 @@ public class Problem0001 {
 
     for (i = 0; i < top; i++) {
       if (i % 3 == 0 || i % 5 == 0) {
-        String text = MessageFormat.format("Line result: {0}", i);
-        logger.fine(text);
+        String log = MessageFormat.format("Line result: {0}", i);
+        logger.fine(log);
 
         result += i;
       }
     }
 
-    String text = MessageFormat.format("Problem 00001 solved: {0}", result);
-    logger.info(text);
+    String log = MessageFormat.format("Problem 00001 solved: {0}", result);
+    logger.info(log);
 
     return result;
   }

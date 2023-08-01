@@ -8,20 +8,19 @@ import java.util.ArrayList;
  */
 public class NaturalNumber {
 
-  private Long __value = null;
-  private Long __nextPrimeFactor = null;
-  private Long __nextDivisor = null;
-  private Integer __nextPrimeFactorCycles = null;
+  private Long value = null;
+  private Long nextPrimeFactor = null;
+  private Long nextDivisor = null;
+  private Integer nextPrimeFactorCycles = null;
 
-  private Long[] __primeFactors = null;
-  private Integer __primeFactorsCycles = null;
+  private Integer primeFactorsCycles = null;
 
   public NaturalNumber(Long value) {
-    this.__value = value;
+    this.value = value;
   }
 
   public Long getValue() {
-    return this.__value;
+    return this.value;
   }
 
   /**
@@ -32,11 +31,11 @@ public class NaturalNumber {
    */
   public Long getNextPrimeFactor() {
 
-    if (this.__nextPrimeFactor == null) {
+    if (this.nextPrimeFactor == null) {
       this.computeNextPrimefactor();
     }
 
-    return __nextPrimeFactor;
+    return nextPrimeFactor;
   }
 
   /**
@@ -48,11 +47,11 @@ public class NaturalNumber {
    * That is, this function saves the result in an internal cache.
    */
   public Long getNextDivisor() {
-    if (this.__nextDivisor == null) {
+    if (this.nextDivisor == null) {
       this.computeNextPrimefactor();
     }
 
-    return __nextDivisor;
+    return nextDivisor;
   }
 
   /**
@@ -63,11 +62,11 @@ public class NaturalNumber {
    */
   public Integer getNextPrimeFactorCycles() {
 
-    if (this.__nextPrimeFactorCycles == null) {
+    if (this.nextPrimeFactorCycles == null) {
       this.computeNextPrimefactor();
     }
 
-    return __nextPrimeFactorCycles;
+    return nextPrimeFactorCycles;
   }
 
   /**
@@ -91,26 +90,27 @@ public class NaturalNumber {
       } while (top % i != 0);
     }
 
-    this.__nextPrimeFactor = factor;
-    this.__nextDivisor = divisor;
-    this.__nextPrimeFactorCycles = i - init;
+    this.nextPrimeFactor = factor;
+    this.nextDivisor = divisor;
+    this.nextPrimeFactorCycles = i - init;
 
-    return __nextPrimeFactor;
+    return nextPrimeFactor;
   }
 
   /**
    * Compute a list of prime factors of a number.
    */
   public Long[] primeFactors() {
-    ArrayList<Long> factors = new ArrayList<Long>();
+    Long[] primeFactors = null;
+    ArrayList<Long> factors = new ArrayList<>();
     Long target = Math.abs(this.getValue());
     Integer cycles = 0;
 
     if (target == 1L) {
       factors.add(1L);
-      this.__primeFactors = factors.toArray(Long[]::new);
-      this.__primeFactorsCycles = cycles;
-      return this.__primeFactors;
+      primeFactors = factors.toArray(Long[]::new);
+      this.primeFactorsCycles = cycles;
+      return primeFactors;
     }
 
     Long partial = target;
@@ -124,40 +124,36 @@ public class NaturalNumber {
       partial = divisor;
     }
 
-    this.__primeFactors = factors.toArray(Long[]::new);
-    this.__primeFactorsCycles = cycles;
+    primeFactors = factors.toArray(Long[]::new);
+    this.primeFactorsCycles = cycles;
 
-    return this.__primeFactors;
+    return primeFactors;
   }
 
   /**
    * Get cycles to compute a list of prime factors of a number.
    */
   public Integer getPrimeFactorCycles() {
-    if (this.__primeFactorsCycles == null) {
+    if (this.primeFactorsCycles == null) {
       this.primeFactors();
     }
 
-    return __primeFactorsCycles;
+    return primeFactorsCycles;
   }
 
   /**
    * Checks if number is prime.
    */
-  public Boolean isPrime() {
+  public boolean isPrime() {
     Long primeFactor = this.getNextPrimeFactor();
-    if (primeFactor != 1 && primeFactor.equals(this.getValue())) {
-      return true;
-    }
-
-    return false;
+    return primeFactor != 1 && primeFactor.equals(this.getValue());
   }
 
   /**
    * Checks if number is prime. Static way.
    */
-  public static Boolean isPrime(Long _number) {
-    return new NaturalNumber(_number).isPrime();
+  public static Boolean isPrime(Long number) {
+    return new NaturalNumber(number).isPrime();
   }
 }
 

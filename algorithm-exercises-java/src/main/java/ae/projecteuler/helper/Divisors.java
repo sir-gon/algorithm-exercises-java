@@ -13,18 +13,18 @@ public class Divisors {
   /**
    * Calculate divisors of a natural number.
    *
-   * @param _number number to calculate their divisors
+   * @param number number to calculate their divisors
    * @return Long
    */
-  public Long[] calculateDivisors(Long _number) {
+  public Long[] calculateDivisors(Long number) {
 
     // Reset cycles counter
     this.cycles = 0;
 
-    Long target = Math.abs(_number);
-    Long top = Math.abs(_number);
+    Long target = Math.abs(number);
+    Long top = Math.abs(number);
 
-    ArrayList<Long> divs = new ArrayList<Long>();
+    ArrayList<Long> divs = new ArrayList<>();
 
     divs.add(1L);
 
@@ -72,12 +72,8 @@ public class Divisors {
   /**
    * Calculate divisors of a number.
    */
-  public static Long[] divisors(Long _number) {
-
-    Divisors self = new Divisors();
-    Long[] result = self.calculateDivisors(_number);
-
-    return result;
+  public static Long[] divisors(Long number) {
+    return new Divisors().calculateDivisors(number);
   }
 
   /**
@@ -92,15 +88,15 @@ public class Divisors {
   /**
    * Calculate abundance of a number.
    */
-  public static DivisorsAbundance abundance(Long _number) {
-    Long[] divisors = Divisors.divisors(_number);
-    Long divSum = Sum.sum(divisors) - _number;
+  public static DivisorsAbundance abundance(Long number) {
+    Long[] divisors = Divisors.divisors(number);
+    Long divSum = Sum.sum(divisors) - number;
 
-    if (divSum > _number) {
+    if (divSum > number) {
       return DivisorsAbundance.DIVISORS_ABUNDANT;
     }
 
-    if (divSum < _number) {
+    if (divSum < number) {
       return DivisorsAbundance.DIVISORS_DEFICIENT;
     }
 

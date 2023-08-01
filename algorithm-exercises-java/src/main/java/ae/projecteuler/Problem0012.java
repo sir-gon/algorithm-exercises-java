@@ -34,23 +34,27 @@ import ae.projecteuler.helper.Divisors;
  */
 public class Problem0012 {
 
+  private Problem0012() {}
+
   static java.util.logging.Logger logger = ae.projecteuler.util.CustomLogger.getLogger();
 
   /**
    * Problem 0012.
    */
-  public static Long problem0012(Long _top) {
+  public static Long problem0012(Long top) {
     Long count = (long) 0;
     Long triangular = (long) 0;
     Long i = (long) 1;
 
     Long[] d;
+    String log;
 
-    while (count < _top) {
+    while (count < top) {
       triangular += i;
       d = Divisors.divisors(triangular);
 
-      logger.fine(String.format("Triangular number: %d has %d divisors", triangular, d.length));
+      log = String.format("Triangular number: %d has %d divisors", triangular, d.length);
+      logger.fine(log);
 
       if (d.length > count) {
         count = (long) d.length;
@@ -59,7 +63,8 @@ public class Problem0012 {
       i += 1;
     }
 
-    logger.info(String.format("Problem 00012 solved: %d", count));
+    log = String.format("Problem 00012 solved: %d", count);
+    logger.info(log);
 
     return count;
   }

@@ -6,8 +6,10 @@ import java.util.LinkedHashMap;
  * WordScore helper.
  */
 public class WordScore {
+  private WordScore() {}
+
   private static final LinkedHashMap<String, Integer>
-      _scoreLetter = new LinkedHashMap<String, Integer>();
+      _scoreLetter = new LinkedHashMap<>();
 
   static {
     _scoreLetter.put("A", 1);

@@ -19,41 +19,45 @@ package ae.projecteuler;
  */
 public class Problem0005Simple {
 
+  private Problem0005Simple() {}
+
   static java.util.logging.Logger logger = ae.projecteuler.util.CustomLogger.getLogger();
 
   /**
    * Problem 0005.
    */
-  public static Integer problem0005(Integer _bottom, Integer _top, Integer _startFrom) {
+  public static Integer problem0005(Integer bottom, Integer top, Integer startFrom) {
     Integer found = null;
-    Boolean fail;
+    boolean fail;
+    String log;
     Integer i;
-    Integer test = _startFrom;
+    Integer test = startFrom;
 
     do {
-      i = 2;
-      fail = false;
+      i = bottom;
       do {
         fail = test % i != 0;
 
         if (fail) {
-          logger.fine(String.format("Fail %d not divisible by %d", test, i));
+          log = String.format("Fail %d not divisible by %d", test, i);
+          logger.fine(log);
         } else {
-          logger.fine(String.format("Testing: %d divisible by %d", test, i));
+          log = String.format("Testing: %d divisible by %d", test, i);
+          logger.fine(log);
         }
 
         i += 1;
-      } while (i <= _top && !fail);
+      } while (i <= top && !fail);
 
       if (!fail) {
         found = test;
       }
 
-      fail = false;
       test += 1;
     } while (found == null);
 
-    logger.info(String.format("Problem 00005 solved: %d", found));
+    log = String.format("Problem 00005 solved: %d", found);
+    logger.info(log);
 
     return found;
   }

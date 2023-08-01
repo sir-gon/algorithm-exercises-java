@@ -2,26 +2,12 @@ package ae.projecteuler;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertInstanceOf;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
 
 
 class Problem0024Test {
-
-  @Test void problem0024Instance() {
-    Problem0024 classUnderTest = new Problem0024();
-
-    assertNotNull(classUnderTest);
-    assertInstanceOf(
-        Problem0024.class,
-        classUnderTest,
-        String.format("Must be an instance of %s", Problem0024.class)
-    );
-  }
-
   @Test void problem0024small() {
 
     String strNumber = "HOLA";

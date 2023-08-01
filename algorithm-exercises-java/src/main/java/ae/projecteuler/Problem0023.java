@@ -39,16 +39,18 @@ import java.util.Set;
  */
 public class Problem0023 {
 
+  private Problem0023() {}
+
   static java.util.logging.Logger logger = ae.projecteuler.util.CustomLogger.getLogger();
 
   /**
    * Problem 0023.
    */
-  public static Integer problem0023(int _underLimit, int _superLimit) {
-    ArrayList<Integer> abundantNumberList = new ArrayList<Integer>();
+  public static Integer problem0023(int underLimit, int superLimit) {
+    ArrayList<Integer> abundantNumberList = new ArrayList<>();
 
     // Produce a list of abundant numbers below limit
-    for (int i = _underLimit; i <= _superLimit; i++) {
+    for (int i = underLimit; i <= superLimit; i++) {
       DivisorsAbundance abundancyOf = Divisors.abundance((long) i);
 
       if (abundancyOf == DivisorsAbundance.DIVISORS_ABUNDANT) {
@@ -56,14 +58,18 @@ public class Problem0023 {
       }
     }
 
-    logger.info(String.format(
-        "abundant nums list size => %d", abundantNumberList.size()
-    ));
-    logger.fine(String.format(
-        "abundant nums list result: => %s", abundantNumberList
-    ));
+    String log;
 
-    ArrayList<Integer> sumsAbundantNums = new ArrayList<Integer>();
+    log = String.format(
+        "abundant nums list size => %d", abundantNumberList.size()
+    );
+    logger.info(log);
+    log = String.format(
+        "abundant nums list result: => %s", abundantNumberList
+    );
+    logger.fine(log);
+
+    ArrayList<Integer> sumsAbundantNums = new ArrayList<>();
 
     // Produce a list of sums of pair of abundant numbers below limit
     for (int i = 0; i < abundantNumberList.size(); i++) {
@@ -71,18 +77,21 @@ public class Problem0023 {
           j < abundantNumberList.size();
           j++
       ) {
-        if (abundantNumberList.get(i) + abundantNumberList.get(j) <= _superLimit) {
+        if (abundantNumberList.get(i) + abundantNumberList.get(j) <= superLimit) {
           sumsAbundantNums.add(abundantNumberList.get(i) + abundantNumberList.get(j));
         }
       }
     }
 
-    logger.info(String.format(
+    log = String.format(
         "sumsAbundantNums size => %d", abundantNumberList.size()
-    ));
-    logger.fine(String.format(
+    );
+    logger.info(log);
+
+    log = String.format(
         "sumsAbundantNums => %s", abundantNumberList
-    ));
+    );
+    logger.fine(log);
 
     ////////////////////
     // filter duplicates
@@ -101,27 +110,29 @@ public class Problem0023 {
     // with no duplicates to the list
     sumsAbundantNums.addAll(set);
 
-    logger.fine(String.format(
+    log = String.format(
         "sumsAbundantNums size: %d. result => %s",
         sumsAbundantNums.size(),
-        sumsAbundantNums)
-    );
+        sumsAbundantNums);
+    logger.fine(log);
 
     // All numbers below limit that not present in list of sums of pair of abundant numbers
-    ArrayList<Integer> found = new ArrayList<Integer>();
+    ArrayList<Integer> found = new ArrayList<>();
 
-    for (int i = 1; i <= _superLimit; i++) {
+    for (int i = 1; i <= superLimit; i++) {
       if (!sumsAbundantNums.contains(i)) {
         found.add(i);
       }
     }
 
-    logger.fine(String.format("found: %d, found => %s", found.size(), found));
+    log = String.format("found: %d, found => %s", found.size(), found);
+    logger.fine(log);
 
     Integer[] foundArr = found.toArray(Integer[]::new);
     Integer result = Sum.sum(foundArr);
 
-    logger.info(String.format("Problem 0023 result: %d", result));
+    log = String.format("Problem 0023 result: %d", result);
+    logger.info(log);
 
     return result;
   }

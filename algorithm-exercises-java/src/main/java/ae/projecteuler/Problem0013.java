@@ -23,6 +23,8 @@ import java.util.stream.Collectors;
  */
 public class Problem0013 {
 
+  private Problem0013() {}
+
   static java.util.logging.Logger logger = ae.projecteuler.util.CustomLogger.getLogger();
 
   /**
@@ -30,10 +32,7 @@ public class Problem0013 {
    */
   public static String problem0013(String[] arrayOfNumbers, Integer firtsDigits) {
     BigNum sum = new BigNum(0);
-
     sum = sum.bigSumMany(arrayOfNumbers);
-
-    // logger.fine(String.format("Sum: %d", sum));
 
     List<Integer> first = Arrays.asList(sum.toArray()).subList(0, firtsDigits);
 
@@ -42,11 +41,13 @@ public class Problem0013 {
         .collect(Collectors.joining(""));
 
 
-    logger.info(String.format("First %d digits of huge sume are %s", firtsDigits, first));
-    logger.info(String.format("Problem 00013 solved: %s", numberString));
+    String log;
+    log = String.format("First %d digits of huge sume are %s", firtsDigits, first);
+    logger.info(log);
+    log = String.format("Problem 00013 solved: %s", numberString);
+    logger.info(log);
 
     return numberString;
-
   }
 }
 

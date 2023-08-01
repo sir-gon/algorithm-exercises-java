@@ -18,6 +18,8 @@ package ae.projecteuler;
  */
 public class Problem0015 {
 
+  private Problem0015() {}
+
   static java.util.logging.Logger logger = ae.projecteuler.util.CustomLogger.getLogger();
 
   /**
@@ -46,7 +48,9 @@ public class Problem0015 {
 
     Long result = grid[gridSide][gridSide];
 
-    logger.info(String.format("Problem 00015 solved: %d", result));
+    String log;
+    log = String.format("Problem 00015 solved: %d", result);
+    logger.info(log);
 
     return result;
   }

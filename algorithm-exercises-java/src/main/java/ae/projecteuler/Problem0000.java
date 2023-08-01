@@ -14,6 +14,8 @@
 
 package ae.projecteuler;
 
+import java.text.MessageFormat;
+
 /**
  * {TITLE}.
  */
@@ -29,7 +31,8 @@ public class Problem0000 {
   public static Integer problem0000() {
     Integer result = null;
 
-    logger.info(() -> String.format("Problem 000XX solved: %d", result));
+    String log = MessageFormat.format("Problem 000XX solved: {0}", result);
+    logger.info(log);
 
     return result;
   }

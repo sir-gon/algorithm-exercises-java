@@ -1,8 +1,6 @@
 package ae.projecteuler.helper;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertInstanceOf;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.jupiter.api.Test;
 
@@ -19,15 +17,15 @@ class PalindromeTest {
     }
   }
 
-  @Test void instanceCaseTest() {
-    Palindrome classUnderTest = new Palindrome();
+  // @Test void instanceCaseTest() {
+  //   Palindrome classUnderTest = new Palindrome();
 
-    assertNotNull(classUnderTest);
-    assertInstanceOf(
-        Palindrome.class,
-        classUnderTest,
-        String.format("Must be an instance of %s", Palindrome.class));
-  }
+  //   assertNotNull(classUnderTest);
+  //   assertInstanceOf(
+  //       Palindrome.class,
+  //       classUnderTest,
+  //       String.format("Must be an instance of %s", Palindrome.class));
+  // }
 
   @Test void listOfPalindromBorderCaseTest() {
 

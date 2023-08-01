@@ -33,8 +33,10 @@ import java.util.Set;
  */
 public class Problem0019 {
 
+  private Problem0019() {}
+
   static java.util.logging.Logger logger = ae.projecteuler.util.CustomLogger.getLogger();
-  private static final String __FEBRUARY__KEY__ = "FEBRUARY";
+  private static final String FEBRUARY_KEY = "FEBRUARY";
 
   /**
    * Problem 0019.
@@ -44,12 +46,13 @@ public class Problem0019 {
       int sinceYear, // 1901,
       int untilYear // 2000
   ) {
+    String log;
     int resultCount = 0;
     int accumulatedRemainder = 0;
     int excess = 0;
 
     // copy days in months
-    Map<String, Integer> daysInMonth = new LinkedHashMap<String, Integer>();
+    Map<String, Integer> daysInMonth = new LinkedHashMap<>();
     Set<Entry<String, Integer>>
         entries = ae.projecteuler.constants.Date.__DAYS_IN_MONTH__.entrySet();
     for (Map.Entry<String, Integer> mapEntry : entries) {
@@ -59,10 +62,11 @@ public class Problem0019 {
     for (int year = 1900; year < untilYear + 1; year++) {
 
       int leap = (year % 4 == 0 && year % 100 != 0) || year % 400 == 0 ? 1 : 0;
-      daysInMonth.put(__FEBRUARY__KEY__, 28 + leap);
+      daysInMonth.put(FEBRUARY_KEY, 28 + leap);
 
       if (leap != 0) {
-        logger.fine(String.format("Year %d has a leap-day", year));
+        log = String.format("Year %d has a leap-day", year);
+        logger.fine(log);
       }
 
       Set<Entry<String, Integer>> months = daysInMonth.entrySet();
@@ -70,7 +74,8 @@ public class Problem0019 {
         String month = mapEntry.getKey();
         Integer days = mapEntry.getValue();
 
-        logger.fine(String.format("Year: %d | Month: %s | days: %d", year, month, days));
+        log = String.format("Year: %d | Month: %s | days: %d", year, month, days);
+        logger.fine(log);
 
         accumulatedRemainder += days % 7;
         if (accumulatedRemainder % 7 == dayOfWeek) {
@@ -85,7 +90,8 @@ public class Problem0019 {
 
     Integer result = resultCount - excess;
 
-    logger.info(String.format("Problem 00019 solved: %d", result));
+    log = String.format("Problem 00019 solved: %d", result);
+    logger.info(log);
 
     return result;
   }
