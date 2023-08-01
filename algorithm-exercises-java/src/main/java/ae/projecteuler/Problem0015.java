@@ -48,7 +48,9 @@ public class Problem0015 {
 
     Long result = grid[gridSide][gridSide];
 
-    logger.info(String.format("Problem 00015 solved: %d", result));
+    String log;
+    log = String.format("Problem 00015 solved: %d", result);
+    logger.info(log);
 
     return result;
   }

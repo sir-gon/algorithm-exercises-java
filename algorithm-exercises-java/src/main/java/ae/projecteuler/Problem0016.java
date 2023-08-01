@@ -29,14 +29,18 @@ public class Problem0016 {
   public static String problem0016(int base, int exponent) {
     BigNum power = new BigNum(base).bigPower(exponent);
 
-    logger.info(String.format("Digits of power found: %s", power.toString()));
+    String log;
+
+    log = String.format("Digits of power found: %s", power.toString());
+    logger.info(log);
 
     String[] digits = power.toString().split("");
 
     BigNum result = new BigNum(0);
     result.bigSumMany(digits);
 
-    logger.info(String.format("Problem 00016 solved: %s", result.toString()));
+    log = String.format("Problem 00016 solved: %s", result.toString());
+    logger.info(log);
 
     return result.toString();
   }
