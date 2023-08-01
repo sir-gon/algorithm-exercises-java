@@ -24,9 +24,8 @@
 
 package ae.projecteuler;
 
-import java.text.MessageFormat;
-
 import ae.projecteuler.helper.Palindrome;
+import java.text.MessageFormat;
 
 /**
  * Largest palindrome product.
