@@ -10,7 +10,7 @@ public class BinaryNodeWeightBuilder<T>
 
   private ArrayList<Integer> leafCollector = new ArrayList<>();
 
-  private BinaryNode<Integer> build_binary_node_tree_with_weight_internal(
+  private BinaryNode<Integer> buildBinaryNodeTreeWithWeightInternal(
       Integer[][] dataTree,
       int i,
       int j,
@@ -26,7 +26,7 @@ public class BinaryNodeWeightBuilder<T>
 
       if (i + 1 < dataTree.length && j + 1 < dataTree[i + 1].length) {
         resultNode.setLeft(
-            this.build_binary_node_tree_with_weight_internal(
+            this.buildBinaryNodeTreeWithWeightInternal(
               dataTree,
               i + 1,
               j,
@@ -35,7 +35,7 @@ public class BinaryNodeWeightBuilder<T>
         );
 
         resultNode.setRight(
-            this.build_binary_node_tree_with_weight_internal(
+            this.buildBinaryNodeTreeWithWeightInternal(
               dataTree,
               i + 1,
               j + 1,
@@ -55,9 +55,9 @@ public class BinaryNodeWeightBuilder<T>
     return null;
   }
 
-  public BinaryNode<Integer> build_binary_node_tree_with_weight(Integer[][] dataTree) {
-    this.leafCollector = new ArrayList<Integer>();
-    return build_binary_node_tree_with_weight_internal(dataTree, 0, 0, 0);
+  public BinaryNode<Integer> buildBinaryNodeTreeWithWeight(Integer[][] dataTree) {
+    this.leafCollector = new ArrayList<>();
+    return buildBinaryNodeTreeWithWeightInternal(dataTree, 0, 0, 0);
   }
 
   public Integer[] getLeaves() {

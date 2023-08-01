@@ -31,7 +31,7 @@ class BinaryNodeWeightBuilderTest {
 
   @Test void buildSmallTreeTest() {
     BinaryNodeWeightBuilder<Integer> builder = new BinaryNodeWeightBuilder<Integer>();
-    BinaryNode<Integer> testTree = builder.build_binary_node_tree_with_weight(smallCaseData);
+    BinaryNode<Integer> testTree = builder.buildBinaryNodeTreeWithWeight(smallCaseData);
 
     assertEquals(75, testTree.getValue());
     assertEquals(75 + 95, testTree.getLeft().getValue());
@@ -45,7 +45,7 @@ class BinaryNodeWeightBuilderTest {
   @Test void buildNullTreeTest() {
 
     BinaryNodeWeightBuilder<Integer> builder = new BinaryNodeWeightBuilder<Integer>();
-    BinaryNode<Integer> testTree = builder.build_binary_node_tree_with_weight(null);
+    BinaryNode<Integer> testTree = builder.buildBinaryNodeTreeWithWeight(null);
 
     assertNull(testTree);
   }
@@ -54,7 +54,7 @@ class BinaryNodeWeightBuilderTest {
     Integer[][] emptyMatrix = {};
 
     BinaryNodeWeightBuilder<Integer> builder = new BinaryNodeWeightBuilder<Integer>();
-    BinaryNode<Integer> testTree = builder.build_binary_node_tree_with_weight(emptyMatrix);
+    BinaryNode<Integer> testTree = builder.buildBinaryNodeTreeWithWeight(emptyMatrix);
 
     assertNull(testTree);
   }
@@ -67,7 +67,7 @@ class BinaryNodeWeightBuilderTest {
     };
 
     BinaryNodeWeightBuilder<Integer> builder = new BinaryNodeWeightBuilder<Integer>();
-    BinaryNode<Integer> testTree = builder.build_binary_node_tree_with_weight(emptyMatrix);
+    BinaryNode<Integer> testTree = builder.buildBinaryNodeTreeWithWeight(emptyMatrix);
 
     assertEquals(new BinaryNode<Integer>(1), testTree);
   }
@@ -80,7 +80,7 @@ class BinaryNodeWeightBuilderTest {
     };
 
     BinaryNodeWeightBuilder<Integer> builder = new BinaryNodeWeightBuilder<Integer>();
-    BinaryNode<Integer> testTree = builder.build_binary_node_tree_with_weight(emptyMatrix);
+    BinaryNode<Integer> testTree = builder.buildBinaryNodeTreeWithWeight(emptyMatrix);
 
     assertEquals(new BinaryNode<Integer>(1), testTree);
   }
