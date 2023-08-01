@@ -14,7 +14,7 @@ public class Palindrome {
    * @param number Number to test if it is a palindrome
    * @return Boolean
    */
-  public static Boolean isPalindrome(Long number) {
+  public static boolean isPalindrome(Long number) {
     String original = number.toString();
     String reversed = new StringBuilder(original).reverse().toString();
 
