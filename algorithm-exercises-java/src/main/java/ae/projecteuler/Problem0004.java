@@ -54,16 +54,15 @@ public class Problem0004 {
       while (j >= _bottom && (foundj == null || j >= foundj)) {
         cycles += 1;
 
-        if (Palindrome.isPalindrome(Long.valueOf(j * i))) {
-          logger.fine(String.format("FOUND: %d x %d = %d is Palindrome", i, j, i * j));
+        if (Palindrome.isPalindrome(Long.valueOf((long) j * i))) {
+          String log = String.format("FOUND: %d x %d = %d is Palindrome", i, j, i * j);
+          logger.fine(log);
 
           if (foundPalindrome == null || i * j > foundPalindrome) {
             foundi = i;
             foundj = j;
             foundPalindrome = i * j;
           }
-        } else {
-          // logger.fine(String.format("FOUND: %d x %d = %d is NOT Palindrome", i, j, i * j));
         }
 
         j -= 1;
@@ -72,12 +71,13 @@ public class Problem0004 {
       i -= 1;
     }
 
-    logger.info(
-        String.format("Problem 0004 Largest Palindrome  => %d 𝗑 %d = %d in %d cycles",
+    String log = String.format("Problem 0004 Largest Palindrome  => %d 𝗑 %d = %d in %d cycles",
           foundi,
           foundj,
           foundPalindrome,
-          cycles));
+          cycles);
+
+    logger.info(log);
 
     return foundPalindrome;
   }

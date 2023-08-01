@@ -53,9 +53,7 @@ public class Problem0005 {
       Map<Long, Integer> listB) {
     Map<Long, Integer> occurrences = new HashMap<>();
 
-    listA.forEach((key, value) -> {
-      occurrences.put(key, value);
-    });
+    listA.forEach(occurrences::put);
 
     listB.forEach((keyB, valueB) -> {
       Integer valueA = occurrences.getOrDefault(keyB, null);
@@ -71,13 +69,14 @@ public class Problem0005 {
   /**
    * Problem 0005.
    */
-  public static Integer problem0005(Integer _bottom, Integer _top) {
+  public static Integer problem0005(Integer bottom, Integer top) {
+    String log;
     Integer result = null;
     Integer cycles = 0;
 
     Map<Long, Integer> minimumPrimeFactorsCollector = new HashMap<>();
 
-    for (int i = _bottom; i <= _top; i++) {
+    for (int i = bottom; i <= top; i++) {
       NaturalNumber number = new NaturalNumber(Long.valueOf(i));
 
       Long[] primeFactors = number.primeFactors();
@@ -90,7 +89,8 @@ public class Problem0005 {
           primeFactorsCount
       );
 
-      logger.info(String.format("%s", minimumPrimeFactorsCollector.toString()));
+      log = String.format("%s", minimumPrimeFactorsCollector.toString());
+      logger.info(log);
     }
 
     result = 1;
@@ -98,10 +98,11 @@ public class Problem0005 {
       Long factor = me.getKey();
       Integer quantity = me.getValue();
 
-      result *= (int) Math.pow((double) factor, (double) quantity);
+      result *= (int) Math.pow(factor, quantity);
     }
 
-    logger.info(String.format("Problem 00005 solved: %d", result));
+    log = String.format("Problem 00005 solved: %d", result);
+    logger.info(log);
 
     return result;
   }

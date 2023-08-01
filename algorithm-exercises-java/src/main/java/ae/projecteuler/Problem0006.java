@@ -39,14 +39,14 @@ class Problem0006 {
   /**
    * Problem 0006.
    */
-  public static Integer problem0006(Integer _bottom, Integer _top) {
+  public static Integer problem0006(Integer bottom, Integer top) {
     Integer answer = 0;
 
     Integer sumOfSquares = 0;
     Integer baseForSquareOfSum = 0;
     Integer squareOfSum = 0;
 
-    for (Integer i = _bottom; i <= _top; i++) {
+    for (Integer i = bottom; i <= top; i++) {
       sumOfSquares += (int) Math.pow(i, 2);
       baseForSquareOfSum += i;
     }
@@ -54,17 +54,22 @@ class Problem0006 {
     squareOfSum = (int) Math.pow(baseForSquareOfSum, 2);
     answer = squareOfSum - sumOfSquares;
 
-    logger.fine(String.format("Sum of first %d squares = %d", _top, sumOfSquares));
-    logger.fine(String.format("Base for Square Of Sum of first %d = %d", _top, baseForSquareOfSum));
-    logger.fine(String.format("Square Of Sum of first %d = %d", _top, squareOfSum));
+    String log;
+    log = String.format("Sum of first %d squares = %d", top, sumOfSquares);
+    logger.fine(log);
+    log = String.format("Base for Square Of Sum of first %d = %d", top, baseForSquareOfSum);
+    logger.fine(log);
+    log = String.format("Square Of Sum of first %d = %d", top, squareOfSum);
+    logger.fine(log);
 
-    logger.fine(String.format("Difference found %d - %d = %d",
+    log = String.format("Difference found %d - %d = %d",
         squareOfSum,
         sumOfSquares,
-        squareOfSum - sumOfSquares)
-    );
+        squareOfSum - sumOfSquares);
+    logger.fine(log);
 
-    logger.info(String.format("Problem 00006 solved: %d", answer));
+    log = String.format("Problem 00006 solved: %d", answer);
+    logger.info(log);
 
     return answer;
   }
