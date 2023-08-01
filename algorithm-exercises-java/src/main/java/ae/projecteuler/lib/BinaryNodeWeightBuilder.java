@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class BinaryNodeWeightBuilder<T>
     extends BinaryNodeBuilder<T> {
 
-  private ArrayList<Integer> leafCollector = new ArrayList<Integer>();
+  private ArrayList<Integer> leafCollector = new ArrayList<>();
 
   private BinaryNode<Integer> build_binary_node_tree_with_weight_internal(
       Integer[][] dataTree,
@@ -22,7 +22,7 @@ public class BinaryNodeWeightBuilder<T>
 
     if (i < dataTree.length /* && j < dataTree[i].length */) {
       int currentValue = dataTree[i][j] + rootValue;
-      BinaryNode<Integer> resultNode = new BinaryNode<Integer>(Integer.valueOf(currentValue));
+      BinaryNode<Integer> resultNode = new BinaryNode<>(Integer.valueOf(currentValue));
 
       if (i + 1 < dataTree.length && j + 1 < dataTree[i + 1].length) {
         resultNode.setLeft(

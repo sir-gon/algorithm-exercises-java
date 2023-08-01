@@ -20,7 +20,7 @@ public class CustomLogger {
       logLevel = "INFO";
     }
 
-    logLevel.toUpperCase();
+    logLevel = logLevel.toUpperCase();
 
     // Singleton initalization
     if (log == null) {
