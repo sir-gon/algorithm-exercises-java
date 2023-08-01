@@ -1,6 +1,6 @@
 services:
-  projecteuler-java:
-    image: projecteuler-java:latest
+  algorithm-exercises-java:
+    image: algorithm-exercises-java:latest
     build:
       context: .
       target: testing
@@ -11,8 +11,8 @@ services:
       - ./build:/app/build
     profiles: ["testing"]
 
-  projecteuler-java-dev:
-    image: projecteuler-java:dev
+  algorithm-exercises-java-dev:
+    image: algorithm-exercises-java:dev
     build:
       context: .
       target: development
