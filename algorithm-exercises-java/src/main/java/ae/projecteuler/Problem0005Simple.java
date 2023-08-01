@@ -28,13 +28,12 @@ public class Problem0005Simple {
    */
   public static Integer problem0005(Integer bottom, Integer top, Integer startFrom) {
     Integer found = null;
-    Boolean fail;
+    boolean fail;
     String log;
     Integer i;
     Integer test = startFrom;
 
     do {
-      fail = false;
       i = bottom;
       do {
         fail = test % i != 0;
@@ -54,7 +53,6 @@ public class Problem0005Simple {
         found = test;
       }
 
-      fail = false;
       test += 1;
     } while (found == null);
 

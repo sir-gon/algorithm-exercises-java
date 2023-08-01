@@ -24,6 +24,8 @@
 
 package ae.projecteuler;
 
+import java.text.MessageFormat;
+
 import ae.projecteuler.helper.Palindrome;
 
 /**
@@ -38,7 +40,7 @@ public class Problem0004 {
   /**
    * Problem template method.
    */
-  public static Integer problem0004(Integer _bottom, Integer _top) {
+  public static Integer problem0004(Integer bottom, Integer top) {
     Integer i;
     Integer j;
     Integer foundi = null;
@@ -48,14 +50,14 @@ public class Problem0004 {
     // Find all cases
     Integer cycles = 0;
 
-    i = _top;
-    while (i >= _bottom) {
+    i = top;
+    while (i >= bottom) {
       j = i;
-      while (j >= _bottom && (foundj == null || j >= foundj)) {
+      while (j >= bottom && (foundj == null || j >= foundj)) {
         cycles += 1;
 
-        if (Palindrome.isPalindrome(Long.valueOf((long) j * i))) {
-          String log = String.format("FOUND: %d x %d = %d is Palindrome", i, j, i * j);
+        if (Palindrome.isPalindrome(Long.valueOf((long) j * (long) i))) {
+          String log = MessageFormat.format("FOUND: {0} x {1} = {2} is Palindrome", i, j, i * j);
           logger.fine(log);
 
           if (foundPalindrome == null || i * j > foundPalindrome) {
@@ -71,11 +73,12 @@ public class Problem0004 {
       i -= 1;
     }
 
-    String log = String.format("Problem 0004 Largest Palindrome  => %d 𝗑 %d = %d in %d cycles",
-          foundi,
-          foundj,
-          foundPalindrome,
-          cycles);
+    String log = MessageFormat.format(
+        "Problem 0004 Largest Palindrome  => {0} 𝗑 {1} = {2} in {3} cycles",
+        foundi,
+        foundj,
+        foundPalindrome,
+        cycles);
 
     logger.info(log);
 
