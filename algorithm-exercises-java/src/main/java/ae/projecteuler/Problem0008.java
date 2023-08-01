@@ -51,30 +51,31 @@ public class Problem0008 {
   /**
    * Problem template method.
    */
-  public static Long problem0008(String _number, Integer _interval) {
-    String[] digits = _number.split("");
+  public static Long problem0008(String number, Integer interval) {
+    String[] digits = number.split("");
     Integer bottom = 0;
     Integer top = digits.length;
     Long max = 0L;
+    String log;
 
-    for (int i = bottom; i < top - _interval; i++) {
-      ArrayList<Long> digitsSet = new ArrayList<Long>();
+    for (int i = bottom; i < top - interval; i++) {
+      ArrayList<Long> digitsSet = new ArrayList<>();
 
-      for (int j = 0; j < _interval; j++) {
+      for (int j = 0; j < interval; j++) {
         digitsSet.add(Long.parseLong(digits[i + j]));
       }
 
       Long currentProduct = Product.product(digitsSet.toArray(Long[]::new));
-      logger.fine(
-          String.format("Product beetwen %d and %d is: %d", i, i + _interval, currentProduct)
-      );
+      log = String.format("Product beetwen %d and %d is: %d", i, i + interval, currentProduct);
+      logger.fine(log);
 
       if (currentProduct > max) {
         max = currentProduct;
       }
     }
 
-    logger.info(String.format("Problem 00088 solved: %d", max));
+    log = String.format("Problem 0008 solved: %d", max);
+    logger.info(log);
 
     return max;
   }
