@@ -42,9 +42,6 @@ env:
 	@printenv | grep -E "LOG_LEVEL|BRUTEFORCE|BUILDKIT_PROGRESS"
 	@echo "################################################################################"
 
-clean:
-	$(GRADLE) clean
-
 dependencies:
 	@echo "################################################################################"
 	@echo "## Dependencies: ###############################################################"
@@ -52,11 +49,25 @@ dependencies:
 	$(GRADLE) dependencies
 	@echo "################################################################################"
 
+mdlint:
+	markdownlint '**/*.md' --ignore node_modules && echo '✔  Your code looks good.'
+
 lint:
 	$(GRADLE) --console=verbose clean checkstyleMain checkstyleTest
 
+test/static: lint
+
 test: env
 	$(GRADLE) --console=verbose clean test
+
+coverage: test
+
+coverage/html: test
+
+outdated:
+
+clean:
+	$(GRADLE) clean
 
 build: env lint test
 	$(GRADLE) --console=verbose clean build
@@ -66,6 +77,12 @@ compose/build: env
 
 compose/rebuild: env
 	docker-compose --profile testing build --no-cache
+
+compose/lint: env compose/mdlint
+	docker-compose --profile lint build
+
+compose/mdlint: env
+	docker-compose --profile lint run --rm algorithm-exercises-java-mdlint make mdlint
 
 compose/run: compose/build
 	docker-compose --profile testing run --rm algorithm-exercises-java make test

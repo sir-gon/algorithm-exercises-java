@@ -1,4 +1,4 @@
-package ae.projecteuler;
+package ae;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

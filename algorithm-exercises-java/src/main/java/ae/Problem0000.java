@@ -1,18 +1,13 @@
 // CHECKSTYLE.OFF: JavadocParagraph
 /**
- *
- * {TITLE}
- *
- * https://projecteuler.net/problem=XX
- *
- * {DESCRIPTION}
+ * {TITLE}.
  *
  * ////////////////////////////////////////////////////////////////////////////
  * Result found:
  * ////////////////////////////////////////////////////////////////////////////
  */
 
-package ae.projecteuler;
+package ae;
 
 import java.text.MessageFormat;
 

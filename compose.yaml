@@ -11,6 +11,18 @@ services:
       - ./build:/app/build
     profiles: ["testing"]
 
+  algorithm-exercises-java-mdlint:
+    image: algorithm-exercises-ts:mdlint
+    build:
+      context: .
+      target: lint
+    # environment:
+      # LOG_LEVEL: ${LOG_LEVEL:-info} ## (1) ## info | debug
+      # BRUTEFORCE: ${BRUTEFORCE:-false} ## (1) ## true | false
+    volumes:
+      - ./:/app
+    profiles: ["lint"]
+
   algorithm-exercises-java-dev:
     image: algorithm-exercises-java:dev
     build:
