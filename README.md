@@ -4,6 +4,7 @@
 [![codecov](https://codecov.io/gh/sir-gon/projecteuler-java/branch/main/graph/badge.svg?token=7QAS85D3HB)](https://codecov.io/gh/sir-gon/projecteuler-java)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fsir-gon%2Fprojecteuler-java.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fsir-gon%2Fprojecteuler-java?ref=badge_shield)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=sir-gon_algorithm-exercises-java&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=sir-gon_algorithm-exercises-java)
+[![Markdown Lint](https://github.com/sir-gon/algorithm-exercises-java/actions/workflows/markdown-lint.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-java/actions/workflows/markdown-lint.yml)
 
 ![GitHub](https://img.shields.io/github/license/sir-gon/projecteuler-java)
 ![GitHub language count](https://img.shields.io/github/languages/count/sir-gon/projecteuler-java)
