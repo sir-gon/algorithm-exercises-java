@@ -6,6 +6,16 @@ RUN apk add --update --no-cache make
 WORKDIR /app
 
 ###############################################################################
+FROM node:20.2.0-alpine3.16 AS lint
+
+ENV WORKDIR=/app
+WORKDIR ${WORKDIR}
+
+COPY ./algorithm-exercises-java ${WORKDIR}/algorithm-exercises-java
+RUN apk add --update --no-cache make
+RUN npm install -g markdownlint-cli
+
+###############################################################################
 FROM development AS builder
 
 WORKDIR /app
