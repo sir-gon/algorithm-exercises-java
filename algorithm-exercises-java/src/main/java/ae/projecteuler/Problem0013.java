@@ -1,14 +1,4 @@
 // CHECKSTYLE.OFF: JavadocParagraph
-/**
- * Large sum
- *
- * https://projecteuler.net/problem=13
- *
- * Work out the first ten digits of the sum of the following
- * one-hundred 50-digit numbers.
- *
- * See: src/main/java/projecteuler/data/Problem0013Data.java
- */
 
 package ae.projecteuler;
 
