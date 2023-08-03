@@ -60,7 +60,6 @@ public class Problem0005 {
   public static Integer problem0005(Integer bottom, Integer top) {
     String log;
     Integer result = null;
-    Integer cycles = 0;
 
     Map<Long, Integer> minimumPrimeFactorsCollector = new HashMap<>();
 
@@ -68,7 +67,6 @@ public class Problem0005 {
       NaturalNumber number = new NaturalNumber(Long.valueOf(i));
 
       Long[] primeFactors = number.primeFactors();
-      cycles += number.getNextPrimeFactorCycles();
 
       Map<Long, Integer> primeFactorsCount = countOccurrences(Arrays.asList(primeFactors));
 
