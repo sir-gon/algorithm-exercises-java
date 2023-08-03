@@ -60,6 +60,10 @@ public class BinaryNode<T> {
     return this.value.getClass().getName();
   }
 
+  public int hashCode() {
+    return this.value.hashCode();
+  }
+
   /**
    * equals.
    */
