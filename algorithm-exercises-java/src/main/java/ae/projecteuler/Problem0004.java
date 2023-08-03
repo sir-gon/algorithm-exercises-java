@@ -26,9 +26,7 @@ public class Problem0004 {
   /**
    * Problem template method.
    */
-  public static Integer problem0004(Integer bottom, Integer top) {
-    Integer i;
-    Integer j;
+  public static Integer problem0004(int bottom, int top) {
     Integer foundi = null;
     Integer foundj = null;
     Integer foundPalindrome = null;
@@ -36,7 +34,8 @@ public class Problem0004 {
     // Find all cases
     Integer cycles = 0;
 
-    i = top;
+    int i = top;
+    int j;
     while (i >= bottom) {
       j = i;
       while (j >= bottom && (foundj == null || j >= foundj)) {
