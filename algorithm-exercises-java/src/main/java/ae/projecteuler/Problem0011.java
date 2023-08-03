@@ -12,7 +12,6 @@ public class Problem0011 {
   private Problem0011() {}
 
   static java.util.logging.Logger logger = ae.projecteuler.util.CustomLogger.getLogger();
-  private static final String ROW_MESSAGE = "row: i {0}, column: {1}, step {2} => {3}";
 
   /**
    * Problem 0011.
@@ -23,87 +22,68 @@ public class Problem0011 {
       throws IllegalArgumentException {
     Integer top = squareMatrix.length;
     Integer result = 0;
-    Integer acum = 0;
+    int quadrantSize = interval;
+    int matrixLimit = squareMatrix.length - (interval - 1);
 
     String log;
 
-    for (Integer i = 0; i < top; i++) {
-
+    for (int i = 0; i < matrixLimit; i++) {
       if (top != squareMatrix[i].length) {
         throw new IllegalArgumentException("Not a square matrix");
       }
 
-      for (Integer j = 0; j < top; j++) {
-        log = MessageFormat.format("i: {0}, j: {1}", i, j);
+      for (int j = 0; j < matrixLimit; j++) {
+        log = MessageFormat.format("start point => i: {0}, j: {1}", i, j);
         logger.fine(log);
 
-        acum = 1;
+        // reset diagonals
+        int diag1Acum = 1;
+        int diag2Acum = 1;
+        for (int k = 0; k < quadrantSize; k++) {
+          log = MessageFormat.format(
+            "diag1 coordinate: (i, j) = ({0}, {1})",
+            i + k,
+            j + k
+          );
+          logger.fine(log);
+          log = MessageFormat.format(
+            "diag2 coordinate: (i, j) = ({0}, {1})",
+            i + k,
+            j + (quadrantSize - 1) - k
+          );
+          logger.fine(log);
 
-        if (i < top - (interval - 1)) {
-          logger.fine("---- VERTICAL ------------------------------------------");
-          // vertical
+          diag1Acum *= squareMatrix[i + k][j + k];
+          diag2Acum *= squareMatrix[i + k][j + (quadrantSize - 1) - k];
 
-          for (Integer k = 0; k < interval; k++) {
+          result = Math.max(diag1Acum, result);
+          result = Math.max(diag2Acum, result);
+
+          // reset lines
+          int verticalAcum = 1;
+          int horizontalAcum = 1;
+
+          for (int l = 0; l < quadrantSize; l++) {
             log = MessageFormat.format(
-                Problem0011.ROW_MESSAGE,
-                i + k, j, k, squareMatrix[i + k][j]);
-            logger.fine(log);
-            acum *= squareMatrix[i + k][j];
-          }
-        }
-
-        result = Math.max(acum, result);
-
-        acum = 1;
-        if (j < top - (interval - 1)) {
-          logger.fine("---- HORIZONTAL ----------------------------------------");
-          // horizontal
-
-          for (Integer k = 0; k < interval; k++) {
-            log = MessageFormat.format(
-                  Problem0011.ROW_MESSAGE,
-                  i, j + k, k, squareMatrix[i][j + k]
+              "vertical coordinate: (i, j) = ({0}, {1})",
+              i + k,
+              j + l
             );
             logger.fine(log);
-            acum *= squareMatrix[i][j + k];
-          }
-        }
-
-        result = Math.max(acum, result);
-
-        acum = 1;
-        if (i + (interval - 1) < top && j + (interval - 1) < top) {
-          // diagonal top left -> bottom right
-          logger.fine("---- DIAG \\ ---------------------------------------------");
-
-          for (Integer k = 0; k < interval; k++) {
             log = MessageFormat.format(
-              Problem0011.ROW_MESSAGE,
-                i, j + k, k, squareMatrix[i + k][j + k]
+              "horizontal coordinate: (i, j) = ({0}, {1})",
+              i + l,
+              j + k
             );
             logger.fine(log);
-            acum *= squareMatrix[i + k][j + k];
+
+            verticalAcum *= squareMatrix[i + k][j + l];
+            horizontalAcum *= squareMatrix[i + l][j + k];
+
+            result = Math.max(verticalAcum, result);
+            result = Math.max(horizontalAcum, result);
           }
         }
-
-        result = Math.max(acum, result);
-
-        acum = 1;
-        if (i + (interval - 1) < top && j + (interval - 1) < top) {
-          // diagonal top rigth -> bottom left
-          logger.fine("---- DIAG / ---------------------------------------------");
-
-          for (Integer k = 0; k < interval; k++) {
-            log = MessageFormat.format(
-                Problem0011.ROW_MESSAGE,
-                i, j + k, k, squareMatrix[i + k][j + (interval - 1) - k]
-            );
-            logger.fine(log);
-            acum *= squareMatrix[i + k][j + (interval - 1) - k];
-          }
-        }
-
-        result = Math.max(acum, result);
       }
     }
 
