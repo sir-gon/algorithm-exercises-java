@@ -17,6 +17,17 @@ public class Problem0019 {
   static java.util.logging.Logger logger = ae.projecteuler.util.CustomLogger.getLogger();
   private static final String FEBRUARY_KEY = "FEBRUARY";
 
+  private static Map<String, Integer> copyDaysInMonth() {
+    Map<String, Integer> daysInMonth = new LinkedHashMap<>();
+    Set<Entry<String, Integer>>
+        entries = ae.projecteuler.constants.Date.daysInMonth().entrySet();
+    for (Map.Entry<String, Integer> mapEntry : entries) {
+      daysInMonth.put(mapEntry.getKey(), mapEntry.getValue());
+    }
+
+    return daysInMonth;
+  }
+
   /**
    * Problem 0019.
    */
@@ -31,22 +42,12 @@ public class Problem0019 {
     int excess = 0;
 
     // copy days in months
-    Map<String, Integer> daysInMonth = new LinkedHashMap<>();
-    Set<Entry<String, Integer>>
-        entries = ae.projecteuler.constants.Date.daysInMonth().entrySet();
-    for (Map.Entry<String, Integer> mapEntry : entries) {
-      daysInMonth.put(mapEntry.getKey(), mapEntry.getValue());
-    }
+    Map<String, Integer> daysInMonth = copyDaysInMonth();
 
     for (int year = 1900; year < untilYear + 1; year++) {
 
       int leap = (year % 4 == 0 && year % 100 != 0) || year % 400 == 0 ? 1 : 0;
       daysInMonth.put(FEBRUARY_KEY, 28 + leap);
-
-      if (leap != 0) {
-        log = String.format("Year %d has a leap-day", year);
-        logger.fine(log);
-      }
 
       Set<Entry<String, Integer>> months = daysInMonth.entrySet();
       for (Map.Entry<String, Integer> mapEntry : months) {
