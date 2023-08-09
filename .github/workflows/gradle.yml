@@ -9,9 +9,9 @@ name: Java CI with Gradle
 
 on:
   push:
-    branches: [ "main", "develop", "feature/*" ]
+    branches: [ main, develop, feature/* ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ main ]
 
 permissions:
   contents: read
@@ -30,7 +30,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '19'
-          distribution: 'temurin'
+          distribution: temurin
 
       - name: Validate Gradle wrapper
         uses: gradle/wrapper-validation-action@v1

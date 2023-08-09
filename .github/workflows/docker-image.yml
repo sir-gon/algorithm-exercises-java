@@ -1,15 +1,18 @@
 name: Docker Image CI
 
+
 on:
   push:
-    branches: [ "main", "develop", "feature/*" ]
+    branches: [ main, develop, feature/* ]
   pull_request:
-    branches: [ "main" ]
+      branches: [ main ]
+
+permissions: read-all
 
 jobs:
 
   build:
-    name: "Build & Test in Docker"
+    name: Build & Test in Docker
 
     runs-on: ubuntu-latest
 

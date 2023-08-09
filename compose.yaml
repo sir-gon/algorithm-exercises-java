@@ -9,7 +9,7 @@ services:
       BRUTEFORCE: ${BRUTEFORCE:-false} ## (1) ## true | false
     volumes:
       - ./build:/app/build
-    profiles: ["testing"]
+    profiles: [testing]
 
   algorithm-exercises-java-mdlint:
     image: algorithm-exercises-ts:mdlint
@@ -21,7 +21,7 @@ services:
       # BRUTEFORCE: ${BRUTEFORCE:-false} ## (1) ## true | false
     volumes:
       - ./:/app
-    profiles: ["lint"]
+    profiles: [lint]
 
   algorithm-exercises-java-dev:
     image: algorithm-exercises-java:dev
@@ -33,7 +33,7 @@ services:
       BRUTEFORCE: ${BRUTEFORCE:-false} ## (1) ## true | false
     volumes:
       - ./:/app
-    profiles: ["development"]
+    profiles: [development]
 
 ## REFERENCES:
 ## (1) Passing Environment variable with fallback value:

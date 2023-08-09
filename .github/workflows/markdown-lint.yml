@@ -2,9 +2,11 @@ name: Markdown Lint
 
 on:
   push:
-    branches: [ "main", "develop", "feature/*" ]
+    branches: [ main, develop, feature/* ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ main ]
+
+permissions: read-all
 
 jobs:
   build:
@@ -13,7 +15,7 @@ jobs:
 
     strategy:
       matrix:
-        os: ["ubuntu-latest"]
+        os: [ubuntu-latest]
         node-version: [20.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
