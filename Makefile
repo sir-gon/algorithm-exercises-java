@@ -84,6 +84,9 @@ compose/lint: env compose/mdlint
 compose/mdlint: env
 	docker-compose --profile lint run --rm algorithm-exercises-java-mdlint make mdlint
 
+compose/dev:
+	docker-compose --profile development run --rm algorithm-exercises-java-dev sh
+
 compose/run: compose/build
 	docker-compose --profile testing run --rm algorithm-exercises-java make test
 
