@@ -1,5 +1,3 @@
-// CHECKSTYLE.OFF: JavadocParagraph
-
 package ae.projecteuler;
 
 import java.text.MessageFormat;
@@ -7,6 +5,8 @@ import java.util.logging.Logger;
 
 /**
  * Multiples of 3 and 5.
+ *
+ * @link Problem definition [[docs/projecteuler/problem0001.md]]
  */
 public class Problem0001 {
 
@@ -15,7 +15,6 @@ public class Problem0001 {
   static Logger logger = ae.projecteuler.util.CustomLogger.getLogger();
 
   /**
-   *
    * Problem0001.
    */
   public static Integer problem0001(Integer top) {
@@ -37,5 +36,3 @@ public class Problem0001 {
     return result;
   }
 }
-
-//CHECKSTYLE.ON: JavadocParagraph

@@ -1,5 +1,3 @@
-// CHECKSTYLE.OFF: JavadocParagraph
-
 /// ////////////////////////////////////////////////////////////////////////////
 // NOTES ABOUT THE SOLUTION:
 // This solution cycles to test all pairs of factors between 111 and 999 that
@@ -16,6 +14,8 @@ import java.text.MessageFormat;
 
 /**
  * Largest palindrome product.
+ *
+ * @link Problem definition [[docs/projecteuler/problem0004.md]]
  */
 public class Problem0004 {
 
@@ -70,5 +70,3 @@ public class Problem0004 {
     return foundPalindrome;
   }
 }
-
-//CHECKSTYLE.ON: JavadocParagraph

@@ -4,6 +4,8 @@ package ae.projecteuler;
 
 /**
  * Smallest multiple.
+ *
+ * @link Problem definition [[docs/projecteuler/problem0005.md]]
  */
 public class Problem0005Simple {
 

@@ -1,5 +1,3 @@
-// CHECKSTYLE.OFF: JavadocParagraph
-
 package ae.projecteuler;
 
 import ae.projecteuler.helper.Collatz;
@@ -8,7 +6,9 @@ import java.util.ArrayList;
 
 
 /**
- * Problem 0013.
+ * Longest Collatz sequence.
+ *
+ * @link Problem definition [[docs/projecteuler/problem0014.md]]
  */
 public class Problem0014 {
   private Problem0014() {}
@@ -59,5 +59,3 @@ public class Problem0014 {
     return result;
   }
 }
-
-//CHECKSTYLE.ON: JavadocParagraph

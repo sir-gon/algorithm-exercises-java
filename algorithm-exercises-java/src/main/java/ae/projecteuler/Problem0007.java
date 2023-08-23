@@ -1,5 +1,3 @@
-// CHECKSTYLE.OFF: JavadocParagraph
-
 package ae.projecteuler;
 
 import ae.projecteuler.helper.NaturalNumber;
@@ -8,6 +6,8 @@ import java.util.ArrayList;
 
 /**
  * 10001st prime.
+ *
+ * @link Problem definition [[docs/projecteuler/problem0007.md]]
  */
 public class Problem0007 {
 
@@ -49,5 +49,3 @@ public class Problem0007 {
     return answer;
   }
 }
-
-//CHECKSTYLE.ON: JavadocParagraph

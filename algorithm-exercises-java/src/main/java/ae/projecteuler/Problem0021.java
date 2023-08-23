@@ -1,5 +1,3 @@
-// CHECKSTYLE.OFF: JavadocParagraph
-
 package ae.projecteuler;
 
 import ae.projecteuler.helper.BigNum;
@@ -13,9 +11,10 @@ import java.util.Map.Entry;
 import java.util.Set;
 
 
-
 /**
- * Problem 0021.
+ * Amicable numbers.
+ *
+ * @link Problem definition [[docs/projecteuler/problem0021.md]]
  */
 public class Problem0021 {
 
@@ -68,4 +67,3 @@ public class Problem0021 {
     return result.toString();
   }
 }
-//CHECKSTYLE.ON: JavadocParagraph

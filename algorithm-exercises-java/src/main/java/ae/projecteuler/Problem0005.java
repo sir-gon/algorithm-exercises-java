@@ -1,5 +1,3 @@
-// CHECKSTYLE.OFF: JavadocParagraph
-
 package ae.projecteuler;
 
 import ae.projecteuler.helper.NaturalNumber;
@@ -11,6 +9,8 @@ import java.util.Map;
 
 /**
  * Smallest multiple.
+ *
+ * @link Problem definition [[docs/projecteuler/problem0005.md]]
  */
 public class Problem0005 {
 
@@ -33,7 +33,7 @@ public class Problem0005 {
     return occurrences;
   }
 
-  /***
+  /**
    * mixOccurrences.
    */
   public static Map<Long, Integer> mixOccurrences(
@@ -94,5 +94,3 @@ public class Problem0005 {
   }
 
 }
-
-//CHECKSTYLE.ON: JavadocParagraph

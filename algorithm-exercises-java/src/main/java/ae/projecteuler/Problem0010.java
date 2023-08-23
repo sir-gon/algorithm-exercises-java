@@ -1,5 +1,3 @@
-// CHECKSTYLE.OFF: JavadocParagraph
-
 package ae.projecteuler;
 
 import ae.projecteuler.helper.NaturalNumber;
@@ -9,6 +7,8 @@ import java.util.ArrayList;
 
 /**
  * Summation of primes.
+ *
+ * @link Problem definition [[docs/projecteuler/problem0010.md]]
  */
 public class Problem0010 {
 
@@ -45,5 +45,3 @@ public class Problem0010 {
     return result;
   }
 }
-
-//CHECKSTYLE.ON: JavadocParagraph

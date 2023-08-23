@@ -1,5 +1,3 @@
-// CHECKSTYLE.OFF: JavadocParagraph
-
 package ae.projecteuler;
 
 import ae.projecteuler.helper.Divisors;
@@ -11,7 +9,9 @@ import java.util.Set;
 
 
 /**
- * Problem 0023.
+ * Non-abundant sums.
+ *
+ * @link Problem definition [[docs/projecteuler/problem0023.md]]
  */
 public class Problem0023 {
 
@@ -113,5 +113,3 @@ public class Problem0023 {
     return result;
   }
 }
-
-//CHECKSTYLE.ON: JavadocParagraph

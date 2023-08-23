@@ -1,5 +1,3 @@
-// CHECKSTYLE.OFF: JavadocParagraph
-
 package ae.projecteuler;
 
 import java.util.ArrayList;
@@ -7,6 +5,8 @@ import java.util.Arrays;
 
 /**
  * Problem 0024.
+ *
+ * @link Problem definition [[docs/projecteuler/problem0024.md]]
  */
 public class Problem0024 {
 
@@ -54,5 +54,3 @@ public class Problem0024 {
     return Problem0024.permute(inputElements, inputPermutationToFind);
   }
 }
-
-//CHECKSTYLE.ON: JavadocParagraph

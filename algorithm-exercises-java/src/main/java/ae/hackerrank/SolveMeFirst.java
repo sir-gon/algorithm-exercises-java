@@ -1,18 +1,11 @@
-// CHECKSTYLE.OFF: JavadocParagraph
-/**
- * SolveMeFirst.
- *
- * ////////////////////////////////////////////////////////////////////////////
- * Result found:
- * ////////////////////////////////////////////////////////////////////////////
- */
-
 package ae.hackerrank;
 
 import java.text.MessageFormat;
 
 /**
- * SolveMeFirst.
+ * Solve Me First.
+ *
+ * @link Problem definition [[docs/hackerrank/SolveMeFirst.md]]
  */
 public class SolveMeFirst {
 
@@ -37,5 +30,3 @@ public class SolveMeFirst {
     return total;
   }
 }
-
-//CHECKSTYLE.ON: JavadocParagraph

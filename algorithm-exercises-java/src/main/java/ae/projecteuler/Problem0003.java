@@ -1,14 +1,13 @@
-// CHECKSTYLE.OFF: JavadocParagraph
-
 package ae.projecteuler;
 
 import ae.projecteuler.helper.Divisors;
 import ae.projecteuler.helper.NaturalNumber;
 import java.util.Arrays;
 
-
 /**
- * Problem0003.
+ * Largest prime factor.
+ *
+ * @link Problem definition [[docs/projecteuler/problem0003.md]]
  */
 public class Problem0003 {
 
@@ -56,5 +55,3 @@ public class Problem0003 {
   }
 
 }
-
-//CHECKSTYLE.ON: JavadocParagraph

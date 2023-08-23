@@ -1,11 +1,11 @@
-// CHECKSTYLE.OFF: JavadocParagraph
-
 package ae.projecteuler;
 
 import ae.projecteuler.helper.NumberToWord;
 
 /**
- * Problem 0017.
+ * Number letter counts.
+ *
+ * @link Problem definition [[docs/projecteuler/problem0017.md]]
  */
 public class Problem0017 {
 
@@ -38,5 +38,3 @@ public class Problem0017 {
     return acum;
   }
 }
-
-//CHECKSTYLE.ON: JavadocParagraph

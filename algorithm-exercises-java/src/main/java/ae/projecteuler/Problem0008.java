@@ -1,5 +1,3 @@
-// CHECKSTYLE.OFF: JavadocParagraph
-
 package ae.projecteuler;
 
 import ae.projecteuler.helper.Product;
@@ -8,6 +6,8 @@ import java.util.ArrayList;
 
 /**
  * Largest product in a series.
+ *
+ * @link Problem definition [[docs/projecteuler/problem0008.md]]
  */
 public class Problem0008 {
 
@@ -47,5 +47,3 @@ public class Problem0008 {
     return max;
   }
 }
-
-//CHECKSTYLE.ON: JavadocParagraph

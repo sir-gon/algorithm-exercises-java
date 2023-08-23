@@ -1,5 +1,3 @@
-// CHECKSTYLE.OFF: JavadocParagraph
-
 // ////////////////////////////////////////////////////////////////////////////
 // Solution found:
 // Sum of first 100 squares = 338350
@@ -10,6 +8,11 @@
 
 package ae.projecteuler;
 
+/**
+ * Sum square difference.
+ *
+ * @link Problem definition [[docs/projecteuler/problem0006.md]]
+ */
 class Problem0006 {
 
   private Problem0006() {}
@@ -55,5 +58,3 @@ class Problem0006 {
   }
 
 }
-
-//CHECKSTYLE.ON: JavadocParagraph

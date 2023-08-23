@@ -1,9 +1,9 @@
-// CHECKSTYLE.OFF: JavadocParagraph
-
 package ae.projecteuler;
 
 /**
-   * Problem 0015.
+ * Lattice paths.
+ *
+ * @link Problem definition [[docs/projecteuler/problem0015.md]]
  */
 public class Problem0015 {
 
@@ -44,5 +44,3 @@ public class Problem0015 {
     return result;
   }
 }
-
-//CHECKSTYLE.ON: JavadocParagraph

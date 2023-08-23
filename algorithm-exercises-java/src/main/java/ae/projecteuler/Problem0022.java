@@ -1,5 +1,3 @@
-// CHECKSTYLE.OFF: JavadocParagraph
-
 package ae.projecteuler;
 
 import ae.projecteuler.helper.WordScore;
@@ -9,7 +7,9 @@ import java.util.List;
 
 
 /**
- * Problem 0022.
+ * Names scores.
+ *
+ * @link Problem definition [[docs/projecteuler/problem0022.md]]
  */
 public class Problem0022 {
 
@@ -38,5 +38,3 @@ public class Problem0022 {
     return result;
   }
 }
-
-//CHECKSTYLE.ON: JavadocParagraph
