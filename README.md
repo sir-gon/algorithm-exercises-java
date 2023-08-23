@@ -1,4 +1,4 @@
-# Algorithm Exercises (Java 19)
+# Algorithm Exercises (Java 20)
 
 [![Java CI with Gradle](https://github.com/sir-gon/projecteuler-java/actions/workflows/gradle.yml/badge.svg?branch=main)](https://github.com/sir-gon/projecteuler-java/actions/workflows/gradle.yml)
 [![codecov](https://codecov.io/gh/sir-gon/projecteuler-java/branch/main/graph/badge.svg?token=7QAS85D3HB)](https://codecov.io/gh/sir-gon/projecteuler-java)
@@ -132,9 +132,9 @@ Developed with runtime:
 
 ```text
 java --version
-openjdk 19.0.2 2023-01-17
-OpenJDK Runtime Environment Temurin-19.0.2+7 (build 19.0.2+7)
-OpenJDK 64-Bit Server VM Temurin-19.0.2+7 (build 19.0.2+7, mixed mode, sharing)
+java version "20.0.2" 2023-07-18
+Java(TM) SE Runtime Environment (build 20.0.2+9-78)
+Java HotSpot(TM) 64-Bit Server VM (build 20.0.2+9-78, mixed mode, sharing)
 ```
 
 ### License
