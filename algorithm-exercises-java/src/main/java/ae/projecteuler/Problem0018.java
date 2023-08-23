@@ -1,5 +1,3 @@
-// CHECKSTYLE.OFF: JavadocParagraph
-
 package ae.projecteuler;
 
 import ae.projecteuler.lib.BinaryNode;
@@ -9,6 +7,8 @@ import java.util.Arrays;
 
 /**
  * Problem 0018.
+ *
+ * @link Problem definition [[docs/projecteuler/problem0018.md]]
  */
 public class Problem0018 {
 
@@ -41,5 +41,3 @@ public class Problem0018 {
     return result;
   }
 }
-
-//CHECKSTYLE.ON: JavadocParagraph

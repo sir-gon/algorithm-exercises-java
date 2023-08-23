@@ -1,11 +1,11 @@
-// CHECKSTYLE.OFF: JavadocParagraph
-
 package ae.projecteuler;
 
 import java.text.MessageFormat;
 
 /**
- * Problem 0011.
+ * Largest product in a grid.
+ *
+ * @link Problem definition [[docs/projecteuler/problem0011.md]]
  */
 public class Problem0011 {
 
@@ -93,5 +93,3 @@ public class Problem0011 {
     return result;
   }
 }
-
-//CHECKSTYLE.ON: JavadocParagraph

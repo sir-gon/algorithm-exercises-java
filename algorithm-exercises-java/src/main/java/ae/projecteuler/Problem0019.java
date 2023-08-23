@@ -1,5 +1,3 @@
-// CHECKSTYLE.OFF: JavadocParagraph
-
 package ae.projecteuler;
 
 import java.util.LinkedHashMap;
@@ -8,7 +6,9 @@ import java.util.Map.Entry;
 import java.util.Set;
 
 /**
- * Problem 0019.
+ * Counting Sundays.
+ *
+ * @link Problem definition [[docs/projecteuler/problem0019.md]]
  */
 public class Problem0019 {
 
@@ -76,5 +76,3 @@ public class Problem0019 {
     return result;
   }
 }
-
-//CHECKSTYLE.ON: JavadocParagraph

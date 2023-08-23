@@ -1,5 +1,3 @@
-// CHECKSTYLE.OFF: JavadocParagraph
-
 package ae.projecteuler;
 
 import java.text.MessageFormat;
@@ -7,6 +5,8 @@ import java.util.logging.Logger;
 
 /**
  * Even Fibonacci numbers.
+ *
+ * @link Problem definition [[docs/projecteuler/problem0002.md]]
  */
 public class Problem0002 {
 
@@ -48,5 +48,3 @@ public class Problem0002 {
   }
 
 }
-
-//CHECKSTYLE.ON: JavadocParagraph

@@ -1,11 +1,11 @@
-// CHECKSTYLE.OFF: JavadocParagraph
-
 package ae.projecteuler;
 
 import java.text.MessageFormat;
 
 /**
  * Special Pythagorean triplet.
+ *
+ * @link Problem definition [[docs/projecteuler/problem0009.md]]
  */
 public class Problem0009 {
 
@@ -76,5 +76,3 @@ public class Problem0009 {
     return found.ta * found.tb * found.tc;
   }
 }
-
-//CHECKSTYLE.ON: JavadocParagraph

@@ -1,11 +1,11 @@
-// CHECKSTYLE.OFF: JavadocParagraph
-
 package ae.projecteuler;
 
 import ae.projecteuler.helper.BigNum;
 
 /**
  * Problem 0020.
+ *
+ * @link Problem definition [[docs/projecteuler/problem0020.md]]
  */
 public class Problem0020 {
 
@@ -31,5 +31,3 @@ public class Problem0020 {
     return result;
   }
 }
-
-//CHECKSTYLE.ON: JavadocParagraph

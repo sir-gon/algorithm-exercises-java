@@ -1,11 +1,11 @@
-// CHECKSTYLE.OFF: JavadocParagraph
-
 package ae.projecteuler;
 
 import ae.projecteuler.helper.Divisors;
 
 /**
  * Problem 0012.
+ *
+ * @link Problem definition [[docs/projecteuler/problem0012.md]]
  */
 public class Problem0012 {
 
@@ -44,5 +44,3 @@ public class Problem0012 {
     return count;
   }
 }
-
-//CHECKSTYLE.ON: JavadocParagraph

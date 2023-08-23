@@ -1,5 +1,3 @@
-// CHECKSTYLE.OFF: JavadocParagraph
-
 package ae.projecteuler;
 
 import ae.projecteuler.helper.BigNum;
@@ -9,7 +7,9 @@ import java.util.stream.Collectors;
 
 
 /**
- * Problem 0013.
+ * Large sum.
+ *
+ * @link Problem definition [[docs/projecteuler/problem0013.md]]
  */
 public class Problem0013 {
 
@@ -40,5 +40,3 @@ public class Problem0013 {
     return numberString;
   }
 }
-
-//CHECKSTYLE.ON: JavadocParagraph
