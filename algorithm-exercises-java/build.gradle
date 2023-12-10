@@ -49,6 +49,12 @@ checkstyle {
     showViolations = true
 }
 
+configurations.checkstyle {
+  resolutionStrategy.capabilitiesResolution.withCapability("com.google.collections:google-collections") {
+    select("com.google.guava:guava:0")
+  }
+}
+
 def jacocoExclusions = [
         '**/*App.class',
         '**/CustomLogger.class'
