@@ -42,12 +42,11 @@ public class Euler001 {
     n = n - 1;
     Long lcm = (a * b) / gcd(a, b);
 
-    String log = MessageFormat.format("Problem 000XX solved: {0}", result);
-
     result = sumOfArithmeticProgression((long) n, (long) a)
-       + sumOfArithmeticProgression((long) n, (long) b)
-       - sumOfArithmeticProgression((long) n, lcm);
+      + sumOfArithmeticProgression((long) n, (long) b)
+      - sumOfArithmeticProgression((long) n, lcm);
 
+    String log = MessageFormat.format("Problem 001 solved: {0}", result);
     logger.info(log);
 
     return result;
