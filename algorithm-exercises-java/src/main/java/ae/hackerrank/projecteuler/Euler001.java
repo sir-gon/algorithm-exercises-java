@@ -1,7 +1,5 @@
 package ae.hackerrank.projecteuler;
 
-import java.text.MessageFormat;
-
 /**
  * Multiples of 3 and 5.
  *
@@ -46,7 +44,7 @@ public class Euler001 {
       + sumOfArithmeticProgression((long) n, (long) b)
       - sumOfArithmeticProgression((long) n, lcm);
 
-    String log = MessageFormat.format("Problem 001 solved: {0}", result);
+    String log = String.format("Problem 001 solved: %d", result);
     logger.info(log);
 
     return result;

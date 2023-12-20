@@ -23,7 +23,10 @@ class Euler001Test {
 
     Long solutionFound = Euler001.euler001(a, b, n);
 
-    String log = String.format("Problem 0023 {0} answer must be: {1}", testCase, answer);
+    String log = String.format("Problem 001 solved: %s. Answer must be %s",
+        testCase,
+        answer);
+
     assertEquals(answer, solutionFound, log);
   }
 }

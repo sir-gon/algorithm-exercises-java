@@ -1,7 +1,6 @@
 package ae.projecteuler;
 
 import ae.projecteuler.helper.Collatz;
-import java.text.MessageFormat;
 import java.util.ArrayList;
 
 
@@ -38,7 +37,7 @@ public class Problem0014 {
         sequence.add(c);
       } while (c != 1);
 
-      log = MessageFormat.format("sequence of {0}: {1}", i, sequence);
+      log = String.format("sequense of %d: %s", i, sequence);
       logger.fine(log);
 
       if (sequence.size() > maxSequence.size()) {
@@ -46,8 +45,8 @@ public class Problem0014 {
       }
     }
 
-    log = MessageFormat.format(
-        "Large sequence found: {0} has {1} elements",
+    log = String.format(
+        "Large sequence found: %s has %d elements",
         maxSequence,
         maxSequence.size());
     logger.fine(log);

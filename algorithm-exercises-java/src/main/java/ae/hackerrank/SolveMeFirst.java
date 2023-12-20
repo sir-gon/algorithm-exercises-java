@@ -1,7 +1,5 @@
 package ae.hackerrank;
 
-import java.text.MessageFormat;
-
 /**
  * Solve Me First.
  *
@@ -24,7 +22,7 @@ public class SolveMeFirst {
       total += name;
     }
 
-    String log = MessageFormat.format("solveMeFirst solved: {0}", total);
+    String log = String.format("solveMeFirst solved: %d", total);
     logger.info(log);
 
     return total;
