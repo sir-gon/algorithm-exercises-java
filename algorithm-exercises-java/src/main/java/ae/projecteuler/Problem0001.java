@@ -1,6 +1,5 @@
 package ae.projecteuler;
 
-import java.text.MessageFormat;
 import java.util.logging.Logger;
 
 /**
@@ -23,14 +22,14 @@ public class Problem0001 {
 
     for (i = 0; i < top; i++) {
       if (i % 3 == 0 || i % 5 == 0) {
-        String log = MessageFormat.format("Line result: {0}", i);
+        String log = String.format("Line result: %d", i);
         logger.fine(log);
 
         result += i;
       }
     }
 
-    String log = MessageFormat.format("Problem 00001 solved: {0}", result);
+    String log = String.format("Problem 0001 solved: %d", result);
     logger.info(log);
 
     return result;

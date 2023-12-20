@@ -2,7 +2,6 @@ package ae.projecteuler;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.text.MessageFormat;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
 
@@ -36,12 +35,12 @@ class Problem0005Test {
     Integer top = 20;
     Integer solutionFound = Problem0005.problem0005(bottom, top);
 
-    log = MessageFormat.format("Problem 0005 BRUTE-FORCE answer must be: {0}", answer);
+    log = String.format("Problem 0005 BRUTE-FORCE answer must be: %s", answer);
     assertEquals(answer, solutionFound,
         log
     );
 
-    log = "Problem 00005 BRUTE FORCE ends.";
+    log = "Problem 0005 BRUTE FORCE ends.";
     logger.info(log);
   }
 }

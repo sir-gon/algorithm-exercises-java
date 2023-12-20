@@ -4,8 +4,6 @@
 
 package ae;
 
-import java.text.MessageFormat;
-
 /**
  * {TITLE}.
  *
@@ -23,7 +21,7 @@ public class Problem0000 {
   public static Integer problem0000() {
     Integer result = null;
 
-    String log = MessageFormat.format("Problem 000XX solved: {0}", result);
+    String log = String.format("Problem 00XX solved: %d", result);
     logger.info(log);
 
     return result;

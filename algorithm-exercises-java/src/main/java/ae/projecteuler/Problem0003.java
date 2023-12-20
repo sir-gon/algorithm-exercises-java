@@ -4,6 +4,7 @@ import ae.projecteuler.helper.Divisors;
 import ae.projecteuler.helper.NaturalNumber;
 import java.util.Arrays;
 
+
 /**
  * Largest prime factor.
  *
@@ -42,7 +43,7 @@ public class Problem0003 {
       if (prime) {
         maxPrimeFactor = divs[i];
 
-        log = String.format("Problem 00003 solved: %d", maxPrimeFactor);
+        log = String.format("Problem 0003 solved: %d", maxPrimeFactor);
         logger.info(log);
 
         return maxPrimeFactor;

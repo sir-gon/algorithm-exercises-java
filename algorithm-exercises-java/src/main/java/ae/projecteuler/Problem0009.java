@@ -1,6 +1,5 @@
 package ae.projecteuler;
 
-import java.text.MessageFormat;
 
 /**
  * Special Pythagorean triplet.
@@ -46,13 +45,13 @@ public class Problem0009 {
 
       while (b < c && found == null) {
         // TESTING
-        log = MessageFormat.format("TESTING: a = {0} b = {1} c = {2}", a, b, c);
+        log = String.format("TESTING: a = %d b = %d c = %d", a, b, c);
         logger.fine(log);
         Triplet test = new Problem0009().new Triplet(a, b, c);
 
         if (test.isPythagoreanTriplet()) {
           found = test;
-          log = MessageFormat.format("FOUND: a = {0} b = {1} c = {2}", a, b, c);
+          log = String.format("FOUND: a = %d b = %d c = %d", a, b, c);
           logger.fine(log);
         }
 
@@ -68,9 +67,9 @@ public class Problem0009 {
       return null;
     }
 
-    log = MessageFormat.format("FOUND: a = {0}, b = {1}, c = {2}", found.ta, found.tb, found.tc);
+    log = String.format("FOUND: a = %d, b = %d, c = %d", found.ta, found.tb, found.tc);
     logger.info(log);
-    log = MessageFormat.format("PRODUCT: a * b * c = {0}", found.ta * found.tb * found.tc);
+    log = String.format("PRODUCT: a * b * c = %d", found.ta * found.tb * found.tc);
     logger.info(log);
 
     return found.ta * found.tb * found.tc;

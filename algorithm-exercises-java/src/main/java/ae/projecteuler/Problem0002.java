@@ -1,6 +1,5 @@
 package ae.projecteuler;
 
-import java.text.MessageFormat;
 import java.util.logging.Logger;
 
 /**
@@ -28,7 +27,7 @@ public class Problem0002 {
     do {
       fibo = last2 + last1;
 
-      String log = MessageFormat.format("Fibonacci({0}) = {1}", i, fibo);
+      String log = String.format("Fibonacci(%d) = %d", i, fibo);
       logger.fine(log);
 
       if (fibo % 2 == 0) {
@@ -41,7 +40,7 @@ public class Problem0002 {
       i += 1;
     } while (fibo < top);
 
-    String log = MessageFormat.format("Problem 0002 result: {0}", evenSum);
+    String log = String.format("Problem 0002 result: %d", evenSum);
     logger.info(log);
 
     return evenSum;
