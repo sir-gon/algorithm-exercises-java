@@ -36,7 +36,7 @@ jobs:
         uses: gradle/wrapper-validation-action@v1
 
       - name: Setup and execute Gradle 'test' task
-        uses: gradle/gradle-build-action@v2
+        uses: gradle/gradle-build-action@v3
         with:
           arguments: --console=verbose clean checkstyleMain checkstyleTest test
 
