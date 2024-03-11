@@ -88,7 +88,6 @@ public class BigNum {
   public BigNum bigSum(List<Integer> numberList) {
     List<Integer> a = this.getInternalValue();
     List<Integer> b = numberList;
-    ArrayList<Integer> result = new ArrayList<>();
 
     Collections.reverse(a);
     Collections.reverse(b);
@@ -107,6 +106,7 @@ public class BigNum {
       }
     }
 
+    ArrayList<Integer> result = new ArrayList<>();
     // do the sum
     for (int i = 0; i < a.size(); i++) {
       sum = a.get(i) + b.get(i) + carry;
