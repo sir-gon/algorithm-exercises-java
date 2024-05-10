@@ -26,19 +26,20 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: Set up JDK 20
+      - name: Set up JDK
         uses: actions/setup-java@v4
         with:
-          java-version: '20'
+          java-version: '21'
           distribution: temurin
 
       - name: Validate Gradle wrapper
-        uses: gradle/wrapper-validation-action@v3
+        uses: gradle/actions/wrapper-validation@v3
 
-      - name: Setup and execute Gradle 'test' task
-        uses: gradle/gradle-build-action@v3
-        with:
-          arguments: --console=verbose clean checkstyleMain checkstyleTest test
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+
+      - name: Runt tests
+        run: ./gradlew --console=verbose test
 
       - name: Upload coverage reports to Codecov with GitHub Action
         uses: codecov/codecov-action@v4
