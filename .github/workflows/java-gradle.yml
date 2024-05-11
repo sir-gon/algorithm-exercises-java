@@ -5,7 +5,7 @@
 # This workflow will build a Java project with Gradle and cache/restore any dependencies to improve the workflow execution time
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-gradle
 
-name: Java CI with Gradle
+name: Java CI Tests with Gradle
 
 on:
   push:
@@ -22,26 +22,28 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
+        java: [ '20', '21', '22' ]
     runs-on: ${{ matrix.os }}
 
     steps:
       - uses: actions/checkout@v4
-      - name: Set up JDK 20
+      - name: Set up JDK
         uses: actions/setup-java@v4
         with:
-          java-version: '20'
+          java-version: ${{ matrix.java }}
           distribution: temurin
 
       - name: Validate Gradle wrapper
-        uses: gradle/wrapper-validation-action@v3
+        uses: gradle/actions/wrapper-validation@v3
 
-      - name: Setup and execute Gradle 'test' task
-        uses: gradle/gradle-build-action@v3
-        with:
-          arguments: --console=verbose clean checkstyleMain checkstyleTest test
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
 
-      - name: Upload coverage reports to Codecov with GitHub Action
-        uses: codecov/codecov-action@v4
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }} # required
-          verbose: true # optional (default = false)
+      - name: Clean
+        run: ./gradlew --console=verbose clean
+
+      - name: Lint
+        run: ./gradlew --console=verbose checkstyleMain checkstyleTest
+
+      - name: Runt tests
+        run: ./gradlew --console=verbose test

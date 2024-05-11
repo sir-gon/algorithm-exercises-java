@@ -1,12 +1,12 @@
 ###############################################################################
-FROM gradle:8.4.0-jdk20-alpine AS development
+FROM gradle:8.7.0-jdk21-alpine AS development
 
 RUN apk add --update --no-cache make
 
 WORKDIR /app
 
 ###############################################################################
-FROM node:20.2.0-alpine3.16 AS lint
+FROM node:22.1.0-alpine3.19 AS lint
 
 ENV WORKDIR=/app
 WORKDIR ${WORKDIR}
