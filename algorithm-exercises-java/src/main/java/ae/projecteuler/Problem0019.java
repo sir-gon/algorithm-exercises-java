@@ -14,7 +14,7 @@ public class Problem0019 {
 
   private Problem0019() {}
 
-  static java.util.logging.Logger logger = ae.projecteuler.util.CustomLogger.getLogger();
+  static java.util.logging.Logger logger = util.CustomLogger.getLogger();
   private static final String FEBRUARY_KEY = "FEBRUARY";
 
   private static Map<String, Integer> copyDaysInMonth() {

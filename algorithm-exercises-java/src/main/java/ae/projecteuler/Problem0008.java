@@ -13,7 +13,7 @@ public class Problem0008 {
 
   private Problem0008() {}
 
-  static java.util.logging.Logger logger = ae.projecteuler.util.CustomLogger.getLogger();
+  static java.util.logging.Logger logger = util.CustomLogger.getLogger();
 
   /**
    * Problem template method.

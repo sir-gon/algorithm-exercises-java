@@ -8,7 +8,7 @@ import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
 
 class Problem0005Test {
 
-  static java.util.logging.Logger logger = ae.projecteuler.util.CustomLogger.getLogger();
+  static java.util.logging.Logger logger = util.CustomLogger.getLogger();
 
   @Test void problem0005() {
 

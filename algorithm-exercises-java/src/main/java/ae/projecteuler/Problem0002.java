@@ -11,7 +11,7 @@ public class Problem0002 {
 
   private Problem0002() {}
 
-  static Logger logger = ae.projecteuler.util.CustomLogger.getLogger();
+  static Logger logger = util.CustomLogger.getLogger();
 
   /**
    * Problem template method.

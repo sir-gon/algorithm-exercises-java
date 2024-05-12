@@ -10,7 +10,7 @@ public class Problem0009 {
 
   private Problem0009() {}
 
-  static java.util.logging.Logger logger = ae.projecteuler.util.CustomLogger.getLogger();
+  static java.util.logging.Logger logger = util.CustomLogger.getLogger();
 
   private class Triplet {
 

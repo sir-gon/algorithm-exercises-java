@@ -11,7 +11,7 @@ public class Problem0005Simple {
 
   private Problem0005Simple() {}
 
-  static java.util.logging.Logger logger = ae.projecteuler.util.CustomLogger.getLogger();
+  static java.util.logging.Logger logger = util.CustomLogger.getLogger();
 
   /**
    * Problem 0005.

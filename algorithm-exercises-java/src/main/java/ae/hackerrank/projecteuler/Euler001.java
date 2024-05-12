@@ -9,7 +9,7 @@ public class Euler001 {
 
   private Euler001() {}
 
-  static java.util.logging.Logger logger = ae.projecteuler.util.CustomLogger.getLogger();
+  static java.util.logging.Logger logger = util.CustomLogger.getLogger();
 
   /**
    * Greatest common divisor.

@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
  */
 public class BigNum {
 
-  static java.util.logging.Logger logger = ae.projecteuler.util.CustomLogger.getLogger();
+  static java.util.logging.Logger logger = util.CustomLogger.getLogger();
 
   int cycles = 0;
   List<Integer> value = new ArrayList<>();

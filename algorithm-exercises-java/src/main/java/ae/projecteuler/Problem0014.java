@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class Problem0014 {
   private Problem0014() {}
 
-  static java.util.logging.Logger logger = ae.projecteuler.util.CustomLogger.getLogger();
+  static java.util.logging.Logger logger = util.CustomLogger.getLogger();
 
   /**
    * Problem 0013.
