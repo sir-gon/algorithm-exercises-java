@@ -1,14 +1,19 @@
 # Algorithm Exercises (Java 20)
 
-[![Java CI with Gradle](https://github.com/sir-gon/projecteuler-java/actions/workflows/gradle.yml/badge.svg?branch=main)](https://github.com/sir-gon/projecteuler-java/actions/workflows/gradle.yml)
-[![codecov](https://codecov.io/gh/sir-gon/projecteuler-java/branch/main/graph/badge.svg?token=7QAS85D3HB)](https://codecov.io/gh/sir-gon/projecteuler-java)
+[![Java with Gradle](https://github.com/sir-gon/algorithm-exercises-java/actions/workflows/java-gradle.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-java/actions/workflows/java-gradle.yml)
+[![codecov](https://codecov.io/gh/sir-gon/algorithm-exercises-java/graph/badge.svg?token=7QAS85D3HB)](https://codecov.io/gh/sir-gon/algorithm-exercises-java)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fsir-gon%2Fprojecteuler-java.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fsir-gon%2Fprojecteuler-java?ref=badge_shield)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=sir-gon_algorithm-exercises-java&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=sir-gon_algorithm-exercises-java)
 [![Markdown Lint](https://github.com/sir-gon/algorithm-exercises-java/actions/workflows/markdown-lint.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-java/actions/workflows/markdown-lint.yml)
 
-![GitHub](https://img.shields.io/github/license/sir-gon/projecteuler-java)
-![GitHub language count](https://img.shields.io/github/languages/count/sir-gon/projecteuler-java)
-![GitHub top language](https://img.shields.io/github/languages/top/sir-gon/projecteuler-java)
+![GitHub](https://img.shields.io/github/license/sir-gon/algorithm-exercises-java)
+![GitHub language count](https://img.shields.io/github/languages/count/sir-gon/algorithm-exercises-java)
+![GitHub top language](https://img.shields.io/github/languages/top/sir-gon/algorithm-exercises-java)
+
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=sir-gon_algorithm-exercises-java&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=sir-gon_algorithm-exercises-java)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=sir-gon_algorithm-exercises-java&metric=coverage)](https://sonarcloud.io/summary/new_code?id=sir-gon_algorithm-exercises-java)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=sir-gon_algorithm-exercises-java&metric=bugs)](https://sonarcloud.io/summary/new_code?id=sir-gon_algorithm-exercises-java)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=sir-gon_algorithm-exercises-java&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=sir-gon_algorithm-exercises-java)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=sir-gon_algorithm-exercises-java&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=sir-gon_algorithm-exercises-java)
 
 ## What is this?
 
@@ -94,8 +99,8 @@ Coverage results will be stored in host **/coverage** directory (mounted as volu
 
 ```text
 # Build a complete image
-docker-compose build projecteuler-java
-docker-compose run --rm projecteuler-java gradle clean test
+docker-compose build algorithm-exercises-java
+docker-compose run --rm algorithm-exercises-java gradle clean test
 ```
 
 ### Enable BRUTEFORCE tests with full DEBUG output
@@ -103,7 +108,7 @@ docker-compose run --rm projecteuler-java gradle clean test
 With docker-compose:
 
 ```text
-docker-compose --profile testing run --rm projecteuler-java make test -e LOG_LEVEL=DEBUG -e BRUTEFORCE=true
+docker-compose --profile testing run --rm algorithm-exercises-java make test -e LOG_LEVEL=DEBUG -e BRUTEFORCE=true
 ```
 
 Using make:
@@ -122,8 +127,8 @@ Dependencies should be installed to run (not present in this target) so, you
 
 ```text
 # install node_modules dependencies using docker runtime and store them in host directory
-docker-compose build --compress projecteuler-java-dev
-docker-compose run --rm projecteuler-java-dev gradle clean test
+docker-compose build --compress algorithm-exercises-java-dev
+docker-compose run --rm algorithm-exercises-java-dev gradle clean test
 ```
 
 ## About development
