@@ -1,5 +1,3 @@
-package ae.projecteuler;
-
 /**
 * Main app entry point.
 */
