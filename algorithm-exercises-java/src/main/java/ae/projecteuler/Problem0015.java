@@ -16,7 +16,8 @@ public class Problem0015 {
    */
   public static Long problem0015(Integer gridSide) {
 
-    Long[][] grid = new Long[gridSide + 1][gridSide + 1];
+    int limit = gridSide + 1;
+    Long[][] grid = new Long[limit][limit];
 
     // initialization
     for (int i = 0; i <= gridSide; i++) {
@@ -26,8 +27,8 @@ public class Problem0015 {
     }
 
     // vertex computing
-    for (int i = 1; i <= gridSide; i++) {
-      for (int j = 1; j <= gridSide; j++) {
+    for (int i = 1; i < limit; i++) {
+      for (int j = 1; j < limit; j++) {
         long upperParent = grid[i - 1][j];
         long leftParent = grid[i][j - 1];
 
