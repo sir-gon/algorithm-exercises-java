@@ -15,19 +15,26 @@ public class Problem0015 {
    * Problem 0015.
    */
   public static Long problem0015(Integer gridSide) {
+    int limit;
 
-    Long[][] grid = new Long[gridSide + 1][gridSide + 1];
+    if (gridSide <= 0) {
+      limit = 0;
+    } else {
+      limit = gridSide + 1;
+    }
+
+    Long[][] grid = new Long[limit][limit];
 
     // initialization
-    for (int i = 0; i <= gridSide; i++) {
-      for (int j = 0; j <= gridSide; j++) {
+    for (int i = 0; i < limit; i++) {
+      for (int j = 0; j < limit; j++) {
         grid[i][j] = 1L;
       }
     }
 
     // vertex computing
-    for (int i = 1; i <= gridSide; i++) {
-      for (int j = 1; j <= gridSide; j++) {
+    for (int i = 1; i < limit; i++) {
+      for (int j = 1; j < limit; j++) {
         long upperParent = grid[i - 1][j];
         long leftParent = grid[i][j - 1];
 
@@ -35,7 +42,12 @@ public class Problem0015 {
       }
     }
 
-    Long result = grid[gridSide][gridSide];
+    Long result;
+    if (grid.length > 0) {
+      result = grid[grid.length - 1][grid.length - 1];
+    } else {
+      result = 0L;
+    }
 
     String log;
     log = String.format("Problem 00015 solved: %d", result);
