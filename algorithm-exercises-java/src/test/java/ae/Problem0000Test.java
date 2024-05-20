@@ -10,7 +10,6 @@ class Problem0000Test {
   @Test void problem0000() {
 
     Integer answer = null;
-    // Integer input = 0;
     Integer solutionFound = Problem0000.problem0000();
 
     assertEquals(answer, solutionFound,

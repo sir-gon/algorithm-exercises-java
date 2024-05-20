@@ -71,8 +71,13 @@ class BigNumTest {
         solutionFound.toArray()
     );
 
-    solutionFound = solutionFound.bigSum(new BigNum(6));
+    BigNum solutionFoundB = new BigNum(input);
+    solutionFoundB.bigSum(solutionFound);
 
+    assertArrayEquals(
+        expectedAnswer,
+        solutionFoundB.toArray()
+    );
   }
 
   @Test void bigMultiplyRowToBigNumTest() {
@@ -102,8 +107,6 @@ class BigNumTest {
         new Integer[]{ 8, 9, 9, 1 },
         BigNum.bigMultiplyRowToBigNum("999", 9).toArray()
     );
-    solutionFound = solutionFound.bigSum(new BigNum(6));
-
   }
 
   @Test void bigMultiplyTest() {
