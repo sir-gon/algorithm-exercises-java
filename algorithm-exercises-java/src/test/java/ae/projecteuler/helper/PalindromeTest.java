@@ -17,16 +17,6 @@ class PalindromeTest {
     }
   }
 
-  // @Test void instanceCaseTest() {
-  //   Palindrome classUnderTest = new Palindrome();
-
-  //   assertNotNull(classUnderTest);
-  //   assertInstanceOf(
-  //       Palindrome.class,
-  //       classUnderTest,
-  //       String.format("Must be an instance of %s", Palindrome.class));
-  // }
-
   @Test void listOfPalindromBorderCaseTest() {
 
     PalindromTestCase[] testCases = {
@@ -37,6 +27,4 @@ class PalindromeTest {
       assertEquals(testCase.answer, Palindrome.isPalindrome(testCase.input));
     }
   }
-
-
 }
