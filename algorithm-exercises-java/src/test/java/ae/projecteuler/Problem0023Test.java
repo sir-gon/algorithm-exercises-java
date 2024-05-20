@@ -22,7 +22,7 @@ class Problem0023Test {
 
     Integer solutionFound = Problem0023.problem0023(inputUnderLimit, inputSuperLimit);
 
-    String log = String.format("Problem 0023 {0} answer must be: {1}", testCase, answer);
+    String log = String.format("Problem 0023 %s answer must be: %d", testCase, answer);
     assertEquals(answer, solutionFound, log);
   }
 
