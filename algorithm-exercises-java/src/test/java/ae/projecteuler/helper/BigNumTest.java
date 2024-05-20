@@ -70,6 +70,14 @@ class BigNumTest {
         expectedAnswer,
         solutionFound.toArray()
     );
+
+    BigNum solutionFoundB = new BigNum(input);
+    solutionFoundB.bigSum(solutionFound);
+
+    assertArrayEquals(
+        expectedAnswer,
+        solutionFoundB.toArray()
+    );
   }
 
   @Test void bigMultiplyRowToBigNumTest() {
