@@ -99,8 +99,6 @@ class BigNumTest {
         new Integer[]{ 8, 9, 9, 1 },
         BigNum.bigMultiplyRowToBigNum("999", 9).toArray()
     );
-    solutionFound = solutionFound.bigSum(new BigNum(6));
-
   }
 
   @Test void bigMultiplyTest() {
