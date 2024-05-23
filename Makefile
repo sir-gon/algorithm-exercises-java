@@ -63,6 +63,7 @@ test: env
 coverage: test
 
 coverage/html: test
+	open algorithm-exercises-java/build/reports/jacoco/test/html/index.html
 
 outdated:
 
