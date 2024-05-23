@@ -10,9 +10,10 @@ class SolveMeFirstTest {
   @Test void solveMeFirst() {
 
     Integer answer = 5;
-    Integer[] input = {2, 3};
+    Integer a = 2;
+    Integer b = 3;
 
-    Integer solutionFound = SolveMeFirst.solveMeFirst(input);
+    Integer solutionFound = SolveMeFirst.solveMeFirst(a, b);
 
     assertEquals(answer, solutionFound,
         String.format("Problem 0000 answer must be: %d", answer)

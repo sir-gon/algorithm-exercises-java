@@ -3,7 +3,7 @@ package ae.hackerrank;
 /**
  * Solve Me First.
  *
- * @link Problem definition [[docs/hackerrank/SolveMeFirst.md]]
+ * @link Problem definition [[docs/hackerrank/warmup/solve_me_first.md]]
  */
 public class SolveMeFirst {
 
@@ -14,17 +14,7 @@ public class SolveMeFirst {
   /**
    * solveMeFirst.
    */
-  public static Integer solveMeFirst(Integer[] inputs) {
-
-    int total = 0;
-
-    for (Integer name : inputs) {
-      total += name;
-    }
-
-    String log = String.format("solveMeFirst solved: %d", total);
-    logger.info(log);
-
-    return total;
+  public static int solveMeFirst(int a, int b) {
+    return a + b;
   }
 }
