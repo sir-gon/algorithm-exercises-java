@@ -17,7 +17,10 @@ class SimpleArraySumTest {
     Integer solutionFound = SimpleArraySum.simpleArraySum(ar);
 
     assertEquals(answer, solutionFound,
-        String.format("Problem 0000 answer must be: %d", answer)
+        String.format("%s(%s) answer must be: %d",
+        "SimpleArraySum.simpleArraySum",
+        ar.toString(),
+        answer)
     );
   }
 }

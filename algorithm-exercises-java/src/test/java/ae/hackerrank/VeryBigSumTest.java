@@ -17,7 +17,7 @@ class VeryBigSumTest {
     Long solutionFound = VeryBigSum.aVeryBigSum(arr);
 
     assertEquals(answer, solutionFound,
-        String.format("Problem 0000 answer must be: %d", answer)
+        String.format("%s(%s) answer must be: %d", "VeryBigSum.aVeryBigSum", arr.toString(), answer)
     );
   }
 }
