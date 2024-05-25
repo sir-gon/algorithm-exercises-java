@@ -16,7 +16,7 @@ class SolveMeFirstTest {
     Integer solutionFound = SolveMeFirst.solveMeFirst(a, b);
 
     assertEquals(answer, solutionFound,
-        String.format("Problem 0000 answer must be: %d", answer)
+        String.format("%s(%d, %d) answer must be: %d", "SolveMeFirst.solveMeFirst", a, b, answer)
     );
   }
 }

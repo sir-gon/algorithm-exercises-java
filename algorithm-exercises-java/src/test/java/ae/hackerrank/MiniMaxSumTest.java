@@ -41,9 +41,11 @@ class MiniMaxSumTest {
       String solutionFound = MiniMaxSum.miniMaxSum(testCase.input);
 
       assertEquals(testCase.expected, solutionFound,
-          String.format(
-              "CompareTriplets.compareTriplets() answer must be: %s",
-              testCase.expected.toString()));
+          String.format("%s(%s) answer must be: %s",
+              "MiniMaxSum.miniMaxSum",
+              testCase.input.toString(),
+              testCase.expected.toString())
+      );
     }
   }
 
