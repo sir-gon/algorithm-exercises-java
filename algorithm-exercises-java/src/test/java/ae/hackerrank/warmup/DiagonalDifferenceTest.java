@@ -1,4 +1,4 @@
-package ae.hackerrank;
+package ae.hackerrank.warmup;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

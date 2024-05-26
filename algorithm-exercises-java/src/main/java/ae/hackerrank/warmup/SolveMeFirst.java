@@ -1,4 +1,4 @@
-package ae.hackerrank;
+package ae.hackerrank.warmup;
 
 /**
  * Solve Me First.
