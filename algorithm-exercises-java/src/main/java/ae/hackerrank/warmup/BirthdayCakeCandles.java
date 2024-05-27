@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * Birthday Cake Candles.
  *
- * @link Problem definition [[docs/hackerrank/warmup/solve_me_first.md]]
+ * @link Problem definition [[docs/hackerrank/warmup/birthday_cake_candles.md]]
  */
 public class BirthdayCakeCandles {
 
