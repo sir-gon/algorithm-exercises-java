@@ -28,7 +28,7 @@ dependencies {
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
     // This dependency is used by the application.
-    implementation 'com.google.guava:guava:33.2.0-jre'
+    implementation 'com.google.guava:guava:33.2.1-jre'
 }
 
 application {
@@ -51,7 +51,7 @@ checkstyle {
 
 configurations.checkstyle {
   resolutionStrategy.capabilitiesResolution.withCapability("com.google.collections:google-collections") {
-    select("com.google.guava:guava:33.2.0-jre")
+    select("com.google.guava:guava:33.2.1-jre")
   }
 }
 
