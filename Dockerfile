@@ -1,5 +1,5 @@
 ###############################################################################
-FROM gradle:8.7.0-jdk21-alpine AS development
+FROM gradle:8.8.0-jdk21-alpine AS development
 
 RUN apk add --update --no-cache make
 
