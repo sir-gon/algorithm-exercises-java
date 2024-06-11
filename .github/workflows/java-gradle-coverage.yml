@@ -1,37 +1,36 @@
+# yamllint disable rule:line-length
 # This workflow uses actions that are not certified by GitHub.
 # They are provided by a third-party and are governed by
 # separate terms of service, privacy policy, and support
 # documentation.
 # This workflow will build a Java project with Gradle and cache/restore any dependencies to improve the workflow execution time
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-gradle
+# yamllint enable rule:line-length
+---
 
 name: Java CI Coverage with Gradle
 
-on:
+on: # yamllint disable-line rule:truthy
   push:
-    branches: [ main, develop, feature/* ]
+    branches: ["main", "develop", "feature/*"]
   pull_request:
-    branches: [ main ]
+    branches: ["main"]
 
 permissions:
   contents: read
 
 jobs:
-  gradle:
-
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-    runs-on: ${{ matrix.os }}
+  coverage:
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
       - name: Set up JDK
         uses: actions/setup-java@v4
         with:
-          java-version: '21'
+          java-version: 21
+          # Alternative distribution options are available
           distribution: temurin
-
       - name: Validate Gradle wrapper
         uses: gradle/actions/wrapper-validation@v3
 
