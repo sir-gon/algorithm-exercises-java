@@ -11,8 +11,8 @@ services:
       - ./build:/app/build
     profiles: [testing]
 
-  algorithm-exercises-java-mdlint:
-    image: algorithm-exercises-ts:mdlint
+  algorithm-exercises-java-lint:
+    image: algorithm-exercises-ts:lint
     build:
       context: .
       target: lint
