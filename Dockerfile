@@ -87,7 +87,7 @@ CMD ["make", "test"]
 ## in the production phase, "good practices" such as
 ## WORKDIR and USER are maintained
 ##
-FROM eclipse-temurin:21.0.3_9-jre-alpine AS production
+FROM eclipse-temurin:22.0.1_8-jre-alpine AS production
 
 ENV LOG_LEVEL=INFO
 ENV BRUTEFORCE=false
