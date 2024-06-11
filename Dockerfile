@@ -66,4 +66,41 @@ RUN chmod +x gradlew
 RUN gradle --console=verbose build
 
 ###############################################################################
+### In testing stage, can't use USER, due permissions issue
+## in github actions environment:
+##
+## https://docs.github.com/en/actions/creating-actions/dockerfile-support-for-github-actions
+##
 FROM builder AS testing
+
+ENV LOG_LEVEL=INFO
+ENV BRUTEFORCE=false
+
+WORKDIR /app
+
+RUN ls -alh
+
+CMD ["make", "test"]
+
+###############################################################################
+### In production stage
+## in the production phase, "good practices" such as
+## WORKDIR and USER are maintained
+##
+FROM eclipse-temurin:21.0.3_9-jre-alpine AS production
+
+ENV LOG_LEVEL=INFO
+ENV BRUTEFORCE=false
+
+RUN adduser -D worker
+RUN mkdir -p /app
+RUN chown worker:worker /app
+
+WORKDIR /app
+
+COPY --from=builder ./algorithm-exercises-java/build/libs/algorithm-exercises-java.jar ${WORKDIR}/algorithm-exercises-java.jar
+RUN ls -alh
+
+USER worker
+
+# CMD []
