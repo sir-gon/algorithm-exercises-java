@@ -1,8 +1,10 @@
+---
+
 name: SonarCloud
 
-on:
+on: # yamllint disable-line rule:truthy
   push:
-    branches: [ main, develop, feature/* ]
+    branches: ["main", "develop", "feature/*"]
   pull_request:
     types: [opened, synchronize, reopened]
 
@@ -15,12 +17,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+          # Shallow clones should be disabled for a better relevancy of analysis
+          fetch-depth: 0
       - name: Set up JDK
         uses: actions/setup-java@v4
-        with:
+        with: # Alternative distribution options are available
           java-version: 21
-          distribution: temurin # Alternative distribution options are available
+          distribution: temurin
       - name: Cache SonarCloud packages
         uses: actions/cache@v4
         with:
@@ -35,6 +38,7 @@ jobs:
           restore-keys: ${{ runner.os }}-gradle
       - name: Build and analyze
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          # Needed to get PR information, if any
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: ./gradlew --console=verbose test sonar
