@@ -31,8 +31,10 @@ COPY ./CODE_OF_CONDUCT.md ${WORKDIR}/
 # Code source
 COPY ./algorithm-exercises-java ${WORKDIR}/algorithm-exercises-java
 COPY ./settings.gradle ${WORKDIR}/
-COPY ./config ${WORKDIR}/config
 COPY ./Makefile ${WORKDIR}/
+
+# code linting conf
+COPY ./checkstyle.xml ${WORKDIR}/checkstyle.xml
 
 # markdownlint conf
 COPY ./.markdownlint.yaml ${WORKDIR}/

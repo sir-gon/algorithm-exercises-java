@@ -1,7 +1,7 @@
 {
     "java.configuration.updateBuildConfiguration": "automatic",
     "java.compile.nullAnalysis.mode": "automatic",
-    "java.checkstyle.configuration": "${workspaceFolder}/config/checkstyle/checkstyle.xml",
+    "java.checkstyle.configuration": "${workspaceFolder}/checkstyle.xml",
     "java.checkstyle.version": "10.10.0",
     "sonarlint.connectedMode.project": {
         "connectionId": "sir-gon",
