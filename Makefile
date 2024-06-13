@@ -108,8 +108,7 @@ compose/test: compose/build
 	docker-compose --profile testing run --rm algorithm-exercises-java-test make test
 
 compose/run: compose/build
-	docker-compose --profile production run --rm algorithm-exercises-java make run
-
+	docker-compose --profile testing run --rm algorithm-exercises-java make run
 all: env dependencies lint test
 
 run:
