@@ -1,8 +1,8 @@
 ---
 
 services:
-  algorithm-exercises-java:
-    image: algorithm-exercises-java:latest
+  algorithm-exercises-java-test:
+    image: algorithm-exercises-java:test
     build:
       context: .
       target: testing
@@ -10,7 +10,8 @@ services:
       LOG_LEVEL: ${LOG_LEVEL:-info} ## (1) ## info | debug
       BRUTEFORCE: ${BRUTEFORCE:-false} ## (1) ## true | false
     volumes:
-      - ./build:/app/build
+      # - ./build:/app/build
+      - ./:/app
     profiles: [testing]
 
   algorithm-exercises-java-lint:
@@ -37,6 +38,17 @@ services:
       - ./:/app
     profiles: [development]
 
+  algorithm-exercises-java:
+    image: algorithm-exercises-java:latest
+    build:
+      context: .
+      target: production
+    environment:
+      LOG_LEVEL: ${LOG_LEVEL:-info} ## (1) ## info | debug
+      BRUTEFORCE: ${BRUTEFORCE:-false} ## (1) ## true | false
+    # volumes:
+    #   - ./:/app
+    profiles: [production]
 ## REFERENCES:
 ## (1) Passing Environment variable with fallback value:
 ##    https://stackoverflow.com/a/70772707/6366150

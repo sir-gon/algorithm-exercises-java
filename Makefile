@@ -74,16 +74,21 @@ outdated:
 clean:
 	$(GRADLE) clean
 
-build: env lint test
-	$(GRADLE) --console=verbose clean build
+build: env
+	$(GRADLE) --console=verbose clean build \
+		--exclude-task test \
+		--exclude-task checkstyleMain \
+		--exclude-task checkstyleTest
 
 compose/build: env
 	docker-compose --profile lint build
 	docker-compose --profile testing build
+	docker-compose --profile production build
 
 compose/rebuild: env
 	docker-compose --profile lint build --no-cache
 	docker-compose --profile testing build --no-cache
+	docker-compose --profile production build --no-cache
 
 compose/lint/markdown: compose/build
 	docker-compose --profile lint run --rm algorithm-exercises-java-lint make lint/markdown
@@ -99,7 +104,13 @@ compose/test/static: compose/build
 
 compose/lint: compose/lint/markdown compose/lint/yaml compose/test/styling compose/test/static
 
+compose/test: compose/build
+	docker-compose --profile testing run --rm algorithm-exercises-java-test make test
+
 compose/run: compose/build
-	docker-compose --profile testing run --rm algorithm-exercises-java make test
+	docker-compose --profile production run --rm algorithm-exercises-java make run
 
 all: env dependencies lint test
+
+run:
+	ls -alh

@@ -4,6 +4,8 @@ FROM gradle:8.8.0-jdk21-alpine AS base
 ENV WORKDIR=/app
 WORKDIR ${WORKDIR}
 
+RUN apk add --update --no-cache make
+
 ###############################################################################
 FROM base AS lint
 
@@ -31,8 +33,10 @@ COPY ./CODE_OF_CONDUCT.md ${WORKDIR}/
 # Code source
 COPY ./algorithm-exercises-java ${WORKDIR}/algorithm-exercises-java
 COPY ./settings.gradle ${WORKDIR}/
-COPY ./config ${WORKDIR}/config
 COPY ./Makefile ${WORKDIR}/
+
+# code linting conf
+COPY ./checkstyle.xml ${WORKDIR}/
 
 # markdownlint conf
 COPY ./.markdownlint.yaml ${WORKDIR}/
@@ -46,24 +50,23 @@ CMD ["make", "lint"]
 ###############################################################################
 FROM base AS development
 
-RUN apk add --update --no-cache make
+COPY ./algorithm-exercises-java ${WORKDIR}/algorithm-exercises-java
+COPY ./settings.gradle ${WORKDIR}/
+COPY ./Makefile ${WORKDIR}/
+COPY ./checkstyle.xml ${WORKDIR}/
+COPY ./gradle ${WORKDIR}/
+COPY ./gradlew ${WORKDIR}/
 
 ###############################################################################
 FROM development AS builder
 
-WORKDIR /app
-
-## Copy sources to builder stage
-COPY ./algorithm-exercises-java ${WORKDIR}/algorithm-exercises-java
-COPY ./config ${WORKDIR}/config
-COPY ./gradle ${WORKDIR}/gradle
-COPY ./gradlew ${WORKDIR}/gradlew
-COPY ./settings.gradle ${WORKDIR}/settings.gradle
-COPY ./Makefile ${WORKDIR}/Makefile
+ENV WORKDIR=/app
+WORKDIR ${WORKDIR}
 
 ## build
-RUN chmod +x gradlew
-RUN gradle --console=verbose build
+RUN make build
+
+# CMD []
 
 ###############################################################################
 ### In testing stage, can't use USER, due permissions issue
@@ -71,12 +74,12 @@ RUN gradle --console=verbose build
 ##
 ## https://docs.github.com/en/actions/creating-actions/dockerfile-support-for-github-actions
 ##
-FROM builder AS testing
+FROM development AS testing
 
 ENV LOG_LEVEL=INFO
 ENV BRUTEFORCE=false
-
-WORKDIR /app
+ENV WORKDIR=/app
+WORKDIR ${WORKDIR}
 
 RUN ls -alh
 
@@ -91,16 +94,18 @@ FROM eclipse-temurin:22.0.1_8-jre-alpine AS production
 
 ENV LOG_LEVEL=INFO
 ENV BRUTEFORCE=false
+ENV WORKDIR=/app
+WORKDIR ${WORKDIR}
 
 RUN adduser -D worker
 RUN mkdir -p /app
 RUN chown worker:worker /app
 
-WORKDIR /app
+RUN apk add --update --no-cache make
+COPY ./Makefile ${WORKDIR}/
+COPY --from=builder /app/algorithm-exercises-java/build/libs/algorithm-exercises-java.jar ${WORKDIR}/algorithm-exercises-java.jar
 
-COPY --from=builder ./algorithm-exercises-java/build/libs/algorithm-exercises-java.jar ${WORKDIR}/algorithm-exercises-java.jar
 RUN ls -alh
 
 USER worker
-
-# CMD []
+CMD ["make", "run"]
