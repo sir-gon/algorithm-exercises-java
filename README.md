@@ -1,15 +1,14 @@
 # Algorithm Exercises (Java 20)
 
 [![Java with Gradle](https://github.com/sir-gon/algorithm-exercises-java/actions/workflows/java-gradle.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-java/actions/workflows/java-gradle.yml)
-[![codecov](https://codecov.io/gh/sir-gon/algorithm-exercises-java/graph/badge.svg?token=7QAS85D3HB)](https://codecov.io/gh/sir-gon/algorithm-exercises-java)
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fsir-gon%2Fprojecteuler-java.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fsir-gon%2Fprojecteuler-java?ref=badge_shield)
+[![Markdown Lint](https://github.com/sir-gon/algorithm-exercises-java/actions/workflows/markdown-lint.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-java/actions/workflows/markdown-lint.yml)
+[![YAML lint](https://github.com/sir-gon/algorithm-exercises-java/actions/workflows/yamllint.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-java/actions/workflows/yamllint.yml)
 
 ![GitHub](https://img.shields.io/github/license/sir-gon/algorithm-exercises-java)
 ![GitHub language count](https://img.shields.io/github/languages/count/sir-gon/algorithm-exercises-java)
 ![GitHub top language](https://img.shields.io/github/languages/top/sir-gon/algorithm-exercises-java)
-
-[![Markdown Lint](https://github.com/sir-gon/algorithm-exercises-java/actions/workflows/markdown-lint.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-java/actions/workflows/markdown-lint.yml)
-[![YAML lint](https://github.com/sir-gon/algorithm-exercises-java/actions/workflows/yamllint.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-java/actions/workflows/yamllint.yml)
+[![codecov](https://codecov.io/gh/sir-gon/algorithm-exercises-java/graph/badge.svg?token=7QAS85D3HB)](https://codecov.io/gh/sir-gon/algorithm-exercises-java)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fsir-gon%2Fprojecteuler-java.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fsir-gon%2Fprojecteuler-java?ref=badge_shield)
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=sir-gon_algorithm-exercises-java&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=sir-gon_algorithm-exercises-java)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=sir-gon_algorithm-exercises-java&metric=coverage)](https://sonarcloud.io/summary/new_code?id=sir-gon_algorithm-exercises-java)
