@@ -62,7 +62,7 @@ test/styling: dependencies
 test/static: dependencies
 
 test: env
-	$(GRADLE) --console=verbose clean test
+	$(GRADLE) --console=verbose clean test -x checkstyleMain checkstyleTest
 
 coverage: test
 

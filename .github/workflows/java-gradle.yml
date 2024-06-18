@@ -48,4 +48,4 @@ jobs:
         run: ./gradlew --console=verbose checkstyleMain checkstyleTest
 
       - name: Runt tests
-        run: ./gradlew --console=verbose test
+        run: ./gradlew --console=verbose test -x checkstyleMain checkstyleTest
