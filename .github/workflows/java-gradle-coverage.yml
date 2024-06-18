@@ -37,8 +37,8 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
 
-      - name: Runt tests
-        run: ./gradlew --console=verbose test
+      - name: Run tests
+        run: ./gradlew --console=verbose test -x checkstyleMain checkstyleTest
 
       - name: Upload coverage reports to Codecov with GitHub Action
         uses: codecov/codecov-action@v4
