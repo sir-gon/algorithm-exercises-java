@@ -47,5 +47,5 @@ jobs:
       - name: Lint
         run: ./gradlew --console=verbose checkstyleMain checkstyleTest
 
-      - name: Runt tests
+      - name: Run tests
         run: ./gradlew --console=verbose test -x checkstyleMain checkstyleTest
