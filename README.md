@@ -26,7 +26,7 @@ This repository is part of a series that share and solve the same [objectives](#
 with the difference that each one is based on a different software ecosystem,
 depending on the chosen programming language:
 
-- [Modern Javascript: algorithm-exercises-java](https://github.com/sir-gon/algorithm-exercises-java)
+- [Modern Javascript: algorithm-exercises-js](https://github.com/sir-gon/algorithm-exercises-js)
 - [Python 3.x: algorithm-exercises-py](https://github.com/sir-gon/algorithm-exercises-py)
 - [Typescript: algorithm-exercises-ts](https://github.com/sir-gon/algorithm-exercises-ts)
 - [Go / Golang: algorithm-exercises-go](https://github.com/sir-gon/algorithm-exercises-go)
