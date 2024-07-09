@@ -12,8 +12,8 @@ updates:
     schedule:
       interval: weekly
 
-  # Maintain dependencies for npm
-  - package-ecosystem: npm
+  # Maintain dependencies for gradle
+  - package-ecosystem: gradle
     directory: /
     schedule:
       interval: weekly
