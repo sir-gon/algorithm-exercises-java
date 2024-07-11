@@ -44,6 +44,7 @@ COPY ./.markdownlint.yaml ${WORKDIR}/
 # yamllint conf
 COPY ./.yamllint ${WORKDIR}/
 COPY ./.yamlignore ${WORKDIR}/
+COPY ./.gitignore ${WORKDIR}/
 
 CMD ["make", "lint"]
 
