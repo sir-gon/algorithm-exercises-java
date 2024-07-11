@@ -1,5 +1,5 @@
 ###############################################################################
-FROM gradle:8.8.0-jdk21-alpine AS base
+FROM gradle:8.8.0-jdk22-alpine AS base
 
 ENV WORKDIR=/app
 WORKDIR ${WORKDIR}
@@ -44,6 +44,7 @@ COPY ./.markdownlint.yaml ${WORKDIR}/
 # yamllint conf
 COPY ./.yamllint ${WORKDIR}/
 COPY ./.yamlignore ${WORKDIR}/
+COPY ./.gitignore ${WORKDIR}/
 
 CMD ["make", "lint"]
 
