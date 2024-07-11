@@ -15,7 +15,7 @@ services:
     profiles: [testing]
 
   algorithm-exercises-java-lint:
-    image: algorithm-exercises-ts:lint
+    image: algorithm-exercises-java:lint
     build:
       context: .
       target: lint
