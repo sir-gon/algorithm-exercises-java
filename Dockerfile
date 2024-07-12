@@ -1,5 +1,5 @@
 ###############################################################################
-FROM gradle:8.8.0-jdk22-alpine AS base
+FROM gradle:8.9.0-jdk22-alpine AS base
 
 ENV WORKDIR=/app
 WORKDIR ${WORKDIR}
