@@ -5,6 +5,8 @@ ENV WORKDIR=/app
 WORKDIR ${WORKDIR}
 
 RUN apk add --update --no-cache make
+RUN apk upgrade --update --no-cache openssl libcrypto3 libssl3 # FIX CVE-2024-5535
+RUN apk upgrade --update --no-cache --available # FIX CVE-2024-5535 CVE-2024-4741
 
 ###############################################################################
 FROM base AS lint
@@ -92,6 +94,8 @@ CMD ["make", "test"]
 ## WORKDIR and USER are maintained
 ##
 FROM eclipse-temurin:22.0.1_8-jre-alpine AS production
+RUN apk upgrade --update --no-cache openssl libcrypto3 libssl3 # FIX CVE-2024-5535
+RUN apk upgrade --update --no-cache --available # FIX CVE-2024-5535 CVE-2024-4741
 
 ENV LOG_LEVEL=INFO
 ENV BRUTEFORCE=false
