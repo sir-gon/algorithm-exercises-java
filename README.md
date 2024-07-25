@@ -19,7 +19,14 @@
 
 ## TL;DR
 
-[Install and run](#install-and-run)
+Algorithms Exercises solved in [Java](https://www.java.org/),
+running with Gradle + JUnit testing suite. Developed with TDD.
+
+[![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)](https://www.java.com/)
+[![Gradle](https://img.shields.io/badge/Gradle-02303A.svg?style=for-the-badge&logo=Gradle&logoColor=white)](https://gradle.org/)
+[![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
+
+Go to [Install and run](#install-and-run)
 
 ## What is this?
 
