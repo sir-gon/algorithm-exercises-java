@@ -93,7 +93,7 @@ CMD ["make", "test"]
 ## in the production phase, "good practices" such as
 ## WORKDIR and USER are maintained
 ##
-FROM eclipse-temurin:22.0.1_8-jre-alpine AS production
+FROM eclipse-temurin:22.0.2_9-jre-alpine AS production
 RUN apk upgrade --update --no-cache openssl libcrypto3 libssl3 # FIX CVE-2024-5535
 RUN apk upgrade --update --no-cache --available # FIX CVE-2024-5535 CVE-2024-4741
 
