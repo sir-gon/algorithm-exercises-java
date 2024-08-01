@@ -2,7 +2,10 @@
 
 name: Snyk Code (Java gradle-jdk17)
 
-on: push # yamllint disable-line rule:truthy
+on: # yamllint disable-line rule:truthy
+  push:
+  pull_request:
+  workflow_dispatch:
 
 jobs:
   security:
