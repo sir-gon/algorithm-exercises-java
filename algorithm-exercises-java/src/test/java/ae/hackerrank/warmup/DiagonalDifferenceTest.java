@@ -17,9 +17,9 @@ class DiagonalDifferenceTest {
     public List<List<Integer>> matrix;
     public Integer expected;
 
-    public DiagonalDifferenceTestCase(List<List<Integer>> _input, int _expected) {
-      this.matrix = _input;
-      this.expected = _expected;
+    public DiagonalDifferenceTestCase(List<List<Integer>> input, int expected) {
+      this.matrix = input;
+      this.expected = expected;
     }
   }
 

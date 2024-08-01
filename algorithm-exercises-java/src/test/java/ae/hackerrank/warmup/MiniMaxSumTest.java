@@ -19,9 +19,9 @@ class MiniMaxSumTest {
     public List<Integer> input;
     public String expected;
 
-    public MiniMaxSumTestCase(List<Integer> _input, String _expected) {
-      this.input = _input;
-      this.expected = _expected;
+    public MiniMaxSumTestCase(List<Integer> input, String expected) {
+      this.input = input;
+      this.expected = expected;
     }
   }
 

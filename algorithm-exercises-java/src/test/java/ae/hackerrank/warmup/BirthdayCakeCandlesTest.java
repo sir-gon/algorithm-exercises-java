@@ -18,9 +18,9 @@ class BirthdayCakeCandlesTest {
     public List<Integer> candles;
     public Integer expected;
 
-    public BirthdayCakeCandlesTestCase(List<Integer> _candles, Integer _expected) {
-      this.candles = _candles;
-      this.expected = _expected;
+    public BirthdayCakeCandlesTestCase(List<Integer> candles, Integer expected) {
+      this.candles = candles;
+      this.expected = expected;
     }
   }
 

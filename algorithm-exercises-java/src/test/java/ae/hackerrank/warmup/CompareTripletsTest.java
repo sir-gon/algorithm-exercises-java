@@ -18,10 +18,10 @@ class CompareTripletsTest {
     public List<Integer> lb;
     public List<Integer> expected;
 
-    public CompareTripletsTestCase(List<Integer> _la, List<Integer> _lb, List<Integer> _expected) {
-      this.la = _la;
-      this.lb = _lb;
-      this.expected = _expected;
+    public CompareTripletsTestCase(List<Integer> la, List<Integer> lb, List<Integer> expected) {
+      this.la = la;
+      this.lb = lb;
+      this.expected = expected;
     }
   }
 
