@@ -172,11 +172,11 @@ class NaturalNumberTest {
           String.format("Must be an instance of %s", NaturalNumber.class)
       );
 
-      final Long[] answer_prime_factors = answer.primeFactors();
-      final Integer answer_prime_factors_cycles = answer.getPrimeFactorCycles();
+      final Long[] answerPrimeFactors = answer.primeFactors();
+      final Integer answerPrimeFactorsCycles = answer.getPrimeFactorCycles();
 
-      assertArrayEquals(expected.factors, answer_prime_factors);
-      assertEquals(expected.cycles, answer_prime_factors_cycles);
+      assertArrayEquals(expected.factors, answerPrimeFactors);
+      assertEquals(expected.cycles, answerPrimeFactorsCycles);
     }
   }
 
@@ -193,9 +193,9 @@ class NaturalNumberTest {
           String.format("Must be an instance of %s", NaturalNumber.class)
       );
 
-      final Integer answer_prime_factors_cycles = answer.getPrimeFactorCycles();
+      final Integer answerPrimeFactorsCycles = answer.getPrimeFactorCycles();
 
-      assertEquals(expected.cycles, answer_prime_factors_cycles);
+      assertEquals(expected.cycles, answerPrimeFactorsCycles);
     }
   }
 
