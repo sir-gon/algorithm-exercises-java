@@ -4,9 +4,10 @@ name: SonarCloud
 
 on: # yamllint disable-line rule:truthy
   push:
-    branches: ["main", "develop", "feature/*"]
+    branches: ["main"]
   pull_request:
     types: [opened, synchronize, reopened]
+  workflow_dispatch:
 
 permissions: read-all
 
