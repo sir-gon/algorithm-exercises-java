@@ -16,9 +16,9 @@ class PlusMinusTest {
     public List<Integer> input;
     public String expected;
 
-    public PlusMinusTestCase(List<Integer> _input, String _expected) {
-      this.input = _input;
-      this.expected = _expected;
+    public PlusMinusTestCase(List<Integer> input, String expected) {
+      this.input = input;
+      this.expected = expected;
     }
   }
 

@@ -15,9 +15,9 @@ class StaircaseTest {
     public Integer input;
     public String expected;
 
-    public StaircaseTestCase(Integer _input, String _expected) {
-      this.input = _input;
-      this.expected = _expected;
+    public StaircaseTestCase(Integer input, String expected) {
+      this.input = input;
+      this.expected = expected;
     }
   }
 

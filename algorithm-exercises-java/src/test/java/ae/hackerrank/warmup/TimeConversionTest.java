@@ -15,9 +15,9 @@ class TimeConversionTest {
     public String input;
     public String expected;
 
-    public TimeConversionTestCase(String _input, String _expected) {
-      this.input = _input;
-      this.expected = _expected;
+    public TimeConversionTestCase(String input, String expected) {
+      this.input = input;
+      this.expected = expected;
     }
   }
 
