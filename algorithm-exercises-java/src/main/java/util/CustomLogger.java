@@ -1,7 +1,9 @@
 package util;
 
 /**
- * https://www.logicbig.com/tutorials/core-java-tutorial/logging/levels.html
+ * CustomLogger.
+ *
+ * @link https://www.logicbig.com/tutorials/core-java-tutorial/logging/levels.html
  */
 public class CustomLogger {
 
