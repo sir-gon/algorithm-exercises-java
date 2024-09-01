@@ -2,6 +2,11 @@ package ae.hackerrank.interview_preparation_kit.arrays;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import java.io.File;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import org.junit.jupiter.api.BeforeAll;
@@ -11,76 +16,62 @@ import org.junit.jupiter.api.TestInstance.Lifecycle;
 
 
 @TestInstance(Lifecycle.PER_CLASS)
-  class ArraysLeftRotationTest {
+class ArraysLeftRotationTest {
 
-  public class ArraysLeftRotationTestCase {
-    public List<Integer> input;
-    public List<Integer> expected;
-
-    public ArraysLeftRotationTestCase(List<Integer> input, List<Integer> expected) {
-      this.input = input;
-      this.expected = expected;
-    }
-  }
-
-  public class ArraysLeftRotationsTestCase {
-    public List<Integer> input;
-    public Integer d;
-    public List<Integer> expected;
-
-    public ArraysLeftRotationsTestCase(List<Integer> input, Integer d, List<Integer> expected) {
-      this.input = input;
-      this.d = d;
-      this.expected = expected;
-    }
-  }
-
-  public List<ArraysLeftRotationTestCase> testCases;
-  public List<ArraysLeftRotationsTestCase> testRotationsCases;
+  public JsonNode testCases;
 
   @BeforeAll
-  public void setup() {
-    this.testCases = Arrays.asList(
-      new ArraysLeftRotationTestCase(Arrays.asList(1, 2, 3, 4, 5), Arrays.asList(2, 3, 4, 5, 1)),
-      new ArraysLeftRotationTestCase(Arrays.asList(2, 3, 4, 5, 1), Arrays.asList(3, 4, 5, 1, 2)),
-      new ArraysLeftRotationTestCase(Arrays.asList(3, 4, 5, 1, 2), Arrays.asList(4, 5, 1, 2, 3)),
-      new ArraysLeftRotationTestCase(Arrays.asList(4, 5, 1, 2, 3), Arrays.asList(5, 1, 2, 3, 4)),
-      new ArraysLeftRotationTestCase(Arrays.asList(5, 1, 2, 3, 4), Arrays.asList(1, 2, 3, 4, 5))
-    );
+  public void setup() throws IOException {
+    ObjectMapper objectMapper = new ObjectMapper();
 
-    this.testRotationsCases = Arrays.asList(
-      new ArraysLeftRotationsTestCase(
-        Arrays.asList(1, 2, 3, 4, 5),
-        4,
-        Arrays.asList(5, 1, 2, 3, 4))
+    String path = String.join("/", "hackerrank",
+        "interview_preparation_kit",
+        "arrays",
+        "ctci_array_left_rotation.testcases.json");
+    File file = new File(
+        this.getClass()
+        .getClassLoader()
+        .getResource(path)
+        .getFile()
     );
+    this.testCases = objectMapper.readTree(file);
   }
 
-  @Test void testRotLeftOne() {
-    for (ArraysLeftRotationTestCase testCase : this.testCases) {
-      List<Integer> solutionFound = ArraysLeftRotation.rotLeftOne(testCase.input);
+  @Test void testRotLeftOne() throws JsonProcessingException {
 
-      assertEquals(testCase.expected, solutionFound,
+    ObjectMapper mapper = new ObjectMapper();
+
+    for (JsonNode testCase : this.testCases) {
+      int[] input  = mapper.readValue(testCase.get("input").toString(), int[].class);
+      List<Integer> tlist = Arrays.stream(input).boxed().toList();
+      List<Integer> solutionFound = ArraysLeftRotation.rotLeftOne(tlist);
+
+      int[] expected  = mapper.readValue(testCase.get("expected").toString(), int[].class);
+      List<Integer> texpected = Arrays.stream(expected).boxed().toList();
+
+
+      assertEquals(texpected, solutionFound,
           String.format("%s(%s) answer must be: %s",
             "CompareTriplets.compareTriplets",
-            testCase.input.toString(),
-            testCase.expected.toString())
+            testCase.get("input"),
+            testCase.get("expected"))
       );
     }
   }
 
   @Test void testRotLeft() {
-    for (ArraysLeftRotationsTestCase testCase : this.testRotationsCases) {
-      List<Integer> solutionFound = ArraysLeftRotation.rotLeft(testCase.input, testCase.d);
+    List<Integer> input = Arrays.asList(1, 2, 3, 4, 5);
+    List<Integer> expected = Arrays.asList(5, 1, 2, 3, 4);
+    Integer d = 4;
 
-      assertEquals(testCase.expected, solutionFound,
-          String.format("%s(%s, %d) answer must be: %s",
-            "CompareTriplets.compareTriplets",
-            testCase.input.toString(),
-            testCase.d,
-            testCase.expected.toString())
-      );
-    }
+    List<Integer> solutionFound = ArraysLeftRotation.rotLeft(input, d);
+
+    assertEquals(expected, solutionFound,
+        String.format("%s(%s, %d) answer must be: %s",
+          "CompareTriplets.compareTriplets",
+          input.toString(),
+          d,
+          expected.toString())
+    );
   }
-
 }
