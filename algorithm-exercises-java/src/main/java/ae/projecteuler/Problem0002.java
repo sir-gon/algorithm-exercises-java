@@ -1,6 +1,6 @@
 package ae.projecteuler;
 
-import util.CustomLogger;
+import util.Log;
 
 /**
  * Even Fibonacci numbers.
@@ -26,7 +26,7 @@ public class Problem0002 {
       fibo = last2 + last1;
 
       String log = String.format("Fibonacci(%d) = %d", i, fibo);
-      CustomLogger.debug(log);
+      Log.debug(log);
 
       if (fibo % 2 == 0) {
         evenSum += fibo;
@@ -39,7 +39,7 @@ public class Problem0002 {
     } while (fibo < top);
 
     String log = String.format("Problem 0002 result: %d", evenSum);
-    CustomLogger.info(log);
+    Log.info(log);
 
     return evenSum;
   }

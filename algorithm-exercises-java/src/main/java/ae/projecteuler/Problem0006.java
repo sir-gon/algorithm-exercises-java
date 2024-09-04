@@ -8,7 +8,7 @@
 
 package ae.projecteuler;
 
-import util.CustomLogger;
+import util.Log;
 
 /**
  * Sum square difference.
@@ -40,20 +40,20 @@ class Problem0006 {
 
     String log;
     log = String.format("Sum of first %d squares = %d", top, sumOfSquares);
-    CustomLogger.debug(log);
+    Log.debug(log);
     log = String.format("Base for Square Of Sum of first %d = %d", top, baseForSquareOfSum);
-    CustomLogger.debug(log);
+    Log.debug(log);
     log = String.format("Square Of Sum of first %d = %d", top, squareOfSum);
-    CustomLogger.debug(log);
+    Log.debug(log);
 
     log = String.format("Difference found %d - %d = %d",
         squareOfSum,
         sumOfSquares,
         squareOfSum - sumOfSquares);
-    CustomLogger.debug(log);
+    Log.debug(log);
 
     log = String.format("Problem 00006 solved: %d", answer);
-    CustomLogger.info(log);
+    Log.info(log);
 
     return answer;
   }

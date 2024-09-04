@@ -1,6 +1,6 @@
 package ae.projecteuler;
 
-import util.CustomLogger;
+import util.Log;
 
 /**
  * Multiples of 3 and 5.
@@ -21,14 +21,14 @@ public class Problem0001 {
     for (i = 0; i < top; i++) {
       if (i % 3 == 0 || i % 5 == 0) {
         String log = String.format("Line result: %d", i);
-        CustomLogger.debug(log);
+        Log.debug(log);
 
         result += i;
       }
     }
 
     String log = String.format("Problem 0001 solved: %d", result);
-    CustomLogger.info(log);
+    Log.info(log);
 
     return result;
   }

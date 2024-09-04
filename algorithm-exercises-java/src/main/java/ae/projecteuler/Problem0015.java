@@ -1,6 +1,6 @@
 package ae.projecteuler;
 
-import util.CustomLogger;
+import util.Log;
 
 /**
  * Lattice paths.
@@ -52,7 +52,7 @@ public class Problem0015 {
 
     String log;
     log = String.format("Problem 00015 solved: %d", result);
-    CustomLogger.info(log);
+    Log.info(log);
 
     return result;
   }

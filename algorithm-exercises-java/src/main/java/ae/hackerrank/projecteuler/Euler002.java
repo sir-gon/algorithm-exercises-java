@@ -1,6 +1,6 @@
 package ae.hackerrank.projecteuler;
 
-import util.CustomLogger;
+import util.Log;
 
 /**
  * Even Fibonacci numbers.
@@ -37,7 +37,7 @@ public class Euler002 {
     Long result = fibbo(n);
 
     String log = String.format("Problem 002 solved: %d", result);
-    CustomLogger.info(log);
+    Log.info(log);
 
     return result;
   }

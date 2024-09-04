@@ -1,7 +1,7 @@
 package ae.hackerrank.warmup;
 
 import java.util.List;
-import util.CustomLogger;
+import util.Log;
 
 /**
  * Simple Array Sum.
@@ -23,7 +23,7 @@ public class SimpleArraySum {
     }
 
     String log = String.format("simpleArraySum solved: %d", total);
-    CustomLogger.info(log);
+    Log.info(log);
 
     return total;
   }

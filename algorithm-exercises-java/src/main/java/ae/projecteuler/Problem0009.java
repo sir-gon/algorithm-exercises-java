@@ -1,6 +1,6 @@
 package ae.projecteuler;
 
-import util.CustomLogger;
+import util.Log;
 
 /**
  * Special Pythagorean triplet.
@@ -46,13 +46,13 @@ public class Problem0009 {
       while (b < c && found == null) {
         // TESTING
         log = String.format("TESTING: a = %d b = %d c = %d", a, b, c);
-        CustomLogger.debug(log);
+        Log.debug(log);
         Triplet test = new Problem0009().new Triplet(a, b, c);
 
         if (test.isPythagoreanTriplet()) {
           found = test;
           log = String.format("FOUND: a = %d b = %d c = %d", a, b, c);
-          CustomLogger.debug(log);
+          Log.debug(log);
         }
 
         // INCREASE
@@ -68,9 +68,9 @@ public class Problem0009 {
     }
 
     log = String.format("FOUND: a = %d, b = %d, c = %d", found.ta, found.tb, found.tc);
-    CustomLogger.info(log);
+    Log.info(log);
     log = String.format("PRODUCT: a * b * c = %d", found.ta * found.tb * found.tc);
-    CustomLogger.info(log);
+    Log.info(log);
 
     return found.ta * found.tb * found.tc;
   }

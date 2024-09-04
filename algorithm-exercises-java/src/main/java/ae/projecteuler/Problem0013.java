@@ -4,7 +4,7 @@ import ae.projecteuler.helper.BigNum;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
-import util.CustomLogger;
+import util.Log;
 
 /**
  * Large sum.
@@ -32,9 +32,9 @@ public class Problem0013 {
 
     String log;
     log = String.format("First %d digits of huge sume are %s", firtsDigits, first);
-    CustomLogger.info(log);
+    Log.info(log);
     log = String.format("Problem 00013 solved: %s", numberString);
-    CustomLogger.info(log);
+    Log.info(log);
 
     return numberString;
   }

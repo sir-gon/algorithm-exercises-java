@@ -4,7 +4,7 @@
 
 package ae;
 
-import util.CustomLogger;
+import util.Log;
 
 /**
  * {TITLE}.
@@ -22,7 +22,7 @@ public class Problem0000 {
     Integer result = null;
 
     String log = String.format("Problem 00XX solved: %d", result);
-    CustomLogger.info(log);
+    Log.info(log);
 
     return result;
   }

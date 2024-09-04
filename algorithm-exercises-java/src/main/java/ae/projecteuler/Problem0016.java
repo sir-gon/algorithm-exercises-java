@@ -1,7 +1,7 @@
 package ae.projecteuler;
 
 import ae.projecteuler.helper.BigNum;
-import util.CustomLogger;
+import util.Log;
 
 
 /**
@@ -23,7 +23,7 @@ public class Problem0016 {
     String log;
 
     log = String.format("Digits of power found: %s", power.toString());
-    CustomLogger.info(log);
+    Log.info(log);
 
     String[] digits = power.toString().split("");
 
@@ -31,7 +31,7 @@ public class Problem0016 {
     result.bigSumMany(digits);
 
     log = String.format("Problem 00016 solved: %s", result.toString());
-    CustomLogger.info(log);
+    Log.info(log);
 
     return result.toString();
   }

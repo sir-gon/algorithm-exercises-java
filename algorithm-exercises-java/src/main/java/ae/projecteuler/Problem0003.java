@@ -3,7 +3,7 @@ package ae.projecteuler;
 import ae.projecteuler.helper.Divisors;
 import ae.projecteuler.helper.NaturalNumber;
 import java.util.Arrays;
-import util.CustomLogger;
+import util.Log;
 
 
 /**
@@ -28,7 +28,7 @@ public class Problem0003 {
 
     String log;
     log = String.format("Divisors of %d: %s", top, Arrays.toString(divs));
-    CustomLogger.info(log);
+    Log.info(log);
 
     Long maxPrimeFactor = null;
     Integer i = middle;
@@ -38,13 +38,13 @@ public class Problem0003 {
       boolean prime = NaturalNumber.isPrime(divs[i]);
 
       log = String.format("%d is Prime?: %b", i, prime);
-      CustomLogger.debug(log);
+      Log.debug(log);
 
       if (prime) {
         maxPrimeFactor = divs[i];
 
         log = String.format("Problem 0003 solved: %d", maxPrimeFactor);
-        CustomLogger.info(log);
+        Log.info(log);
 
         return maxPrimeFactor;
       }

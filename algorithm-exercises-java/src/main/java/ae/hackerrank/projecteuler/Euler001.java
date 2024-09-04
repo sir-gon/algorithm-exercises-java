@@ -1,6 +1,6 @@
 package ae.hackerrank.projecteuler;
 
-import util.CustomLogger;
+import util.Log;
 
 /**
  * Multiples of 3 and 5.
@@ -45,7 +45,7 @@ public class Euler001 {
       - sumOfArithmeticProgression((long) n, lcm);
 
     String log = String.format("Problem 001 solved: %d", result);
-    CustomLogger.info(log);
+    Log.info(log);
 
     return result;
   }

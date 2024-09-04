@@ -1,7 +1,7 @@
 package ae.projecteuler;
 
 import ae.projecteuler.helper.Divisors;
-import util.CustomLogger;
+import util.Log;
 
 /**
  * Problem 0012.
@@ -29,7 +29,7 @@ public class Problem0012 {
       d = Divisors.divisors(triangular);
 
       log = String.format("Triangular number: %d has %d divisors", triangular, d.length);
-      CustomLogger.debug(log);
+      Log.debug(log);
 
       if (d.length > count) {
         count = (long) d.length;
@@ -39,7 +39,7 @@ public class Problem0012 {
     }
 
     log = String.format("Problem 00012 solved: %d", count);
-    CustomLogger.info(log);
+    Log.info(log);
 
     return count;
   }

@@ -2,7 +2,7 @@ package ae.projecteuler;
 
 import ae.projecteuler.helper.Collatz;
 import java.util.ArrayList;
-import util.CustomLogger;
+import util.Log;
 
 /**
  * Longest Collatz sequence.
@@ -37,7 +37,7 @@ public class Problem0014 {
       } while (c != 1);
 
       log = String.format("sequense of %d: %s", i, sequence);
-      CustomLogger.debug(log);
+      Log.debug(log);
 
       if (sequence.size() > maxSequence.size()) {
         maxSequence = sequence;
@@ -48,12 +48,12 @@ public class Problem0014 {
         "Large sequence found: %s has %d elements",
         maxSequence,
         maxSequence.size());
-    CustomLogger.debug(log);
+    Log.debug(log);
 
     // return firt element
     long result = maxSequence.get(0);
 
-    CustomLogger.info("Problem 00014 solved: %d".formatted(result));
+    Log.info("Problem 00014 solved: %d".formatted(result));
     return result;
   }
 }

@@ -3,7 +3,7 @@ package ae.projecteuler;
 import ae.projecteuler.lib.BinaryNode;
 import ae.projecteuler.lib.BinaryNodeWeightBuilder;
 import java.util.Arrays;
-import util.CustomLogger;
+import util.Log;
 
 
 /**
@@ -27,16 +27,16 @@ public class Problem0018 {
     Integer[] leaves = builder.getLeaves();
 
     log = String.format("Triangle: %s", tree);
-    CustomLogger.debug(log);
+    Log.debug(log);
     log = String.format("Leaves count: %d, %s", leaves.length, leaves);
-    CustomLogger.debug(log);
+    Log.debug(log);
 
     Arrays.sort(leaves);
 
     Integer result = leaves[leaves.length - 1]; // maximum is last element
 
     log = String.format("Problem 00018 solved: %d", result);
-    CustomLogger.debug(log);
+    Log.debug(log);
 
     return result;
   }

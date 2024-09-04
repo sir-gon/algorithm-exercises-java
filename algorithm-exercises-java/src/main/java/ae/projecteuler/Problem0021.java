@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
-import util.CustomLogger;
+import util.Log;
 
 
 /**
@@ -57,12 +57,12 @@ public class Problem0021 {
     String log;
 
     log = String.format("Amicable numbers: %s", amicableNumbers);
-    CustomLogger.info(log);
+    Log.info(log);
 
     BigNum result = new BigNum(0).bigSumMany(amicableNumbers.toArray(String[]::new));
 
     log = String.format("Problem 00021 solved: %s", result);
-    CustomLogger.info(log);
+    Log.info(log);
 
     return result.toString();
   }

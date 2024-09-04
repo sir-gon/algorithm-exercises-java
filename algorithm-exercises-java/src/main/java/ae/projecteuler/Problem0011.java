@@ -1,6 +1,6 @@
 package ae.projecteuler;
 
-import util.CustomLogger;
+import util.Log;
 
 /**
  * Largest product in a grid.
@@ -33,7 +33,7 @@ public class Problem0011 {
 
       for (int j = 0; j < matrixLimit; j++) {
         log = String.format("start point => i: %d, j: %d", i, j);
-        CustomLogger.debug(log);
+        Log.debug(log);
 
         // reset diagonals
         int diag1Acum = 1;
@@ -44,13 +44,13 @@ public class Problem0011 {
             i + k,
             j + k
           );
-          CustomLogger.debug(log);
+          Log.debug(log);
           log = String.format(
             "diag2 coordinate: (i, j) = (%d, %d)",
             i + k,
             j + (quadrantSize - 1) - k
           );
-          CustomLogger.debug(log);
+          Log.debug(log);
 
           diag1Acum *= squareMatrix[i + k][j + k];
           diag2Acum *= squareMatrix[i + k][j + (quadrantSize - 1) - k];
@@ -68,13 +68,13 @@ public class Problem0011 {
               i + k,
               j + l
             );
-            CustomLogger.debug(log);
+            Log.debug(log);
             log = String.format(
               "horizontal coordinate: (i, j) = (%d, %d)",
               i + l,
               j + k
             );
-            CustomLogger.debug(log);
+            Log.debug(log);
 
             verticalAcum *= squareMatrix[i + k][j + l];
             horizontalAcum *= squareMatrix[i + l][j + k];
@@ -87,7 +87,7 @@ public class Problem0011 {
     }
 
     log = String.format("Problem 0011 solved: %d", result);
-    CustomLogger.info(log);
+    Log.info(log);
 
     return result;
   }

@@ -3,7 +3,7 @@ package util;
 /**
  * Log.
  */
-public class CustomLogger {
+public class Log {
 
   /**
    * LoggerSingleton.

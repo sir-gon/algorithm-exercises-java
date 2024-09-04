@@ -4,7 +4,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
-import util.CustomLogger;
+import util.Log;
 
 /**
  * Counting Sundays.
@@ -55,7 +55,7 @@ public class Problem0019 {
         Integer days = mapEntry.getValue();
 
         log = String.format("Year: %d | Month: %s | days: %d", year, month, days);
-        CustomLogger.debug(log);
+        Log.debug(log);
 
         accumulatedRemainder += days % 7;
         if (accumulatedRemainder % 7 == dayOfWeek) {
@@ -71,7 +71,7 @@ public class Problem0019 {
     Integer result = resultCount - excess;
 
     log = String.format("Problem 00019 solved: %d", result);
-    CustomLogger.info(log);
+    Log.info(log);
 
     return result;
   }

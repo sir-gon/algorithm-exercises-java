@@ -2,7 +2,7 @@
 
 package ae.projecteuler;
 
-import util.CustomLogger;
+import util.Log;
 
 /**
  * Smallest multiple.
@@ -31,10 +31,10 @@ public class Problem0005Simple {
 
         if (fail) {
           log = String.format("Fail %d not divisible by %d", test, i);
-          CustomLogger.debug(log);
+          Log.debug(log);
         } else {
           log = String.format("Testing: %d divisible by %d", test, i);
-          CustomLogger.debug(log);
+          Log.debug(log);
         }
 
         i += 1;
@@ -48,7 +48,7 @@ public class Problem0005Simple {
     } while (found == null);
 
     log = String.format("Problem 00005 solved: %d", found);
-    CustomLogger.info(log);
+    Log.info(log);
 
     return found;
   }
