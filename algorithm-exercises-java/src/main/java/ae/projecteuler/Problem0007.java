@@ -2,7 +2,7 @@ package ae.projecteuler;
 
 import ae.projecteuler.helper.NaturalNumber;
 import java.util.ArrayList;
-
+import util.Log;
 
 /**
  * 10001st prime.
@@ -13,7 +13,6 @@ public class Problem0007 {
 
   private Problem0007() {}
 
-  static java.util.logging.Logger logger = util.CustomLogger.getLogger();
 
   /**
    * Problem 0007.
@@ -31,20 +30,20 @@ public class Problem0007 {
         primes.add(j);
 
         log = String.format("Prime found %d put in position: %d", j, primes.size());
-        logger.fine(log);
+        Log.debug(log);
       }
 
       j = 2 * i + 1;
     }
 
     log = String.format("primes count: %d", primes.size());
-    logger.info(log);
+    Log.info(log);
 
     Integer answer = primes.get(primes.size() - 1);
     Integer cycles = i;
 
     log = String.format("%d prime number is: %d in %d cycles", top, answer, cycles);
-    logger.info(log);
+    Log.info(log);
 
     return answer;
   }

@@ -4,7 +4,7 @@ import ae.projecteuler.helper.WordScore;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-
+import util.Log;
 
 /**
  * Names scores.
@@ -15,7 +15,6 @@ public class Problem0022 {
 
   private Problem0022() {}
 
-  static java.util.logging.Logger logger = util.CustomLogger.getLogger();
 
   /**
    * Problem 0022.
@@ -33,7 +32,7 @@ public class Problem0022 {
     String log;
 
     log = String.format("Problem 00022 solved: %d", result);
-    logger.info(log);
+    Log.info(log);
 
     return result;
   }

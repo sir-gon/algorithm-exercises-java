@@ -1,6 +1,7 @@
 package ae.projecteuler;
 
 import ae.projecteuler.helper.BigNum;
+import util.Log;
 
 /**
  * Problem 0020.
@@ -11,7 +12,6 @@ public class Problem0020 {
 
   private Problem0020() {}
 
-  static java.util.logging.Logger logger = util.CustomLogger.getLogger();
 
   /**
    * Problem 0020.
@@ -21,12 +21,12 @@ public class Problem0020 {
     BigNum factorial = BigNum.bigFactorial(limit);
 
     log = String.format("Factorial of %d!: %s", limit, factorial.toString());
-    logger.info(log);
+    Log.info(log);
 
     BigNum result = new BigNum(0).bigSumMany(factorial.toArray());
 
     log = String.format("Problem 00020 solved: %s", result.toString());
-    logger.info(log);
+    Log.info(log);
 
     return result;
   }

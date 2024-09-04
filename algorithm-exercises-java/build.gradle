@@ -63,7 +63,7 @@ configurations.checkstyle {
 
 def jacocoExclusions = [
         '**/*App.class',
-        '**/CustomLogger.class'
+        '**/util/*'
 ];
 
 test {

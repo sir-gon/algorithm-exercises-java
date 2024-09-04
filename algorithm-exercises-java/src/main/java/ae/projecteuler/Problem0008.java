@@ -2,7 +2,7 @@ package ae.projecteuler;
 
 import ae.projecteuler.helper.Product;
 import java.util.ArrayList;
-
+import util.Log;
 
 /**
  * Largest product in a series.
@@ -13,7 +13,6 @@ public class Problem0008 {
 
   private Problem0008() {}
 
-  static java.util.logging.Logger logger = util.CustomLogger.getLogger();
 
   /**
    * Problem template method.
@@ -34,7 +33,7 @@ public class Problem0008 {
 
       Long currentProduct = Product.product(digitsSet.toArray(Long[]::new));
       log = String.format("Product beetwen %d and %d is: %d", i, i + interval, currentProduct);
-      logger.fine(log);
+      Log.debug(log);
 
       if (currentProduct > max) {
         max = currentProduct;
@@ -42,7 +41,7 @@ public class Problem0008 {
     }
 
     log = String.format("Problem 0008 solved: %d", max);
-    logger.info(log);
+    Log.info(log);
 
     return max;
   }

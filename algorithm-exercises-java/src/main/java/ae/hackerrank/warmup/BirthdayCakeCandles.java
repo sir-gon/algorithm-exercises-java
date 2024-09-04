@@ -9,10 +9,7 @@ import java.util.List;
  */
 public class BirthdayCakeCandles {
 
-  private BirthdayCakeCandles() {
-  }
-
-  static java.util.logging.Logger logger = util.CustomLogger.getLogger();
+  private BirthdayCakeCandles() {}
 
   /**
    * birthdayCakeCandles.

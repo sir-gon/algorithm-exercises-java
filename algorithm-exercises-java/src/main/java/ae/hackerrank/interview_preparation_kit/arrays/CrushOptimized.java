@@ -12,10 +12,7 @@ import java.util.List;
  */
 public class CrushOptimized {
 
-  private CrushOptimized() {
-  }
-
-  static java.util.logging.Logger logger = util.CustomLogger.getLogger();
+  private CrushOptimized() {}
 
   /**
    * arrayManipulation.

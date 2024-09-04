@@ -9,10 +9,7 @@ import java.util.List;
  */
 public class VeryBigSum {
 
-  private VeryBigSum() {
-  }
-
-  static java.util.logging.Logger logger = util.CustomLogger.getLogger();
+  private VeryBigSum() {}
 
   /**
    * aVeryBigSum.

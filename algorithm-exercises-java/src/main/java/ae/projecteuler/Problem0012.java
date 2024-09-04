@@ -1,6 +1,7 @@
 package ae.projecteuler;
 
 import ae.projecteuler.helper.Divisors;
+import util.Log;
 
 /**
  * Problem 0012.
@@ -11,7 +12,6 @@ public class Problem0012 {
 
   private Problem0012() {}
 
-  static java.util.logging.Logger logger = util.CustomLogger.getLogger();
 
   /**
    * Problem 0012.
@@ -29,7 +29,7 @@ public class Problem0012 {
       d = Divisors.divisors(triangular);
 
       log = String.format("Triangular number: %d has %d divisors", triangular, d.length);
-      logger.fine(log);
+      Log.debug(log);
 
       if (d.length > count) {
         count = (long) d.length;
@@ -39,7 +39,7 @@ public class Problem0012 {
     }
 
     log = String.format("Problem 00012 solved: %d", count);
-    logger.info(log);
+    Log.info(log);
 
     return count;
   }

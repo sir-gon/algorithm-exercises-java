@@ -1,5 +1,7 @@
 package ae.hackerrank.projecteuler;
 
+import util.Log;
+
 /**
  * Multiples of 3 and 5.
  *
@@ -8,8 +10,6 @@ package ae.hackerrank.projecteuler;
 public class Euler001 {
 
   private Euler001() {}
-
-  static java.util.logging.Logger logger = util.CustomLogger.getLogger();
 
   /**
    * Greatest common divisor.
@@ -45,7 +45,7 @@ public class Euler001 {
       - sumOfArithmeticProgression((long) n, lcm);
 
     String log = String.format("Problem 001 solved: %d", result);
-    logger.info(log);
+    Log.info(log);
 
     return result;
   }

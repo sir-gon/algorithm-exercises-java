@@ -11,8 +11,6 @@ public class MiniMaxSum {
 
   private MiniMaxSum() {}
 
-  static java.util.logging.Logger logger = util.CustomLogger.getLogger();
-
   /**
    * miniMaxSum.
    *

@@ -8,10 +8,7 @@ package ae.hackerrank.warmup;
  */
 public class TimeConversion {
 
-  private TimeConversion() {
-  }
-
-  static java.util.logging.Logger logger = util.CustomLogger.getLogger();
+  private TimeConversion() {}
 
   /**
    * timeConversion.

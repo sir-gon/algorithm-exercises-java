@@ -6,7 +6,7 @@ import ae.projecteuler.helper.Sum;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.Set;
-
+import util.Log;
 
 /**
  * Non-abundant sums.
@@ -17,7 +17,6 @@ public class Problem0023 {
 
   private Problem0023() {}
 
-  static java.util.logging.Logger logger = util.CustomLogger.getLogger();
 
   /**
    * Problem 0023.
@@ -39,11 +38,11 @@ public class Problem0023 {
     log = String.format(
         "abundant nums list size => %d", abundantNumberList.size()
     );
-    logger.info(log);
+    Log.info(log);
     log = String.format(
         "abundant nums list result: => %s", abundantNumberList
     );
-    logger.fine(log);
+    Log.debug(log);
 
     ArrayList<Integer> sumsAbundantNums = new ArrayList<>();
 
@@ -62,12 +61,12 @@ public class Problem0023 {
     log = String.format(
         "sumsAbundantNums size => %d", abundantNumberList.size()
     );
-    logger.info(log);
+    Log.info(log);
 
     log = String.format(
         "sumsAbundantNums => %s", abundantNumberList
     );
-    logger.fine(log);
+    Log.debug(log);
 
     ////////////////////
     // filter duplicates
@@ -90,7 +89,7 @@ public class Problem0023 {
         "sumsAbundantNums size: %d. result => %s",
         sumsAbundantNums.size(),
         sumsAbundantNums);
-    logger.fine(log);
+    Log.debug(log);
 
     // All numbers below limit that not present in list of sums of pair of abundant numbers
     ArrayList<Integer> found = new ArrayList<>();
@@ -102,13 +101,13 @@ public class Problem0023 {
     }
 
     log = String.format("found: %d, found => %s", found.size(), found);
-    logger.fine(log);
+    Log.debug(log);
 
     Integer[] foundArr = found.toArray(Integer[]::new);
     Integer result = Sum.sum(foundArr);
 
     log = String.format("Problem 0023 result: %d", result);
-    logger.info(log);
+    Log.info(log);
 
     return result;
   }

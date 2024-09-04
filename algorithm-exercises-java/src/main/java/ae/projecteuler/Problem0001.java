@@ -1,6 +1,6 @@
 package ae.projecteuler;
 
-import java.util.logging.Logger;
+import util.Log;
 
 /**
  * Multiples of 3 and 5.
@@ -10,8 +10,6 @@ import java.util.logging.Logger;
 public class Problem0001 {
 
   private Problem0001() {}
-
-  static Logger logger = util.CustomLogger.getLogger();
 
   /**
    * Problem0001.
@@ -23,14 +21,14 @@ public class Problem0001 {
     for (i = 0; i < top; i++) {
       if (i % 3 == 0 || i % 5 == 0) {
         String log = String.format("Line result: %d", i);
-        logger.fine(log);
+        Log.debug(log);
 
         result += i;
       }
     }
 
     String log = String.format("Problem 0001 solved: %d", result);
-    logger.info(log);
+    Log.info(log);
 
     return result;
   }
