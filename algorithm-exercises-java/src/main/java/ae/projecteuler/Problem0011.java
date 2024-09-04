@@ -1,5 +1,6 @@
 package ae.projecteuler;
 
+import util.CustomLogger;
 
 /**
  * Largest product in a grid.
@@ -10,7 +11,6 @@ public class Problem0011 {
 
   private Problem0011() {}
 
-  static java.util.logging.Logger logger = util.CustomLogger.getLogger();
 
   /**
    * Problem 0011.
@@ -33,7 +33,7 @@ public class Problem0011 {
 
       for (int j = 0; j < matrixLimit; j++) {
         log = String.format("start point => i: %d, j: %d", i, j);
-        logger.fine(log);
+        CustomLogger.debug(log);
 
         // reset diagonals
         int diag1Acum = 1;
@@ -44,13 +44,13 @@ public class Problem0011 {
             i + k,
             j + k
           );
-          logger.fine(log);
+          CustomLogger.debug(log);
           log = String.format(
             "diag2 coordinate: (i, j) = (%d, %d)",
             i + k,
             j + (quadrantSize - 1) - k
           );
-          logger.fine(log);
+          CustomLogger.debug(log);
 
           diag1Acum *= squareMatrix[i + k][j + k];
           diag2Acum *= squareMatrix[i + k][j + (quadrantSize - 1) - k];
@@ -68,13 +68,13 @@ public class Problem0011 {
               i + k,
               j + l
             );
-            logger.fine(log);
+            CustomLogger.debug(log);
             log = String.format(
               "horizontal coordinate: (i, j) = (%d, %d)",
               i + l,
               j + k
             );
-            logger.fine(log);
+            CustomLogger.debug(log);
 
             verticalAcum *= squareMatrix[i + k][j + l];
             horizontalAcum *= squareMatrix[i + l][j + k];
@@ -87,7 +87,7 @@ public class Problem0011 {
     }
 
     log = String.format("Problem 0011 solved: %d", result);
-    logger.info(log);
+    CustomLogger.info(log);
 
     return result;
   }

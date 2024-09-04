@@ -12,10 +12,7 @@ import java.util.List;
  */
 public class CrushBruteForce {
 
-  private CrushBruteForce() {
-  }
-
-  static java.util.logging.Logger logger = util.CustomLogger.getLogger();
+  private CrushBruteForce() {}
 
   private static final int INITIALIZER = 0;
 

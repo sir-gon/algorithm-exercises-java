@@ -11,10 +11,8 @@ import java.util.List;
  */
 public class ArraysLeftRotation {
 
-  private ArraysLeftRotation() {
-  }
+  private ArraysLeftRotation() {}
 
-  static java.util.logging.Logger logger = util.CustomLogger.getLogger();
   static final int FIRST_POSITION = 0;
 
   /**

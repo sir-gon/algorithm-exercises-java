@@ -4,11 +4,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
+import util.CustomLogger;
 
 
 class Problem0005Test {
 
-  static java.util.logging.Logger logger = util.CustomLogger.getLogger();
 
   @Test void problem0005() {
 
@@ -28,7 +28,7 @@ class Problem0005Test {
 
     String log;
     log = "Problem 00005 BRUTE FORCE stars...";
-    logger.info(log);
+    CustomLogger.info(log);
 
     Integer answer = 232792560;
     Integer bottom = 1;
@@ -41,6 +41,6 @@ class Problem0005Test {
     );
 
     log = "Problem 0005 BRUTE FORCE ends.";
-    logger.info(log);
+    CustomLogger.info(log);
   }
 }

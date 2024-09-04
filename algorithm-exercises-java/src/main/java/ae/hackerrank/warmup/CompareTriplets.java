@@ -12,8 +12,6 @@ public class CompareTriplets {
 
   private CompareTriplets() {}
 
-  static java.util.logging.Logger logger = util.CustomLogger.getLogger();
-
   /**
    * compareTriplets.
    */

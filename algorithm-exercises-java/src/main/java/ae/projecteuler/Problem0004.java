@@ -10,6 +10,7 @@
 package ae.projecteuler;
 
 import ae.projecteuler.helper.Palindrome;
+import util.CustomLogger;
 
 /**
  * Largest palindrome product.
@@ -20,7 +21,6 @@ public class Problem0004 {
 
   private Problem0004() {}
 
-  static java.util.logging.Logger logger = util.CustomLogger.getLogger();
 
   /**
    * Problem template method.
@@ -42,7 +42,7 @@ public class Problem0004 {
 
         if (Palindrome.isPalindrome(Long.valueOf((long) j * (long) i))) {
           String log = String.format("FOUND: %d x %d = %d is Palindrome", i, j, i * j);
-          logger.fine(log);
+          CustomLogger.debug(log);
 
           if (foundPalindrome == null || i * j > foundPalindrome) {
             foundi = i;
@@ -64,7 +64,7 @@ public class Problem0004 {
         foundPalindrome,
         cycles);
 
-    logger.info(log);
+    CustomLogger.info(log);
 
     return foundPalindrome;
   }

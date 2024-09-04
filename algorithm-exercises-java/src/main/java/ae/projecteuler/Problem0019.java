@@ -4,6 +4,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
+import util.CustomLogger;
 
 /**
  * Counting Sundays.
@@ -14,7 +15,6 @@ public class Problem0019 {
 
   private Problem0019() {}
 
-  static java.util.logging.Logger logger = util.CustomLogger.getLogger();
   private static final String FEBRUARY_KEY = "FEBRUARY";
 
   private static Map<String, Integer> copyDaysInMonth() {
@@ -55,7 +55,7 @@ public class Problem0019 {
         Integer days = mapEntry.getValue();
 
         log = String.format("Year: %d | Month: %s | days: %d", year, month, days);
-        logger.fine(log);
+        CustomLogger.debug(log);
 
         accumulatedRemainder += days % 7;
         if (accumulatedRemainder % 7 == dayOfWeek) {
@@ -71,7 +71,7 @@ public class Problem0019 {
     Integer result = resultCount - excess;
 
     log = String.format("Problem 00019 solved: %d", result);
-    logger.info(log);
+    CustomLogger.info(log);
 
     return result;
   }

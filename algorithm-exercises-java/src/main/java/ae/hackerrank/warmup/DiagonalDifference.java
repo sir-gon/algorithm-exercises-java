@@ -11,8 +11,6 @@ public class DiagonalDifference {
 
   private DiagonalDifference() {}
 
-  static java.util.logging.Logger logger = util.CustomLogger.getLogger();
-
   /**
    * diagonalDifference.
    */

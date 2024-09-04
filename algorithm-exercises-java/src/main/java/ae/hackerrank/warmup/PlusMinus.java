@@ -11,10 +11,7 @@ import java.util.Locale;
  */
 public class PlusMinus {
 
-  private PlusMinus() {
-  }
-
-  static java.util.logging.Logger logger = util.CustomLogger.getLogger();
+  private PlusMinus() {}
 
   /**
    * plusMinus.

@@ -1,6 +1,7 @@
 package ae.projecteuler;
 
 import ae.projecteuler.helper.NumberToWord;
+import util.CustomLogger;
 
 /**
  * Number letter counts.
@@ -11,7 +12,6 @@ public class Problem0017 {
 
   private Problem0017() {}
 
-  static java.util.logging.Logger logger = util.CustomLogger.getLogger();
 
   /**
    * Problem 0017.
@@ -29,11 +29,11 @@ public class Problem0017 {
       acum += replaced.length();
 
       log = String.format("acum: %d => word: %s", acum, word);
-      logger.fine(log);
+      CustomLogger.debug(log);
     }
 
     log = String.format("Problem 00017 solved: %d", acum);
-    logger.info(log);
+    CustomLogger.info(log);
 
     return acum;
   }

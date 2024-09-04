@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+import util.CustomLogger;
 
 /**
  * Smallest multiple.
@@ -16,7 +16,6 @@ public class Problem0005 {
 
   private Problem0005() {}
 
-  static java.util.logging.Logger logger = util.CustomLogger.getLogger();
 
   /**
    * countOccurrences.
@@ -76,7 +75,7 @@ public class Problem0005 {
       );
 
       log = String.format("%s", minimumPrimeFactorsCollector.toString());
-      logger.info(log);
+      CustomLogger.info(log);
     }
 
     result = 1;
@@ -88,7 +87,7 @@ public class Problem0005 {
     }
 
     log = String.format("Problem 0005 solved: %d", result);
-    logger.info(log);
+    CustomLogger.info(log);
 
     return result;
   }

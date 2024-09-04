@@ -10,10 +10,7 @@ import java.util.List;
  */
 public class Staircase {
 
-  private Staircase() {
-  }
-
-  static java.util.logging.Logger logger = util.CustomLogger.getLogger();
+  private Staircase() {}
 
   /**
    * staircase.

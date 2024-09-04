@@ -4,6 +4,8 @@
 
 package ae;
 
+import util.CustomLogger;
+
 /**
  * {TITLE}.
  *
@@ -13,8 +15,6 @@ public class Problem0000 {
 
   private Problem0000() {}
 
-  static java.util.logging.Logger logger = util.CustomLogger.getLogger();
-
   /**
    * Problem template method.
    */
@@ -22,7 +22,7 @@ public class Problem0000 {
     Integer result = null;
 
     String log = String.format("Problem 00XX solved: %d", result);
-    logger.info(log);
+    CustomLogger.info(log);
 
     return result;
   }

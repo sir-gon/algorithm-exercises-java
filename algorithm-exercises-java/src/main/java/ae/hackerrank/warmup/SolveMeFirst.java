@@ -9,8 +9,6 @@ public class SolveMeFirst {
 
   private SolveMeFirst() {}
 
-  static java.util.logging.Logger logger = util.CustomLogger.getLogger();
-
   /**
    * solveMeFirst.
    */
