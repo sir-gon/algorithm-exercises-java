@@ -40,8 +40,8 @@ class TwoStringsTest {
       String solutionFound = TwoStrings.twoStrings(test.s1, test.s2);
 
       assertEquals(test.expected, solutionFound,
-          String.format("%s(%s, %s) answer must be: %s",
-            "CrushOptimized.arrayManipulation",
+          "%s(%s, %s) answer must be: %s".formatted(
+            "TwoStrings.twoStrings",
             test.s1,
             test.s2,
             test.expected
