@@ -2,10 +2,6 @@ package ae.hackerrank.interview_preparation_kit.arrays;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
@@ -13,48 +9,39 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
-
+import util.JsonLoader;
 
 @TestInstance(Lifecycle.PER_CLASS)
 class ArraysLeftRotationTest {
 
-  public JsonNode testCases;
+  public static class ArraysLeftRotationTestCase {
+    public List<Integer> input;
+    public List<Integer> expected;
+  }
+
+  List<ArraysLeftRotationTestCase> testCases;
 
   @BeforeAll
   public void setup() throws IOException {
-    ObjectMapper objectMapper = new ObjectMapper();
 
     String path = String.join("/", "hackerrank",
         "interview_preparation_kit",
         "arrays",
         "ctci_array_left_rotation.testcases.json");
-    File file = new File(
-        this.getClass()
-        .getClassLoader()
-        .getResource(path)
-        .getFile()
-    );
-    this.testCases = objectMapper.readTree(file);
+
+    this.testCases = JsonLoader.loadJson(path, ArraysLeftRotationTestCase.class);
   }
 
-  @Test void testRotLeftOne() throws JsonProcessingException {
+  @Test void testRotLeftOne() {
 
-    ObjectMapper mapper = new ObjectMapper();
+    for (ArraysLeftRotationTestCase test : this.testCases) {
+      List<Integer> solutionFound = ArraysLeftRotation.rotLeftOne(test.input);
 
-    for (JsonNode testCase : this.testCases) {
-      int[] input  = mapper.readValue(testCase.get("input").toString(), int[].class);
-      List<Integer> tlist = Arrays.stream(input).boxed().toList();
-      List<Integer> solutionFound = ArraysLeftRotation.rotLeftOne(tlist);
-
-      int[] expected  = mapper.readValue(testCase.get("expected").toString(), int[].class);
-      List<Integer> texpected = Arrays.stream(expected).boxed().toList();
-
-
-      assertEquals(texpected, solutionFound,
+      assertEquals(test.expected, solutionFound,
           String.format("%s(%s) answer must be: %s",
             "CompareTriplets.compareTriplets",
-            testCase.get("input"),
-            testCase.get("expected"))
+            test.input,
+            test.expected)
       );
     }
   }
