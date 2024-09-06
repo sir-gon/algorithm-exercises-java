@@ -37,8 +37,8 @@ class RansomNoteTest {
       String solutionFound = RansomNote.checkMagazine(test.magazine, test.note);
 
       assertEquals(test.expected, solutionFound,
-          String.format("%s(%s, %s) answer must be: %s",
-            "CrushOptimized.arrayManipulation",
+          "%s(%s, %s) answer must be: %s".formatted(
+            "RansomNote.checkMagazine",
             test.magazine,
             test.note,
             test.expected

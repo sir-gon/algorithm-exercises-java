@@ -38,10 +38,11 @@ class ArraysLeftRotationTest {
       List<Integer> solutionFound = ArraysLeftRotation.rotLeftOne(test.input);
 
       assertEquals(test.expected, solutionFound,
-          String.format("%s(%s) answer must be: %s",
-            "CompareTriplets.compareTriplets",
+          "%s(%s) answer must be: %s".formatted(
+            "ArraysLeftRotation.rotLeftOne",
             test.input,
-            test.expected)
+            test.expected
+          )
       );
     }
   }
@@ -54,11 +55,12 @@ class ArraysLeftRotationTest {
     List<Integer> solutionFound = ArraysLeftRotation.rotLeft(input, d);
 
     assertEquals(expected, solutionFound,
-        String.format("%s(%s, %d) answer must be: %s",
-          "CompareTriplets.compareTriplets",
-          input.toString(),
-          d,
-          expected.toString())
+        "%s(%s, %d) answer must be: %s".formatted(
+            "ArraysLeftRotation.rotLeftOne",
+            input,
+            d,
+            expected
+          )
     );
   }
 }

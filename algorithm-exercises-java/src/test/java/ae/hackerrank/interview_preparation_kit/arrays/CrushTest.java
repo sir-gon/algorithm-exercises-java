@@ -39,12 +39,12 @@ class CrushTest {
           .arrayManipulation(testCase.n, testCase.queries);
 
       assertEquals(testCase.expected, solutionFound,
-          String.format("%s(%d, %s) answer must be: %s",
+          "%s(%d, %s) answer must be: %s".formatted(
             "CrushOptimized.arrayManipulation",
             testCase.n,
             testCase.queries.toString(),
             testCase.expected
-          )
+            )
       );
     }
   }

@@ -38,7 +38,7 @@ class CrushBruteForceTest {
           .arrayManipulation(testCase.n, testCase.queries);
 
       assertEquals(testCase.expected, solutionFound,
-          String.format("%s(%d, %s) answer must be: %s",
+          "%s(%d, %s) answer must be: %s".formatted(
             "CrushBruteForce.arrayManipulation",
             testCase.n,
             testCase.queries.toString(),
