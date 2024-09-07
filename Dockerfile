@@ -1,12 +1,14 @@
 ###############################################################################
 FROM gradle:8.10.0-jdk22-alpine AS base
 
-ENV WORKDIR=/app
-WORKDIR ${WORKDIR}
+RUN apk add --update --no-cache make \
+  # FIX CVE-2024-5535
+  && apk upgrade --update --no-cache openssl libcrypto3 libssl3 \
+  # FIX CVE-2024-5535 CVE-2024-4741
+  && apk upgrade --update --no-cache --available
 
-RUN apk add --update --no-cache make
-RUN apk upgrade --update --no-cache openssl libcrypto3 libssl3 # FIX CVE-2024-5535
-RUN apk upgrade --update --no-cache --available # FIX CVE-2024-5535 CVE-2024-4741
+  ENV WORKDIR=/app
+WORKDIR ${WORKDIR}
 
 ###############################################################################
 FROM base AS lint
@@ -14,10 +16,9 @@ FROM base AS lint
 ENV WORKDIR=/app
 WORKDIR ${WORKDIR}
 
-RUN apk add --update --no-cache make nodejs npm
-RUN apk add --update --no-cache yamllint
-
-RUN npm install -g --ignore-scripts markdownlint-cli
+RUN  apk add --update --no-cache make nodejs npm\
+  && apk add --update --no-cache yamllint \
+  && npm install -g --ignore-scripts markdownlint-cli
 
 # [!TIP] Use a bind-mount to "/app" to override following "copys"
 # for lint and test against "current" sources in this stage
@@ -94,19 +95,22 @@ CMD ["make", "test"]
 ## WORKDIR and USER are maintained
 ##
 FROM eclipse-temurin:22.0.2_9-jre-alpine AS production
-RUN apk upgrade --update --no-cache openssl libcrypto3 libssl3 # FIX CVE-2024-5535
-RUN apk upgrade --update --no-cache --available # FIX CVE-2024-5535 CVE-2024-4741
+
+RUN apk add --update --no-cache make \
+  # FIX CVE-2024-5535
+  && apk upgrade --update --no-cache openssl libcrypto3 libssl3 \
+  # FIX CVE-2024-5535 CVE-2024-4741
+  && apk upgrade --update --no-cache --available
 
 ENV LOG_LEVEL=INFO
 ENV BRUTEFORCE=false
 ENV WORKDIR=/app
 WORKDIR ${WORKDIR}
 
-RUN adduser -D worker
-RUN mkdir -p /app
-RUN chown worker:worker /app
+RUN adduser -D worker \
+  && mkdir -p /app \
+  && chown worker:worker /app
 
-RUN apk add --update --no-cache make
 COPY ./Makefile ${WORKDIR}/
 COPY --from=builder /app/algorithm-exercises-java/build/libs/algorithm-exercises-java.jar ${WORKDIR}/algorithm-exercises-java.jar
 
