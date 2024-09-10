@@ -1,5 +1,5 @@
 ###############################################################################
-FROM gradle:8.10.0-jdk22-alpine AS base
+FROM gradle:8.10.1-jdk22-alpine AS base
 
 RUN apk add --update --no-cache make \
   # FIX CVE-2024-5535
