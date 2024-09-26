@@ -1,6 +1,8 @@
 package ae.hackerrank.projecteuler;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.IOException;
 import java.util.List;
@@ -8,6 +10,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import util.JsonLoader;
 
 
@@ -44,5 +48,23 @@ class Euler003Test {
           )
       );
     }
+  }
+
+  @ParameterizedTest
+  @CsvSource({
+      "0",
+      "1"
+  }) void euler003edgecases(long input) {
+
+    Exception exception;
+
+    exception = assertThrows(IllegalArgumentException.class, () ->
+        Euler003.euler003(input)
+    );
+
+    String expectedMessage = "n must be greater than 2";
+
+    assertTrue(exception.getMessage().contains(expectedMessage));
+
   }
 }

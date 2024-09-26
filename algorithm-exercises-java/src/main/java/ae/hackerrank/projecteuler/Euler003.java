@@ -11,7 +11,7 @@ public class Euler003 {
 
   private static Long primeFactor(Long n) {
     if (n < 2) {
-      return null;
+      throw new IllegalArgumentException("n must be greater than 2");
     }
 
     Long divisor = n;
