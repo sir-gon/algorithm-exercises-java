@@ -2,31 +2,48 @@ package ae.hackerrank.projecteuler;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvSource;
+import java.io.IOException;
+import java.util.List;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.TestInstance.Lifecycle;
+import util.JsonLoader;
 
-
+@TestInstance(Lifecycle.PER_CLASS)
 class Euler001Test {
 
-  @ParameterizedTest
-  @CsvSource({
-      "3, 5, 10, 23, Test Case 1",
-      "3, 5, 100, 2318, Test Case 2",
-      "3, 5, 1000, 233168, Test Case 3"
-  })
-  void euler001(
-      int a,
-      int b,
-      int n,
-      long answer,
-      String testCase) {
+  public static class Euler001TestCase {
+    public Integer a;
+    public Integer b;
+    public Integer n;
+    public Long expected;
+  }
 
-    Long solutionFound = Euler001.euler001(a, b, n);
+  private List<Euler001TestCase> testCases;
 
-    String log = String.format("Problem 001 solved: %s. Answer must be %s",
-        testCase,
-        answer);
+  @BeforeAll
+  public void setup() throws IOException {
+    String path = String.join("/",
+         "hackerrank",
+        "projecteuler",
+        "euler001.testcases.json");
 
-    assertEquals(answer, solutionFound, log);
+    this.testCases = JsonLoader.loadJson(path, Euler001TestCase.class);
+  }
+
+  @Test void euler001() {
+
+    for (Euler001TestCase test : testCases) {
+      Long solutionFound = Euler001.euler001(test.a, test.b, test.n);
+
+      assertEquals(test.expected, solutionFound,
+          "%s(%d, %d, %d) => must be: %s".formatted(
+            "Euler001.euler001",
+            test.a, test.b, test.n,
+            test.expected
+          )
+      );
+    }
   }
 }
