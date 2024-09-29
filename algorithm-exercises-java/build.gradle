@@ -48,7 +48,7 @@ tasks.named('test') {
 }
 
 checkstyle {
-    toolVersion = '10.18.1'
+    toolVersion = '10.18.2'
     configFile = file("${rootDir}/checkstyle.xml")
     maxErrors	= 0
     maxWarnings	= 0
