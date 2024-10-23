@@ -3,8 +3,11 @@
 name: Snyk Code (Java gradle-jdk17)
 
 on: # yamllint disable-line rule:truthy
-  push:
   pull_request:
+  push:
+    branches:
+      - '**'        # matches every branch
+      - '!dependabot/**'   # excludes master
   workflow_dispatch:
 
 jobs:
