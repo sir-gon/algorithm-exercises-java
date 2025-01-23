@@ -42,7 +42,7 @@ class PlusMinusTest {
           String.format("%s(%s) answer must be: %s",
               "PlusMinus.plusMinus",
               testCase.input.toString(),
-              testCase.expected.toString()));
+              testCase.toString()));
     }
   }
 }

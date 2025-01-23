@@ -45,7 +45,7 @@ class MiniMaxSumTest {
           String.format("%s(%s) answer must be: %s",
               "MiniMaxSum.miniMaxSum",
               testCase.input.toString(),
-              testCase.expected.toString())
+              testCase.expected)
       );
     }
   }
