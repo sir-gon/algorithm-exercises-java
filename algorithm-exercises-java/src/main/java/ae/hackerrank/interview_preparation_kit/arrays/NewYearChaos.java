@@ -13,6 +13,8 @@ public class NewYearChaos {
   private NewYearChaos() {}
 
   static final String TOO_CHAOTIC_ERROR = "Too chaotic";
+  static final int NEW_YEAR_CHAOS_TOLERANCE = 2;
+
 
   /**
    * minimumBribesCalculate.
@@ -25,11 +27,13 @@ public class NewYearChaos {
     for (Integer value : q) {
       int position = i + 1;
 
-      if (value - position > 2) {
+      if (value - position > NEW_YEAR_CHAOS_TOLERANCE) {
         throw new IllegalStateException(TOO_CHAOTIC_ERROR);
       }
 
-      List<Integer> fragment = q.subList(Math.min(Math.max(value - 2, 0), i), i);
+      List<Integer> fragment = q.subList(
+          Math.min(Math.max(value - NEW_YEAR_CHAOS_TOLERANCE, 0), i), i
+        );
 
       for (Integer k : fragment) {
         if (k > value) {
