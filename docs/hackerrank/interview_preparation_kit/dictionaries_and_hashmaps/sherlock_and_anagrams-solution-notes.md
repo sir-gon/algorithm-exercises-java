@@ -22,9 +22,8 @@ The second part of this problem can be solved with the binomial coefficient form
 
 But the entire cost of this formula falls on the "factorial" function.
 
-In javascript, the factorial quickly reaches results that return large numbers,
-in scientific notation, losing precision.
-This loss of precision can result in an erroneous result
-in the final calculation of permutations.
+The factorial quickly reaches results that return large numbers,
+overflowing the length of primitive number types.
 
-To avoid this problem, it is necessary to introduce large number handling using BigInt.
+To avoid this problem in Java, it is necessary to introduce large number handling
+using java.math.BigInteger
