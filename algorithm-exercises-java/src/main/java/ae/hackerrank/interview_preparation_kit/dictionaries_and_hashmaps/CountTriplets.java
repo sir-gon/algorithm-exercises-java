@@ -32,8 +32,9 @@ public class CountTriplets {
       }
     }
 
-    long jItem;
-    long kItem;
+    long prevItemCount;
+    long nextItemCount;
+    Long currentItemCount;
 
     for (Long item : arr) {
       Long j = item / r;
@@ -41,15 +42,14 @@ public class CountTriplets {
 
       aCounter.put(item, aCounter.get(item) - 1L);
 
-      jItem = bCounter.get(j) != null ? bCounter.get(j) : 0L;
-      kItem = aCounter.get(k) != null ? aCounter.get(k) : 0L;
+      prevItemCount = bCounter.get(j) != null ? bCounter.get(j) : 0L;
+      nextItemCount = aCounter.get(k) != null ? aCounter.get(k) : 0L;
       if (item % r == 0) {
-        triplets += jItem * kItem;
+        triplets += prevItemCount * nextItemCount;
       }
 
-      Long bItem = bCounter.get(item);
-
-      bCounter.put(item, bItem != null ? bItem + 1L : 1L);
+      currentItemCount = bCounter.get(item);
+      bCounter.put(item, currentItemCount != null ? currentItemCount + 1L : 1L);
     }
 
     return triplets;
