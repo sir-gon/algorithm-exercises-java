@@ -22,7 +22,7 @@ class ArraysLeftRotationTest {
   List<ArraysLeftRotationTestCase> testCases;
 
   @BeforeAll
-  public void setup() throws IOException {
+  void setup() throws IOException {
 
     String path = String.join("/", "hackerrank",
         "interview_preparation_kit",
@@ -32,22 +32,22 @@ class ArraysLeftRotationTest {
     this.testCases = JsonLoader.loadJson(path, ArraysLeftRotationTestCase.class);
   }
 
-  @Test void testRotLeftOne() {
+  @Test
+  void testRotLeftOne() {
 
     for (ArraysLeftRotationTestCase test : this.testCases) {
       List<Integer> solutionFound = ArraysLeftRotation.rotLeftOne(test.input);
 
       assertEquals(test.expected, solutionFound,
           "%s(%s) answer must be: %s".formatted(
-            "ArraysLeftRotation.rotLeftOne",
-            test.input,
-            test.expected
-          )
-      );
+              "ArraysLeftRotation.rotLeftOne",
+              test.input,
+              test.expected));
     }
   }
 
-  @Test void testRotLeft() {
+  @Test
+  void testRotLeft() {
     List<Integer> input = Arrays.asList(1, 2, 3, 4, 5);
     List<Integer> expected = Arrays.asList(5, 1, 2, 3, 4);
     Integer d = 4;
@@ -59,8 +59,6 @@ class ArraysLeftRotationTest {
             "ArraysLeftRotation.rotLeftOne",
             input,
             d,
-            expected
-          )
-    );
+            expected));
   }
 }

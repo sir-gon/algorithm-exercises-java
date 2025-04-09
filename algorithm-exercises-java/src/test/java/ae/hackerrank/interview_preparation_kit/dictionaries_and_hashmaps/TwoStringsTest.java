@@ -12,7 +12,7 @@ import util.JsonLoader;
 
 /**
  * TwoStringsTest.
-*/
+ */
 @TestInstance(Lifecycle.PER_CLASS)
 class TwoStringsTest {
   public static class TwoStringsTestCase {
@@ -25,9 +25,9 @@ class TwoStringsTest {
   private List<TwoStringsTestCase> testCases;
 
   @BeforeAll
-  public void setup() throws IOException {
+  void setup() throws IOException {
     String path = String.join("/",
-         "hackerrank",
+        "hackerrank",
         "interview_preparation_kit",
         "dictionaries_and_hashmaps",
         "two_strings.testcases.json");
@@ -35,18 +35,17 @@ class TwoStringsTest {
     this.testCases = JsonLoader.loadJson(path, TwoStringsTestCase.class);
   }
 
-  @Test void testTwoStrings() {
+  @Test
+  void testTwoStrings() {
     for (TwoStringsTestCase test : testCases) {
       String solutionFound = TwoStrings.twoStrings(test.s1, test.s2);
 
       assertEquals(test.expected, solutionFound,
           "%s(%s, %s) answer must be: %s".formatted(
-            "TwoStrings.twoStrings",
-            test.s1,
-            test.s2,
-            test.expected
-          )
-      );
+              "TwoStrings.twoStrings",
+              test.s1,
+              test.s2,
+              test.expected));
     }
   }
 }

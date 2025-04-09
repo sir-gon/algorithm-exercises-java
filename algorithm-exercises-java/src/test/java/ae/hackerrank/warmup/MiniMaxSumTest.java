@@ -11,7 +11,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
 
-
 @TestInstance(Lifecycle.PER_CLASS)
 class MiniMaxSumTest {
 
@@ -28,11 +27,10 @@ class MiniMaxSumTest {
   public List<MiniMaxSumTestCase> testCases;
 
   @BeforeAll
-  public void setup() {
+  void setup() {
     this.testCases = Arrays.asList(
-      new MiniMaxSumTestCase(Arrays.asList(1, 2, 3, 4, 5), "10 14"),
-      new MiniMaxSumTestCase(Arrays.asList(5, 4, 3, 2, 1), "10 14")
-    );
+        new MiniMaxSumTestCase(Arrays.asList(1, 2, 3, 4, 5), "10 14"),
+        new MiniMaxSumTestCase(Arrays.asList(5, 4, 3, 2, 1), "10 14"));
   }
 
   @Test
@@ -45,8 +43,7 @@ class MiniMaxSumTest {
           String.format("%s(%s) answer must be: %s",
               "MiniMaxSum.miniMaxSum",
               testCase.input.toString(),
-              testCase.expected)
-      );
+              testCase.expected));
     }
   }
 

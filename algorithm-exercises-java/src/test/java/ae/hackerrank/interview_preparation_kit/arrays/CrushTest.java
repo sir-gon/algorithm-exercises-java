@@ -10,7 +10,6 @@ import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
 import util.JsonLoader;
 
-
 @TestInstance(Lifecycle.PER_CLASS)
 class CrushTest {
 
@@ -24,7 +23,7 @@ class CrushTest {
   List<CrushTestCase> testCases;
 
   @BeforeAll
-  public void setup() throws IOException {
+  void setup() throws IOException {
     String path = String.join("/", "hackerrank",
         "interview_preparation_kit",
         "arrays",
@@ -33,19 +32,18 @@ class CrushTest {
     this.testCases = JsonLoader.loadJson(path, CrushTestCase.class);
   }
 
-  @Test void testArrayManipulation() {
+  @Test
+  void testArrayManipulation() {
     for (CrushTestCase testCase : testCases) {
       long solutionFound = CrushOptimized
           .arrayManipulation(testCase.n, testCase.queries);
 
       assertEquals(testCase.expected, solutionFound,
           "%s(%d, %s) answer must be: %s".formatted(
-            "CrushOptimized.arrayManipulation",
-            testCase.n,
-            testCase.queries.toString(),
-            testCase.expected
-            )
-      );
+              "CrushOptimized.arrayManipulation",
+              testCase.n,
+              testCase.queries.toString(),
+              testCase.expected));
     }
   }
 }

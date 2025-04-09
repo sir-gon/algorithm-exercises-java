@@ -24,7 +24,7 @@ class StaircaseTest {
   public List<StaircaseTestCase> testCases;
 
   @BeforeAll
-  public void setup() {
+  void setup() {
     this.testCases = Arrays.asList(
         new StaircaseTestCase(
             6, String.join("\n",

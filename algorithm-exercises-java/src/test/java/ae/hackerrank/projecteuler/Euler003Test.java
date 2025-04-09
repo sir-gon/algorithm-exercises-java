@@ -14,7 +14,6 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import util.JsonLoader;
 
-
 @TestInstance(Lifecycle.PER_CLASS)
 class Euler003Test {
 
@@ -26,27 +25,26 @@ class Euler003Test {
   private List<Euler003TestCase> testCases;
 
   @BeforeAll
-  public void setup() throws IOException {
+  void setup() throws IOException {
     String path = String.join("/",
-         "hackerrank",
+        "hackerrank",
         "projecteuler",
         "euler003.testcases.json");
 
     this.testCases = JsonLoader.loadJson(path, Euler003TestCase.class);
   }
 
-  @Test void euler003() {
+  @Test
+  void euler003() {
 
     for (Euler003TestCase test : testCases) {
       Long solutionFound = Euler003.euler003(test.n);
 
       assertEquals(test.expected, solutionFound,
           "%s(%d) => must be: %s".formatted(
-            "Euler003.euler003",
-            test.n,
-            test.expected
-          )
-      );
+              "Euler003.euler003",
+              test.n,
+              test.expected));
     }
   }
 
@@ -54,13 +52,12 @@ class Euler003Test {
   @CsvSource({
       "0",
       "1"
-  }) void euler003edgecases(long input) {
+  })
+  void euler003edgecases(long input) {
 
     Exception exception;
 
-    exception = assertThrows(IllegalArgumentException.class, () ->
-        Euler003.euler003(input)
-    );
+    exception = assertThrows(IllegalArgumentException.class, () -> Euler003.euler003(input));
 
     String expectedMessage = "n must be greater than 2";
 

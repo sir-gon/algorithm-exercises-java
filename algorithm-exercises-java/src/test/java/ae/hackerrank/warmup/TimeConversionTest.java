@@ -24,11 +24,10 @@ class TimeConversionTest {
   public List<TimeConversionTestCase> testCases;
 
   @BeforeAll
-  public void setup() {
+  void setup() {
     this.testCases = Arrays.asList(
-      new TimeConversionTestCase("12:01:00PM", "12:01:00"),
-      new TimeConversionTestCase("12:01:00AM", "00:01:00")
-    );
+        new TimeConversionTestCase("12:01:00PM", "12:01:00"),
+        new TimeConversionTestCase("12:01:00AM", "00:01:00"));
   }
 
   @Test

@@ -23,7 +23,7 @@ class CrushBruteForceTest {
   List<CrushBruteForceTestCase> testCases;
 
   @BeforeAll
-  public void setup() throws IOException {
+  void setup() throws IOException {
 
     String path = String.join("/", "hackerrank",
         "interview_preparation_kit",
@@ -32,19 +32,18 @@ class CrushBruteForceTest {
     this.testCases = JsonLoader.loadJson(path, CrushBruteForceTestCase.class);
   }
 
-  @Test void testArrayManipulation() {
+  @Test
+  void testArrayManipulation() {
     for (CrushBruteForceTestCase testCase : testCases) {
       long solutionFound = CrushBruteForce
           .arrayManipulation(testCase.n, testCase.queries);
 
       assertEquals(testCase.expected, solutionFound,
           "%s(%d, %s) answer must be: %s".formatted(
-            "CrushBruteForce.arrayManipulation",
-            testCase.n,
-            testCase.queries.toString(),
-            testCase.expected
-          )
-      );
+              "CrushBruteForce.arrayManipulation",
+              testCase.n,
+              testCase.queries.toString(),
+              testCase.expected));
     }
   }
 }

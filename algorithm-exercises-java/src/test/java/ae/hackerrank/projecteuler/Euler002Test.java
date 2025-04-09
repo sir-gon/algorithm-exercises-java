@@ -10,7 +10,6 @@ import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
 import util.JsonLoader;
 
-
 @TestInstance(Lifecycle.PER_CLASS)
 class Euler002Test {
 
@@ -22,27 +21,26 @@ class Euler002Test {
   private List<Euler002TestCase> testCases;
 
   @BeforeAll
-  public void setup() throws IOException {
+  void setup() throws IOException {
     String path = String.join("/",
-         "hackerrank",
+        "hackerrank",
         "projecteuler",
         "euler002.testcases.json");
 
     this.testCases = JsonLoader.loadJson(path, Euler002TestCase.class);
   }
 
-  @Test void euler002() {
+  @Test
+  void euler002() {
 
     for (Euler002TestCase test : testCases) {
       Long solutionFound = Euler002.euler002(test.n);
 
       assertEquals(test.expected, solutionFound,
           "%s(%d) => must be: %s".formatted(
-            "Euler002.euler002",
-            test.n,
-            test.expected
-          )
-      );
+              "Euler002.euler002",
+              test.n,
+              test.expected));
     }
   }
 }
