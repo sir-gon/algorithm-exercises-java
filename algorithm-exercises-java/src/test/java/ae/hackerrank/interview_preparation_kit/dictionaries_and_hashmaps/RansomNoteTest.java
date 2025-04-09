@@ -23,7 +23,7 @@ class RansomNoteTest {
   List<RansomNoteTestCase> testCases;
 
   @BeforeAll
-  public void setup() throws IOException {
+  void setup() throws IOException {
     String path = String.join("/", "hackerrank",
         "interview_preparation_kit",
         "dictionaries_and_hashmaps",
@@ -32,18 +32,17 @@ class RansomNoteTest {
     this.testCases = JsonLoader.loadJson(path, RansomNoteTestCase.class);
   }
 
-  @Test void testArrayManipulation() {
+  @Test
+  void testArrayManipulation() {
     for (RansomNoteTestCase test : testCases) {
       String solutionFound = RansomNote.checkMagazine(test.magazine, test.note);
 
       assertEquals(test.expected, solutionFound,
           "%s(%s, %s) answer must be: %s".formatted(
-            "RansomNote.checkMagazine",
-            test.magazine,
-            test.note,
-            test.expected
-          )
-      );
+              "RansomNote.checkMagazine",
+              test.magazine,
+              test.note,
+              test.expected));
     }
   }
 }

@@ -9,7 +9,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
 
-
 @TestInstance(Lifecycle.PER_CLASS)
 class CompareTripletsTest {
 
@@ -28,26 +27,25 @@ class CompareTripletsTest {
   public List<CompareTripletsTestCase> testCases;
 
   @BeforeAll
-  public void setup() {
+  void setup() {
     this.testCases = Arrays.asList(
-      new CompareTripletsTestCase(
-        Arrays.asList(5, 6, 7),
-        Arrays.asList(3, 6, 10),
-        Arrays.asList(1, 1))
-    );
+        new CompareTripletsTestCase(
+            Arrays.asList(5, 6, 7),
+            Arrays.asList(3, 6, 10),
+            Arrays.asList(1, 1)));
   }
 
-  @Test void testCompareTriplets() {
+  @Test
+  void testCompareTriplets() {
     for (CompareTripletsTestCase testCase : this.testCases) {
       List<Integer> solutionFound = CompareTriplets.compareTriplets(testCase.la, testCase.lb);
 
       assertEquals(testCase.expected, solutionFound,
           String.format("%s(%s, %s) answer must be: %s",
-            "CompareTriplets.compareTriplets",
-            testCase.la.toString(),
-            testCase.lb.toString(),
-            testCase.expected.toString())
-      );
+              "CompareTriplets.compareTriplets",
+              testCase.la.toString(),
+              testCase.lb.toString(),
+              testCase.expected.toString()));
     }
   }
 }

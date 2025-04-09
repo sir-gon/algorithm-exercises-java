@@ -10,7 +10,6 @@ import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
 import util.JsonLoader;
 
-
 @TestInstance(Lifecycle.PER_CLASS)
 class MinimumSwaps2Test {
 
@@ -23,7 +22,7 @@ class MinimumSwaps2Test {
   List<MinimumSwaps2TestCase> testCases;
 
   @BeforeAll
-  public void setup() throws IOException {
+  void setup() throws IOException {
     String path = String.join("/", "hackerrank",
         "interview_preparation_kit",
         "arrays",
@@ -32,7 +31,8 @@ class MinimumSwaps2Test {
     this.testCases = JsonLoader.loadJson(path, MinimumSwaps2TestCase.class);
   }
 
-  @Test void testArrayManipulation() {
+  @Test
+  void testArrayManipulation() {
     for (MinimumSwaps2TestCase testCase : testCases) {
       int[] input = testCase.input
           .stream()
@@ -42,11 +42,9 @@ class MinimumSwaps2Test {
 
       assertEquals(testCase.expected, solutionFound,
           "%s(%s) answer must be: %s".formatted(
-          "MinimumSwaps2.minimumSwaps",
-          testCase.input.toString(),
-          testCase.expected
-          )
-      );
+              "MinimumSwaps2.minimumSwaps",
+              testCase.input.toString(),
+              testCase.expected));
     }
   }
 }

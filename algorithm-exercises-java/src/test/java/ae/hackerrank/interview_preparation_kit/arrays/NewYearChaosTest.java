@@ -22,7 +22,7 @@ class NewYearChaosTest {
   List<NewYearChaosTestCase> testCases;
 
   @BeforeAll
-  public void setup() throws IOException {
+  void setup() throws IOException {
 
     String path = String.join("/", "hackerrank",
         "interview_preparation_kit",
@@ -32,7 +32,8 @@ class NewYearChaosTest {
     this.testCases = JsonLoader.loadJson(path, NewYearChaosTestCase.class);
   }
 
-  @Test void testMinimumBribesText() {
+  @Test
+  void testMinimumBribesText() {
 
     for (NewYearChaosTestCase test : this.testCases) {
       String solutionFound = NewYearChaos.minimumBribesText(test.input);
@@ -40,11 +41,9 @@ class NewYearChaosTest {
 
       assertEquals(test.expected, solutionFound,
           "%s(%s) answer must be: %s".formatted(
-            "NewYearChaosTestCase.minimumBribesText",
-            test.input,
-            test.expected
-          )
-      );
+              "NewYearChaosTestCase.minimumBribesText",
+              test.input,
+              test.expected));
     }
   }
 

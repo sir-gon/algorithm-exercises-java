@@ -9,7 +9,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
 
-
 @TestInstance(Lifecycle.PER_CLASS)
 class DiagonalDifferenceTest {
 
@@ -26,17 +25,16 @@ class DiagonalDifferenceTest {
   public List<DiagonalDifferenceTestCase> testCases;
 
   @BeforeAll
-  public void setup() {
+  void setup() {
     this.testCases = Arrays.asList(
-      new DiagonalDifferenceTestCase(Arrays.asList(
-        Arrays.asList(11, 2, 4),
-        Arrays.asList(4, 5, 6),
-        Arrays.asList(10, 8, -12)
-      ),  15)
-    );
+        new DiagonalDifferenceTestCase(Arrays.asList(
+            Arrays.asList(11, 2, 4),
+            Arrays.asList(4, 5, 6),
+            Arrays.asList(10, 8, -12)), 15));
   }
 
-  @Test void testDiagonalDifference() {
+  @Test
+  void testDiagonalDifference() {
 
     for (DiagonalDifferenceTestCase testCase : this.testCases) {
       Integer resultFound = DiagonalDifference.diagonalDifference(testCase.matrix);
@@ -45,8 +43,7 @@ class DiagonalDifferenceTest {
           String.format("%s(%s) answer must be: %s",
               "MiniMaxSum.miniMaxSum",
               testCase.matrix.toString(),
-              testCase.expected.toString())
-      );
+              testCase.expected.toString()));
     }
   }
 }

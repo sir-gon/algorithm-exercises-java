@@ -25,7 +25,7 @@ class PlusMinusTest {
   public List<PlusMinusTestCase> testCases;
 
   @BeforeAll
-  public void setup() {
+  void setup() {
     this.testCases = Arrays.asList(
         new PlusMinusTestCase(
             Arrays.asList(-4, 3, -9, 0, 4, 1),

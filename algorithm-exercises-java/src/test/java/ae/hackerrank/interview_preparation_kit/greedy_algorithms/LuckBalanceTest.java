@@ -12,7 +12,7 @@ import util.JsonLoader;
 
 /**
  * LuckBalanceTest.
-*/
+ */
 @TestInstance(Lifecycle.PER_CLASS)
 class LuckBalanceTest {
   public static class LuckBalanceTestCase {
@@ -25,9 +25,9 @@ class LuckBalanceTest {
   private List<LuckBalanceTestCase> testCases;
 
   @BeforeAll
-  public void setup() throws IOException {
+  void setup() throws IOException {
     String path = String.join("/",
-         "hackerrank",
+        "hackerrank",
         "interview_preparation_kit",
         "greedy_algorithms",
         "luck_balance.testcases.json");
@@ -35,18 +35,17 @@ class LuckBalanceTest {
     this.testCases = JsonLoader.loadJson(path, LuckBalanceTestCase.class);
   }
 
-  @Test void testLuckBalance() {
+  @Test
+  void testLuckBalance() {
     for (LuckBalanceTestCase test : testCases) {
       Integer result = LuckBalance.luckBalance(test.k, test.contests);
 
       assertEquals(test.expected, result,
           "%s(%d, %s) => must be: %s".formatted(
-            "LuckBalance.luckBalance",
-            test.k,
-            test.contests,
-            test.expected
-          )
-      );
+              "LuckBalance.luckBalance",
+              test.k,
+              test.contests,
+              test.expected));
     }
   }
 }
