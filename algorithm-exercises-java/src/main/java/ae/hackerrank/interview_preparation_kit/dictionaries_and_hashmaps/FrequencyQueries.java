@@ -23,7 +23,6 @@ public class FrequencyQueries {
 
   private static final int __NOT_FOUND__ = 0;
   private static final int __FOUND__ = 1;
-  private static final int __EXISTS__ = 1;
 
   /**
    * FrequencyQueries.
@@ -31,65 +30,68 @@ public class FrequencyQueries {
   static List<Integer> freqQuery(List<List<Integer>> queries) {
     List<Integer> result = new ArrayList<>();
     Map<Long, Long> valueFreqs = new HashMap<>();
-    Map<Long, Map<Long, Integer>> freqMap = new HashMap<>();
+    Map<Long, List<Long>> freqMap = new HashMap<>();
 
     for (List<Integer> query : queries) {
       int operation = query.get(0);
       long value = query.get(1);
+
       Long currentFreqCount = valueFreqs.getOrDefault(value, null);
+      List<Long> currentFreq = freqMap.getOrDefault(value, null);
       Long newFreqCount;
-      Map<Long, Integer> currentFreq;
-      Map<Long, Integer> newFreq;
+      List<Long> newFreq;
 
       switch (operation) {
         case __INSERT__:
           newFreqCount = (currentFreqCount == null ? __INITIAL__ : currentFreqCount + 1L);
           valueFreqs.put(value, newFreqCount);
 
-          // delete current value from frequency map
-          currentFreq = freqMap.getOrDefault(currentFreqCount, null);
+          newFreq = freqMap.getOrDefault(newFreqCount, null);
+
+          // delete current frequency
           if (currentFreq != null) {
-            currentFreq.remove(value);
-            if (currentFreq.isEmpty()) {
+            freqMap.get(currentFreqCount).remove(value);
+            if (freqMap.get(currentFreqCount).isEmpty()) {
               freqMap.remove(currentFreqCount);
             }
           }
 
-          // add new value to frequency map
-          newFreq = freqMap.getOrDefault(newFreqCount, null);
+          // add new frequency
           if (newFreq == null) {
-            newFreq = new HashMap<>();
-            newFreq.put(value, __EXISTS__);
+            newFreq = new ArrayList<>();
+            newFreq.add(value);
             freqMap.put(newFreqCount, newFreq);
+          } else {
+            freqMap.get(newFreqCount).add(value);
           }
 
           break;
         case __DELETE__:
-          newFreqCount = (currentFreqCount == null ? 0L : currentFreqCount - 1L);
-          valueFreqs.put(value, newFreqCount);
-
-          if (newFreqCount <= 0L) {
-            valueFreqs.remove(value);
-          } else {
+          newFreqCount = (currentFreqCount == null ? 0 : currentFreqCount - 1L);
+          if (newFreqCount > 0L) {
             valueFreqs.put(value, newFreqCount);
 
-            // add new value to frequency map
             newFreq = freqMap.getOrDefault(newFreqCount, null);
+            // add new frequency
             if (newFreq == null) {
-              newFreq = new HashMap<>();
-              newFreq.put(value, __EXISTS__);
+              newFreq = new ArrayList<>();
+              newFreq.add(value);
               freqMap.put(newFreqCount, newFreq);
+            } else {
+              freqMap.get(newFreqCount).add(value);
             }
+          } else {
+            valueFreqs.remove(value);
           }
 
-          // delete current value from frequency map
-          currentFreq = freqMap.getOrDefault(currentFreqCount, null);
-          if (currentFreq != null) {
-            currentFreq.remove(value);
-            if (currentFreq.isEmpty()) {
+          // delete current frequency
+          if (currentFreqCount != null) {
+            freqMap.get(currentFreqCount).remove(value);
+            if (freqMap.get(currentFreqCount).isEmpty()) {
               freqMap.remove(currentFreqCount);
             }
           }
+
           break;
         case __SELECT__:
           result.add(freqMap.containsKey(value) ? __FOUND__ : __NOT_FOUND__);
