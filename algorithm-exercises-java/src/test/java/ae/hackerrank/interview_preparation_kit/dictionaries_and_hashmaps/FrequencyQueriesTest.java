@@ -20,6 +20,7 @@ class FrequencyQueriesTest {
   }
 
   List<FrequencyQueriesTestCase> testCases;
+  List<FrequencyQueriesTestCase> testCase6;
 
   @BeforeAll
   public void setup() throws IOException {
@@ -31,6 +32,13 @@ class FrequencyQueriesTest {
         "frequency_queries.testcases.json");
 
     this.testCases = JsonLoader.loadJson(path, FrequencyQueriesTestCase.class);
+
+    path = String.join("/",
+        "hackerrank",
+        "interview_preparation_kit",
+        "dictionaries_and_hashmaps",
+        "frequency_queries.testcase6.json");
+    this.testCase6 = JsonLoader.loadJson(path, FrequencyQueriesTestCase.class);
   }
 
   @Test
@@ -38,6 +46,22 @@ class FrequencyQueriesTest {
     List<Integer> solutionFound;
 
     for (FrequencyQueriesTestCase test : testCases) {
+      solutionFound = FrequencyQueries.freqQuery(test.input);
+
+      assertEquals(test.expected, solutionFound,
+          "%s(%s) answer must be: %s".formatted(
+              "FrequencyQueriesTest.freqQuery",
+              test.input,
+              test.expected));
+    }
+  }
+
+  @Test
+  void testFrequencyQueriesBigCases() {
+    List<Integer> solutionFound;
+
+    for (FrequencyQueriesTestCase test : testCase6) {
+
       solutionFound = FrequencyQueries.freqQuery(test.input);
 
       assertEquals(test.expected, solutionFound,

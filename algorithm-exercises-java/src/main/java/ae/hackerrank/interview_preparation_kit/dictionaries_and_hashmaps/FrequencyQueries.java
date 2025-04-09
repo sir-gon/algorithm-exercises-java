@@ -37,7 +37,6 @@ public class FrequencyQueries {
       long value = query.get(1);
 
       Long currentFreqCount = valueFreqs.getOrDefault(value, null);
-      List<Long> currentFreq = freqMap.getOrDefault(value, null);
       Long newFreqCount;
       List<Long> newFreq;
 
@@ -49,7 +48,7 @@ public class FrequencyQueries {
           newFreq = freqMap.getOrDefault(newFreqCount, null);
 
           // delete current frequency
-          if (currentFreq != null) {
+          if (currentFreqCount != null) {
             freqMap.get(currentFreqCount).remove(value);
             if (freqMap.get(currentFreqCount).isEmpty()) {
               freqMap.remove(currentFreqCount);
