@@ -96,7 +96,8 @@ public class FrequencyQueries {
           result.add(freqMap.containsKey(value) ? __FOUND__ : __NOT_FOUND__);
           break;
         default:
-          break;
+          throw new IllegalArgumentException(
+              "Operation %d not supported".formatted(operation));
       }
     }
 

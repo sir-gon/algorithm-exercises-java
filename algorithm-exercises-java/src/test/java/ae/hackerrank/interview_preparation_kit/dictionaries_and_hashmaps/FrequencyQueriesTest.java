@@ -1,6 +1,8 @@
 package ae.hackerrank.interview_preparation_kit.dictionaries_and_hashmaps;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.IOException;
 import java.util.List;
@@ -21,9 +23,11 @@ class FrequencyQueriesTest {
 
   List<FrequencyQueriesTestCase> testCases;
   List<FrequencyQueriesTestCase> testCase6;
+  List<FrequencyQueriesTestCase> testCaseBorderCases;
+  List<FrequencyQueriesTestCase> testCaseBorderCaseException;
 
   @BeforeAll
-  public void setup() throws IOException {
+  void setup() throws IOException {
     String path;
     path = String.join("/",
         "hackerrank",
@@ -39,6 +43,20 @@ class FrequencyQueriesTest {
         "dictionaries_and_hashmaps",
         "frequency_queries.testcase6.json");
     this.testCase6 = JsonLoader.loadJson(path, FrequencyQueriesTestCase.class);
+
+    path = String.join("/",
+      "hackerrank",
+      "interview_preparation_kit",
+      "dictionaries_and_hashmaps",
+      "frequency_queries.testcase_border_cases.json");
+    this.testCaseBorderCases = JsonLoader.loadJson(path, FrequencyQueriesTestCase.class);
+
+    path = String.join("/",
+      "hackerrank",
+      "interview_preparation_kit",
+      "dictionaries_and_hashmaps",
+      "frequency_queries.testcase_border_case_exception.json");
+    this.testCaseBorderCaseException = JsonLoader.loadJson(path, FrequencyQueriesTestCase.class);
   }
 
   @Test
@@ -69,6 +87,36 @@ class FrequencyQueriesTest {
               "FrequencyQueriesTest.freqQuery",
               test.input,
               test.expected));
+    }
+  }
+
+  @Test
+  void testFrequencyQueriesBorderCases() {
+    List<Integer> solutionFound;
+
+    for (FrequencyQueriesTestCase test : testCaseBorderCases) {
+
+      solutionFound = FrequencyQueries.freqQuery(test.input);
+
+      assertEquals(test.expected, solutionFound,
+          "%s(%s) answer must be: %s".formatted(
+              "FrequencyQueriesTest.freqQuery",
+              test.input,
+              test.expected));
+    }
+  }
+
+  @Test
+  void testFrequencyQueriesBorderCaseException() {
+    for (FrequencyQueriesTestCase test : testCaseBorderCaseException) {
+      Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+        FrequencyQueries.freqQuery(test.input);
+      });
+
+      String expectedMessage = "Operation 4 not supported";
+      String actualMessage = exception.getMessage();
+
+      assertTrue(actualMessage.contains(expectedMessage));
     }
   }
 }
