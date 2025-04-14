@@ -87,13 +87,27 @@ public class FrequencyQueries {
     }
   }
 
+  void reset() {
+    this.result = new ArrayList<>();
+  }
+
+  void select(Long value) {
+    this.result.add(this.freqMap.containsKey(value) ? __FOUND__ : __NOT_FOUND__);
+  }
+
+  static FrequencyQueries factory() {
+    FrequencyQueries fq = new FrequencyQueries();
+    fq.reset();
+
+    return fq;
+  }
+
   /**
    * FrequencyQueries.
    */
   static List<Integer> freqQuery(List<List<Integer>> queries) {
 
-    FrequencyQueries fq = new FrequencyQueries();
-    fq.result = new ArrayList<>();
+    FrequencyQueries fq = FrequencyQueries.factory();
 
     for (List<Integer> query : queries) {
       int operation = query.get(0);
@@ -109,7 +123,7 @@ public class FrequencyQueries {
 
           break;
         case __SELECT__:
-          fq.result.add(fq.freqMap.containsKey(value) ? __FOUND__ : __NOT_FOUND__);
+          fq.select(value);
           break;
         default:
           throw new IllegalArgumentException(
