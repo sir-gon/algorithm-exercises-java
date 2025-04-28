@@ -94,7 +94,7 @@ CMD ["make", "test"]
 ## in the production phase, "good practices" such as
 ## WORKDIR and USER are maintained
 ##
-FROM eclipse-temurin:24_36-jre-alpine AS production
+FROM eclipse-temurin:24.0.1_9-jre-alpine AS production
 
 RUN apk add --update --no-cache make \
   # FIX CVE-2024-5535
