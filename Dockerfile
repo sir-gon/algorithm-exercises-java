@@ -1,5 +1,8 @@
+ARG BUILDTIME_IMAGE=gradle:8.14.0-jdk21-alpine
+ARG RUNTIME_IMAGE=eclipse-temurin:24.0.1_9-jre-alpine
+
 ###############################################################################
-FROM gradle:8.14.0-jdk21-alpine AS base
+FROM ${BUILDTIME_IMAGE} AS base
 
 RUN apk add --update --no-cache make \
   # FIX CVE-2024-5535
@@ -94,7 +97,8 @@ CMD ["make", "test"]
 ## in the production phase, "good practices" such as
 ## WORKDIR and USER are maintained
 ##
-FROM eclipse-temurin:24.0.1_9-jre-alpine AS production
+
+FROM ${RUNTIME_IMAGE} AS production
 
 RUN apk add --update --no-cache make \
   # FIX CVE-2024-5535
