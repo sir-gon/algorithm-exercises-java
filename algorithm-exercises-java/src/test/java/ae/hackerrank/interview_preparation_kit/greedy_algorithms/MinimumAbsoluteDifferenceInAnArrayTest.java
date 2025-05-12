@@ -1,0 +1,48 @@
+package ae.hackerrank.interview_preparation_kit.greedy_algorithms;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.io.IOException;
+import java.util.List;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.TestInstance.Lifecycle;
+import util.JsonLoader;
+
+/**
+ * MinimumAbsoluteDifferenceInAnArrayTest.
+ */
+@TestInstance(Lifecycle.PER_CLASS)
+class MinimumAbsoluteDifferenceInAnArrayTest {
+  public static class MinimumAbsoluteDifferenceInAnArrayTestCase {
+    public String title;
+    public List<Integer> input;
+    public Integer expected;
+  }
+
+  private List<MinimumAbsoluteDifferenceInAnArrayTestCase> testCases;
+
+  @BeforeAll
+  void setup() throws IOException {
+    String path = String.join("/",
+        "hackerrank",
+        "interview_preparation_kit",
+        "greedy_algorithms",
+        "minimum_absolute_difference_in_an_array.testcases.json");
+    this.testCases = JsonLoader.loadJson(path, MinimumAbsoluteDifferenceInAnArrayTestCase.class);
+  }
+
+  @Test
+  void testLuckBalance() {
+    for (MinimumAbsoluteDifferenceInAnArrayTestCase test : testCases) {
+      Integer result = MinimumAbsoluteDifferenceInAnArray.minimumAbsoluteDifference(test.input);
+
+      assertEquals(test.expected, result,
+          "%s(%s) => must be: %d".formatted(
+              "MinimumAbsoluteDifferenceInAnArray.minimumAbsoluteDifference",
+              test.input.toString(),
+              test.expected));
+    }
+  }
+}
