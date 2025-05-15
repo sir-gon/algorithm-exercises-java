@@ -1,4 +1,4 @@
-# Algorithm Exercises (Java 20)
+# Algorithm Exercises (Java 22, 23, 24)
 
 [![Java with Gradle](https://github.com/sir-gon/algorithm-exercises-java/actions/workflows/java-gradle.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-java/actions/workflows/java-gradle.yml)
 [![Markdown Lint](https://github.com/sir-gon/algorithm-exercises-java/actions/workflows/markdown-lint.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-java/actions/workflows/markdown-lint.yml)
@@ -244,9 +244,9 @@ Developed with runtime:
 
 ```text
 java --version
-java version "20.0.2" 2023-07-18
-Java(TM) SE Runtime Environment (build 20.0.2+9-78)
-Java HotSpot(TM) 64-Bit Server VM (build 20.0.2+9-78, mixed mode, sharing)
+java 24.0.1 2025-04-15
+Java(TM) SE Runtime Environment (build 24.0.1+9-30)
+Java HotSpot(TM) 64-Bit Server VM (build 24.0.1+9-30, mixed mode, sharing)
 ```
 
 ## Algorithm excersices sources
