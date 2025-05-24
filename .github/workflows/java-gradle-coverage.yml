@@ -31,7 +31,7 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@v4
         with:
-          java-version: 22
+          java-version: 24
           # Alternative distribution options are available
           distribution: temurin
       - name: Validate Gradle wrapper
