@@ -60,6 +60,12 @@ lint: lint/markdown lint/yaml test/styling test/static
 test/styling: dependencies
 	$(GRADLE) --console=verbose clean checkstyleMain checkstyleTest
 
+
+format/sources:
+	$(GRADLE) --console=verbose rewriteRun
+
+format: format/sources
+
 test/static: dependencies
 
 test: env
