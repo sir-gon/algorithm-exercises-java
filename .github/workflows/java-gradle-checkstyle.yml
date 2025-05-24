@@ -55,5 +55,5 @@ jobs:
       - name: Clean
         run: ./gradlew --console=verbose clean
 
-      - name: Run tests
-        run: ./gradlew --console=verbose test -x checkstyleMain checkstyleTest
+      - name: Lint
+        run: ./gradlew --console=verbose checkstyleMain checkstyleTest
