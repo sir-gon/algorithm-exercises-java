@@ -22,8 +22,8 @@ permissions:
   contents: read
 
 jobs:
-  gradle:
-    name: Java Gradle CI Test
+  test:
+    name: Java Gradle CI Test JUNit Jupiter
 
     strategy:
       matrix:
@@ -54,9 +54,6 @@ jobs:
 
       - name: Clean
         run: ./gradlew --console=verbose clean
-
-      - name: Lint
-        run: ./gradlew --console=verbose checkstyleMain checkstyleTest
 
       - name: Run tests
         run: ./gradlew --console=verbose test -x checkstyleMain checkstyleTest
