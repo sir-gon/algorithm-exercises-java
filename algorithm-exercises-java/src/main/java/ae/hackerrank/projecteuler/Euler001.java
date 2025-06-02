@@ -41,8 +41,8 @@ public class Euler001 {
     Long lcm = (a * b) / gcd(a, b);
 
     result = sumOfArithmeticProgression((long) n, (long) a)
-      + sumOfArithmeticProgression((long) n, (long) b)
-      - sumOfArithmeticProgression((long) n, lcm);
+        + sumOfArithmeticProgression((long) n, (long) b)
+        - sumOfArithmeticProgression((long) n, lcm);
 
     String log = String.format("Problem 001 solved: %d", result);
     Log.info(log);
