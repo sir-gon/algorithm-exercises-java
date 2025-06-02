@@ -47,7 +47,7 @@ public class Problem0021 {
 
       if (
           !key.equals(value)
-          && key.equals(properDivisorsSums.get(value))
+            && key.equals(properDivisorsSums.get(value))
       ) {
         amicableNumbers.add(key);
       }
