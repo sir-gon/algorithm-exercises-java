@@ -43,25 +43,60 @@ env:
 	@printenv | grep -E "LOG_LEVEL|BRUTEFORCE|BUILDKIT_PROGRESS"
 	@echo "################################################################################"
 
+## Dependency management
 dependencies:
 	@echo "################################################################################"
 	@echo "## Dependencies: ###############################################################"
 	@echo "################################################################################"
-	$(GRADLE) dependencies
+	$(GRADLE) dependencies --refresh-dependencies
 	@echo "################################################################################"
+
+outdated:
+	$(GRADLE) dependencyUpdates
+
+update: # TODO: Implement dependency update (dependency file)
+	@echo "NOT IMPLEMENTED YET"
+
+upgrade: # TODO: Implement dependency upgrade (download and install latest)
+	@echo "NOT IMPLEMENTED YET"
+
+clean:
+	$(GRADLE) clean
+
+## Building process
+build: env
+	$(GRADLE) --console=verbose clean build \
+		--exclude-task test \
+		--exclude-task checkstyleMain \
+		--exclude-task checkstyleTest
+
+## Source code linting and formatting
+lint/json:
+	prettier --check ./algorithm-exercises-java/**/*.json
 
 lint/markdown:
 	markdownlint '**/*.md' --ignore node_modules && echo '✔  Your code looks good.'
+
 lint/yaml:
 	yamllint --stric . && echo '✔  Your code looks good.'
 
-lint: lint/markdown lint/yaml test/styling test/static
+lint: lint/markdown lint/yaml lint/json test/styling test/static
 
+format/json:
+	prettier --write ./algorithm-exercises-java/**/*.json
+
+format/sources: # TODO: Implement source code formatting
+	@echo "NOT IMPLEMENTED YET"
+
+format: format/sources format/json
+
+## Static code analysis
 test/styling: dependencies
 	$(GRADLE) --console=verbose clean checkstyleMain checkstyleTest
 
 test/static: dependencies
 
+## Unit tests and coverage
 test: env
 	$(GRADLE) --console=verbose clean test -x checkstyleMain checkstyleTest
 
@@ -70,17 +105,7 @@ coverage: test
 coverage/html: test
 	open algorithm-exercises-java/build/reports/jacoco/test/html/index.html
 
-outdated:
-
-clean:
-	$(GRADLE) clean
-
-build: env
-	$(GRADLE) --console=verbose clean build \
-		--exclude-task test \
-		--exclude-task checkstyleMain \
-		--exclude-task checkstyleTest
-
+## Docker Compose commands
 compose/build: env
 	${DOCKER_COMPOSE} --profile lint build
 	${DOCKER_COMPOSE} --profile testing build
