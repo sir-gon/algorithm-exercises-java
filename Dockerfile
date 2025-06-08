@@ -53,6 +53,9 @@ COPY ./.yamllint ${WORKDIR}/
 COPY ./.yamlignore ${WORKDIR}/
 COPY ./.gitignore ${WORKDIR}/
 
+# JSON linting conf
+COPY ./.prettierrc.yaml ${WORKDIR}/
+
 CMD ["make", "lint"]
 
 ###############################################################################
