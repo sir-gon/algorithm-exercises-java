@@ -27,4 +27,4 @@ jobs:
 
       - name: Prettier LINT / Style JSON
         run: >
-          prettier --check ./src/**/*.json
+          prettier --check ./algorithm-exercises-java/**/*.json
