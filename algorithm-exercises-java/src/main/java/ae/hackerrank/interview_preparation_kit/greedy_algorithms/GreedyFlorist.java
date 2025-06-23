@@ -23,6 +23,7 @@ public class GreedyFlorist {
    */
   public static int getMinimumCost(int k, int[] c) {
     List<Integer> flowers = Arrays.stream(c).boxed().collect(Collectors.toList());
+    Collections.sort(flowers);
     Collections.reverse(flowers);
 
     int totalCost = 0;
