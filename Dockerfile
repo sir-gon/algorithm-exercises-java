@@ -1,4 +1,4 @@
-ARG BUILDTIME_IMAGE=gradle:8.14.2-jdk21-alpine
+ARG BUILDTIME_IMAGE=gradle:8.14.3-jdk21-alpine
 ARG RUNTIME_IMAGE=eclipse-temurin:24.0.1_9-jre-alpine
 
 ###############################################################################
