@@ -68,9 +68,9 @@ public class Problem0023 {
     );
     Log.debug(log);
 
-    ////////////////////
+    // /////////////////
     // filter duplicates
-    ////////////////////
+    // /////////////////
 
     // Create a new LinkedHashSet
     Set<Integer> set = new LinkedHashSet<>();
