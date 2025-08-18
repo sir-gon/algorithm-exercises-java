@@ -45,7 +45,7 @@ class FlippingBitsTest {
   }
 
   @Test
-  void testLuckBalance() {
+  void testFlippingBits() {
     for (FlippingBitsTestCase tests : testCases) {
       for (FlippingBitsTestCaseTest test : tests.tests) {
         Long result = FlippingBits.flippingBits(test.input);

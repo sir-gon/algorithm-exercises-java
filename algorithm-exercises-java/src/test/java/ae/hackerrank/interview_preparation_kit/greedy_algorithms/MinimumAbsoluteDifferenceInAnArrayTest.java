@@ -34,7 +34,7 @@ class MinimumAbsoluteDifferenceInAnArrayTest {
   }
 
   @Test
-  void testLuckBalance() {
+  void testMinimumAbsoluteDifferenceInAnArray() {
     for (MinimumAbsoluteDifferenceInAnArrayTestCase test : testCases) {
       Integer result = MinimumAbsoluteDifferenceInAnArray.minimumAbsoluteDifference(test.input);
 
