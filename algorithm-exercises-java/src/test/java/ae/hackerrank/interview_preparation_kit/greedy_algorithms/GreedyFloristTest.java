@@ -35,7 +35,7 @@ class GreedyFloristTest {
   }
 
   @Test
-  void testLuckBalance() {
+  void testGreedyFlorist() {
     for (GreedyFloristTestCase test : testCases) {
       int[] inputArray = test.c.stream().mapToInt(Integer::intValue).toArray();
       Integer result = GreedyFlorist.getMinimumCost(test.k, inputArray);

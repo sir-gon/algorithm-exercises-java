@@ -57,7 +57,7 @@ class SherlockAndAnagramsTest {
   /**
    * sherlockAndAnagrams.
    */
-  @Test void sherlockAndAnagrams() {
+  @Test void testSherlockAndAnagrams() {
     for (SherlockAndAnagramsTestCase _testCases : this.testCases) {
 
       for (SherlockAndAnagramsTestCase.TestCase test : _testCases.tests) {

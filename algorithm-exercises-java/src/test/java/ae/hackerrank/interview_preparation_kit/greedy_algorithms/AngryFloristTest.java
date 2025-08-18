@@ -35,7 +35,7 @@ class AngryFloristTest {
   }
 
   @Test
-  void testLuckBalance() {
+  void testAngryFlorist() {
     for (AngryFloristTestCase test : testCases) {
       Integer result = AngryFlorist.maxMin(test.k, test.arr);
 

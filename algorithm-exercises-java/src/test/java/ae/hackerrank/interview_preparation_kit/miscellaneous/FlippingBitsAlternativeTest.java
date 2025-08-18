@@ -14,24 +14,24 @@ import util.JsonLoader;
  * FlippingBitsTflippingBits.
  */
 @TestInstance(Lifecycle.PER_CLASS)
-class FlippingBitsTestAlternativeTest {
+class FlippingBitsAlternativeTest {
   /**
-   * FlippingBitsTestAlternativeTestCaseTest.
+   * FlippingBitsAlternativeTestCaseTest.
    */
-  public static class FlippingBitsTestAlternativeTestCaseTest {
+  public static class FlippingBitsAlternativeTestCaseTest {
     public long input;
     public long answer;
   }
 
   /**
-   * FlippingBitsTestAlternativeTestCase.
+   * FlippingBitsAlternativeTestCase.
    */
-  public static class FlippingBitsTestAlternativeTestCase {
+  public static class FlippingBitsAlternativeTestCase {
     public String title;
-    public List<FlippingBitsTestAlternativeTestCaseTest> tests;
+    public List<FlippingBitsAlternativeTestCaseTest> tests;
   }
 
-  private List<FlippingBitsTestAlternativeTestCase> testCases;
+  private List<FlippingBitsAlternativeTestCase> testCases;
 
   @BeforeAll
   void setup() throws IOException {
@@ -41,13 +41,13 @@ class FlippingBitsTestAlternativeTest {
         "miscellaneous",
         "flipping_bits.testcases.json");
 
-    this.testCases = JsonLoader.loadJson(path, FlippingBitsTestAlternativeTestCase.class);
+    this.testCases = JsonLoader.loadJson(path, FlippingBitsAlternativeTestCase.class);
   }
 
   @Test
-  void testLuckBalance() {
-    for (FlippingBitsTestAlternativeTestCase tests : testCases) {
-      for (FlippingBitsTestAlternativeTestCaseTest test : tests.tests) {
+  void testFlippingBitsAlternative() {
+    for (FlippingBitsAlternativeTestCase tests : testCases) {
+      for (FlippingBitsAlternativeTestCaseTest test : tests.tests) {
         Long result = FlippingBitsAlternative.flippingBits(test.input);
 
         assertEquals(test.answer, result,
