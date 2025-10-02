@@ -47,10 +47,10 @@ jobs:
           echo "Gradle version:"
           ./gradlew --version
       - name: Validate Gradle wrapper
-        uses: gradle/actions/wrapper-validation@v4
+        uses: gradle/actions/wrapper-validation@v5
 
       - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v4
+        uses: gradle/actions/setup-gradle@v5
 
       - name: Clean
         run: ./gradlew --console=verbose clean
