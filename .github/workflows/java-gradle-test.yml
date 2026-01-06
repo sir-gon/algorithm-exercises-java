@@ -8,7 +8,7 @@
 # yamllint enable rule:line-length
 ---
 
-name: Java CI Tests with Gradle
+name: Java CI Tests with Gradle + JUnit Jupiter
 
 on: # yamllint disable-line rule:truthy
   push:

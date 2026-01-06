@@ -1,6 +1,8 @@
 # Algorithm Exercises (Java 22, 23, 24)
 
-[![Java with Gradle](https://github.com/sir-gon/algorithm-exercises-java/actions/workflows/java-gradle.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-java/actions/workflows/java-gradle.yml)
+[![Java Test with Gradle + JUnit Jupiter](https://github.com/sir-gon/algorithm-exercises-java/actions/workflows/java-gradle-test.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-java/actions/workflows/java-gradle-test.yml)
+[![Java Lint with Gradle + Checkstyle](https://github.com/sir-gon/algorithm-exercises-java/actions/workflows/java-gradle-checkstyle.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-java/actions/workflows/java-gradle-checkstyle.yml)
+
 [![Markdown Lint](https://github.com/sir-gon/algorithm-exercises-java/actions/workflows/markdown-lint.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-java/actions/workflows/markdown-lint.yml)
 [![YAML lint](https://github.com/sir-gon/algorithm-exercises-java/actions/workflows/yamllint.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-java/actions/workflows/yamllint.yml)
 
