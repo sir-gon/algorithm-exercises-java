@@ -94,6 +94,12 @@ format: format/sources format/json
 test/styling: dependencies
 	$(GRADLE) --console=verbose clean checkstyleMain checkstyleTest
 
+
+format/sources:
+	$(GRADLE) --console=verbose rewriteRun
+
+format: format/sources
+
 test/static: dependencies
 
 ## Unit tests and coverage
