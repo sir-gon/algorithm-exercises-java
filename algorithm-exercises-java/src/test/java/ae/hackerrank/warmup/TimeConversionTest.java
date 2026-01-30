@@ -2,7 +2,7 @@ package ae.hackerrank.warmup;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -21,13 +21,13 @@ class TimeConversionTest {
     }
   }
 
-  public List<TimeConversionTestCase> testCases;
+  public List<TimeConversionTestCase> testCases = new ArrayList<>();
 
   @BeforeAll
   void setup() {
-    this.testCases = Arrays.asList(
-        new TimeConversionTestCase("12:01:00PM", "12:01:00"),
-        new TimeConversionTestCase("12:01:00AM", "00:01:00"));
+    this.testCases.clear();
+    this.testCases.add(new TimeConversionTestCase("12:01:00PM", "12:01:00"));
+    this.testCases.add(new TimeConversionTestCase("12:01:00AM", "00:01:00"));
   }
 
   @Test

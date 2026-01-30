@@ -2,6 +2,7 @@ package ae.hackerrank.warmup;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.junit.jupiter.api.BeforeAll;
@@ -22,15 +23,15 @@ class DiagonalDifferenceTest {
     }
   }
 
-  public List<DiagonalDifferenceTestCase> testCases;
+  public final List<DiagonalDifferenceTestCase> testCases = new ArrayList<>();
 
   @BeforeAll
   void setup() {
-    this.testCases = Arrays.asList(
-        new DiagonalDifferenceTestCase(Arrays.asList(
-            Arrays.asList(11, 2, 4),
-            Arrays.asList(4, 5, 6),
-            Arrays.asList(10, 8, -12)), 15));
+    this.testCases.clear();
+    this.testCases.add(new DiagonalDifferenceTestCase(Arrays.asList(
+        Arrays.asList(11, 2, 4),
+        Arrays.asList(4, 5, 6),
+        Arrays.asList(10, 8, -12)), 15));
   }
 
   @Test

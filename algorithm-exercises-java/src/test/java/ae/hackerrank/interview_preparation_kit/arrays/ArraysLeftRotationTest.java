@@ -3,6 +3,7 @@ package ae.hackerrank.interview_preparation_kit.arrays;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.junit.jupiter.api.BeforeAll;
@@ -19,7 +20,7 @@ class ArraysLeftRotationTest {
     public List<Integer> expected;
   }
 
-  List<ArraysLeftRotationTestCase> testCases;
+  private final List<ArraysLeftRotationTestCase> testCases = new ArrayList<>();
 
   @BeforeAll
   void setup() throws IOException {
@@ -29,7 +30,8 @@ class ArraysLeftRotationTest {
         "arrays",
         "ctci_array_left_rotation.testcases.json");
 
-    this.testCases = JsonLoader.loadJson(path, ArraysLeftRotationTestCase.class);
+    this.testCases.clear();
+    this.testCases.addAll(JsonLoader.loadJson(path, ArraysLeftRotationTestCase.class));
   }
 
   @Test

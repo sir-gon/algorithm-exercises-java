@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -21,10 +22,10 @@ class FrequencyQueriesTest {
     public List<Integer> expected;
   }
 
-  List<FrequencyQueriesTestCase> testCases;
-  List<FrequencyQueriesTestCase> testCase6;
-  List<FrequencyQueriesTestCase> testCaseBorderCases;
-  List<FrequencyQueriesTestCase> testCaseBorderCaseException;
+  private final List<FrequencyQueriesTestCase> testCases = new ArrayList<>();
+  private final List<FrequencyQueriesTestCase> testCase6 = new ArrayList<>();
+  private final List<FrequencyQueriesTestCase> testCaseBorderCases = new ArrayList<>();
+  private final List<FrequencyQueriesTestCase> testCaseBorderCaseException = new ArrayList<>();
 
   @BeforeAll
   void setup() throws IOException {
@@ -35,28 +36,33 @@ class FrequencyQueriesTest {
         "dictionaries_and_hashmaps",
         "frequency_queries.testcases.json");
 
-    this.testCases = JsonLoader.loadJson(path, FrequencyQueriesTestCase.class);
+    this.testCases.clear();
+    this.testCases.addAll(JsonLoader.loadJson(path, FrequencyQueriesTestCase.class));
 
     path = String.join("/",
         "hackerrank",
         "interview_preparation_kit",
         "dictionaries_and_hashmaps",
         "frequency_queries.testcase6.json");
-    this.testCase6 = JsonLoader.loadJson(path, FrequencyQueriesTestCase.class);
+    this.testCase6.clear();
+    this.testCase6.addAll(JsonLoader.loadJson(path, FrequencyQueriesTestCase.class));
 
     path = String.join("/",
-      "hackerrank",
-      "interview_preparation_kit",
-      "dictionaries_and_hashmaps",
-      "frequency_queries.testcase_border_cases.json");
-    this.testCaseBorderCases = JsonLoader.loadJson(path, FrequencyQueriesTestCase.class);
+        "hackerrank",
+        "interview_preparation_kit",
+        "dictionaries_and_hashmaps",
+        "frequency_queries.testcase_border_cases.json");
+    this.testCaseBorderCases.clear();
+    this.testCaseBorderCases.addAll(JsonLoader.loadJson(path, FrequencyQueriesTestCase.class));
 
     path = String.join("/",
-      "hackerrank",
-      "interview_preparation_kit",
-      "dictionaries_and_hashmaps",
-      "frequency_queries.testcase_border_case_exception.json");
-    this.testCaseBorderCaseException = JsonLoader.loadJson(path, FrequencyQueriesTestCase.class);
+        "hackerrank",
+        "interview_preparation_kit",
+        "dictionaries_and_hashmaps",
+        "frequency_queries.testcase_border_case_exception.json");
+    this.testCaseBorderCaseException.clear();
+    this.testCaseBorderCaseException.addAll(
+        JsonLoader.loadJson(path, FrequencyQueriesTestCase.class));
   }
 
   @Test

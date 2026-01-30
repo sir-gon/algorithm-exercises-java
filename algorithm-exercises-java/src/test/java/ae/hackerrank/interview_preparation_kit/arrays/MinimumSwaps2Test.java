@@ -3,6 +3,7 @@ package ae.hackerrank.interview_preparation_kit.arrays;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -19,7 +20,7 @@ class MinimumSwaps2Test {
     public long expected;
   }
 
-  List<MinimumSwaps2TestCase> testCases;
+  private final List<MinimumSwaps2TestCase> testCases = new ArrayList<>();
 
   @BeforeAll
   void setup() throws IOException {
@@ -28,7 +29,8 @@ class MinimumSwaps2Test {
         "arrays",
         "minimum_swaps_2.testcases.json");
 
-    this.testCases = JsonLoader.loadJson(path, MinimumSwaps2TestCase.class);
+    this.testCases.clear();
+    this.testCases.addAll(JsonLoader.loadJson(path, MinimumSwaps2TestCase.class));
   }
 
   @Test

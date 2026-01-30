@@ -3,6 +3,7 @@ package ae.hackerrank.interview_preparation_kit.greedy_algorithms;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -22,7 +23,7 @@ class AngryFloristTest {
     public Integer expected;
   }
 
-  private List<AngryFloristTestCase> testCases;
+  private final List<AngryFloristTestCase> testCases = new ArrayList<>();
 
   @BeforeAll
   void setup() throws IOException {
@@ -31,7 +32,8 @@ class AngryFloristTest {
         "interview_preparation_kit",
         "greedy_algorithms",
         "angry_children.testcases.json");
-    this.testCases = JsonLoader.loadJson(path, AngryFloristTestCase.class);
+    this.testCases.clear();
+    this.testCases.addAll(JsonLoader.loadJson(path, AngryFloristTestCase.class));
   }
 
   @Test

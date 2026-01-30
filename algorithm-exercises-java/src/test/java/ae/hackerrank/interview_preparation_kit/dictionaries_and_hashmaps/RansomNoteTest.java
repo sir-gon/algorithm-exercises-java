@@ -3,6 +3,7 @@ package ae.hackerrank.interview_preparation_kit.dictionaries_and_hashmaps;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -20,7 +21,7 @@ class RansomNoteTest {
     public String expected;
   }
 
-  List<RansomNoteTestCase> testCases;
+  private final List<RansomNoteTestCase> testCases = new ArrayList<>();
 
   @BeforeAll
   void setup() throws IOException {
@@ -29,7 +30,8 @@ class RansomNoteTest {
         "dictionaries_and_hashmaps",
         "ctci_ransom_note.testcases.json");
 
-    this.testCases = JsonLoader.loadJson(path, RansomNoteTestCase.class);
+    this.testCases.clear();
+    this.testCases.addAll(JsonLoader.loadJson(path, RansomNoteTestCase.class));
   }
 
   @Test
