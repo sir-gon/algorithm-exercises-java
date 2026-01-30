@@ -3,6 +3,7 @@ package ae.hackerrank.projecteuler;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -18,7 +19,7 @@ class Euler002Test {
     public Long expected;
   }
 
-  private List<Euler002TestCase> testCases;
+  private final List<Euler002TestCase> testCases = new ArrayList<>();
 
   @BeforeAll
   void setup() throws IOException {
@@ -27,7 +28,8 @@ class Euler002Test {
         "projecteuler",
         "euler002.testcases.json");
 
-    this.testCases = JsonLoader.loadJson(path, Euler002TestCase.class);
+    this.testCases.clear();
+    this.testCases.addAll(JsonLoader.loadJson(path, Euler002TestCase.class));
   }
 
   @Test

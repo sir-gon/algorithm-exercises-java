@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -22,7 +23,7 @@ class Euler003Test {
     public Long expected;
   }
 
-  private List<Euler003TestCase> testCases;
+  private final List<Euler003TestCase> testCases = new ArrayList<>();
 
   @BeforeAll
   void setup() throws IOException {
@@ -31,7 +32,8 @@ class Euler003Test {
         "projecteuler",
         "euler003.testcases.json");
 
-    this.testCases = JsonLoader.loadJson(path, Euler003TestCase.class);
+    this.testCases.clear();
+    this.testCases.addAll(JsonLoader.loadJson(path, Euler003TestCase.class));
   }
 
   @Test

@@ -2,6 +2,7 @@ package ae.hackerrank.warmup;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.junit.jupiter.api.BeforeAll;
@@ -24,15 +25,15 @@ class CompareTripletsTest {
     }
   }
 
-  public List<CompareTripletsTestCase> testCases;
+  public final List<CompareTripletsTestCase> testCases = new ArrayList<>();
 
   @BeforeAll
   void setup() {
-    this.testCases = Arrays.asList(
-        new CompareTripletsTestCase(
-            Arrays.asList(5, 6, 7),
-            Arrays.asList(3, 6, 10),
-            Arrays.asList(1, 1)));
+    this.testCases.clear();
+    this.testCases.add(new CompareTripletsTestCase(
+        Arrays.asList(5, 6, 7),
+        Arrays.asList(3, 6, 10),
+        Arrays.asList(1, 1)));
   }
 
   @Test

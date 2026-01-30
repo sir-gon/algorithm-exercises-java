@@ -10,17 +10,16 @@
 # supported CodeQL languages.
 #
 ---
-
 name: CodeQL
 
 permissions: read-all
 
 on: # yamllint disable-line rule:truthy
   push:
-    branches: ["main"]
+    branches: ['main']
   pull_request:
     # The branches below must be a subset of the branches above
-    branches: ["main"]
+    branches: ['main']
   workflow_dispatch:
   schedule:
     #        ┌───────────── minute (0 - 59)
@@ -43,8 +42,7 @@ jobs:
     #   - https://gh.io/using-larger-runners (GitHub.com only)
     # Consider using larger runners or machines with greater resources
     # for possible analysis time improvements.
-    runs-on:
-      ${{ (matrix.language == 'swift' && 'macos-14') || 'ubuntu-24.04' }}
+    runs-on: ${{ (matrix.language == 'swift' && 'macos-14') || 'ubuntu-24.04' }}
     permissions:
       # required for all workflows
       security-events: write
@@ -106,7 +104,7 @@ jobs:
 
       - run: |
           echo Run, Build Application using script
-          ./gradlew build
+          ./gradlew build -x checkstyleMain checkstyleTest
 
       # - run: |
       #     echo Run, Build Application using script

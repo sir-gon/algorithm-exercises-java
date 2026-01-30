@@ -20,7 +20,7 @@ class TwoDarrayTest {
     public long expected;
   }
 
-  private List<TwoDarrayTestCase> testCases;
+  private final List<TwoDarrayTestCase> testCases = new ArrayList<>();
 
   @BeforeAll
   void setup() throws IOException {
@@ -29,7 +29,8 @@ class TwoDarrayTest {
         "arrays",
         "2d_array.testcases.json");
 
-    this.testCases = JsonLoader.loadJson(path, TwoDarrayTestCase.class);
+    this.testCases.clear();
+    this.testCases.addAll(JsonLoader.loadJson(path, TwoDarrayTestCase.class));
   }
 
   @Test

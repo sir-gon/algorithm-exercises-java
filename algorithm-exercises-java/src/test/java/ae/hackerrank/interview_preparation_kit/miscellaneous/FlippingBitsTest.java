@@ -3,6 +3,7 @@ package ae.hackerrank.interview_preparation_kit.miscellaneous;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -31,7 +32,7 @@ class FlippingBitsTest {
     public List<FlippingBitsTestCaseTest> tests;
   }
 
-  private List<FlippingBitsTestCase> testCases;
+  private final List<FlippingBitsTestCase> testCases = new ArrayList<>();
 
   @BeforeAll
   void setup() throws IOException {
@@ -41,7 +42,8 @@ class FlippingBitsTest {
         "miscellaneous",
         "flipping_bits.testcases.json");
 
-    this.testCases = JsonLoader.loadJson(path, FlippingBitsTestCase.class);
+    this.testCases.clear();
+    this.testCases.addAll(JsonLoader.loadJson(path, FlippingBitsTestCase.class));
   }
 
   @Test
@@ -52,9 +54,9 @@ class FlippingBitsTest {
 
         assertEquals(test.answer, result,
             "%s(%s) => must be: %d".formatted(
-              "FlippingBits.flippingBits",
-              test.input,
-              test.answer));
+                "FlippingBits.flippingBits",
+                test.input,
+                test.answer));
       }
     }
   }

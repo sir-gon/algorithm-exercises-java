@@ -2,7 +2,6 @@ package ae.hackerrank.warmup;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.util.Arrays;
 import java.util.List;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -21,11 +20,12 @@ class StaircaseTest {
     }
   }
 
-  public List<StaircaseTestCase> testCases;
+  public List<StaircaseTestCase> testCases = new java.util.ArrayList<>();
 
   @BeforeAll
   void setup() {
-    this.testCases = Arrays.asList(
+    this.testCases.clear();
+    this.testCases.add(
         new StaircaseTestCase(
             6, String.join("\n",
                 "     #",

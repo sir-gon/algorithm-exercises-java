@@ -3,6 +3,7 @@ package ae.hackerrank.interview_preparation_kit.greedy_algorithms;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -22,7 +23,7 @@ class LuckBalanceTest {
     public Integer expected;
   }
 
-  private List<LuckBalanceTestCase> testCases;
+  private final List<LuckBalanceTestCase> testCases = new ArrayList<>();
 
   @BeforeAll
   void setup() throws IOException {
@@ -32,7 +33,8 @@ class LuckBalanceTest {
         "greedy_algorithms",
         "luck_balance.testcases.json");
 
-    this.testCases = JsonLoader.loadJson(path, LuckBalanceTestCase.class);
+    this.testCases.clear();
+    this.testCases.addAll(JsonLoader.loadJson(path, LuckBalanceTestCase.class));
   }
 
   @Test

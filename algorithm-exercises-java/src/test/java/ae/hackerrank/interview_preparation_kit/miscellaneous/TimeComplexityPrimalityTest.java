@@ -3,6 +3,7 @@ package ae.hackerrank.interview_preparation_kit.miscellaneous;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -31,7 +32,7 @@ class TimeComplexityPrimalityTest {
     public List<TimeComplexityPrimalityTestCaseTest> tests;
   }
 
-  private List<TimeComplexityPrimalityTestCase> testCases;
+  private final List<TimeComplexityPrimalityTestCase> testCases = new ArrayList<>();
 
   @BeforeAll
   void setup() throws IOException {
@@ -41,7 +42,8 @@ class TimeComplexityPrimalityTest {
         "miscellaneous",
         "ctci_big_o.testcases.json");
 
-    this.testCases = JsonLoader.loadJson(path, TimeComplexityPrimalityTestCase.class);
+    this.testCases.clear();
+    this.testCases.addAll(JsonLoader.loadJson(path, TimeComplexityPrimalityTestCase.class));
   }
 
   @Test
@@ -52,9 +54,9 @@ class TimeComplexityPrimalityTest {
 
         assertEquals(test.answer, result,
             "%s(%s) => must be: %s".formatted(
-              "TimeComplexityPrimality.primality",
-              test.input,
-              test.answer));
+                "TimeComplexityPrimality.primality",
+                test.input,
+                test.answer));
       }
     }
   }

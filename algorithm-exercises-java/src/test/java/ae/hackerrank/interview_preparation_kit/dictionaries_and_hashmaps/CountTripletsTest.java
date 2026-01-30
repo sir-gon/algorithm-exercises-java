@@ -3,6 +3,7 @@ package ae.hackerrank.interview_preparation_kit.dictionaries_and_hashmaps;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -22,8 +23,8 @@ class CountTripletsTest {
     public Long expected;
   }
 
-  private List<CountTripletsTestCase> smallTestCases;
-  private List<CountTripletsTestCase> bigTestCases;
+  private final List<CountTripletsTestCase> smallTestCases = new ArrayList<>();
+  private final List<CountTripletsTestCase> bigTestCases = new ArrayList<>();
 
   @BeforeAll
   void setup() throws IOException {
@@ -34,7 +35,8 @@ class CountTripletsTest {
         "dictionaries_and_hashmaps",
         "count_triplets_1.small.testcases.json");
 
-    this.smallTestCases = JsonLoader.loadJson(path, CountTripletsTestCase.class);
+    this.smallTestCases.clear();
+    this.smallTestCases.addAll(JsonLoader.loadJson(path, CountTripletsTestCase.class));
 
     path = String.join("/",
         "hackerrank",
@@ -42,7 +44,8 @@ class CountTripletsTest {
         "dictionaries_and_hashmaps",
         "count_triplets_1.big.testcases.json");
 
-    this.bigTestCases = JsonLoader.loadJson(path, CountTripletsTestCase.class);
+    this.bigTestCases.clear();
+    this.bigTestCases.addAll(JsonLoader.loadJson(path, CountTripletsTestCase.class));
 
   }
 

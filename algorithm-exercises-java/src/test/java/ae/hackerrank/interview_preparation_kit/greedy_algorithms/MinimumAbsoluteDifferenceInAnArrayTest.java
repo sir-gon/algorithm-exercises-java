@@ -3,6 +3,7 @@ package ae.hackerrank.interview_preparation_kit.greedy_algorithms;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -21,7 +22,7 @@ class MinimumAbsoluteDifferenceInAnArrayTest {
     public Integer expected;
   }
 
-  private List<MinimumAbsoluteDifferenceInAnArrayTestCase> testCases;
+  private final List<MinimumAbsoluteDifferenceInAnArrayTestCase> testCases = new ArrayList<>();
 
   @BeforeAll
   void setup() throws IOException {
@@ -30,7 +31,9 @@ class MinimumAbsoluteDifferenceInAnArrayTest {
         "interview_preparation_kit",
         "greedy_algorithms",
         "minimum_absolute_difference_in_an_array.testcases.json");
-    this.testCases = JsonLoader.loadJson(path, MinimumAbsoluteDifferenceInAnArrayTestCase.class);
+    this.testCases.clear();
+    this.testCases.addAll(
+        JsonLoader.loadJson(path, MinimumAbsoluteDifferenceInAnArrayTestCase.class));
   }
 
   @Test

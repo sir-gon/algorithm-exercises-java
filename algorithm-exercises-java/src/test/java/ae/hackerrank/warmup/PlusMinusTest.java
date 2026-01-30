@@ -22,14 +22,16 @@ class PlusMinusTest {
     }
   }
 
-  public List<PlusMinusTestCase> testCases;
+  public List<PlusMinusTestCase> testCases = new java.util.ArrayList<>();
 
   @BeforeAll
   void setup() {
-    this.testCases = Arrays.asList(
+    this.testCases.clear();
+    this.testCases.add(
         new PlusMinusTestCase(
             Arrays.asList(-4, 3, -9, 0, 4, 1),
             String.join("\n", "0.500000", "0.333333", "0.166667")));
+
   }
 
   @Test

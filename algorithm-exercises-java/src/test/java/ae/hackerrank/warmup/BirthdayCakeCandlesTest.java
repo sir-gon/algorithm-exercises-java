@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.junit.jupiter.api.BeforeAll;
@@ -23,17 +24,17 @@ class BirthdayCakeCandlesTest {
     }
   }
 
-  public List<BirthdayCakeCandlesTestCase> testCases;
+  public final List<BirthdayCakeCandlesTestCase> testCases = new ArrayList<>();
 
   @BeforeAll
   void setup() {
-    this.testCases = Arrays.asList(
-        new BirthdayCakeCandlesTestCase(
-            Arrays.asList(3, 2, 1, 3),
-            2),
-        new BirthdayCakeCandlesTestCase(
-            Arrays.asList(1, 2, 3, 3),
-            2));
+    this.testCases.clear();
+    this.testCases.add(new BirthdayCakeCandlesTestCase(
+        Arrays.asList(3, 2, 1, 3),
+        2));
+    this.testCases.add(new BirthdayCakeCandlesTestCase(
+        Arrays.asList(1, 2, 3, 3),
+        2));
   }
 
   @Test

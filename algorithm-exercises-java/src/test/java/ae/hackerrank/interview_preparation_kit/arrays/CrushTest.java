@@ -3,6 +3,7 @@ package ae.hackerrank.interview_preparation_kit.arrays;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -20,7 +21,7 @@ class CrushTest {
     public long expected;
   }
 
-  List<CrushTestCase> testCases;
+  private final List<CrushTestCase> testCases = new ArrayList<>();
 
   @BeforeAll
   void setup() throws IOException {
@@ -29,7 +30,8 @@ class CrushTest {
         "arrays",
         "crush.testcases.json");
 
-    this.testCases = JsonLoader.loadJson(path, CrushTestCase.class);
+    this.testCases.clear();
+    this.testCases.addAll(JsonLoader.loadJson(path, CrushTestCase.class));
   }
 
   @Test

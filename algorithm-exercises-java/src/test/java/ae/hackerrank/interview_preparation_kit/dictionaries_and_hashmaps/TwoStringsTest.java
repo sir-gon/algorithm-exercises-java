@@ -3,6 +3,7 @@ package ae.hackerrank.interview_preparation_kit.dictionaries_and_hashmaps;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -22,7 +23,7 @@ class TwoStringsTest {
     public String expected;
   }
 
-  private List<TwoStringsTestCase> testCases;
+  private final List<TwoStringsTestCase> testCases = new ArrayList<>();
 
   @BeforeAll
   void setup() throws IOException {
@@ -32,7 +33,8 @@ class TwoStringsTest {
         "dictionaries_and_hashmaps",
         "two_strings.testcases.json");
 
-    this.testCases = JsonLoader.loadJson(path, TwoStringsTestCase.class);
+    this.testCases.clear();
+    this.testCases.addAll(JsonLoader.loadJson(path, TwoStringsTestCase.class));
   }
 
   @Test
