@@ -85,8 +85,8 @@ lint: lint/markdown lint/yaml lint/json test/styling test/static
 format/json:
 	prettier --write ./algorithm-exercises-java/**/*.json
 
-format/sources: # TODO: Implement source code formatting
-	@echo "NOT IMPLEMENTED YET"
+format/sources:
+	$(GRADLE) --console=verbose spotlessApply
 
 format: format/sources format/json
 
