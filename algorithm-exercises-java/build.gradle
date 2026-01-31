@@ -10,7 +10,7 @@ plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
     id 'checkstyle'
-    id 'org.openrewrite.rewrite' version '7.6.2'
+    id 'org.openrewrite.rewrite' version '7.25.0'
     id 'jacoco'
     id 'org.barfuin.gradle.jacocolog' version '4.0.1'
     id 'com.adarshr.test-logger' version '4.0.0'
