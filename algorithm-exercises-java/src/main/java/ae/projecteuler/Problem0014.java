@@ -12,10 +12,7 @@ import util.Log;
 public class Problem0014 {
   private Problem0014() {}
 
-
-  /**
-   * Problem 0013.
-   */
+  /** Problem 0013. */
   public static Long problem0014(Integer bottom, Integer top) throws IllegalArgumentException {
     String log;
 
@@ -29,7 +26,7 @@ public class Problem0014 {
 
     for (int i = bottom; i < top; i++) {
       long c = i;
-      ArrayList<Long> sequence =  new ArrayList<>();
+      ArrayList<Long> sequence = new ArrayList<>();
       sequence.add(c);
       do {
         c = Collatz.collatz(c);
@@ -44,10 +41,8 @@ public class Problem0014 {
       }
     }
 
-    log = String.format(
-        "Large sequence found: %s has %d elements",
-        maxSequence,
-        maxSequence.size());
+    log =
+        String.format("Large sequence found: %s has %d elements", maxSequence, maxSequence.size());
     Log.debug(log);
 
     // return firt element

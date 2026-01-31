@@ -3,24 +3,22 @@ package ae.hackerrank.interview_preparation_kit.arrays;
 import java.util.Arrays;
 import java.util.List;
 
-
 /**
  * Crush (Optimized).
  *
  * @link Problem definition [[docs/hackerrank/interview_preparation_kit/arrays/crush.md]]
- * @link Solution notes [[docs/hackerrank/interview_preparation_kit/arrays/crush_optimized-solution-notes.md]]
+ * @link Solution notes
+ *     [[docs/hackerrank/interview_preparation_kit/arrays/crush_optimized-solution-notes.md]]
  */
 public class CrushOptimized {
 
   private CrushOptimized() {}
 
-  /**
-   * arrayManipulation.
-   */
+  /** arrayManipulation. */
   public static long arrayManipulation(int n, List<List<Integer>> queries) {
     // why adding 2?
-    //   first slot to adjust 1-based index and
-    //   last slot for storing accumSum result
+    // first slot to adjust 1-based index and
+    // last slot for storing accumSum result
     int[] result = new int[n + 2];
     Arrays.fill(result, 0);
     int maximum = 0;

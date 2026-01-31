@@ -8,16 +8,13 @@ import java.util.stream.Collectors;
  * AngryFlorist.
  *
  * @link Problem definition
- *       [[docs/hackerrank/interview_preparation_kit/greedy_algorithms/angry-children.md]]
+ *     [[docs/hackerrank/interview_preparation_kit/greedy_algorithms/angry-children.md]]
  */
 public class AngryFlorist {
 
-  private AngryFlorist() {
-  }
+  private AngryFlorist() {}
 
-  /**
-   * maxMin.
-   */
+  /** maxMin. */
   public static int maxMin(int k, List<Integer> arr) {
     List<Integer> sortedNums = arr.stream().collect(Collectors.toList());
     Collections.sort(sortedNums);

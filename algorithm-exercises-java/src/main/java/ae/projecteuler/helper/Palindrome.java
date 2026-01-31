@@ -1,15 +1,13 @@
 package ae.projecteuler.helper;
 
-/**
- * Palindrome helper.
- */
+/** Palindrome helper. */
 public class Palindrome {
 
   private Palindrome() {}
 
   /**
-   * Checks that a number is a palindrome
-   * (reads the same in both directions: left-to-right / right-to-left).
+   * Checks that a number is a palindrome (reads the same in both directions: left-to-right /
+   * right-to-left).
    *
    * @param number Number to test if it is a palindrome
    * @return Boolean
@@ -20,5 +18,4 @@ public class Palindrome {
 
     return original.equals(reversed);
   }
-
 }

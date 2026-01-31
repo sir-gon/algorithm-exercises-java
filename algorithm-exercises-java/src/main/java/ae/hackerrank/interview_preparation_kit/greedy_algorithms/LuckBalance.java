@@ -8,7 +8,8 @@ import java.util.stream.Collectors;
 /**
  * LuckBalance.
  *
- * @link Problem definition [[docs/hackerrank/interview_preparation_kit/greedy_algorithms/luck-balance.md]]
+ * @link Problem definition
+ *     [[docs/hackerrank/interview_preparation_kit/greedy_algorithms/luck-balance.md]]
  */
 public class LuckBalance {
 
@@ -30,12 +31,13 @@ public class LuckBalance {
     }
   }
 
-  private LuckBalance() { }
+  private LuckBalance() {}
 
   /**
    * luckBalance.
    *
-   * @link https://www.baeldung.com/java-sort-collection-multiple-fields#use-comparatorcomparing-and-lambda-expression
+   * @link
+   *     https://www.baeldung.com/java-sort-collection-multiple-fields#use-comparatorcomparing-and-lambda-expression
    */
   public static int luckBalance(int k, List<List<Integer>> contests) {
     List<Competition> importantCompetitions = new ArrayList<>();
@@ -52,14 +54,14 @@ public class LuckBalance {
       }
     }
 
-    importantCompetitions = importantCompetitions
-      .stream()
-      .sorted(
-        Comparator
-          .comparing(Competition::getImportant).reversed()
-          .thenComparing(Competition::getLuck).reversed()
-      )
-      .collect(Collectors.toList());
+    importantCompetitions =
+        importantCompetitions.stream()
+            .sorted(
+                Comparator.comparing(Competition::getImportant)
+                    .reversed()
+                    .thenComparing(Competition::getLuck)
+                    .reversed())
+            .collect(Collectors.toList());
 
     int total = 0;
     int size = importantCompetitions.size();

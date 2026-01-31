@@ -27,10 +27,7 @@ class Euler003Test {
 
   @BeforeAll
   void setup() throws IOException {
-    String path = String.join("/",
-        "hackerrank",
-        "projecteuler",
-        "euler003.testcases.json");
+    String path = String.join("/", "hackerrank", "projecteuler", "euler003.testcases.json");
 
     this.testCases.clear();
     this.testCases.addAll(JsonLoader.loadJson(path, Euler003TestCase.class));
@@ -42,19 +39,15 @@ class Euler003Test {
     for (Euler003TestCase test : testCases) {
       Long solutionFound = Euler003.euler003(test.n);
 
-      assertEquals(test.expected, solutionFound,
-          "%s(%d) => must be: %s".formatted(
-              "Euler003.euler003",
-              test.n,
-              test.expected));
+      assertEquals(
+          test.expected,
+          solutionFound,
+          "%s(%d) => must be: %s".formatted("Euler003.euler003", test.n, test.expected));
     }
   }
 
   @ParameterizedTest
-  @CsvSource({
-      "0",
-      "1"
-  })
+  @CsvSource({"0", "1"})
   void euler003edgecases(long input) {
 
     Exception exception;
@@ -64,6 +57,5 @@ class Euler003Test {
     String expectedMessage = "n must be greater than 2";
 
     assertTrue(exception.getMessage().contains(expectedMessage));
-
   }
 }

@@ -34,12 +34,10 @@ public class Euler003 {
     return maxPrimeFactor;
   }
 
-  /**
-   * Even Fibonacci numbers.
-   */
+  /** Even Fibonacci numbers. */
   public static Long euler003(long n) {
     return primeFactor(n);
   }
 }
 
-//CHECKSTYLE.ON: JavadocParagraph
+// CHECKSTYLE.ON: JavadocParagraph

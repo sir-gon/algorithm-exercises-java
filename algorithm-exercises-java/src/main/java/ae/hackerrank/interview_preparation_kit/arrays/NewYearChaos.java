@@ -2,7 +2,6 @@ package ae.hackerrank.interview_preparation_kit.arrays;
 
 import java.util.List;
 
-
 /**
  * New Year Chaos.
  *
@@ -15,10 +14,7 @@ public class NewYearChaos {
   static final String TOO_CHAOTIC_ERROR = "Too chaotic";
   static final int NEW_YEAR_CHAOS_TOLERANCE = 2;
 
-
-  /**
-   * minimumBribesCalculate.
-   */
+  /** minimumBribesCalculate. */
   @SuppressWarnings("java:S6885")
   public static Integer minimumBribesCalculate(List<Integer> q) {
     int bribes = 0;
@@ -31,9 +27,8 @@ public class NewYearChaos {
         throw new IllegalStateException(TOO_CHAOTIC_ERROR);
       }
 
-      List<Integer> fragment = q.subList(
-          Math.min(Math.max(value - NEW_YEAR_CHAOS_TOLERANCE, 0), i), i
-        );
+      List<Integer> fragment =
+          q.subList(Math.min(Math.max(value - NEW_YEAR_CHAOS_TOLERANCE, 0), i), i);
 
       for (Integer k : fragment) {
         if (k > value) {
@@ -46,9 +41,7 @@ public class NewYearChaos {
     return bribes;
   }
 
-  /**
-   * minimumBribes.
-   */
+  /** minimumBribes. */
   public static String minimumBribesText(List<Integer> q) {
     try {
       Integer bribes = minimumBribesCalculate(q);
@@ -58,12 +51,9 @@ public class NewYearChaos {
     }
   }
 
-  /**
-   * minimumBribesText.
-   */
+  /** minimumBribesText. */
   @SuppressWarnings("java:S106")
   public static void minimumBribes(List<Integer> q) {
     System.out.println(minimumBribesText(q));
   }
-
 }

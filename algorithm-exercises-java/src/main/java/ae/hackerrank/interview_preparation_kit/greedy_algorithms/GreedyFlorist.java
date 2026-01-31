@@ -9,18 +9,15 @@ import java.util.stream.Collectors;
  * GreedyFlorist.
  *
  * @link Problem definition
- *       [[docs/hackerrank/interview_preparation_kit/greedy_algorithms/greedy-florist.md]]
+ *     [[docs/hackerrank/interview_preparation_kit/greedy_algorithms/greedy-florist.md]]
  * @link Solution notes
- *      [[docs/hackerrank/interview_preparation_kit/greedy_algorithms/greedy-florist-solution-notes.md]]
+ *     [[docs/hackerrank/interview_preparation_kit/greedy_algorithms/greedy-florist-solution-notes.md]]
  */
 public class GreedyFlorist {
 
-  private GreedyFlorist() {
-  }
+  private GreedyFlorist() {}
 
-  /**
-   * getMinimumCost.
-   */
+  /** getMinimumCost. */
   public static int getMinimumCost(int k, int[] c) {
     List<Integer> flowers = Arrays.stream(c).boxed().collect(Collectors.toList());
     Collections.sort(flowers);

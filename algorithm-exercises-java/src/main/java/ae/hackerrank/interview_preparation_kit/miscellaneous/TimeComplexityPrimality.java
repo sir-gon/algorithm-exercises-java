@@ -1,11 +1,10 @@
-
 package ae.hackerrank.interview_preparation_kit.miscellaneous;
 
 /**
  * TimeComplexityPrimality.
  *
  * @link Problem definition
- *       [[docs/hackerrank/interview_preparation_kit/miscellaneous/ctci-big-o.md]]
+ *     [[docs/hackerrank/interview_preparation_kit/miscellaneous/ctci-big-o.md]]
  */
 public class TimeComplexityPrimality {
 
@@ -38,10 +37,7 @@ public class TimeComplexityPrimality {
     return maxPrimeFactor;
   }
 
-
-  /**
-   * primality.
-   */
+  /** primality. */
   public static String primality(int n) {
     Integer pf = primeFactor(n);
 

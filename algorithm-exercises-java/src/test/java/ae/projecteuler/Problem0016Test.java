@@ -4,9 +4,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-
 class Problem0016Test {
-  @Test void problem0016() {
+  @Test
+  void problem0016() {
 
     Integer base = 2;
     Integer exponent = 1000;
@@ -14,8 +14,9 @@ class Problem0016Test {
 
     String solutionFound = Problem0016.problem0016(base, exponent);
 
-    assertEquals(solutionExpected, solutionFound,
-        String.format("Problem 0016 answer must be: %s", solutionExpected)
-    );
+    assertEquals(
+        solutionExpected,
+        solutionFound,
+        String.format("Problem 0016 answer must be: %s", solutionExpected));
   }
 }

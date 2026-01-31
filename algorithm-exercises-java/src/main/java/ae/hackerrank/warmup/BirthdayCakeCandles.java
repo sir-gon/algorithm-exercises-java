@@ -11,9 +11,7 @@ public class BirthdayCakeCandles {
 
   private BirthdayCakeCandles() {}
 
-  /**
-   * birthdayCakeCandles.
-   */
+  /** birthdayCakeCandles. */
   public static int birthdayCakeCandles(List<Integer> candles) {
     if (candles == null || candles.isEmpty()) {
       throw new IllegalArgumentException("Parameter cannot be empty");

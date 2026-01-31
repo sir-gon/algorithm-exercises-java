@@ -3,11 +3,11 @@ package ae.hackerrank.interview_preparation_kit.arrays;
 import java.util.ArrayList;
 import java.util.List;
 
-
 /**
  * Arrays Left Rotation.
  *
- * @link Problem definition [[docs/hackerrank/interview_preparation_kit/arrays/ctci_array_left_rotation.md]]
+ * @link Problem definition
+ *     [[docs/hackerrank/interview_preparation_kit/arrays/ctci_array_left_rotation.md]]
  */
 public class ArraysLeftRotation {
 
@@ -15,9 +15,7 @@ public class ArraysLeftRotation {
 
   static final int FIRST_POSITION = 0;
 
-  /**
-   * rotLeftOne.
-   */
+  /** rotLeftOne. */
   public static List<Integer> rotLeftOne(List<Integer> a) {
     // Clone the list
     List<Integer> output = new ArrayList<>(a);
@@ -29,9 +27,7 @@ public class ArraysLeftRotation {
     return output;
   }
 
-  /**
-   * rotLeft.
-   */
+  /** rotLeft. */
   public static List<Integer> rotLeft(List<Integer> a, int d) {
 
     // Clone the list

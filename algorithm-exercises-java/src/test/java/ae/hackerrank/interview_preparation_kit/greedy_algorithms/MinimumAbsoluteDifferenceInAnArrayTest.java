@@ -11,9 +11,7 @@ import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
 import util.JsonLoader;
 
-/**
- * MinimumAbsoluteDifferenceInAnArrayTest.
- */
+/** MinimumAbsoluteDifferenceInAnArrayTest. */
 @TestInstance(Lifecycle.PER_CLASS)
 class MinimumAbsoluteDifferenceInAnArrayTest {
   public static class MinimumAbsoluteDifferenceInAnArrayTestCase {
@@ -26,11 +24,13 @@ class MinimumAbsoluteDifferenceInAnArrayTest {
 
   @BeforeAll
   void setup() throws IOException {
-    String path = String.join("/",
-        "hackerrank",
-        "interview_preparation_kit",
-        "greedy_algorithms",
-        "minimum_absolute_difference_in_an_array.testcases.json");
+    String path =
+        String.join(
+            "/",
+            "hackerrank",
+            "interview_preparation_kit",
+            "greedy_algorithms",
+            "minimum_absolute_difference_in_an_array.testcases.json");
     this.testCases.clear();
     this.testCases.addAll(
         JsonLoader.loadJson(path, MinimumAbsoluteDifferenceInAnArrayTestCase.class));
@@ -41,11 +41,14 @@ class MinimumAbsoluteDifferenceInAnArrayTest {
     for (MinimumAbsoluteDifferenceInAnArrayTestCase test : testCases) {
       Integer result = MinimumAbsoluteDifferenceInAnArray.minimumAbsoluteDifference(test.input);
 
-      assertEquals(test.expected, result,
-          "%s(%s) => must be: %d".formatted(
-              "MinimumAbsoluteDifferenceInAnArray.minimumAbsoluteDifference",
-              test.input.toString(),
-              test.expected));
+      assertEquals(
+          test.expected,
+          result,
+          "%s(%s) => must be: %d"
+              .formatted(
+                  "MinimumAbsoluteDifferenceInAnArray.minimumAbsoluteDifference",
+                  test.input.toString(),
+                  test.expected));
     }
   }
 }

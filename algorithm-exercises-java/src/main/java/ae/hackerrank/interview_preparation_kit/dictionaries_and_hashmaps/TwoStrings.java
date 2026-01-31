@@ -6,8 +6,10 @@ import java.util.Set;
 /**
  * TwoStrings.
  *
- * @link Problem definition [[docs/hackerrank/interview_preparation_kit/dictionaries_and_hashmaps/two-strings.md]]
- * @link Solution notes [[docs/hackerrank/interview_preparation_kit/dictionaries_and_hashmaps/two-strings-solution-notes.md]]
+ * @link Problem definition
+ *     [[docs/hackerrank/interview_preparation_kit/dictionaries_and_hashmaps/two-strings.md]]
+ * @link Solution notes
+ *     [[docs/hackerrank/interview_preparation_kit/dictionaries_and_hashmaps/two-strings-solution-notes.md]]
  */
 public class TwoStrings {
   private TwoStrings() {}
@@ -15,9 +17,7 @@ public class TwoStrings {
   private static final String YES = "YES";
   private static final String NO = "NO";
 
-  /**
-   * twoStringsCompute.
-   */
+  /** twoStringsCompute. */
   public static boolean twoStringsCompute(String s1, String s2) {
 
     Set<String> dictionary = new HashSet<>();

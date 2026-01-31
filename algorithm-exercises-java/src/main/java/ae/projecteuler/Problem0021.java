@@ -11,7 +11,6 @@ import java.util.Map.Entry;
 import java.util.Set;
 import util.Log;
 
-
 /**
  * Amicable numbers.
  *
@@ -21,10 +20,7 @@ public class Problem0021 {
 
   private Problem0021() {}
 
-
-  /**
-   * Problem 0021.
-   */
+  /** Problem 0021. */
   public static String problem0021(int start, int limit) {
 
     Map<String, String> properDivisorsSums = new LinkedHashMap<>();
@@ -45,13 +41,9 @@ public class Problem0021 {
       String key = mapEntry.getKey();
       String value = mapEntry.getValue();
 
-      if (
-          !key.equals(value)
-            && key.equals(properDivisorsSums.get(value))
-      ) {
+      if (!key.equals(value) && key.equals(properDivisorsSums.get(value))) {
         amicableNumbers.add(key);
       }
-
     }
 
     String log;

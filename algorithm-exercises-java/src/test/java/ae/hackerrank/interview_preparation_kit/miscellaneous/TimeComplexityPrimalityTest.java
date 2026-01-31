@@ -11,22 +11,16 @@ import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
 import util.JsonLoader;
 
-/**
- * TimeComplexityPrimalityTest.
- */
+/** TimeComplexityPrimalityTest. */
 @TestInstance(Lifecycle.PER_CLASS)
 class TimeComplexityPrimalityTest {
-  /**
-   * TimeComplexityPrimalityTestCaseTest.
-   */
+  /** TimeComplexityPrimalityTestCaseTest. */
   public static class TimeComplexityPrimalityTestCaseTest {
     public int input;
     public String answer;
   }
 
-  /**
-   * TimeComplexityPrimalityTestCase.
-   */
+  /** TimeComplexityPrimalityTestCase. */
   public static class TimeComplexityPrimalityTestCase {
     public String title;
     public List<TimeComplexityPrimalityTestCaseTest> tests;
@@ -36,11 +30,13 @@ class TimeComplexityPrimalityTest {
 
   @BeforeAll
   void setup() throws IOException {
-    String path = String.join("/",
-        "hackerrank",
-        "interview_preparation_kit",
-        "miscellaneous",
-        "ctci_big_o.testcases.json");
+    String path =
+        String.join(
+            "/",
+            "hackerrank",
+            "interview_preparation_kit",
+            "miscellaneous",
+            "ctci_big_o.testcases.json");
 
     this.testCases.clear();
     this.testCases.addAll(JsonLoader.loadJson(path, TimeComplexityPrimalityTestCase.class));
@@ -52,11 +48,11 @@ class TimeComplexityPrimalityTest {
       for (TimeComplexityPrimalityTestCaseTest test : tests.tests) {
         String result = TimeComplexityPrimality.primality(test.input);
 
-        assertEquals(test.answer, result,
-            "%s(%s) => must be: %s".formatted(
-                "TimeComplexityPrimality.primality",
-                test.input,
-                test.answer));
+        assertEquals(
+            test.answer,
+            result,
+            "%s(%s) => must be: %s"
+                .formatted("TimeComplexityPrimality.primality", test.input, test.answer));
       }
     }
   }

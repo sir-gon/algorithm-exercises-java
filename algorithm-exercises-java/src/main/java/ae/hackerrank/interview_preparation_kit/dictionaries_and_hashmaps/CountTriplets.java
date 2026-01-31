@@ -8,18 +8,14 @@ import java.util.Map;
  * CountTriplets.
  *
  * @link Problem definition
- *       [[docs/hackerrank/interview_preparation_kit/dictionaries_and_hashmaps/count_triplets_1.md/]]
- *
+ *     [[docs/hackerrank/interview_preparation_kit/dictionaries_and_hashmaps/count_triplets_1.md/]]
  * @link Solution Notes
- *       [[docs/hackerrank/interview_preparation_kit/dictionaries_and_hashmaps/count_triplets_1-solution-notes.md/]]
+ *     [[docs/hackerrank/interview_preparation_kit/dictionaries_and_hashmaps/count_triplets_1-solution-notes.md/]]
  */
 public class CountTriplets {
-  private CountTriplets() {
-  }
+  private CountTriplets() {}
 
-  /**
-   * CountTriplets.
-   */
+  /** CountTriplets. */
   static long countTriplets(List<Long> arr, long r) {
 
     Map<Long, Long> aCounter = new HashMap<>();

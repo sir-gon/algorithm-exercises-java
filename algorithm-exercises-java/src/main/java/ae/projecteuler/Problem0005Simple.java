@@ -13,10 +13,7 @@ public class Problem0005Simple {
 
   private Problem0005Simple() {}
 
-
-  /**
-   * Problem 0005.
-   */
+  /** Problem 0005. */
   public static Integer problem0005(Integer bottom, Integer top, Integer startFrom) {
     Integer found = null;
     boolean fail;
@@ -52,7 +49,6 @@ public class Problem0005Simple {
 
     return found;
   }
-
 }
 
-//CHECKSTYLE.ON: JavadocParagraph
+// CHECKSTYLE.ON: JavadocParagraph

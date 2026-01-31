@@ -9,11 +9,10 @@ import java.util.Map;
  * FrequencyQueries.
  *
  * @link Problem definition
- *       [[docs/hackerrank/interview_preparation_kit/dictionaries_and_hashmaps/frequency-queries.md]]
+ *     [[docs/hackerrank/interview_preparation_kit/dictionaries_and_hashmaps/frequency-queries.md]]
  */
 public class FrequencyQueries {
-  private FrequencyQueries() {
-  }
+  private FrequencyQueries() {}
 
   private static final long __INITIAL__ = 1L;
 
@@ -102,9 +101,7 @@ public class FrequencyQueries {
     return fq;
   }
 
-  /**
-   * FrequencyQueries.
-   */
+  /** FrequencyQueries. */
   static List<Integer> freqQuery(List<List<Integer>> queries) {
 
     FrequencyQueries fq = FrequencyQueries.factory();
@@ -126,8 +123,7 @@ public class FrequencyQueries {
           fq.select(value);
           break;
         default:
-          throw new IllegalArgumentException(
-              "Operation %d not supported".formatted(operation));
+          throw new IllegalArgumentException("Operation %d not supported".formatted(operation));
       }
     }
 

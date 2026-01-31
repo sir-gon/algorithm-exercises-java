@@ -4,10 +4,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-
 class CollatzTest {
 
-  @Test void collatzSequenceFirstTest() {
+  @Test
+  void collatzSequenceFirstTest() {
 
     // Test static way
     assertEquals(40, Collatz.collatz((long) 13));
@@ -17,7 +17,8 @@ class CollatzTest {
     assertEquals(16, Collatz.collatz((long) 5));
   }
 
-  @Test void collatzSequenceSecondTest() {
+  @Test
+  void collatzSequenceSecondTest() {
 
     // Test static way
     assertEquals(8, Collatz.collatz((long) 16));

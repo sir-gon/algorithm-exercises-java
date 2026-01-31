@@ -9,9 +9,7 @@ public class SolveMeFirst {
 
   private SolveMeFirst() {}
 
-  /**
-   * solveMeFirst.
-   */
+  /** solveMeFirst. */
   public static int solveMeFirst(int a, int b) {
     return a + b;
   }

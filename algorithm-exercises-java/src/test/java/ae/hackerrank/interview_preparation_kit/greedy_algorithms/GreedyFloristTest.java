@@ -11,9 +11,7 @@ import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
 import util.JsonLoader;
 
-/**
- * GreedyFloristTest.
- */
+/** GreedyFloristTest. */
 @TestInstance(Lifecycle.PER_CLASS)
 class GreedyFloristTest {
   public static class GreedyFloristTestCase {
@@ -27,11 +25,13 @@ class GreedyFloristTest {
 
   @BeforeAll
   void setup() throws IOException {
-    String path = String.join("/",
-        "hackerrank",
-        "interview_preparation_kit",
-        "greedy_algorithms",
-        "greedy_florist.testcases.json");
+    String path =
+        String.join(
+            "/",
+            "hackerrank",
+            "interview_preparation_kit",
+            "greedy_algorithms",
+            "greedy_florist.testcases.json");
     this.testCases.clear();
     this.testCases.addAll(JsonLoader.loadJson(path, GreedyFloristTestCase.class));
   }
@@ -42,11 +42,11 @@ class GreedyFloristTest {
       int[] inputArray = test.c.stream().mapToInt(Integer::intValue).toArray();
       Integer result = GreedyFlorist.getMinimumCost(test.k, inputArray);
 
-      assertEquals(test.expected, result,
-          "%s(%s) => must be: %d".formatted(
-              "GreedyFlorist.getMinimumCost",
-              test.c.toString(),
-              test.expected));
+      assertEquals(
+          test.expected,
+          result,
+          "%s(%s) => must be: %d"
+              .formatted("GreedyFlorist.getMinimumCost", test.c.toString(), test.expected));
     }
   }
 }

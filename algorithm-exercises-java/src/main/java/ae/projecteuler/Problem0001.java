@@ -11,9 +11,7 @@ public class Problem0001 {
 
   private Problem0001() {}
 
-  /**
-   * Problem0001.
-   */
+  /** Problem0001. */
   public static Integer problem0001(Integer top) {
     Integer result = 0;
     Integer i;

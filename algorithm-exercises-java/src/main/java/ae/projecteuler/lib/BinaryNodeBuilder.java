@@ -2,17 +2,12 @@ package ae.projecteuler.lib;
 
 import java.util.ArrayList;
 
-/**
- * BinaryNodeBuilder.
- */
+/** BinaryNodeBuilder. */
 public class BinaryNodeBuilder<T> {
 
   private ArrayList<T> leafCollector = new ArrayList<>();
 
-  private BinaryNode<T> buildBinaryNodeTreeInternal(
-      T[][] dataTree,
-      Integer i,
-      Integer j) {
+  private BinaryNode<T> buildBinaryNodeTreeInternal(T[][] dataTree, Integer i, Integer j) {
 
     if (dataTree == null) {
       return null;
@@ -23,13 +18,9 @@ public class BinaryNodeBuilder<T> {
       BinaryNode<T> resultNode = new BinaryNode<>(dataTree[i][j]);
 
       if (i + 1 < dataTree.length && j + 1 < dataTree[i + 1].length) {
-        resultNode.setLeft(
-            this.buildBinaryNodeTreeInternal(dataTree, i + 1, j)
-        );
+        resultNode.setLeft(this.buildBinaryNodeTreeInternal(dataTree, i + 1, j));
 
-        resultNode.setRight(
-            this.buildBinaryNodeTreeInternal(dataTree, i + 1, j + 1)
-        );
+        resultNode.setRight(this.buildBinaryNodeTreeInternal(dataTree, i + 1, j + 1));
       }
 
       if (resultNode.isLeaf()) {

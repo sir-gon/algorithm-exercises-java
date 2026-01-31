@@ -9,11 +9,11 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
 
-
 @TestInstance(Lifecycle.PER_CLASS)
 class BinaryNodeTest {
 
-  @Test void instanceCaseTest() {
+  @Test
+  void instanceCaseTest() {
     BinaryNode<Integer> classUnderTest = new BinaryNode<Integer>(0);
 
     assertNotNull(classUnderTest);
@@ -23,7 +23,8 @@ class BinaryNodeTest {
         String.format("Must be an instance of %s", BinaryNode.class));
   }
 
-  @Test void getValueTest() {
+  @Test
+  void getValueTest() {
 
     Integer value = 5;
     BinaryNode<Integer> testNodeA = new BinaryNode<Integer>(5);
@@ -44,7 +45,8 @@ class BinaryNodeTest {
     assertEquals(value, testNodeD.getValue());
   }
 
-  @Test void binaryNodeLeftTest() {
+  @Test
+  void binaryNodeLeftTest() {
     String valueA = "A";
     String valueLeft = "Z";
 
@@ -55,7 +57,8 @@ class BinaryNodeTest {
     assertEquals(valueLeft, testNodeA.getLeft().getValue());
   }
 
-  @Test void binaryNodeRightTest() {
+  @Test
+  void binaryNodeRightTest() {
     String valueA = "A";
     String valueRight = "Z";
 
@@ -66,15 +69,15 @@ class BinaryNodeTest {
     assertEquals(valueRight, testNodeA.getRight().getValue());
   }
 
-  @Test void binaryNodeBothBranchesTest() {
+  @Test
+  void binaryNodeBothBranchesTest() {
     String valueA = "A";
     String valueLeft = "X";
     String valueRight = "Y";
 
-    BinaryNode<String> testNodeA = new BinaryNode<String>(valueA,
-        new BinaryNode<String>(valueLeft),
-        new BinaryNode<String>(valueRight)
-    );
+    BinaryNode<String> testNodeA =
+        new BinaryNode<String>(
+            valueA, new BinaryNode<String>(valueLeft), new BinaryNode<String>(valueRight));
 
     assertNotNull(testNodeA.getLeft());
     assertNotNull(testNodeA.getRight());
@@ -82,7 +85,8 @@ class BinaryNodeTest {
     assertEquals(valueRight, testNodeA.getRight().getValue());
   }
 
-  @Test void binaryNodeIsLeafTest() {
+  @Test
+  void binaryNodeIsLeafTest() {
     String valueA = "A";
 
     // both branches are null
@@ -91,31 +95,25 @@ class BinaryNodeTest {
     assertEquals(true, testNodeA.isLeaf());
 
     // both child branches has values
-    testNodeA = new BinaryNode<String>(valueA,
-        new BinaryNode<String>(valueA),
-        new BinaryNode<String>(valueA)
-    );
+    testNodeA =
+        new BinaryNode<String>(
+            valueA, new BinaryNode<String>(valueA), new BinaryNode<String>(valueA));
 
     assertEquals(false, testNodeA.isLeaf());
 
     // left branch is null
-    testNodeA = new BinaryNode<String>(valueA,
-        null,
-        new BinaryNode<String>(valueA)
-    );
+    testNodeA = new BinaryNode<String>(valueA, null, new BinaryNode<String>(valueA));
 
     assertEquals(false, testNodeA.isLeaf());
 
     // right branch is null
-    testNodeA = new BinaryNode<String>(valueA,
-        new BinaryNode<String>(valueA),
-        null
-    );
+    testNodeA = new BinaryNode<String>(valueA, new BinaryNode<String>(valueA), null);
 
     assertEquals(false, testNodeA.isLeaf());
   }
 
-  @Test void binaryNodeEqualityTest() {
+  @Test
+  void binaryNodeEqualityTest() {
     // Same instance
     BinaryNode<String> testNodeA = new BinaryNode<String>("A");
     assertEquals(testNodeA, testNodeA);
@@ -124,9 +122,10 @@ class BinaryNodeTest {
     assertNotEquals(new BinaryNode<String>("A"), new StringBuilder('A').toString());
 
     // Same type, both with null type
-    assertEquals(new BinaryNode<String>(),  new BinaryNode<String>());
+    assertEquals(new BinaryNode<String>(), new BinaryNode<String>());
 
-    // Two null values of different types can't be compared, so... both will be "equal"
+    // Two null values of different types can't be compared, so... both will be
+    // "equal"
     assertEquals(new BinaryNode<Integer>(), new BinaryNode<String>());
 
     // Test different value types:

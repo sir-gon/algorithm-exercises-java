@@ -30,10 +30,9 @@ class CompareTripletsTest {
   @BeforeAll
   void setup() {
     this.testCases.clear();
-    this.testCases.add(new CompareTripletsTestCase(
-        Arrays.asList(5, 6, 7),
-        Arrays.asList(3, 6, 10),
-        Arrays.asList(1, 1)));
+    this.testCases.add(
+        new CompareTripletsTestCase(
+            Arrays.asList(5, 6, 7), Arrays.asList(3, 6, 10), Arrays.asList(1, 1)));
   }
 
   @Test
@@ -41,8 +40,11 @@ class CompareTripletsTest {
     for (CompareTripletsTestCase testCase : this.testCases) {
       List<Integer> solutionFound = CompareTriplets.compareTriplets(testCase.la, testCase.lb);
 
-      assertEquals(testCase.expected, solutionFound,
-          String.format("%s(%s, %s) answer must be: %s",
+      assertEquals(
+          testCase.expected,
+          solutionFound,
+          String.format(
+              "%s(%s, %s) answer must be: %s",
               "CompareTriplets.compareTriplets",
               testCase.la.toString(),
               testCase.lb.toString(),

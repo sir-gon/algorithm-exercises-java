@@ -13,10 +13,7 @@ public class Problem0008 {
 
   private Problem0008() {}
 
-
-  /**
-   * Problem template method.
-   */
+  /** Problem template method. */
   public static Long problem0008(String number, Integer interval) {
     String[] digits = number.split("");
     Integer bottom = 0;

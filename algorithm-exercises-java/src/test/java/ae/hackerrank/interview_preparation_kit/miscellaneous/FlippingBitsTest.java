@@ -11,22 +11,16 @@ import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
 import util.JsonLoader;
 
-/**
- * FlippingBitsTflippingBits.
- */
+/** FlippingBitsTflippingBits. */
 @TestInstance(Lifecycle.PER_CLASS)
 class FlippingBitsTest {
-  /**
-   * FlippingBitsTestCaseTest.
-   */
+  /** FlippingBitsTestCaseTest. */
   public static class FlippingBitsTestCaseTest {
     public long input;
     public long answer;
   }
 
-  /**
-   * FlippingBitsTestCase.
-   */
+  /** FlippingBitsTestCase. */
   public static class FlippingBitsTestCase {
     public String title;
     public List<FlippingBitsTestCaseTest> tests;
@@ -36,11 +30,13 @@ class FlippingBitsTest {
 
   @BeforeAll
   void setup() throws IOException {
-    String path = String.join("/",
-        "hackerrank",
-        "interview_preparation_kit",
-        "miscellaneous",
-        "flipping_bits.testcases.json");
+    String path =
+        String.join(
+            "/",
+            "hackerrank",
+            "interview_preparation_kit",
+            "miscellaneous",
+            "flipping_bits.testcases.json");
 
     this.testCases.clear();
     this.testCases.addAll(JsonLoader.loadJson(path, FlippingBitsTestCase.class));
@@ -52,11 +48,11 @@ class FlippingBitsTest {
       for (FlippingBitsTestCaseTest test : tests.tests) {
         Long result = FlippingBits.flippingBits(test.input);
 
-        assertEquals(test.answer, result,
-            "%s(%s) => must be: %d".formatted(
-                "FlippingBits.flippingBits",
-                test.input,
-                test.answer));
+        assertEquals(
+            test.answer,
+            result,
+            "%s(%s) => must be: %d"
+                .formatted("FlippingBits.flippingBits", test.input, test.answer));
       }
     }
   }

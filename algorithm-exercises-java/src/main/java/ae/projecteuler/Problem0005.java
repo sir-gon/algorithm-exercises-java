@@ -16,10 +16,7 @@ public class Problem0005 {
 
   private Problem0005() {}
 
-
-  /**
-   * countOccurrences.
-   */
+  /** countOccurrences. */
   public static Map<Long, Integer> countOccurrences(List<Long> numbers) {
     // Crear un mapa para realizar el recuento de ocurrencias
     Map<Long, Integer> occurrences = new HashMap<>();
@@ -32,30 +29,25 @@ public class Problem0005 {
     return occurrences;
   }
 
-  /**
-   * mixOccurrences.
-   */
+  /** mixOccurrences. */
   public static Map<Long, Integer> mixOccurrences(
-      Map<Long, Integer> listA,
-      Map<Long, Integer> listB) {
+      Map<Long, Integer> listA, Map<Long, Integer> listB) {
     Map<Long, Integer> occurrences = new HashMap<>();
 
     listA.forEach(occurrences::put);
 
-    listB.forEach((keyB, valueB) -> {
-      Integer valueA = occurrences.getOrDefault(keyB, null);
-      Integer max = (valueA != null && valueA > valueB) ? valueA : valueB;
+    listB.forEach(
+        (keyB, valueB) -> {
+          Integer valueA = occurrences.getOrDefault(keyB, null);
+          Integer max = (valueA != null && valueA > valueB) ? valueA : valueB;
 
-      occurrences.put(keyB, max);
-    });
+          occurrences.put(keyB, max);
+        });
 
     return occurrences;
   }
 
-
-  /**
-   * Problem 0005.
-   */
+  /** Problem 0005. */
   public static Integer problem0005(Integer bottom, Integer top) {
     String log;
     Integer result = null;
@@ -69,10 +61,8 @@ public class Problem0005 {
 
       Map<Long, Integer> primeFactorsCount = countOccurrences(Arrays.asList(primeFactors));
 
-      minimumPrimeFactorsCollector = mixOccurrences(
-          minimumPrimeFactorsCollector,
-          primeFactorsCount
-      );
+      minimumPrimeFactorsCollector =
+          mixOccurrences(minimumPrimeFactorsCollector, primeFactorsCount);
 
       log = String.format("%s", minimumPrimeFactorsCollector.toString());
       Log.info(log);
@@ -91,5 +81,4 @@ public class Problem0005 {
 
     return result;
   }
-
 }

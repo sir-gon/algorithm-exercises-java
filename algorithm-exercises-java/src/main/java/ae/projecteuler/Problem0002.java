@@ -11,9 +11,7 @@ public class Problem0002 {
 
   private Problem0002() {}
 
-  /**
-   * Problem template method.
-   */
+  /** Problem template method. */
   public static Integer problem0002(int top) {
 
     int i = 0;
@@ -43,5 +41,4 @@ public class Problem0002 {
 
     return evenSum;
   }
-
 }

@@ -11,9 +11,7 @@ import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
 import util.JsonLoader;
 
-/**
- * CountTripletsTest.
- */
+/** CountTripletsTest. */
 @TestInstance(Lifecycle.PER_CLASS)
 class CountTripletsTest {
   public static class CountTripletsTestCase {
@@ -29,24 +27,27 @@ class CountTripletsTest {
   @BeforeAll
   void setup() throws IOException {
     String path;
-    path = String.join("/",
-        "hackerrank",
-        "interview_preparation_kit",
-        "dictionaries_and_hashmaps",
-        "count_triplets_1.small.testcases.json");
+    path =
+        String.join(
+            "/",
+            "hackerrank",
+            "interview_preparation_kit",
+            "dictionaries_and_hashmaps",
+            "count_triplets_1.small.testcases.json");
 
     this.smallTestCases.clear();
     this.smallTestCases.addAll(JsonLoader.loadJson(path, CountTripletsTestCase.class));
 
-    path = String.join("/",
-        "hackerrank",
-        "interview_preparation_kit",
-        "dictionaries_and_hashmaps",
-        "count_triplets_1.big.testcases.json");
+    path =
+        String.join(
+            "/",
+            "hackerrank",
+            "interview_preparation_kit",
+            "dictionaries_and_hashmaps",
+            "count_triplets_1.big.testcases.json");
 
     this.bigTestCases.clear();
     this.bigTestCases.addAll(JsonLoader.loadJson(path, CountTripletsTestCase.class));
-
   }
 
   @Test
@@ -54,12 +55,12 @@ class CountTripletsTest {
     for (CountTripletsTestCase test : smallTestCases) {
       Long solutionFound = CountTriplets.countTriplets(test.input, test.r);
 
-      assertEquals(test.expected, solutionFound,
-          "%s(%s, %d) answer must be: %d".formatted(
-              "CountTriplets.countTriplets",
-              test.input.toString(),
-              test.r,
-              test.expected));
+      assertEquals(
+          test.expected,
+          solutionFound,
+          "%s(%s, %d) answer must be: %d"
+              .formatted(
+                  "CountTriplets.countTriplets", test.input.toString(), test.r, test.expected));
     }
   }
 
@@ -68,12 +69,12 @@ class CountTripletsTest {
     for (CountTripletsTestCase test : bigTestCases) {
       Long solutionFound = CountTriplets.countTriplets(test.input, test.r);
 
-      assertEquals(test.expected, solutionFound,
-          "%s(%s, %d) answer must be: %d".formatted(
-              "CountTriplets.countTriplets",
-              test.input.toString(),
-              test.r,
-              test.expected));
+      assertEquals(
+          test.expected,
+          solutionFound,
+          "%s(%s, %d) answer must be: %d"
+              .formatted(
+                  "CountTriplets.countTriplets", test.input.toString(), test.r, test.expected));
     }
   }
 }

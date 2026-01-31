@@ -25,10 +25,13 @@ class NewYearChaosTest {
   @BeforeAll
   void setup() throws IOException {
 
-    String path = String.join("/", "hackerrank",
-        "interview_preparation_kit",
-        "arrays",
-        "new_year_chaos.testcases.json");
+    String path =
+        String.join(
+            "/",
+            "hackerrank",
+            "interview_preparation_kit",
+            "arrays",
+            "new_year_chaos.testcases.json");
 
     this.testCases.clear();
     this.testCases.addAll(JsonLoader.loadJson(path, NewYearChaosTestCase.class));
@@ -41,12 +44,11 @@ class NewYearChaosTest {
       String solutionFound = NewYearChaos.minimumBribesText(test.input);
       NewYearChaos.minimumBribes(test.input);
 
-      assertEquals(test.expected, solutionFound,
-          "%s(%s) answer must be: %s".formatted(
-              "NewYearChaosTestCase.minimumBribesText",
-              test.input,
-              test.expected));
+      assertEquals(
+          test.expected,
+          solutionFound,
+          "%s(%s) answer must be: %s"
+              .formatted("NewYearChaosTestCase.minimumBribesText", test.input, test.expected));
     }
   }
-
 }

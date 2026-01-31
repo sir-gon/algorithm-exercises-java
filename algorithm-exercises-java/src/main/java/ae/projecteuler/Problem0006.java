@@ -19,10 +19,7 @@ class Problem0006 {
 
   private Problem0006() {}
 
-
-  /**
-   * Problem 0006.
-   */
+  /** Problem 0006. */
   public static Integer problem0006(Integer bottom, Integer top) {
     Integer answer = 0;
 
@@ -46,10 +43,9 @@ class Problem0006 {
     log = String.format("Square Of Sum of first %d = %d", top, squareOfSum);
     Log.debug(log);
 
-    log = String.format("Difference found %d - %d = %d",
-        squareOfSum,
-        sumOfSquares,
-        squareOfSum - sumOfSquares);
+    log =
+        String.format(
+            "Difference found %d - %d = %d", squareOfSum, sumOfSquares, squareOfSum - sumOfSquares);
     Log.debug(log);
 
     log = String.format("Problem 00006 solved: %d", answer);
@@ -57,5 +53,4 @@ class Problem0006 {
 
     return answer;
   }
-
 }

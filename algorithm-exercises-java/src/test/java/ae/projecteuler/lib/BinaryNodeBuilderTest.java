@@ -9,16 +9,13 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
 
-
 @TestInstance(Lifecycle.PER_CLASS)
 class BinaryNodeBuilderTest {
 
-  private Integer[][] smallCaseData = {
-    {75},
-    {95, 64}
-  };
+  private Integer[][] smallCaseData = {{75}, {95, 64}};
 
-  @Test void instanceCaseTest() {
+  @Test
+  void instanceCaseTest() {
     BinaryNodeBuilder<Integer> classUnderTest = new BinaryNodeBuilder<Integer>();
 
     assertNotNull(classUnderTest);
@@ -28,7 +25,8 @@ class BinaryNodeBuilderTest {
         String.format("Must be an instance of %s", BinaryNodeBuilder.class));
   }
 
-  @Test void buildSmallTreeTest() {
+  @Test
+  void buildSmallTreeTest() {
 
     BinaryNodeBuilder<Integer> builder = new BinaryNodeBuilder<Integer>();
     BinaryNode<Integer> testTree = builder.buildBinaryNodeTree(smallCaseData);
@@ -38,7 +36,8 @@ class BinaryNodeBuilderTest {
     assertEquals(64, testTree.getRight().getValue());
   }
 
-  @Test void buildNullTreeTest() {
+  @Test
+  void buildNullTreeTest() {
 
     BinaryNodeBuilder<Integer> builder = new BinaryNodeBuilder<Integer>();
     BinaryNode<Integer> testTree = builder.buildBinaryNodeTree(null);
@@ -46,7 +45,8 @@ class BinaryNodeBuilderTest {
     assertNull(testTree);
   }
 
-  @Test void buildEmptyTreeTest() {
+  @Test
+  void buildEmptyTreeTest() {
     Integer[][] emptyMatrix = {};
 
     BinaryNodeBuilder<Integer> builder = new BinaryNodeBuilder<Integer>();
@@ -55,30 +55,22 @@ class BinaryNodeBuilderTest {
     assertNull(testTree);
   }
 
-  @Test void buildMalformedMatrix1TreeTest() {
-    Integer[][] emptyMatrix = {
-      {1},
-      {2},
-      {3}
-    };
+  @Test
+  void buildMalformedMatrix1TreeTest() {
+    Integer[][] emptyMatrix = {{1}, {2}, {3}};
 
     BinaryNodeBuilder<Integer> builder = new BinaryNodeBuilder<Integer>();
     BinaryNode<Integer> testTree = builder.buildBinaryNodeTree(emptyMatrix);
-
 
     assertEquals(new BinaryNode<Integer>(1), testTree);
   }
 
-  @Test void buildMalformedMatrix2TreeTest() {
-    Integer[][] emptyMatrix = {
-      {1},
-      {},
-      {3}
-    };
+  @Test
+  void buildMalformedMatrix2TreeTest() {
+    Integer[][] emptyMatrix = {{1}, {}, {3}};
 
     BinaryNodeBuilder<Integer> builder = new BinaryNodeBuilder<Integer>();
     BinaryNode<Integer> testTree = builder.buildBinaryNodeTree(emptyMatrix);
-
 
     assertEquals(new BinaryNode<Integer>(1), testTree);
   }

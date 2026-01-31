@@ -15,18 +15,14 @@ import util.JsonLoader;
  * SherlockAndAnagrams.
  *
  * @link Problem definition
- *       [[docs/hackerrank/interview_preparation_kit/dictionaries_and_hashmaps/two-strings.md]]
+ *     [[docs/hackerrank/interview_preparation_kit/dictionaries_and_hashmaps/two-strings.md]]
  */
 @TestInstance(Lifecycle.PER_CLASS)
 class SherlockAndAnagramsTest {
 
-  /**
-   * SherlockAndAnagramsTestCase.
-   */
+  /** SherlockAndAnagramsTestCase. */
   public static class SherlockAndAnagramsTestCase {
-    /**
-     * SherlockAndAnagramsTestCase.TestCase.
-     */
+    /** SherlockAndAnagramsTestCase.TestCase. */
     public static class TestCase {
       public String input;
       public Integer expected;
@@ -39,29 +35,28 @@ class SherlockAndAnagramsTest {
   private final List<SherlockAndAnagramsTestCase> testCases = new ArrayList<>();
 
   /**
-   * Sets up the test environment by loading test cases from a JSON file.
-   * The JSON file is located in the specified path relative to the project
-   * structure.
+   * Sets up the test environment by loading test cases from a JSON file. The JSON file is located
+   * in the specified path relative to the project structure.
    *
    * @throws IOException if an error occurs while reading the JSON file.
    */
   @BeforeAll
   void setup() throws IOException {
-    String path = String.join("/", "hackerrank",
-        "interview_preparation_kit",
-        "dictionaries_and_hashmaps",
-        "sherlock_and_anagrams.testcases.json");
+    String path =
+        String.join(
+            "/",
+            "hackerrank",
+            "interview_preparation_kit",
+            "dictionaries_and_hashmaps",
+            "sherlock_and_anagrams.testcases.json");
 
     this.testCases.clear();
     this.testCases.addAll(JsonLoader.loadJson(path, SherlockAndAnagramsTestCase.class));
   }
 
-  private SherlockAndAnagramsTest() {
-  }
+  private SherlockAndAnagramsTest() {}
 
-  /**
-   * sherlockAndAnagrams.
-   */
+  /** sherlockAndAnagrams. */
   @Test
   void testSherlockAndAnagrams() {
     for (SherlockAndAnagramsTestCase _testCases : this.testCases) {
@@ -69,11 +64,11 @@ class SherlockAndAnagramsTest {
       for (SherlockAndAnagramsTestCase.TestCase test : _testCases.tests) {
         Integer solutionFound = SherlockAndAnagrams.sherlockAndAnagrams(test.input);
 
-        assertEquals(test.expected, solutionFound,
-            "%s(%s) answer must be: %s".formatted(
-                "SherlockAndAnagrams.sherlockAndAnagrams",
-                test.input,
-                test.expected));
+        assertEquals(
+            test.expected,
+            solutionFound,
+            "%s(%s) answer must be: %s"
+                .formatted("SherlockAndAnagrams.sherlockAndAnagrams", test.input, test.expected));
       }
     }
   }

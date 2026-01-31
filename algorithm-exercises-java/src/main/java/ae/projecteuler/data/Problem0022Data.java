@@ -5179,4 +5179,4 @@ public class Problem0022Data {
     return Problem0022Data.data;
   }
 }
-//CHECKSTYLE.ON: JavadocParagraph
+// CHECKSTYLE.ON: JavadocParagraph

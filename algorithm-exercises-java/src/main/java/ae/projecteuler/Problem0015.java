@@ -11,10 +11,7 @@ public class Problem0015 {
 
   private Problem0015() {}
 
-
-  /**
-   * Problem 0015.
-   */
+  /** Problem 0015. */
   public static Long problem0015(Integer gridSide) {
     int limit;
 

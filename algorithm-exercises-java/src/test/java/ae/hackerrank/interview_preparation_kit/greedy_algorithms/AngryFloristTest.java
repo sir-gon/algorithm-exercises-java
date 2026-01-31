@@ -11,9 +11,7 @@ import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
 import util.JsonLoader;
 
-/**
- * AngryFloristTest.
- */
+/** AngryFloristTest. */
 @TestInstance(Lifecycle.PER_CLASS)
 class AngryFloristTest {
   public static class AngryFloristTestCase {
@@ -27,11 +25,13 @@ class AngryFloristTest {
 
   @BeforeAll
   void setup() throws IOException {
-    String path = String.join("/",
-        "hackerrank",
-        "interview_preparation_kit",
-        "greedy_algorithms",
-        "angry_children.testcases.json");
+    String path =
+        String.join(
+            "/",
+            "hackerrank",
+            "interview_preparation_kit",
+            "greedy_algorithms",
+            "angry_children.testcases.json");
     this.testCases.clear();
     this.testCases.addAll(JsonLoader.loadJson(path, AngryFloristTestCase.class));
   }
@@ -41,11 +41,11 @@ class AngryFloristTest {
     for (AngryFloristTestCase test : testCases) {
       Integer result = AngryFlorist.maxMin(test.k, test.arr);
 
-      assertEquals(test.expected, result,
-          "%s(%s) => must be: %d".formatted(
-              "AngryFlorist.maxMin",
-              test.arr.toString(),
-              test.expected));
+      assertEquals(
+          test.expected,
+          result,
+          "%s(%s) => must be: %d"
+              .formatted("AngryFlorist.maxMin", test.arr.toString(), test.expected));
     }
   }
 }

@@ -13,10 +13,7 @@ public class Problem0007 {
 
   private Problem0007() {}
 
-
-  /**
-   * Problem 0007.
-   */
+  /** Problem 0007. */
   public static Integer problem0007(Integer top) {
     ArrayList<Integer> primes = new ArrayList<>();
     Integer i = 0;

@@ -25,10 +25,13 @@ class RansomNoteTest {
 
   @BeforeAll
   void setup() throws IOException {
-    String path = String.join("/", "hackerrank",
-        "interview_preparation_kit",
-        "dictionaries_and_hashmaps",
-        "ctci_ransom_note.testcases.json");
+    String path =
+        String.join(
+            "/",
+            "hackerrank",
+            "interview_preparation_kit",
+            "dictionaries_and_hashmaps",
+            "ctci_ransom_note.testcases.json");
 
     this.testCases.clear();
     this.testCases.addAll(JsonLoader.loadJson(path, RansomNoteTestCase.class));
@@ -39,12 +42,11 @@ class RansomNoteTest {
     for (RansomNoteTestCase test : testCases) {
       String solutionFound = RansomNote.checkMagazine(test.magazine, test.note);
 
-      assertEquals(test.expected, solutionFound,
-          "%s(%s, %s) answer must be: %s".formatted(
-              "RansomNote.checkMagazine",
-              test.magazine,
-              test.note,
-              test.expected));
+      assertEquals(
+          test.expected,
+          solutionFound,
+          "%s(%s, %s) answer must be: %s"
+              .formatted("RansomNote.checkMagazine", test.magazine, test.note, test.expected));
     }
   }
 }

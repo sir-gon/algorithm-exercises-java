@@ -42,4 +42,4 @@ public class Problem0011Data {
     return Problem0011Data.wrong_data;
   }
 }
-//CHECKSTYLE.ON: JavadocParagraph
+// CHECKSTYLE.ON: JavadocParagraph

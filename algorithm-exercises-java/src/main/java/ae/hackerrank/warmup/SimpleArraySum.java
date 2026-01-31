@@ -12,9 +12,7 @@ public class SimpleArraySum {
 
   private SimpleArraySum() {}
 
-  /**
-   * simpleArraySum.
-   */
+  /** simpleArraySum. */
   public static int simpleArraySum(List<Integer> ar) {
     int total = 0;
 

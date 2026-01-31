@@ -15,20 +15,14 @@ public class Problem0013 {
 
   private Problem0013() {}
 
-
-  /**
-   * Problem 0013.
-   */
+  /** Problem 0013. */
   public static String problem0013(String[] arrayOfNumbers, Integer firtsDigits) {
     BigNum sum = new BigNum(0);
     sum = sum.bigSumMany(arrayOfNumbers);
 
     List<Integer> first = Arrays.asList(sum.toArray()).subList(0, firtsDigits);
 
-    String numberString = first
-        .stream().map(String::valueOf)
-        .collect(Collectors.joining(""));
-
+    String numberString = first.stream().map(String::valueOf).collect(Collectors.joining(""));
 
     String log;
     log = String.format("First %d digits of huge sume are %s", firtsDigits, first);

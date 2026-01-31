@@ -2,19 +2,13 @@ package ae.projecteuler.lib;
 
 import java.util.ArrayList;
 
-/**
- * BinaryNodeBuilder.
- */
-public class BinaryNodeWeightBuilder<T>
-    extends BinaryNodeBuilder<T> {
+/** BinaryNodeBuilder. */
+public class BinaryNodeWeightBuilder<T> extends BinaryNodeBuilder<T> {
 
   private ArrayList<Integer> leafCollector = new ArrayList<>();
 
   private BinaryNode<Integer> buildBinaryNodeTreeWithWeightInternal(
-      Integer[][] dataTree,
-      int i,
-      int j,
-      int rootValue) {
+      Integer[][] dataTree, int i, int j, int rootValue) {
 
     if (dataTree == null) {
       return null;
@@ -26,22 +20,10 @@ public class BinaryNodeWeightBuilder<T>
 
       if (i + 1 < dataTree.length && j + 1 < dataTree[i + 1].length) {
         resultNode.setLeft(
-            this.buildBinaryNodeTreeWithWeightInternal(
-              dataTree,
-              i + 1,
-              j,
-              currentValue
-              )
-        );
+            this.buildBinaryNodeTreeWithWeightInternal(dataTree, i + 1, j, currentValue));
 
         resultNode.setRight(
-            this.buildBinaryNodeTreeWithWeightInternal(
-              dataTree,
-              i + 1,
-              j + 1,
-              currentValue
-              )
-        );
+            this.buildBinaryNodeTreeWithWeightInternal(dataTree, i + 1, j + 1, currentValue));
       }
 
       if (resultNode.isLeaf()) {
@@ -49,7 +31,6 @@ public class BinaryNodeWeightBuilder<T>
       }
 
       return resultNode;
-
     }
 
     return null;

@@ -3,9 +3,7 @@ package ae.projecteuler.constants;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-/**
- * Dates.
- */
+/** Dates. */
 public class Date {
   private Date() {}
 
@@ -30,8 +28,7 @@ public class Date {
   public static final int NOVEMBER = 10;
   public static final int DECEMBER = 11;
 
-  protected static final Map<String, Integer>
-      DAYS_IN_MONTH = new LinkedHashMap<>();
+  protected static final Map<String, Integer> DAYS_IN_MONTH = new LinkedHashMap<>();
 
   static {
     DAYS_IN_MONTH.put("JANUARY", 31);

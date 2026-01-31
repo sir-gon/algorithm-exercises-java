@@ -12,9 +12,7 @@ public class Staircase {
 
   private Staircase() {}
 
-  /**
-   * staircase.
-   */
+  /** staircase. */
   public static String staircase(int n) {
     List<String> result = new ArrayList<>();
 

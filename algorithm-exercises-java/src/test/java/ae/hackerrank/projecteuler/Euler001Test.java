@@ -25,10 +25,7 @@ class Euler001Test {
 
   @BeforeAll
   void setup() throws IOException {
-    String path = String.join("/",
-        "hackerrank",
-        "projecteuler",
-        "euler001.testcases.json");
+    String path = String.join("/", "hackerrank", "projecteuler", "euler001.testcases.json");
 
     this.testCases.clear();
     this.testCases.addAll(JsonLoader.loadJson(path, Euler001TestCase.class));
@@ -40,11 +37,11 @@ class Euler001Test {
     for (Euler001TestCase test : testCases) {
       Long solutionFound = Euler001.euler001(test.a, test.b, test.n);
 
-      assertEquals(test.expected, solutionFound,
-          "%s(%d, %d, %d) => must be: %s".formatted(
-              "Euler001.euler001",
-              test.a, test.b, test.n,
-              test.expected));
+      assertEquals(
+          test.expected,
+          solutionFound,
+          "%s(%d, %d, %d) => must be: %s"
+              .formatted("Euler001.euler001", test.a, test.b, test.n, test.expected));
     }
   }
 }

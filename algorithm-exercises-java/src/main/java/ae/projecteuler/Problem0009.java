@@ -11,7 +11,6 @@ public class Problem0009 {
 
   private Problem0009() {}
 
-
   private class Triplet {
 
     Integer ta;
@@ -29,9 +28,7 @@ public class Problem0009 {
     }
   }
 
-  /**
-   * Problem 0009.
-   */
+  /** Problem 0009. */
   public static Integer problem0009(Integer limit) {
     String log;
     Integer a = 1;

@@ -5,17 +5,13 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * BigNums helper.
- */
+/** BigNums helper. */
 public class BigNum {
 
   int cycles = 0;
   List<Integer> value = new ArrayList<>();
 
-  /**
-   * Big number from string.
-   */
+  /** Big number from string. */
   public BigNum(String strNumber) {
     // reset value
     this.value = new ArrayList<>();
@@ -33,56 +29,39 @@ public class BigNum {
     this.value = number;
   }
 
-  /**
-   *  Get raw internal value.
-   */
+  /** Get raw internal value. */
   private List<Integer> getInternalValue() {
     return this.value;
   }
 
-  /**
-   *  Get intervanl value as Array.
-   */
+  /** Get intervanl value as Array. */
   public Integer[] toArray() {
     List<Integer> valueFound = this.getInternalValue();
 
     return valueFound.toArray(new Integer[valueFound.size()]);
   }
 
-  /**
-   *  Get value as String.
-   */
+  /** Get value as String. */
   public String toString() {
-    return this.value
-      .stream()
-      .map(Object::toString)
-      .collect(Collectors.joining(""));
+    return this.value.stream().map(Object::toString).collect(Collectors.joining(""));
   }
 
-  /**
-   * Calculate the sum of internal value with a new.
-   */
+  /** Calculate the sum of internal value with a new. */
   public BigNum bigSum(Integer number) {
     return this.bigSum(String.valueOf(number));
   }
 
-  /**
-   * Calculate the sum of internal value with a new.
-   */
+  /** Calculate the sum of internal value with a new. */
   public BigNum bigSum(String strNumber) {
     return this.bigSum(new BigNum(strNumber).getInternalValue());
   }
 
-  /**
-   * Calculate the sum of internal value with a new.
-   */
+  /** Calculate the sum of internal value with a new. */
   public BigNum bigSum(BigNum bigNum) {
     return this.bigSum(bigNum.getInternalValue());
   }
 
-  /**
-   * Calculate the sum of internal value with a new.
-   */
+  /** Calculate the sum of internal value with a new. */
   public BigNum bigSum(List<Integer> numberList) {
     List<Integer> a = this.getInternalValue();
     List<Integer> b = numberList;
@@ -129,9 +108,7 @@ public class BigNum {
     return this;
   }
 
-  /**
-   * Calculate the sum of many BigNum as a list of strings.
-   */
+  /** Calculate the sum of many BigNum as a list of strings. */
   public BigNum bigSumMany(String[] strNumberArr) {
     for (int i = 0; i < strNumberArr.length; i++) {
       this.bigSum(strNumberArr[i]);
@@ -140,9 +117,7 @@ public class BigNum {
     return this;
   }
 
-  /**
-   * Calculate the sum of many BigNum as a list of integers.
-   */
+  /** Calculate the sum of many BigNum as a list of integers. */
   public BigNum bigSumMany(Integer[] numberArr) {
     for (int i = 0; i < numberArr.length; i++) {
       this.bigSum(numberArr[i]);
@@ -151,9 +126,7 @@ public class BigNum {
     return this;
   }
 
-  /**
-   * bigMultiplyRowToBigNum.
-   */
+  /** bigMultiplyRowToBigNum. */
   public static BigNum bigMultiplyRowToBigNum(String strNumber, int multiplierDigit) {
     List<Integer> number = new BigNum(strNumber).getInternalValue();
     Collections.reverse(number);
@@ -185,9 +158,7 @@ public class BigNum {
     return new BigNum(result);
   }
 
-  /**
-   * Calculate the sum of many BigNum as a list of strings.
-   */
+  /** Calculate the sum of many BigNum as a list of strings. */
   public BigNum bigMultiply(String strNumMultiplier) {
     String strMultiply = this.toString();
 
@@ -215,9 +186,7 @@ public class BigNum {
     return this.bigSumMany(collector.toArray(new String[collector.size()]));
   }
 
-  /**
-   * .
-   */
+  /** . */
   public BigNum bigPower(int exponent) {
     BigNum result = new BigNum(1);
     String base = this.toString();
@@ -229,9 +198,7 @@ public class BigNum {
     return result;
   }
 
-  /**
-   * .
-   */
+  /** . */
   public static BigNum bigFactorial(int number) {
     BigNum acum = new BigNum(1);
 

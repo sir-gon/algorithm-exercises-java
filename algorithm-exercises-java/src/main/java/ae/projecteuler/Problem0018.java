@@ -5,7 +5,6 @@ import ae.projecteuler.lib.BinaryNodeWeightBuilder;
 import java.util.Arrays;
 import util.Log;
 
-
 /**
  * Problem 0018.
  *
@@ -15,10 +14,7 @@ public class Problem0018 {
 
   private Problem0018() {}
 
-
-  /**
-   * Problem template method.
-   */
+  /** Problem template method. */
   public static Integer problem0018(Integer[][] triangle) {
 
     String log;

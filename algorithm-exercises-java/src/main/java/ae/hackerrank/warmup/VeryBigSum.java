@@ -11,9 +11,7 @@ public class VeryBigSum {
 
   private VeryBigSum() {}
 
-  /**
-   * aVeryBigSum.
-   */
+  /** aVeryBigSum. */
   public static long aVeryBigSum(List<Long> ar) {
     long total = 0L;
 

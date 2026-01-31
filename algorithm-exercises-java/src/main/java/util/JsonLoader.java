@@ -5,28 +5,18 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
-/**
- * JsonLoader.
- */
+/** JsonLoader. */
 public final class JsonLoader {
 
   private JsonLoader() {}
 
-  /**
-   * loadJson.
-   */
+  /** loadJson. */
   public static <T> List<T> loadJson(String path, Class<T> type) throws IOException {
     ObjectMapper objectMapper = new ObjectMapper();
 
-    File file = new File(
-        JsonLoader.class.getClassLoader()
-        .getResource(path)
-        .getFile()
-    );
+    File file = new File(JsonLoader.class.getClassLoader().getResource(path).getFile());
 
     ObjectMapper mapper = new ObjectMapper();
-    return mapper.readerForListOf(type)
-        .readValue(objectMapper.readTree(file));
+    return mapper.readerForListOf(type).readValue(objectMapper.readTree(file));
   }
-
 }

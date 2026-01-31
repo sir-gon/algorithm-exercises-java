@@ -25,10 +25,9 @@ class CrushTest {
 
   @BeforeAll
   void setup() throws IOException {
-    String path = String.join("/", "hackerrank",
-        "interview_preparation_kit",
-        "arrays",
-        "crush.testcases.json");
+    String path =
+        String.join(
+            "/", "hackerrank", "interview_preparation_kit", "arrays", "crush.testcases.json");
 
     this.testCases.clear();
     this.testCases.addAll(JsonLoader.loadJson(path, CrushTestCase.class));
@@ -37,15 +36,17 @@ class CrushTest {
   @Test
   void testArrayManipulation() {
     for (CrushTestCase testCase : testCases) {
-      long solutionFound = CrushOptimized
-          .arrayManipulation(testCase.n, testCase.queries);
+      long solutionFound = CrushOptimized.arrayManipulation(testCase.n, testCase.queries);
 
-      assertEquals(testCase.expected, solutionFound,
-          "%s(%d, %s) answer must be: %s".formatted(
-              "CrushOptimized.arrayManipulation",
-              testCase.n,
-              testCase.queries.toString(),
-              testCase.expected));
+      assertEquals(
+          testCase.expected,
+          solutionFound,
+          "%s(%d, %s) answer must be: %s"
+              .formatted(
+                  "CrushOptimized.arrayManipulation",
+                  testCase.n,
+                  testCase.queries.toString(),
+                  testCase.expected));
     }
   }
 }

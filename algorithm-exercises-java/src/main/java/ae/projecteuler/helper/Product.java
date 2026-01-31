@@ -1,14 +1,10 @@
 package ae.projecteuler.helper;
 
-/**
- * Product helper.
- */
+/** Product helper. */
 public class Product {
   private Product() {}
 
-  /**
-   * Product of array of numbers.
-   */
+  /** Product of array of numbers. */
   public static Long product(Long[] numList) {
 
     if (numList == null || numList.length == 0) {
