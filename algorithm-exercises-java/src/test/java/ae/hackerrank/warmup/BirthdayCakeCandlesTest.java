@@ -29,12 +29,8 @@ class BirthdayCakeCandlesTest {
   @BeforeAll
   void setup() {
     this.testCases.clear();
-    this.testCases.add(new BirthdayCakeCandlesTestCase(
-        Arrays.asList(3, 2, 1, 3),
-        2));
-    this.testCases.add(new BirthdayCakeCandlesTestCase(
-        Arrays.asList(1, 2, 3, 3),
-        2));
+    this.testCases.add(new BirthdayCakeCandlesTestCase(Arrays.asList(3, 2, 1, 3), 2));
+    this.testCases.add(new BirthdayCakeCandlesTestCase(Arrays.asList(1, 2, 3, 3), 2));
   }
 
   @Test
@@ -42,20 +38,24 @@ class BirthdayCakeCandlesTest {
     for (BirthdayCakeCandlesTestCase testCase : this.testCases) {
       Integer solutionFound = BirthdayCakeCandles.birthdayCakeCandles(testCase.candles);
 
-      assertEquals(testCase.expected, solutionFound,
-          String.format("%s(%s) answer must be: %d",
-              "CompareTriplets.compareTriplets",
-              testCase.candles.toString(),
-              testCase.expected));
+      assertEquals(
+          testCase.expected,
+          solutionFound,
+          String.format(
+              "%s(%s) answer must be: %d",
+              "CompareTriplets.compareTriplets", testCase.candles.toString(), testCase.expected));
     }
   }
 
   @Test
   void testMiniMaxSumNullInput() {
 
-    IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
-      BirthdayCakeCandles.birthdayCakeCandles(null);
-    });
+    IllegalArgumentException exception =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> {
+              BirthdayCakeCandles.birthdayCakeCandles(null);
+            });
 
     String expectedMessage = "Parameter cannot be empty";
     String actualMessage = exception.getMessage();
@@ -67,9 +67,12 @@ class BirthdayCakeCandlesTest {
   void testMiniMaxSumEmptyInput() {
     List<Integer> input = Arrays.asList();
 
-    IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
-      BirthdayCakeCandles.birthdayCakeCandles(input);
-    });
+    IllegalArgumentException exception =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> {
+              BirthdayCakeCandles.birthdayCakeCandles(input);
+            });
 
     String expectedMessage = "Parameter cannot be empty";
     String actualMessage = exception.getMessage();

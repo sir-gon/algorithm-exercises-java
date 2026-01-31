@@ -4,15 +4,13 @@ package ae.hackerrank.interview_preparation_kit.miscellaneous;
  * AngryFlorist.
  *
  * @link Problem definition
- *       [[docs/hackerrank/interview_preparation_kit/miscellaneous/flipping-bits.md]]
+ *     [[docs/hackerrank/interview_preparation_kit/miscellaneous/flipping-bits.md]]
  */
 public class FlippingBits {
 
   private FlippingBits() {}
 
-  /**
-   * flippingBits.
-   */
+  /** flippingBits. */
   public static long flippingBits(long n) {
     String binaryString = Long.toBinaryString(n);
     binaryString = String.format("%32s", binaryString); // Ensure 32 bits

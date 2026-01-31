@@ -12,9 +12,7 @@ public class CompareTriplets {
 
   private CompareTriplets() {}
 
-  /**
-   * compareTriplets.
-   */
+  /** compareTriplets. */
   public static List<Integer> compareTriplets(List<Integer> a, List<Integer> b) {
     List<Integer> awards = Arrays.asList(0, 0);
 

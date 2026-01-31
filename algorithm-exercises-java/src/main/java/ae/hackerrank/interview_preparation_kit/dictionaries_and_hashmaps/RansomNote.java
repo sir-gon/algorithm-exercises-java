@@ -8,12 +8,11 @@ import util.Log;
 /**
  * RansomNote.
  *
- * @link Problem definition [[docs/hackerrank/interview_preparation_kit/dictionaries_and_hashmaps/ctci-ransom-note.md]]
+ * @link Problem definition
+ *     [[docs/hackerrank/interview_preparation_kit/dictionaries_and_hashmaps/ctci-ransom-note.md]]
  */
 public class RansomNote {
-  /**
-   * InvalidValueException.
-   */
+  /** InvalidValueException. */
   public class InvalidValueException extends Exception {
     // constructor for the InvalidAgeException class
     public InvalidValueException(String msg) {
@@ -21,15 +20,12 @@ public class RansomNote {
     }
   }
 
-  protected RansomNote() {
-  }
+  protected RansomNote() {}
 
   private static final String YES = "Yes";
   private static final String NO = "No";
 
-  /**
-   * checkMagazineCompute.
-   */
+  /** checkMagazineCompute. */
   public static boolean checkMagazineCompute(List<String> magazine, List<String> note) {
     Map<String, Integer> dictionary = new HashMap<>();
 
@@ -54,9 +50,7 @@ public class RansomNote {
     return true;
   }
 
-  /**
-   * checkMagazine.
-   */
+  /** checkMagazine. */
   public static String checkMagazine(List<String> magazine, List<String> note) {
     return checkMagazineCompute(magazine, note) ? YES : NO;
   }

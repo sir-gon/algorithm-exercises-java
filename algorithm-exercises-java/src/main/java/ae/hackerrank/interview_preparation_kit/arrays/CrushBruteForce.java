@@ -3,12 +3,12 @@ package ae.hackerrank.interview_preparation_kit.arrays;
 import java.util.Arrays;
 import java.util.List;
 
-
 /**
  * Crush (Brute Force).
  *
  * @link Problem definition [[docs/hackerrank/interview_preparation_kit/arrays/crush.md]]
- * @link Solution notes [[docs/hackerrank/interview_preparation_kit/arrays/crush_optimized-solution-notes.md]]
+ * @link Solution notes
+ *     [[docs/hackerrank/interview_preparation_kit/arrays/crush_optimized-solution-notes.md]]
  */
 public class CrushBruteForce {
 
@@ -16,12 +16,10 @@ public class CrushBruteForce {
 
   private static final int INITIALIZER = 0;
 
-  /**
-   * arrayManipulation.
-   */
+  /** arrayManipulation. */
   public static long arrayManipulation(int n, List<List<Integer>> queries) {
     // why adding 1?
-    //   first slot to adjust 1-based index and
+    // first slot to adjust 1-based index and
     int[] result = new int[n + 1];
     Arrays.fill(result, INITIALIZER);
     int maximum = INITIALIZER;

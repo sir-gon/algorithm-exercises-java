@@ -1,13 +1,10 @@
 package ae.projecteuler.lib;
 
-/**
- * BinaryNode.
- */
+/** BinaryNode. */
 public class BinaryNode<T> {
   T value;
   BinaryNode<T> left;
   BinaryNode<T> right;
-
 
   BinaryNode() {}
 
@@ -64,9 +61,7 @@ public class BinaryNode<T> {
     return this.value.hashCode();
   }
 
-  /**
-   * equals.
-   */
+  /** equals. */
   public boolean equals(Object obj) {
     // Same instance
     if (this == obj) {

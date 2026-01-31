@@ -4,10 +4,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-
 class SolveMeFirstTest {
 
-  @Test void solveMeFirst() {
+  @Test
+  void solveMeFirst() {
 
     Integer answer = 5;
     Integer a = 2;
@@ -15,8 +15,9 @@ class SolveMeFirstTest {
 
     Integer solutionFound = SolveMeFirst.solveMeFirst(a, b);
 
-    assertEquals(answer, solutionFound,
-        String.format("%s(%d, %d) answer must be: %d", "SolveMeFirst.solveMeFirst", a, b, answer)
-    );
+    assertEquals(
+        answer,
+        solutionFound,
+        String.format("%s(%d, %d) answer must be: %d", "SolveMeFirst.solveMeFirst", a, b, answer));
   }
 }

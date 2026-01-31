@@ -40,20 +40,24 @@ class MiniMaxSumTest {
     for (MiniMaxSumTestCase testCase : this.testCases) {
       String solutionFound = MiniMaxSum.miniMaxSum(testCase.input);
 
-      assertEquals(testCase.expected, solutionFound,
-          String.format("%s(%s) answer must be: %s",
-              "MiniMaxSum.miniMaxSum",
-              testCase.input.toString(),
-              testCase.expected));
+      assertEquals(
+          testCase.expected,
+          solutionFound,
+          String.format(
+              "%s(%s) answer must be: %s",
+              "MiniMaxSum.miniMaxSum", testCase.input.toString(), testCase.expected));
     }
   }
 
   @Test
   void testMiniMaxSumNullInput() {
 
-    IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
-      MiniMaxSum.miniMaxSum(null);
-    });
+    IllegalArgumentException exception =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> {
+              MiniMaxSum.miniMaxSum(null);
+            });
 
     String expectedMessage = "Parameter cannot be empty";
     String actualMessage = exception.getMessage();
@@ -65,9 +69,12 @@ class MiniMaxSumTest {
   void testMiniMaxSumEmptyInput() {
     List<Integer> input = Arrays.asList();
 
-    IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
-      MiniMaxSum.miniMaxSum(input);
-    });
+    IllegalArgumentException exception =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> {
+              MiniMaxSum.miniMaxSum(input);
+            });
 
     String expectedMessage = "Parameter cannot be empty";
     String actualMessage = exception.getMessage();

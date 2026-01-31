@@ -2,14 +2,11 @@ package ae.projecteuler.helper;
 
 import java.util.LinkedHashMap;
 
-/**
- * WordScore helper.
- */
+/** WordScore helper. */
 public class WordScore {
   private WordScore() {}
 
-  private static final LinkedHashMap<String, Integer>
-      _scoreLetter = new LinkedHashMap<>();
+  private static final LinkedHashMap<String, Integer> _scoreLetter = new LinkedHashMap<>();
 
   static {
     _scoreLetter.put("A", 1);
@@ -40,9 +37,7 @@ public class WordScore {
     _scoreLetter.put("Z", 26);
   }
 
-  /**
-   * WordScore.
-   */
+  /** WordScore. */
   public static Integer wordScore(String word) {
 
     int result = 0;

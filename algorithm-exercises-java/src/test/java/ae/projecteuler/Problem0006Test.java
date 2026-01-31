@@ -6,7 +6,8 @@ import org.junit.jupiter.api.Test;
 
 class Problem0006Test {
 
-  @Test void problem0006() {
+  @Test
+  void problem0006() {
 
     Integer bottom = 1;
     Integer top = 100;
@@ -14,9 +15,9 @@ class Problem0006Test {
     Integer expectedSolution = 25164150;
     Integer calculated = Problem0006.problem0006(bottom, top);
 
-
-    assertEquals(expectedSolution, calculated,
-        String.format("Problem 0006 answer must be: %d", expectedSolution)
-    );
+    assertEquals(
+        expectedSolution,
+        calculated,
+        String.format("Problem 0006 answer must be: %d", expectedSolution));
   }
 }

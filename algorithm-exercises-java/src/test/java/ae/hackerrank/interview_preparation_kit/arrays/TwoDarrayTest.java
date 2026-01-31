@@ -24,10 +24,9 @@ class TwoDarrayTest {
 
   @BeforeAll
   void setup() throws IOException {
-    String path = String.join("/", "hackerrank",
-        "interview_preparation_kit",
-        "arrays",
-        "2d_array.testcases.json");
+    String path =
+        String.join(
+            "/", "hackerrank", "interview_preparation_kit", "arrays", "2d_array.testcases.json");
 
     this.testCases.clear();
     this.testCases.addAll(JsonLoader.loadJson(path, TwoDarrayTestCase.class));
@@ -38,11 +37,11 @@ class TwoDarrayTest {
     for (TwoDarrayTestCase testCase : testCases) {
       long solutionFound = TwoDarray.hourglassSum(testCase.input);
 
-      assertEquals(testCase.expected, solutionFound,
-          "%s(%s) answer must be: %s".formatted(
-              "TwoDarray.hourglassSum",
-              testCase.input.toString(),
-              testCase.expected));
+      assertEquals(
+          testCase.expected,
+          solutionFound,
+          "%s(%s) answer must be: %s"
+              .formatted("TwoDarray.hourglassSum", testCase.input.toString(), testCase.expected));
     }
   }
 
@@ -51,20 +50,18 @@ class TwoDarrayTest {
     List<List<Integer>> input = null;
     Integer expected = null;
     Integer solutionFound = TwoDarray.hourglassSum(null);
-    assertEquals(expected, solutionFound,
-        "%s(%s) answer must be: %s".formatted(
-            "TwoDarray.hourglassSum",
-            input,
-            expected));
+    assertEquals(
+        expected,
+        solutionFound,
+        "%s(%s) answer must be: %s".formatted("TwoDarray.hourglassSum", input, expected));
 
     input = new ArrayList<List<Integer>>();
     expected = null;
     solutionFound = TwoDarray.hourglassSum(null);
 
-    assertEquals(expected, solutionFound,
-        "%s(%s) answer must be: %s".formatted(
-            "TwoDarray.hourglassSum",
-            input,
-            expected));
+    assertEquals(
+        expected,
+        solutionFound,
+        "%s(%s) answer must be: %s".formatted("TwoDarray.hourglassSum", input, expected));
   }
 }

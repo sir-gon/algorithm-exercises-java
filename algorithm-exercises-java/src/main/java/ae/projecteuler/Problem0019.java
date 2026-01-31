@@ -19,8 +19,7 @@ public class Problem0019 {
 
   private static Map<String, Integer> copyDaysInMonth() {
     Map<String, Integer> daysInMonth = new LinkedHashMap<>();
-    Set<Entry<String, Integer>>
-        entries = ae.projecteuler.constants.Date.daysInMonth().entrySet();
+    Set<Entry<String, Integer>> entries = ae.projecteuler.constants.Date.daysInMonth().entrySet();
     for (Map.Entry<String, Integer> mapEntry : entries) {
       daysInMonth.put(mapEntry.getKey(), mapEntry.getValue());
     }
@@ -28,14 +27,8 @@ public class Problem0019 {
     return daysInMonth;
   }
 
-  /**
-   * Problem 0019.
-   */
-  public static Integer problem0019(
-      int dayOfWeek, // __SUNDAY__,
-      int sinceYear, // 1901,
-      int untilYear // 2000
-  ) {
+  /** Problem 0019. */
+  public static Integer problem0019(int dayOfWeek, int sinceYear, int untilYear) {
     String log;
     int resultCount = 0;
     int accumulatedRemainder = 0;
@@ -64,7 +57,6 @@ public class Problem0019 {
           }
           resultCount += 1;
         }
-
       }
     }
 

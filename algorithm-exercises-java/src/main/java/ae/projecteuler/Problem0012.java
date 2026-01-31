@@ -12,10 +12,7 @@ public class Problem0012 {
 
   private Problem0012() {}
 
-
-  /**
-   * Problem 0012.
-   */
+  /** Problem 0012. */
   public static Long problem0012(Long top) {
     Long count = (long) 0;
     Long triangular = (long) 0;

@@ -11,9 +11,7 @@ import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
 import util.JsonLoader;
 
-/**
- * CountTripletsBruteForceTest.
- */
+/** CountTripletsBruteForceTest. */
 @TestInstance(Lifecycle.PER_CLASS)
 class CountTripletsBruteForceTest {
   public static class CountTripletsBruteForceTestCase {
@@ -28,11 +26,13 @@ class CountTripletsBruteForceTest {
   @BeforeAll
   void setup() throws IOException {
     String path;
-    path = String.join("/",
-        "hackerrank",
-        "interview_preparation_kit",
-        "dictionaries_and_hashmaps",
-        "count_triplets_1.small.testcases.json");
+    path =
+        String.join(
+            "/",
+            "hackerrank",
+            "interview_preparation_kit",
+            "dictionaries_and_hashmaps",
+            "count_triplets_1.small.testcases.json");
 
     this.smallTestCases.clear();
     this.smallTestCases.addAll(JsonLoader.loadJson(path, CountTripletsBruteForceTestCase.class));
@@ -43,12 +43,15 @@ class CountTripletsBruteForceTest {
     for (CountTripletsBruteForceTestCase test : smallTestCases) {
       Long solutionFound = CountTripletsBruteForce.countTriplets(test.input, test.r);
 
-      assertEquals(test.expected, solutionFound,
-          "%s(%s, %d) answer must be: %d".formatted(
-              "CountTripletsBruteForce.countTriplets",
-              test.input.toString(),
-              test.r,
-              test.expected));
+      assertEquals(
+          test.expected,
+          solutionFound,
+          "%s(%s, %d) answer must be: %d"
+              .formatted(
+                  "CountTripletsBruteForce.countTriplets",
+                  test.input.toString(),
+                  test.r,
+                  test.expected));
     }
   }
 }

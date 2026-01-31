@@ -5,13 +5,12 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
-  * 2D Array - DS.
-  *
-  * @link Problem definition [[docs/hackerrank/interview_preparation_kit/arrays/2d_array.md]]
-  */
-
+ * 2D Array - DS.
+ *
+ * @link Problem definition [[docs/hackerrank/interview_preparation_kit/arrays/2d_array.md]]
+ */
 public class TwoDarray {
-  private TwoDarray() { }
+  private TwoDarray() {}
 
   private static List<Integer> getHourGlass(List<List<Integer>> arr, int positionX, int positionY) {
     List<Integer> result = new ArrayList<>();
@@ -32,9 +31,7 @@ public class TwoDarray {
     return result;
   }
 
-  /**
-   * hourglassSum.
-   */
+  /** hourglassSum. */
   public static Integer hourglassSum(List<List<Integer>> arr) {
     int matrixSize = 0;
 
@@ -52,8 +49,8 @@ public class TwoDarray {
     for (int i = matrixStartIndex; i <= matrixEndIndex; i++) {
       for (int j = matrixStartIndex; j <= matrixEndIndex; j++) {
         List<Integer> currentHourGlass = getHourGlass(arr, i, j);
-        int hourGlassSum = currentHourGlass.stream()
-                                           .collect(Collectors.summingInt(Integer::intValue));
+        int hourGlassSum =
+            currentHourGlass.stream().collect(Collectors.summingInt(Integer::intValue));
 
         if (maxHourGlassSum == null || hourGlassSum > maxHourGlassSum) {
           maxHourGlassSum = hourGlassSum;

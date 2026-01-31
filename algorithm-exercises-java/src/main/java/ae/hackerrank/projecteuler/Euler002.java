@@ -30,9 +30,7 @@ public class Euler002 {
     return total;
   }
 
-  /**
-   * Even Fibonacci numbers.
-   */
+  /** Even Fibonacci numbers. */
   public static Long euler002(Integer n) {
     Long result = fibbo(n);
 
@@ -43,4 +41,4 @@ public class Euler002 {
   }
 }
 
-//CHECKSTYLE.ON: JavadocParagraph
+// CHECKSTYLE.ON: JavadocParagraph

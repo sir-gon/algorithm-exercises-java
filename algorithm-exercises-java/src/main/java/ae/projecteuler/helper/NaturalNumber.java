@@ -3,9 +3,7 @@ package ae.projecteuler.helper;
 import java.util.ArrayList;
 
 // CHECKSTYLE.OFF: JavadocParagraph
-/**
- * NaturalNumber.
- */
+/** NaturalNumber. */
 public class NaturalNumber {
 
   private Long value = null;
@@ -26,8 +24,8 @@ public class NaturalNumber {
   /**
    * Get cycles the next minimal prime factor.
    *
-   * If the prime factor has not yet been computed, then it is computed first.
-   * That is, this function saves the result in an internal cache.
+   * <p>If the prime factor has not yet been computed, then it is computed first. That is, this
+   * function saves the result in an internal cache.
    */
   public Long getNextPrimeFactor() {
 
@@ -39,12 +37,11 @@ public class NaturalNumber {
   }
 
   /**
-   * Get cycles to compute the next divisor.
-   * The divisor is the inverse number of the prime factor,
+   * Get cycles to compute the next divisor. The divisor is the inverse number of the prime factor,
    * by which the target number is divided to obtain the prime factor.
    *
-   * If the prime factor has not yet been computed, then it is computed first.
-   * That is, this function saves the result in an internal cache.
+   * <p>If the prime factor has not yet been computed, then it is computed first. That is, this
+   * function saves the result in an internal cache.
    */
   public Long getNextDivisor() {
     if (this.nextDivisor == null) {
@@ -57,8 +54,8 @@ public class NaturalNumber {
   /**
    * Get cycles to compute the next minimal Prime Factor of a number.
    *
-   * If the prime factor has not yet been computed, then it is computed first.
-   * That is, this function saves the result in an internal cache.
+   * <p>If the prime factor has not yet been computed, then it is computed first. That is, this
+   * function saves the result in an internal cache.
    */
   public Integer getNextPrimeFactorCycles() {
 
@@ -69,9 +66,7 @@ public class NaturalNumber {
     return nextPrimeFactorCycles;
   }
 
-  /**
-   * Compute the next minimal Prime Factor of a number.
-   */
+  /** Compute the next minimal Prime Factor of a number. */
   public Long computeNextPrimefactor() {
     Long top = Math.abs(this.getValue());
 
@@ -97,9 +92,7 @@ public class NaturalNumber {
     return nextPrimeFactor;
   }
 
-  /**
-   * Compute a list of prime factors of a number.
-   */
+  /** Compute a list of prime factors of a number. */
   public Long[] primeFactors() {
     Long[] primeFactors = null;
     ArrayList<Long> factors = new ArrayList<>();
@@ -130,9 +123,7 @@ public class NaturalNumber {
     return primeFactors;
   }
 
-  /**
-   * Get cycles to compute a list of prime factors of a number.
-   */
+  /** Get cycles to compute a list of prime factors of a number. */
   public Integer getPrimeFactorCycles() {
     if (this.primeFactorsCycles == null) {
       this.primeFactors();
@@ -141,20 +132,16 @@ public class NaturalNumber {
     return primeFactorsCycles;
   }
 
-  /**
-   * Checks if number is prime.
-   */
+  /** Checks if number is prime. */
   public boolean isPrime() {
     Long primeFactor = this.getNextPrimeFactor();
     return primeFactor != 1 && primeFactor.equals(this.getValue());
   }
 
-  /**
-   * Checks if number is prime. Static way.
-   */
+  /** Checks if number is prime. Static way. */
   public static Boolean isPrime(Long number) {
     return new NaturalNumber(number).isPrime();
   }
 }
 
-//CHECKSTYLE.ON: JavadocParagraph
+// CHECKSTYLE.ON: JavadocParagraph

@@ -25,10 +25,13 @@ class ArraysLeftRotationTest {
   @BeforeAll
   void setup() throws IOException {
 
-    String path = String.join("/", "hackerrank",
-        "interview_preparation_kit",
-        "arrays",
-        "ctci_array_left_rotation.testcases.json");
+    String path =
+        String.join(
+            "/",
+            "hackerrank",
+            "interview_preparation_kit",
+            "arrays",
+            "ctci_array_left_rotation.testcases.json");
 
     this.testCases.clear();
     this.testCases.addAll(JsonLoader.loadJson(path, ArraysLeftRotationTestCase.class));
@@ -40,11 +43,11 @@ class ArraysLeftRotationTest {
     for (ArraysLeftRotationTestCase test : this.testCases) {
       List<Integer> solutionFound = ArraysLeftRotation.rotLeftOne(test.input);
 
-      assertEquals(test.expected, solutionFound,
-          "%s(%s) answer must be: %s".formatted(
-              "ArraysLeftRotation.rotLeftOne",
-              test.input,
-              test.expected));
+      assertEquals(
+          test.expected,
+          solutionFound,
+          "%s(%s) answer must be: %s"
+              .formatted("ArraysLeftRotation.rotLeftOne", test.input, test.expected));
     }
   }
 
@@ -56,11 +59,10 @@ class ArraysLeftRotationTest {
 
     List<Integer> solutionFound = ArraysLeftRotation.rotLeft(input, d);
 
-    assertEquals(expected, solutionFound,
-        "%s(%s, %d) answer must be: %s".formatted(
-            "ArraysLeftRotation.rotLeftOne",
-            input,
-            d,
-            expected));
+    assertEquals(
+        expected,
+        solutionFound,
+        "%s(%s, %d) answer must be: %s"
+            .formatted("ArraysLeftRotation.rotLeftOne", input, d, expected));
   }
 }

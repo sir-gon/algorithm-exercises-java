@@ -35,11 +35,12 @@ class TimeConversionTest {
     for (TimeConversionTestCase testCase : this.testCases) {
       String solutionFound = TimeConversion.timeConversion(testCase.input);
 
-      assertEquals(testCase.expected, solutionFound,
-          String.format("%s(%s) answer must be: %s",
-              "Staircase.staircase",
-              testCase.input,
-              testCase.expected));
+      assertEquals(
+          testCase.expected,
+          solutionFound,
+          String.format(
+              "%s(%s) answer must be: %s",
+              "Staircase.staircase", testCase.input, testCase.expected));
     }
   }
 }

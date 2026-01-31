@@ -12,10 +12,7 @@ public class Problem0017 {
 
   private Problem0017() {}
 
-
-  /**
-   * Problem 0017.
-   */
+  /** Problem 0017. */
   public static Integer problem0017(int init, int last) throws Exception {
 
     int acum = 0;

@@ -13,9 +13,7 @@ public class PlusMinus {
 
   private PlusMinus() {}
 
-  /**
-   * plusMinus.
-   */
+  /** plusMinus. */
   public static String plusMinus(List<Integer> arr) {
 
     int positives = 0;

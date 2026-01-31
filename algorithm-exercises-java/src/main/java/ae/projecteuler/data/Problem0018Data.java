@@ -31,4 +31,4 @@ public class Problem0018Data {
     return Problem0018Data.data;
   }
 }
-//CHECKSTYLE.ON: JavadocParagraph
+// CHECKSTYLE.ON: JavadocParagraph

@@ -27,13 +27,7 @@ class StaircaseTest {
     this.testCases.clear();
     this.testCases.add(
         new StaircaseTestCase(
-            6, String.join("\n",
-                "     #",
-                "    ##",
-                "   ###",
-                "  ####",
-                " #####",
-                "######")));
+            6, String.join("\n", "     #", "    ##", "   ###", "  ####", " #####", "######")));
   }
 
   @Test
@@ -41,11 +35,12 @@ class StaircaseTest {
     for (StaircaseTestCase testCase : this.testCases) {
       String solutionFound = Staircase.staircase(testCase.input);
 
-      assertEquals(testCase.expected, solutionFound,
-          String.format("%s(%d) answer must be: %s",
-              "Staircase.staircase",
-              testCase.input,
-              testCase.expected));
+      assertEquals(
+          testCase.expected,
+          solutionFound,
+          String.format(
+              "%s(%d) answer must be: %s",
+              "Staircase.staircase", testCase.input, testCase.expected));
     }
   }
 }

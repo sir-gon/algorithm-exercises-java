@@ -24,10 +24,13 @@ class MinimumSwaps2Test {
 
   @BeforeAll
   void setup() throws IOException {
-    String path = String.join("/", "hackerrank",
-        "interview_preparation_kit",
-        "arrays",
-        "minimum_swaps_2.testcases.json");
+    String path =
+        String.join(
+            "/",
+            "hackerrank",
+            "interview_preparation_kit",
+            "arrays",
+            "minimum_swaps_2.testcases.json");
 
     this.testCases.clear();
     this.testCases.addAll(JsonLoader.loadJson(path, MinimumSwaps2TestCase.class));
@@ -36,17 +39,15 @@ class MinimumSwaps2Test {
   @Test
   void testArrayManipulation() {
     for (MinimumSwaps2TestCase testCase : testCases) {
-      int[] input = testCase.input
-          .stream()
-          .mapToInt(Integer::intValue)
-          .toArray();
+      int[] input = testCase.input.stream().mapToInt(Integer::intValue).toArray();
       long solutionFound = MinimumSwaps2.minimumSwaps(input);
 
-      assertEquals(testCase.expected, solutionFound,
-          "%s(%s) answer must be: %s".formatted(
-              "MinimumSwaps2.minimumSwaps",
-              testCase.input.toString(),
-              testCase.expected));
+      assertEquals(
+          testCase.expected,
+          solutionFound,
+          "%s(%s) answer must be: %s"
+              .formatted(
+                  "MinimumSwaps2.minimumSwaps", testCase.input.toString(), testCase.expected));
     }
   }
 }

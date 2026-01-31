@@ -31,7 +31,6 @@ class PlusMinusTest {
         new PlusMinusTestCase(
             Arrays.asList(-4, 3, -9, 0, 4, 1),
             String.join("\n", "0.500000", "0.333333", "0.166667")));
-
   }
 
   @Test
@@ -40,11 +39,12 @@ class PlusMinusTest {
     for (PlusMinusTestCase testCase : this.testCases) {
       String solutionFound = PlusMinus.plusMinus(testCase.input);
 
-      assertEquals(testCase.expected, solutionFound,
-          String.format("%s(%s) answer must be: %s",
-              "PlusMinus.plusMinus",
-              testCase.input.toString(),
-              testCase.toString()));
+      assertEquals(
+          testCase.expected,
+          solutionFound,
+          String.format(
+              "%s(%s) answer must be: %s",
+              "PlusMinus.plusMinus", testCase.input.toString(), testCase.toString()));
     }
   }
 }

@@ -15,9 +15,7 @@ public class Problem0000 {
 
   private Problem0000() {}
 
-  /**
-   * Problem template method.
-   */
+  /** Problem template method. */
   public static Integer problem0000() {
     Integer result = null;
 
@@ -28,4 +26,4 @@ public class Problem0000 {
   }
 }
 
-//CHECKSTYLE.ON: JavadocParagraph
+// CHECKSTYLE.ON: JavadocParagraph

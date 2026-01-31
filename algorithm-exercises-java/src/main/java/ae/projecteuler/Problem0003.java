@@ -5,7 +5,6 @@ import ae.projecteuler.helper.NaturalNumber;
 import java.util.Arrays;
 import util.Log;
 
-
 /**
  * Largest prime factor.
  *
@@ -15,10 +14,7 @@ public class Problem0003 {
 
   private Problem0003() {}
 
-
-  /**
-   * Problem 0003.
-   */
+  /** Problem 0003. */
   public static Long problem0003(Long top) {
 
     Long[] divs = Divisors.divisors(top);
@@ -54,5 +50,4 @@ public class Problem0003 {
 
     return null;
   }
-
 }

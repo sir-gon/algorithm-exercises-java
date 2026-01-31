@@ -1,8 +1,6 @@
 package util;
 
-/**
- * Log.
- */
+/** Log. */
 public class Log {
 
   /**
@@ -17,9 +15,7 @@ public class Log {
     public static final String LOGGER_NAME = "projecteuler";
     private static java.util.logging.Logger log;
 
-    /**
-     * Common logger singleton.
-     */
+    /** Common logger singleton. */
     @SuppressWarnings({"java:S106", "java:S4792"})
     public static java.util.logging.Logger getLogger() {
 

@@ -11,9 +11,7 @@ import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
 import util.JsonLoader;
 
-/**
- * LuckBalanceTest.
- */
+/** LuckBalanceTest. */
 @TestInstance(Lifecycle.PER_CLASS)
 class LuckBalanceTest {
   public static class LuckBalanceTestCase {
@@ -27,11 +25,13 @@ class LuckBalanceTest {
 
   @BeforeAll
   void setup() throws IOException {
-    String path = String.join("/",
-        "hackerrank",
-        "interview_preparation_kit",
-        "greedy_algorithms",
-        "luck_balance.testcases.json");
+    String path =
+        String.join(
+            "/",
+            "hackerrank",
+            "interview_preparation_kit",
+            "greedy_algorithms",
+            "luck_balance.testcases.json");
 
     this.testCases.clear();
     this.testCases.addAll(JsonLoader.loadJson(path, LuckBalanceTestCase.class));
@@ -42,12 +42,11 @@ class LuckBalanceTest {
     for (LuckBalanceTestCase test : testCases) {
       Integer result = LuckBalance.luckBalance(test.k, test.contests);
 
-      assertEquals(test.expected, result,
-          "%s(%d, %s) => must be: %s".formatted(
-              "LuckBalance.luckBalance",
-              test.k,
-              test.contests,
-              test.expected));
+      assertEquals(
+          test.expected,
+          result,
+          "%s(%d, %s) => must be: %s"
+              .formatted("LuckBalance.luckBalance", test.k, test.contests, test.expected));
     }
   }
 }

@@ -11,9 +11,7 @@ import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
 import util.JsonLoader;
 
-/**
- * TwoStringsTest.
- */
+/** TwoStringsTest. */
 @TestInstance(Lifecycle.PER_CLASS)
 class TwoStringsTest {
   public static class TwoStringsTestCase {
@@ -27,11 +25,13 @@ class TwoStringsTest {
 
   @BeforeAll
   void setup() throws IOException {
-    String path = String.join("/",
-        "hackerrank",
-        "interview_preparation_kit",
-        "dictionaries_and_hashmaps",
-        "two_strings.testcases.json");
+    String path =
+        String.join(
+            "/",
+            "hackerrank",
+            "interview_preparation_kit",
+            "dictionaries_and_hashmaps",
+            "two_strings.testcases.json");
 
     this.testCases.clear();
     this.testCases.addAll(JsonLoader.loadJson(path, TwoStringsTestCase.class));
@@ -42,12 +42,11 @@ class TwoStringsTest {
     for (TwoStringsTestCase test : testCases) {
       String solutionFound = TwoStrings.twoStrings(test.s1, test.s2);
 
-      assertEquals(test.expected, solutionFound,
-          "%s(%s, %s) answer must be: %s".formatted(
-              "TwoStrings.twoStrings",
-              test.s1,
-              test.s2,
-              test.expected));
+      assertEquals(
+          test.expected,
+          solutionFound,
+          "%s(%s, %s) answer must be: %s"
+              .formatted("TwoStrings.twoStrings", test.s1, test.s2, test.expected));
     }
   }
 }

@@ -6,17 +6,13 @@ import java.util.List;
  * CountTripletsBruteForce.
  *
  * @link Problem definition
- *       [[docs/hackerrank/interview_preparation_kit/dictionaries_and_hashmaps/count_triplets_1.md/]]
- *
+ *     [[docs/hackerrank/interview_preparation_kit/dictionaries_and_hashmaps/count_triplets_1.md/]]
  * @see CountTriplets
  */
 public class CountTripletsBruteForce {
-  private CountTripletsBruteForce() {
-  }
+  private CountTripletsBruteForce() {}
 
-  /**
-   * CountTriples.
-   */
+  /** CountTriples. */
   static long countTriplets(List<Long> arr, long r) {
 
     long size = arr.size();

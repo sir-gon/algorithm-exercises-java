@@ -8,16 +8,13 @@ import java.util.stream.Collectors;
  * MinimumAbsoluteDifferenceInAnArray.
  *
  * @link Problem definition
- *       [[docs/hackerrank/interview_preparation_kit/greedy_algorithms/minimum-absolute-difference-in-an-array.md]]
+ *     [[docs/hackerrank/interview_preparation_kit/greedy_algorithms/minimum-absolute-difference-in-an-array.md]]
  */
 public class MinimumAbsoluteDifferenceInAnArray {
 
-  private MinimumAbsoluteDifferenceInAnArray() {
-  }
+  private MinimumAbsoluteDifferenceInAnArray() {}
 
-  /**
-   * minimumAbsoluteDifference.
-   */
+  /** minimumAbsoluteDifference. */
   public static int minimumAbsoluteDifference(List<Integer> arr) {
     List<Integer> sortedNums = arr.stream().collect(Collectors.toList());
     Collections.sort(sortedNums);

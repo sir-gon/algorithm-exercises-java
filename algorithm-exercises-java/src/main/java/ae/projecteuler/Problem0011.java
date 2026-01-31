@@ -11,7 +11,6 @@ public class Problem0011 {
 
   private Problem0011() {}
 
-
   /**
    * Problem 0011.
    *
@@ -39,17 +38,11 @@ public class Problem0011 {
         int diag1Acum = 1;
         int diag2Acum = 1;
         for (int k = 0; k < quadrantSize; k++) {
-          log = String.format(
-            "diag1 coordinate: (i, j) = (%d, %d)",
-            i + k,
-            j + k
-          );
+          log = String.format("diag1 coordinate: (i, j) = (%d, %d)", i + k, j + k);
           Log.debug(log);
-          log = String.format(
-            "diag2 coordinate: (i, j) = (%d, %d)",
-            i + k,
-            j + (quadrantSize - 1) - k
-          );
+          log =
+              String.format(
+                  "diag2 coordinate: (i, j) = (%d, %d)", i + k, j + (quadrantSize - 1) - k);
           Log.debug(log);
 
           diag1Acum *= squareMatrix[i + k][j + k];
@@ -63,17 +56,9 @@ public class Problem0011 {
           int horizontalAcum = 1;
 
           for (int l = 0; l < quadrantSize; l++) {
-            log = String.format(
-              "vertical coordinate: (i, j) = (%d, %d)",
-              i + k,
-              j + l
-            );
+            log = String.format("vertical coordinate: (i, j) = (%d, %d)", i + k, j + l);
             Log.debug(log);
-            log = String.format(
-              "horizontal coordinate: (i, j) = (%d, %d)",
-              i + l,
-              j + k
-            );
+            log = String.format("horizontal coordinate: (i, j) = (%d, %d)", i + l, j + k);
             Log.debug(log);
 
             verticalAcum *= squareMatrix[i + k][j + l];

@@ -15,10 +15,7 @@ public class Problem0022 {
 
   private Problem0022() {}
 
-
-  /**
-   * Problem 0022.
-   */
+  /** Problem 0022. */
   public static Integer problem0022(String[] listOfNames) {
     List<String> names = Arrays.asList(listOfNames);
     Collections.sort(names);

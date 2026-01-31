@@ -1,6 +1,5 @@
 package ae.hackerrank.warmup;
 
-
 /**
  * Time Conversion.
  *
@@ -10,9 +9,7 @@ public class TimeConversion {
 
   private TimeConversion() {}
 
-  /**
-   * timeConversion.
-   */
+  /** timeConversion. */
   public static String timeConversion(String input) {
     String meridian = input.substring(input.length() - 2);
     meridian = meridian.toLowerCase();

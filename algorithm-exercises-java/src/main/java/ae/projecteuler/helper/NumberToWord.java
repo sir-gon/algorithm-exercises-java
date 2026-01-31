@@ -70,9 +70,7 @@ public class NumberToWord {
       }
 
       return String.format(
-        "%s-%s",
-        dictionary.get(Integer.toString(dec)),
-        dictionary.get(Integer.toString(unit)));
+          "%s-%s", dictionary.get(Integer.toString(dec)), dictionary.get(Integer.toString(unit)));
 
     } else if (value <= 999) {
       // 100 to 999
@@ -80,29 +78,20 @@ public class NumberToWord {
       int cent = (int) Math.floor((double) value / 100);
 
       if (rest == 0) {
-        return String.format(
-          "%s %s",
-          dictionary.get(Integer.toString(cent)),
-          NumberToWord.CENTS);
+        return String.format("%s %s", dictionary.get(Integer.toString(cent)), NumberToWord.CENTS);
       }
 
       return String.format(
           "%s %s and %s",
-          dictionary.get(Integer.toString(cent)),
-          NumberToWord.CENTS,
-          numberToWord(rest)
-      );
+          dictionary.get(Integer.toString(cent)), NumberToWord.CENTS, numberToWord(rest));
     } else if (value == 1000) {
       // up to 1000
       int mills = (int) Math.floor((double) value / 1000);
 
-      return String.format(
-          "%s %s",
-          dictionary.get(Integer.toString(mills)),
-          NumberToWord.MILLS);
+      return String.format("%s %s", dictionary.get(Integer.toString(mills)), NumberToWord.MILLS);
     }
 
     throw new IllegalArgumentException("Invalid value");
   }
 }
-//CHECKSTYLE.ON: JavadocParagraph
+// CHECKSTYLE.ON: JavadocParagraph

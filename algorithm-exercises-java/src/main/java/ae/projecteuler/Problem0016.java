@@ -3,7 +3,6 @@ package ae.projecteuler;
 import ae.projecteuler.helper.BigNum;
 import util.Log;
 
-
 /**
  * Problem 0016.
  *
@@ -13,10 +12,7 @@ public class Problem0016 {
 
   private Problem0016() {}
 
-
-  /**
-   * Problem 0016.
-   */
+  /** Problem 0016. */
   public static String problem0016(int base, int exponent) {
     BigNum power = new BigNum(base).bigPower(exponent);
 

@@ -12,7 +12,6 @@ public class Problem0024 {
 
   private Problem0024() {}
 
-
   static Long factorial(long n) {
     long out = 1L;
     while (n > 1) {
@@ -24,8 +23,7 @@ public class Problem0024 {
   static String permute(String symbols, long target) {
 
     StringBuilder answer = new StringBuilder();
-    ArrayList<String> choices =
-        new ArrayList<>(Arrays.asList(String.valueOf(symbols).split("")));
+    ArrayList<String> choices = new ArrayList<>(Arrays.asList(String.valueOf(symbols).split("")));
     long min = 0;
 
     while (!choices.isEmpty()) {
@@ -43,13 +41,8 @@ public class Problem0024 {
     return answer.toString();
   }
 
-  /**
-   * Problem 0024.
-   */
-  public static String problem0024(
-      String inputElements,
-      Integer inputPermutationToFind
-  ) {
+  /** Problem 0024. */
+  public static String problem0024(String inputElements, Integer inputPermutationToFind) {
     return Problem0024.permute(inputElements, inputPermutationToFind);
   }
 }

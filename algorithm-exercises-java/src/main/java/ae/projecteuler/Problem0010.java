@@ -14,10 +14,7 @@ public class Problem0010 {
 
   private Problem0010() {}
 
-
-  /**
-   * Problem 0010.
-   */
+  /** Problem 0010. */
   public static Long problem0010(Long bottom, Long top) {
     ArrayList<Long> primes = new ArrayList<>();
 

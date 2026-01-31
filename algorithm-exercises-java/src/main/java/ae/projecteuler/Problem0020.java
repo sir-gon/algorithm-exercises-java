@@ -12,10 +12,7 @@ public class Problem0020 {
 
   private Problem0020() {}
 
-
-  /**
-   * Problem 0020.
-   */
+  /** Problem 0020. */
   public static BigNum problem0020(int limit) {
     String log;
     BigNum factorial = BigNum.bigFactorial(limit);

@@ -1,14 +1,10 @@
 package ae.projecteuler.helper;
 
-/**
- * Sum helper.
- */
+/** Sum helper. */
 public class Sum {
   private Sum() {}
 
-  /**
-   * Sum of array of numbers.
-   */
+  /** Sum of array of numbers. */
   public static Integer sum(Integer[] numList) {
 
     if (numList == null || numList.length == 0) {
@@ -24,9 +20,7 @@ public class Sum {
     return result;
   }
 
-  /**
-   * Sum of array of numbers.
-   */
+  /** Sum of array of numbers. */
   public static Long sum(Long[] numList) {
 
     if (numList == null || numList.length == 0) {

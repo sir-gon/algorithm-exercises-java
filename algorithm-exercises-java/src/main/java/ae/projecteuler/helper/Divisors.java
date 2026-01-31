@@ -3,9 +3,7 @@ package ae.projecteuler.helper;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/**
- * Divisors helper.
- */
+/** Divisors helper. */
 public class Divisors {
 
   long cycles = 0;
@@ -56,38 +54,30 @@ public class Divisors {
 
     cycles = i - init;
 
-
     // sort divisors
     Long[] answer = divs.toArray(Long[]::new);
     Arrays.sort(answer);
 
     return answer;
-
   }
 
   public Long getCycles() {
     return this.cycles;
   }
 
-  /**
-   * Calculate divisors of a number.
-   */
+  /** Calculate divisors of a number. */
   public static Long[] divisors(Long number) {
     return new Divisors().calculateDivisors(number);
   }
 
-  /**
-   * DivisorsAbundance.
-   */
+  /** DivisorsAbundance. */
   public enum DivisorsAbundance {
     DIVISORS_ABUNDANT,
     DIVISORS_DEFICIENT,
     DIVISORS_PERFECT;
   }
 
-  /**
-   * Calculate abundance of a number.
-   */
+  /** Calculate abundance of a number. */
   public static DivisorsAbundance abundance(Long number) {
     Long[] divisors = Divisors.divisors(number);
     Long divSum = Sum.sum(divisors) - number;

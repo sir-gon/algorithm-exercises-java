@@ -11,9 +11,7 @@ public class DiagonalDifference {
 
   private DiagonalDifference() {}
 
-  /**
-   * diagonalDifference.
-   */
+  /** diagonalDifference. */
   public static int diagonalDifference(List<List<Integer>> matrix) {
     int diag1 = 0;
     int diag2 = 0;

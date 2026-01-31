@@ -4,7 +4,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-
 class PalindromeTest {
 
   private class PalindromTestCase {
@@ -17,11 +16,10 @@ class PalindromeTest {
     }
   }
 
-  @Test void listOfPalindromBorderCaseTest() {
+  @Test
+  void listOfPalindromBorderCaseTest() {
 
-    PalindromTestCase[] testCases = {
-      new PalindromTestCase(1L, true)
-    };
+    PalindromTestCase[] testCases = {new PalindromTestCase(1L, true)};
 
     for (PalindromTestCase testCase : testCases) {
       assertEquals(testCase.answer, Palindrome.isPalindrome(testCase.input));

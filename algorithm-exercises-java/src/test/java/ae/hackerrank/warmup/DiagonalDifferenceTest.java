@@ -28,10 +28,11 @@ class DiagonalDifferenceTest {
   @BeforeAll
   void setup() {
     this.testCases.clear();
-    this.testCases.add(new DiagonalDifferenceTestCase(Arrays.asList(
-        Arrays.asList(11, 2, 4),
-        Arrays.asList(4, 5, 6),
-        Arrays.asList(10, 8, -12)), 15));
+    this.testCases.add(
+        new DiagonalDifferenceTestCase(
+            Arrays.asList(
+                Arrays.asList(11, 2, 4), Arrays.asList(4, 5, 6), Arrays.asList(10, 8, -12)),
+            15));
   }
 
   @Test
@@ -40,11 +41,12 @@ class DiagonalDifferenceTest {
     for (DiagonalDifferenceTestCase testCase : this.testCases) {
       Integer resultFound = DiagonalDifference.diagonalDifference(testCase.matrix);
 
-      assertEquals(testCase.expected, resultFound,
-          String.format("%s(%s) answer must be: %s",
-              "MiniMaxSum.miniMaxSum",
-              testCase.matrix.toString(),
-              testCase.expected.toString()));
+      assertEquals(
+          testCase.expected,
+          resultFound,
+          String.format(
+              "%s(%s) answer must be: %s",
+              "MiniMaxSum.miniMaxSum", testCase.matrix.toString(), testCase.expected.toString()));
     }
   }
 }

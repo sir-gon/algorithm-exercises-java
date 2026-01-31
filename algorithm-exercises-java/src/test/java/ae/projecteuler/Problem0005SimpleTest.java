@@ -6,11 +6,10 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
 import util.Log;
 
-
 class Problem0005SimpleTest {
 
-
-  @Test void problem0005SmallTest() {
+  @Test
+  void problem0005SmallTest() {
 
     Integer answer = 2520;
     Integer bottom = 1;
@@ -19,13 +18,11 @@ class Problem0005SimpleTest {
 
     Integer solutionFound = Problem0005Simple.problem0005(bottom, top, startFrom);
 
-    assertEquals(answer, solutionFound,
-        String.format("Problem 0005 answer must be: %d", answer)
-    );
-
+    assertEquals(answer, solutionFound, String.format("Problem 0005 answer must be: %d", answer));
   }
 
-  @Test void problem0005BruteForceCuttedTest() {
+  @Test
+  void problem0005BruteForceCuttedTest() {
 
     String log;
     log = "Problem 00005 BRUTE FORCE stars...";
@@ -37,16 +34,18 @@ class Problem0005SimpleTest {
     Integer startFrom = answer - 1000;
     Integer solutionFound = Problem0005Simple.problem0005(bottom, top, startFrom);
 
-    assertEquals(answer, solutionFound,
-        String.format("Problem 0005 BRUTE-FORCE answer must be: %d", answer)
-    );
+    assertEquals(
+        answer,
+        solutionFound,
+        String.format("Problem 0005 BRUTE-FORCE answer must be: %d", answer));
 
     log = "Problem 00005 BRUTE FORCE ends.";
     Log.info(log);
   }
 
   @EnabledIfEnvironmentVariable(named = "BRUTEFORCE", matches = "TRUE")
-  @Test void problem0005BruteForceFull() {
+  @Test
+  void problem0005BruteForceFull() {
 
     String log;
     log = "Problem 00005 BRUTE FORCE stars...";
@@ -58,9 +57,10 @@ class Problem0005SimpleTest {
     Integer startFrom = 1;
     Integer solutionFound = Problem0005Simple.problem0005(bottom, top, startFrom);
 
-    assertEquals(answer, solutionFound,
-        String.format("Problem 0005 BRUTE-FORCE answer must be: %d", answer)
-    );
+    assertEquals(
+        answer,
+        solutionFound,
+        String.format("Problem 0005 BRUTE-FORCE answer must be: %d", answer));
 
     log = "Problem 00005 BRUTE FORCE ends.";
     Log.info(log);

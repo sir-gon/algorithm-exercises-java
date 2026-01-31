@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-
 /**
  * Crush (Optimized).
  *
@@ -14,14 +13,10 @@ public class MinimumSwaps2 {
 
   private MinimumSwaps2() {}
 
-  /**
-   * minimumSwaps.
-   */
+  /** minimumSwaps. */
   static int minimumSwaps(int[] arr) {
-    List<Integer> indexedGroup = IntStream.of(arr)
-                .boxed()
-                .map(t -> t - 1)
-                .collect(Collectors.toList());
+    List<Integer> indexedGroup =
+        IntStream.of(arr).boxed().map(t -> t - 1).collect(Collectors.toList());
 
     int swaps = 0;
     int index = 0;

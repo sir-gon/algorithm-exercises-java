@@ -21,10 +21,7 @@ public class Problem0004 {
 
   private Problem0004() {}
 
-
-  /**
-   * Problem template method.
-   */
+  /** Problem template method. */
   public static Integer problem0004(int bottom, int top) {
     Integer foundi = null;
     Integer foundj = null;
@@ -57,12 +54,10 @@ public class Problem0004 {
       i -= 1;
     }
 
-    String log = String.format(
-        "Problem 0004 Largest Palindrome  => %d 𝗑 %d = %d in %d cycles",
-        foundi,
-        foundj,
-        foundPalindrome,
-        cycles);
+    String log =
+        String.format(
+            "Problem 0004 Largest Palindrome  => %d 𝗑 %d = %d in %d cycles",
+            foundi, foundj, foundPalindrome, cycles);
 
     Log.info(log);
 
