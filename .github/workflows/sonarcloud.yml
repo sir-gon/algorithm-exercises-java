@@ -16,7 +16,7 @@ jobs:
     name: Build and analyze
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v6.0.2
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
         with:
           # Shallow clones should be disabled for a better relevancy of analysis
           fetch-depth: 0
