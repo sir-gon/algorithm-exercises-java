@@ -1,5 +1,5 @@
 ARG BUILDTIME_IMAGE=gradle:9.3.1-jdk21-alpine
-ARG RUNTIME_IMAGE=eclipse-temurin:25.0.1_8-jre-alpine
+ARG RUNTIME_IMAGE=eclipse-temurin:25.0.2_10-jre-alpine
 
 ###############################################################################
 FROM ${BUILDTIME_IMAGE} AS base
