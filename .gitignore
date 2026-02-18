@@ -27,3 +27,28 @@ gradle-app.setting
 # Static Analysis Results Interchange Format
 *.sarif
 .dccache
+
+## Visual Studio Code
+## https://github.com/github/gitignore/blob/main/Global/VisualStudioCode.gitignore
+
+.vscode/*
+# !.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
+
+# Sarif
+*.sarif
+
+# SonarQube sonar-scanner (cli)
+.scannerwork
+
+# Snyk Security Extension - AI Rules (auto-generated)
+.github/instructions/snyk_rules.instructions.md
