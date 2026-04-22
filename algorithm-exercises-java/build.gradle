@@ -19,6 +19,9 @@ plugins {
     id "com.diffplug.spotless" version "8.4.0"
 }
 
+import org.gradle.api.tasks.testing.TestListener
+import org.gradle.api.tasks.testing.TestDescriptor
+
 repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
@@ -99,9 +102,11 @@ test {
         events "passed", "skipped", "failed"
     }
 
-    beforeTest { descriptor ->
-      logger.lifecycle("Running test: ${descriptor}")
-    }
+    addTestListener(new TestListener() {
+        void beforeTest(TestDescriptor descriptor) {
+            logger.lifecycle("Running test: ${descriptor}")
+        }
+    })
 }
 
 jacoco {
