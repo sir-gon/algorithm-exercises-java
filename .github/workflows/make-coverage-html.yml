@@ -1,0 +1,62 @@
+# yamllint disable rule:line-length
+# This workflow runs make coverage/html and verifies that the coverage HTML report is generated.
+# yamllint enable rule:line-length
+
+---
+name: Make Coverage HTML
+
+env:
+  HTML_REPORT_DIR: "algorithm-exercises-java/build/reports/jacoco/test/html"
+on: # yamllint disable-line rule:truthy
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  make-coverage-html:
+    name: "Run make coverage/html and verify coverage HTML"
+    runs-on: ubuntu-24.04
+
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+      - name: Set up JDK
+        uses: actions/setup-java@v5
+        with:
+          java-version: 24
+          # Alternative distribution options are available
+          distribution: temurin
+      - name: Validate Gradle wrapper
+        uses: gradle/actions/wrapper-validation@v6
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v6
+
+      - name: Tool test
+        run: |
+          echo "Java version: ${{ matrix.java }}"
+          java -version
+          echo "OS: ${{ matrix.os }}"
+          echo "Gradle version:"
+          ./gradlew --version
+          make --version
+
+      - name: Run coverage HTML target
+        run: make coverage/html
+      - name: Verify coverage HTML artifact
+        shell: bash
+        run: |
+          if [ ! -f $HTML_REPORT_DIR/index.html ]; then
+            echo "Coverage HTML file not found: $HTML_REPORT_DIR/index.html"
+            exit 1
+          fi
+          if [ ! -s $HTML_REPORT_DIR/index.html ]; then
+            echo "Coverage HTML file is empty: $HTML_REPORT_DIR/index.html"
+            exit 1
+          fi
+      - name: Upload coverage HTML artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report-html
+          path: ${{ env.HTML_REPORT_DIR }}

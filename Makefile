@@ -103,7 +103,13 @@ test: env
 coverage: test
 
 coverage/html: test
-	open algorithm-exercises-java/build/reports/jacoco/test/html/index.html
+	@if [ "$$(uname)" = "Darwin" ]; then \
+		open algorithm-exercises-java/build/reports/jacoco/test/html/index.html; \
+	elif [ "$$(uname | tr '[:upper:]' '[:lower:]')" = "mingw32" ] || [ "$$(uname | tr '[:upper:]' '[:lower:]')" = "mingw64" ] || [ "$$(uname | tr '[:upper:]' '[:lower:]')" = "cygwin" ]; then \
+		cmd /c start algorithm-exercises-java/build/reports/jacoco/test/html/index.html; \
+	else \
+		echo "Coverage HTML generated: algorithm-exercises-java/build/reports/jacoco/test/html/index.html"; \
+	fi
 
 ## Docker Compose commands
 compose/build: env
