@@ -1,6 +1,6 @@
 ---
 
-name: Snyk Code (Java gradle-jdk17)
+name: Snyk Code (Java gradle)
 
 on: # yamllint disable-line rule:truthy
   pull_request:
@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Run Snyk to check for vulnerabilities
-        uses: snyk/actions/gradle-jdk17@master
+        uses: snyk/actions/gradle-9-jdk24@master
         continue-on-error: true # To make sure that SARIF upload gets called
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
