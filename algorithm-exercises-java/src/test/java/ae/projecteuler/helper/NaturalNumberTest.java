@@ -33,8 +33,6 @@ class NaturalNumberTest {
     }
   }
 
-  private List<NextPrimeFactorOfNumberTestCase> nextPrimeFactorTestCases;
-
   public class PrimeFactorsOfNumberTestCase {
     Integer input;
     Long[] factors;
@@ -47,8 +45,11 @@ class NaturalNumberTest {
     }
   }
 
+  private List<NextPrimeFactorOfNumberTestCase> nextPrimeFactorTestCases;
+  private List<PrimeFactorsOfNumberTestCase> primeFactorsTestCases;
+
   @BeforeAll
-  void initNextPrimeFactorOfNumberTestCases() {
+  void initTestCases() {
     nextPrimeFactorTestCases =
         new ArrayList<NextPrimeFactorOfNumberTestCase>(
             Arrays.asList(
@@ -57,12 +58,7 @@ class NaturalNumberTest {
                 new NextPrimeFactorOfNumberTestCase(4, 2, 2, false, 1),
                 new NextPrimeFactorOfNumberTestCase(9, 3, 3, false, 2),
                 new NextPrimeFactorOfNumberTestCase(7, 7, 1, true, 6)));
-  }
 
-  private List<PrimeFactorsOfNumberTestCase> primeFactorsTestCases;
-
-  @BeforeAll
-  void initPrimeFactorsOfNumberTestCases() {
     primeFactorsTestCases =
         new ArrayList<PrimeFactorsOfNumberTestCase>(
             Arrays.asList(
