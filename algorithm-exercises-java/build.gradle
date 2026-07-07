@@ -36,9 +36,9 @@ dependencies {
     implementation 'com.google.guava:guava:33.6.0-jre'
 
     //
-    implementation 'com.fasterxml.jackson.core:jackson-core:2.22.0'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.22.1'
     implementation 'com.fasterxml.jackson.core:jackson-annotations:2.22'
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.22.0'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.22.1'
 
     rewrite 'org.openrewrite.recipe:rewrite-static-analysis:latest.release'
 }
