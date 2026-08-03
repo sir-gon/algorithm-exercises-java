@@ -31,6 +31,14 @@ DOCKER_COMPOSE=docker compose
 .PHONY: all clean dependencies help list test outdated
 .EXPORT_ALL_VARIABLES: # (2)
 
+define crono
+	@start=$$(date +%s); \
+		$(1); \
+		end=$$(date +%s); \
+		diff=$$((end - start)); \
+		printf "Total time: %02d:%02d:%02d\n" $$((diff/3600)) $$((diff%3600/60)) $$((diff%60))
+endef
+
 help: list
 
 list:
@@ -141,7 +149,9 @@ compose/test: compose/build
 
 compose/run: compose/build
 	${DOCKER_COMPOSE} --profile testing run --rm algorithm-exercises-java make run
-all: env dependencies lint test
+
+all:
+	$(call crono, make clean && make dependencies && make build && make test && make lint && make coverage/html)
 
 run:
 	ls -alh
