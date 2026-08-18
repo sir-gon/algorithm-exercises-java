@@ -33,7 +33,7 @@ dependencies {
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
     // This dependency is used by the application.
-    implementation 'com.google.guava:guava:33.7.0-jre'
+    implementation 'com.google.guava:guava:33.7.1-jre'
 
     //
     implementation 'com.fasterxml.jackson.core:jackson-core:2.22.2'
@@ -79,7 +79,7 @@ rewrite {
 
 configurations.checkstyle {
   resolutionStrategy.capabilitiesResolution.withCapability("com.google.collections:google-collections") {
-    select("com.google.guava:guava:33.7.0-jre")
+    select("com.google.guava:guava:33.7.1-jre")
   }
 }
 
