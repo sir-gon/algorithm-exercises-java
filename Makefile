@@ -80,7 +80,7 @@ build: env
 
 ## Source code linting and formatting
 lint/json:
-	prettier --check ./algorithm-exercises-java/**/*.json
+	prettier --check ./**/*.json
 
 lint/markdown:
 	markdownlint --config .markdownlint.json '**/*.md' && echo '✔  Your code looks good.'
@@ -90,13 +90,13 @@ lint/yaml:
 
 lint: test/styling test/static
 
-lint/all: lint/markdown lint/yaml test/styling test/static
-
-format/json:
-	prettier --write ./**/*.json
+lint/all: lint/markdown lint/yaml lint/json test/styling test/static
 
 format/sources:
 	$(GRADLE) --console=verbose spotlessApply
+
+format/json:
+	prettier --write ./**/*.json
 
 format: format/sources format/json
 
@@ -139,7 +139,6 @@ compose/lint/markdown:
     markdownlint --config /workspace/.markdownlint.json '/workspace/**/*.md' \
 		&& echo '✔  Your code looks good.'
 
-
 compose/lint/yaml:
 	${DOCKER_COMPOSE} --profile lint run --rm \
 	--workdir /workspace \
@@ -147,13 +146,22 @@ compose/lint/yaml:
  	yamllint --strict . \
   && echo '✔  Your code looks good.'
 
+compose/lint/json:
+	${DOCKER_COMPOSE} --profile lint run --rm \
+    --workdir /workspace \
+    -v "$$(pwd):/workspace" \
+    prettier --check /workspace/**/*.json \
+		&& echo '✔  Your code looks good.'
+
 compose/test/styling: compose/build
 	${DOCKER_COMPOSE} --profile lint run --rm algorithm-exercises-java-lint make test/styling
 
 compose/test/static: compose/build
 	${DOCKER_COMPOSE} --profile lint run --rm algorithm-exercises-java-lint make test/static
 
-compose/lint: compose/lint/markdown compose/lint/yaml compose/test/styling compose/test/static
+compose/lint: compose/test/styling compose/test/static
+
+compose/lint/all: compose/lint/markdown compose/lint/yaml compose/lint/json compose/test/styling compose/test/static
 
 compose/test: compose/build
 	${DOCKER_COMPOSE} --profile testing run --rm algorithm-exercises-java-test make test
