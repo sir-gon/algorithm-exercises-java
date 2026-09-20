@@ -14,6 +14,8 @@ public class BinaryNode<T> {
 
   BinaryNode(BinaryNode<T> node) {
     this.value = node.getValue();
+    this.left = node.getLeft();
+    this.right = node.getRight();
   }
 
   BinaryNode(T value, BinaryNode<T> left, BinaryNode<T> right) {
