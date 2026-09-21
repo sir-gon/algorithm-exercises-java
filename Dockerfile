@@ -1,12 +1,12 @@
 FROM gradle:9.7.1-jdk26-alpine AS base
 
-RUN apk add --update --no-cache make \
+RUN apk add --update --no-cache "make=4.4.1-r4" \
   # FIX CVE-2024-5535
   && apk upgrade --update --no-cache openssl libcrypto3 libssl3 \
   # FIX CVE-2024-5535 CVE-2024-4741
   && apk upgrade --update --no-cache --available
 
-  ENV WORKDIR=/app
+ENV WORKDIR=/app
 WORKDIR ${WORKDIR}
 
 ###############################################################################
@@ -84,7 +84,7 @@ CMD ["make", "test"]
 
 FROM eclipse-temurin:26-jre-alpine-3.24 AS production
 
-RUN apk add --update --no-cache make \
+RUN apk add --update --no-cache "make=4.4.1-r4" \
   # FIX CVE-2024-5535
   && apk upgrade --update --no-cache openssl libcrypto3 libssl3 \
   # FIX CVE-2024-5535 CVE-2024-4741
@@ -95,7 +95,7 @@ ENV BRUTEFORCE=false
 ENV WORKDIR=/app
 WORKDIR ${WORKDIR}
 
-RUN adduser -D worker \
+RUN adduser -D -u 1000 worker \
   && mkdir -p /app \
   && chown worker:worker /app
 
@@ -104,7 +104,7 @@ COPY --from=builder /app/algorithm-exercises-java/build/libs/algorithm-exercises
 
 RUN ls -alh
 
-USER worker
+USER 1000
 CMD ["make", "run"]
 
 # checkov:skip= CKV_DOCKER_2: production image isn't a service process (yet)
