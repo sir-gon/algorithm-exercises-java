@@ -1,4 +1,4 @@
-FROM gradle:9.7.1-jdk26-alpine AS base
+FROM gradle:9.8.0-jdk26-alpine AS base
 
 RUN apk add --update --no-cache "make=4.4.1-r4" \
   # FIX CVE-2024-5535
