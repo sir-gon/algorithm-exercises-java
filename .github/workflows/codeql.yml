@@ -32,6 +32,9 @@ on: # yamllint disable-line rule:truthy
     #        *  * * * *
     - cron: '45 18 * * 4'
 
+permissions:
+  contents: read
+
 jobs:
   analyze:
     name: Analyze (${{ matrix.language }})

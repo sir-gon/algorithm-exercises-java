@@ -35,16 +35,18 @@ jobs:
           # Alternative distribution options are available
           distribution: temurin
       - name: Validate Gradle wrapper
-        uses: gradle/actions/wrapper-validation@v6.3.0
+        # yamllint disable-line rule:line-length
+        uses: gradle/actions/wrapper-validation@9c971963bec38e04b3d30dcc455b5382be2fdbfb
 
       - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v6.3.0
+        # yamllint disable-line rule:line-length
+        uses: gradle/actions/setup-gradle@9c971963bec38e04b3d30dcc455b5382be2fdbfb
 
       - name: Run tests
         run: ./gradlew --console=verbose test -x checkstyleMain checkstyleTest
 
       - name: Upload coverage reports to Codecov with GitHub Action
-        uses: codecov/codecov-action@v7
+        uses: codecov/codecov-action@303a32d7a59b442fa8d48b6a1cc6825c09c847a5
         with:
           token: ${{ secrets.CODECOV_TOKEN }} # required
           verbose: true # optional (default = false)
