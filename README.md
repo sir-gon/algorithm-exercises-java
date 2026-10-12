@@ -5,6 +5,7 @@
 
 [![Markdown Lint](https://github.com/sir-gon/algorithm-exercises-java/actions/workflows/markdown-lint.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-java/actions/workflows/markdown-lint.yml)
 [![YAML lint](https://github.com/sir-gon/algorithm-exercises-java/actions/workflows/yamllint.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-java/actions/workflows/yamllint.yml)
+[![JSON Prettier lint](https://github.com/sir-gon/algorithm-exercises-java/actions/workflows/prettier-json.yml/badge.svg)](https://github.com/sir-gon/algorithm-exercises-java/actions/workflows/prettier-json.yml)
 
 ![GitHub](https://img.shields.io/github/license/sir-gon/algorithm-exercises-java)
 ![GitHub language count](https://img.shields.io/github/languages/count/sir-gon/algorithm-exercises-java)
@@ -18,6 +19,8 @@
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=sir-gon_algorithm-exercises-java&metric=bugs)](https://sonarcloud.io/summary/new_code?id=sir-gon_algorithm-exercises-java)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=sir-gon_algorithm-exercises-java&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=sir-gon_algorithm-exercises-java)
 [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=sir-gon_algorithm-exercises-java&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=sir-gon_algorithm-exercises-java)
+
+[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/9286/badge)](https://www.bestpractices.dev/projects/9286)
 
 ## TL;DR
 
