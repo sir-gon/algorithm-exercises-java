@@ -82,7 +82,7 @@ CMD ["make", "test"]
 ## WORKDIR and USER are maintained
 ##
 
-FROM eclipse-temurin:26-jre-alpine-3.24 AS production
+FROM eclipse-temurin:27-jre-alpine-3.24 AS production
 
 RUN apk add --update --no-cache "make=4.4.1-r4" \
   # FIX CVE-2024-5535
