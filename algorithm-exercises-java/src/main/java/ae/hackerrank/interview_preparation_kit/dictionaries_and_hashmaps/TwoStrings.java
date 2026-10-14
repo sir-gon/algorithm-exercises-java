@@ -1,7 +1,7 @@
 package ae.hackerrank.interview_preparation_kit.dictionaries_and_hashmaps;
 
-import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * TwoStrings.
@@ -20,19 +20,13 @@ public class TwoStrings {
   /** twoStringsCompute. */
   public static boolean twoStringsCompute(String s1, String s2) {
 
-    Set<String> dictionary = new HashSet<>();
+    Set<String> dictionary = s1.chars()
+        .mapToObj(c -> String.valueOf((char) c))
+        .collect(Collectors.toSet());
 
-    for (char occurrence : s1.toCharArray()) {
-      dictionary.add("%c".formatted(occurrence));
-    }
-
-    for (char occurrence : s2.toCharArray()) {
-      if (dictionary.contains("%c".formatted(occurrence))) {
-        return true;
-      }
-    }
-
-    return false;
+    return s2.chars()
+        .mapToObj(c -> String.valueOf((char) c))
+        .anyMatch(dictionary::contains);
   }
 
   public static String twoStrings(String s1, String s2) {
