@@ -22,16 +22,16 @@ public class Problem0018 {
     BinaryNode<Integer> tree = builder.buildBinaryNodeTreeWithWeight(triangle);
     Integer[] leaves = builder.getLeaves();
 
-    log = String.format("Triangle: %s", tree);
+    log = "Triangle: " + tree;
     Log.debug(log);
-    log = String.format("Leaves count: %d, %s", leaves.length, leaves);
+    log = "Leaves count: " + leaves.length + ", " + Arrays.toString(leaves);
     Log.debug(log);
 
     Arrays.sort(leaves);
 
     Integer result = leaves[leaves.length - 1]; // maximum is last element
 
-    log = String.format("Problem 00018 solved: %d", result);
+    log = "Problem 00018 solved: " + result;
     Log.debug(log);
 
     return result;
