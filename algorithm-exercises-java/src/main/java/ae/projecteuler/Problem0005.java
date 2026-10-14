@@ -64,7 +64,7 @@ public class Problem0005 {
       minimumPrimeFactorsCollector =
           mixOccurrences(minimumPrimeFactorsCollector, primeFactorsCount);
 
-      log = String.format("%s", minimumPrimeFactorsCollector.toString());
+      log = String.valueOf(minimumPrimeFactorsCollector);
       Log.info(log);
     }
 
