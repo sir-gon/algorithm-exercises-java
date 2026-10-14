@@ -26,6 +26,7 @@ public class RansomNote {
   private static final String NO = "No";
 
   /** checkMagazineCompute. */
+  @SuppressWarnings("java:S7467")
   public static boolean checkMagazineCompute(List<String> magazine, List<String> note) {
     Map<String, Integer> dictionary = new HashMap<>();
 
