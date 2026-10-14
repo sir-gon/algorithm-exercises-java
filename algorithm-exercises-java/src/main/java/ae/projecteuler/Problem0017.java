@@ -1,8 +1,7 @@
 package ae.projecteuler;
 
-import java.util.regex.Pattern;
-
 import ae.projecteuler.helper.NumberToWord;
+import java.util.regex.Pattern;
 import util.Log;
 
 /**
@@ -14,8 +13,7 @@ public class Problem0017 {
 
   private Problem0017() {}
 
-  private static final Pattern NON_ALPHANUMERIC =
-            Pattern.compile("[^A-Za-z0-9]");
+  private static final Pattern NON_ALPHANUMERIC = Pattern.compile("[^A-Za-z0-9]");
 
   /** Problem 0017. */
   public static Integer problem0017(int init, int last) throws Exception {
@@ -26,9 +24,7 @@ public class Problem0017 {
     for (int i = init; i <= last; i++) {
       String word = NumberToWord.numberToWord(i);
 
-      String replaced = NON_ALPHANUMERIC
-                    .matcher(word)
-                    .replaceAll("");
+      String replaced = NON_ALPHANUMERIC.matcher(word).replaceAll("");
 
       acum += replaced.length();
 

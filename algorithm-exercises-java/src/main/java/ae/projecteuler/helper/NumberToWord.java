@@ -80,7 +80,11 @@ public class NumberToWord {
         return dictionary.get(Integer.toString(cent)) + " " + NumberToWord.CENTS;
       }
 
-      return dictionary.get(Integer.toString(cent)) + " " + NumberToWord.CENTS + " and " + numberToWord(rest);
+      return dictionary.get(Integer.toString(cent))
+          + " "
+          + NumberToWord.CENTS
+          + " and "
+          + numberToWord(rest);
     } else if (value == 1000) {
       // up to 1000
       int mills = (int) Math.floor((double) value / 1000);

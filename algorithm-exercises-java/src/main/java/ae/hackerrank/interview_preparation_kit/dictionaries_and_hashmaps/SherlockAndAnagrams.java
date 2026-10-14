@@ -20,8 +20,7 @@ import java.util.stream.Collectors;
 public class SherlockAndAnagrams {
   private SherlockAndAnagrams() {}
 
-  private static final Pattern EMPTY_REGEX =
-        Pattern.compile("");
+  private static final Pattern EMPTY_REGEX = Pattern.compile("");
 
   /** factorial(). */
   public static BigInteger factorial(int number) {
@@ -46,9 +45,7 @@ public class SherlockAndAnagrams {
         // Add substrings to a candidate list.
         // two strings are anagrams if sorted strings are the same.
         String anagramCandidate =
-            Arrays.stream(EMPTY_REGEX.split(substr))
-              .sorted()
-              .collect(Collectors.joining());
+            Arrays.stream(EMPTY_REGEX.split(substr)).sorted().collect(Collectors.joining());
 
         // Append candidates to dictionary by "sorted string" key
         if (candidates.containsKey(anagramCandidate)) {

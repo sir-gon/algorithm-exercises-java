@@ -20,13 +20,10 @@ public class TwoStrings {
   /** twoStringsCompute. */
   public static boolean twoStringsCompute(String s1, String s2) {
 
-    Set<String> dictionary = s1.chars()
-        .mapToObj(c -> String.valueOf((char) c))
-        .collect(Collectors.toSet());
+    Set<String> dictionary =
+        s1.chars().mapToObj(c -> String.valueOf((char) c)).collect(Collectors.toSet());
 
-    return s2.chars()
-        .mapToObj(c -> String.valueOf((char) c))
-        .anyMatch(dictionary::contains);
+    return s2.chars().mapToObj(c -> String.valueOf((char) c)).anyMatch(dictionary::contains);
   }
 
   public static String twoStrings(String s1, String s2) {
