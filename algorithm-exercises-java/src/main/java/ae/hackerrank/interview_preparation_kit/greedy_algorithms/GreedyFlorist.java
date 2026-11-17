@@ -3,7 +3,6 @@ package ae.hackerrank.interview_preparation_kit.greedy_algorithms;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * GreedyFlorist.
@@ -19,9 +18,7 @@ public class GreedyFlorist {
 
   /** getMinimumCost. */
   public static int getMinimumCost(int k, int[] c) {
-    List<Integer> flowers = Arrays.stream(c).boxed().collect(Collectors.toList());
-    Collections.sort(flowers);
-    Collections.reverse(flowers);
+    List<Integer> flowers = Arrays.stream(c).boxed().sorted(Collections.reverseOrder()).toList();
 
     int totalCost = 0;
     int i = 0;

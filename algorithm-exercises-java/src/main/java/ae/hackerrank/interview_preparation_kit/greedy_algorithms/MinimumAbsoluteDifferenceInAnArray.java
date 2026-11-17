@@ -1,8 +1,6 @@
 package ae.hackerrank.interview_preparation_kit.greedy_algorithms;
 
-import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * MinimumAbsoluteDifferenceInAnArray.
@@ -16,8 +14,7 @@ public class MinimumAbsoluteDifferenceInAnArray {
 
   /** minimumAbsoluteDifference. */
   public static int minimumAbsoluteDifference(List<Integer> arr) {
-    List<Integer> sortedNums = arr.stream().collect(Collectors.toList());
-    Collections.sort(sortedNums);
+    List<Integer> sortedNums = arr.stream().sorted().toList();
 
     // Find the minimum absolute difference
     int result = 0;

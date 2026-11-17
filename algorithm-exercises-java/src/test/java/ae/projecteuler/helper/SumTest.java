@@ -15,14 +15,14 @@ class SumTest {
     Long[] inputNull = null;
     assertEquals(expectedAnswer, Sum.sum(inputNull));
 
-    Long[] inputEmpty = new Long[] {};
+    Long[] inputEmpty = {};
     assertEquals(expectedAnswer, Sum.sum(inputEmpty));
   }
 
   @Test
   void sumOfSomeConsecutiveNumbersTest() {
 
-    Long[] input = new Long[] {1L, 2L, 3L, 4L};
+    Long[] input = {1L, 2L, 3L, 4L};
     Long expectedAnswer = 10L;
 
     // Test static way
@@ -32,7 +32,7 @@ class SumTest {
   @Test
   void sumOfSomepositiveAndNegativeNumbersTest() {
 
-    Long[] input = new Long[] {-1L, -2L, 1L, 2L};
+    Long[] input = {-1L, -2L, 1L, 2L};
     Long expectedAnswer = 0L;
 
     // Test static way
@@ -48,7 +48,7 @@ class SumTest {
     Long[] inputNull = null;
     assertEquals(expectedAnswer, Sum.sum(inputNull));
 
-    Long[] inputEmpty = new Long[] {};
+    Long[] inputEmpty = {};
     assertEquals(expectedAnswer, Sum.sum(inputEmpty));
 
     Integer expectediAnswer = 0;

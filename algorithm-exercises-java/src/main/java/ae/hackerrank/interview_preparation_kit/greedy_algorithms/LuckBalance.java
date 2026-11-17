@@ -18,6 +18,10 @@ public class LuckBalance {
     private int important;
 
     Competition(int luck, int important) {
+      setCompetition(luck, important);
+    }
+
+    public void setCompetition(int luck, int important) {
       this.luck = luck;
       this.important = important;
     }

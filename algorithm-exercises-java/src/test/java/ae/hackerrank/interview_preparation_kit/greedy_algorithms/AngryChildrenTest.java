@@ -11,17 +11,17 @@ import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
 import util.JsonLoader;
 
-/** AngryFloristTest. */
+/** AngryChildrenTest. */
 @TestInstance(Lifecycle.PER_CLASS)
-class AngryFloristTest {
-  public static class AngryFloristTestCase {
+class AngryChildrenTest {
+  public static class AngryChildrenTestCase {
     public String title;
     public Integer k;
     public List<Integer> arr;
     public Integer expected;
   }
 
-  private final List<AngryFloristTestCase> testCases = new ArrayList<>();
+  private final List<AngryChildrenTestCase> testCases = new ArrayList<>();
 
   @BeforeAll
   void setup() throws IOException {
@@ -33,19 +33,19 @@ class AngryFloristTest {
             "greedy_algorithms",
             "angry_children.testcases.json");
     this.testCases.clear();
-    this.testCases.addAll(JsonLoader.loadJson(path, AngryFloristTestCase.class));
+    this.testCases.addAll(JsonLoader.loadJson(path, AngryChildrenTestCase.class));
   }
 
   @Test
-  void testAngryFlorist() {
-    for (AngryFloristTestCase test : testCases) {
-      Integer result = AngryFlorist.maxMin(test.k, test.arr);
+  void testAngryChildren() {
+    for (AngryChildrenTestCase test : testCases) {
+      Integer result = AngryChildren.maxMin(test.k, test.arr);
 
       assertEquals(
           test.expected,
           result,
           "%s(%s) => must be: %d"
-              .formatted("AngryFlorist.maxMin", test.arr.toString(), test.expected));
+              .formatted("AngryChildren.maxMin", test.arr.toString(), test.expected));
     }
   }
 }

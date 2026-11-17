@@ -1,23 +1,20 @@
 package ae.hackerrank.interview_preparation_kit.greedy_algorithms;
 
-import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
- * AngryFlorist.
+ * AngryChildren.
  *
  * @link Problem definition
  *     [[docs/hackerrank/interview_preparation_kit/greedy_algorithms/angry-children.md]]
  */
-public class AngryFlorist {
+public class AngryChildren {
 
-  private AngryFlorist() {}
+  private AngryChildren() {}
 
   /** maxMin. */
   public static int maxMin(int k, List<Integer> arr) {
-    List<Integer> sortedNums = arr.stream().collect(Collectors.toList());
-    Collections.sort(sortedNums);
+    List<Integer> sortedNums = arr.stream().sorted().toList();
 
     int result = sortedNums.get(sortedNums.size() - 1) - sortedNums.get(0);
 
