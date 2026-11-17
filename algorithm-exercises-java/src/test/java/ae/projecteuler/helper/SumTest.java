@@ -56,7 +56,7 @@ class SumTest {
     Integer[] inputiNull = null;
     assertEquals(expectediAnswer, Sum.sum(inputiNull));
 
-    Integer[] inputiEmpty = new Integer[] {};
+    Integer[] inputiEmpty = {};
     assertEquals(expectediAnswer, Sum.sum(inputiEmpty));
   }
 }
